@@ -19,7 +19,7 @@ describe("shared/entry-status", () => {
       always: false,
       entry: {
         metadata: {
-          emoji: "🦀",
+          emoji: "🥭",
           homepage: "https://mangabaclaw.ai",
           requires: {
             bins: ["bun"],
@@ -43,7 +43,7 @@ describe("shared/entry-status", () => {
     });
 
     expect(result).toEqual({
-      emoji: "🦀",
+      emoji: "🥭",
       homepage: "https://mangabaclaw.ai",
       required: {
         bins: ["bun"],

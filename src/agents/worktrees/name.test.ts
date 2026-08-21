@@ -18,7 +18,7 @@ describe("slugifyWorktreeTitle", () => {
   });
 
   it("returns undefined when a title has no ASCII slug characters", () => {
-    expect(slugifyWorktreeTitle("🦞 日本語")).toBeUndefined();
+    expect(slugifyWorktreeTitle("🥭 日本語")).toBeUndefined();
   });
 
   it("joins numeric and dash-truncated names into the same allocation family", () => {

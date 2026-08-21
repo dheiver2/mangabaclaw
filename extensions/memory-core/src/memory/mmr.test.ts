@@ -13,7 +13,7 @@ describe("memory MMR", () => {
   it("compares token sets and falls back to literal equality for empty token sets", () => {
     expect(jaccardSimilarity(new Set(["a", "b"]), new Set(["b", "c"]))).toBeCloseTo(1 / 3);
     expect(textSimilarity("Привет мир", "Доброе утро")).toBe(0);
-    expect(textSimilarity("🦞🦞", "🦞🦞")).toBe(1);
+    expect(textSimilarity("🥭🥭", "🥭🥭")).toBe(1);
   });
 
   it.each([

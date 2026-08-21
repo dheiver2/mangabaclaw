@@ -52,7 +52,7 @@ describe("resolveDynamicSessionMutationRequiredScope", () => {
   it.each([
     { name: "model set", patch: { model: "openai/gpt-5.6-luna" } },
     { name: "model reset", patch: { model: null } },
-    { name: "icon set", patch: { icon: "🦞" } },
+    { name: "icon set", patch: { icon: "🥭" } },
     { name: "icon reset", patch: { icon: null } },
     {
       name: "safe mixed patch",
@@ -128,7 +128,7 @@ describe("resolveDynamicSessionMutationRequiredScope", () => {
         ],
         patch: {
           label: "Renamed",
-          icon: "🦞",
+          icon: "🥭",
           archived: true,
           unread: false,
           model: "openai/gpt-5.6-luna",

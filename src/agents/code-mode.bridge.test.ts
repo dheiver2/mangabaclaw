@@ -715,7 +715,7 @@ describe("Code Mode bridge settlement and cancellation", () => {
         jsonResult({
           matches: [
             { path: "src/first.ts", line: 1, text: "first useful match" },
-            { path: "src/large.ts", line: 2, text: "🦞".repeat(2_048) },
+            { path: "src/large.ts", line: 2, text: "🥭".repeat(2_048) },
           ],
         }),
     );

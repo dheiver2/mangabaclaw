@@ -1932,7 +1932,7 @@ describe("deliverReplies", () => {
           text: "plain fallback body",
           presentationTextMode: "fallback",
           presentation: {
-            title: "🦞 MangabaClaw 2026.7.2",
+            title: "🥭 MangabaClaw 2026.7.2",
             blocks: [
               {
                 type: "table",

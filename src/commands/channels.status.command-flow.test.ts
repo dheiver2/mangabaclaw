@@ -259,7 +259,7 @@ describe("channelsStatusCommand SecretRef fallback flow", () => {
   });
 
   it("preserves gateway account text in JSON output", async () => {
-    const name = "Primary\u001B]0;channels-status-json\u0007🦞\r\nAccount";
+    const name = "Primary\u001B]0;channels-status-json\u0007🥭\r\nAccount";
     const payload = {
       channelAccounts: { discord: [{ accountId: "default", name }] },
       channels: { discord: { name } },

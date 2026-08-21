@@ -1413,7 +1413,7 @@ describe("chrome.ts internal", () => {
     it("keeps only a bounded UTF-8-safe newest stderr tail when launch fails after large stderr", async () => {
       const oldMarker = "older-stderr-marker";
       const newestMarker = "newest-stderr-marker";
-      const splitEmoji = Buffer.from("🦞");
+      const splitEmoji = Buffer.from("🥭");
       const newestLine = Buffer.from(`\n${newestMarker}\n`);
       const tailMaxBytes = 64 * 1024;
       const filler = Buffer.alloc(tailMaxBytes + 2 - splitEmoji.length - newestLine.length, "x");
@@ -1437,10 +1437,10 @@ describe("chrome.ts internal", () => {
     it("does not split a surrogate pair at the stderr hint char-cap boundary", async () => {
       const newestMarker = "newest-stderr-marker";
       const tail = `${newestMarker}${"y".repeat(CHROME_STDERR_HINT_MAX_CHARS - 1 - newestMarker.length)}`;
-      // The raw cap starts on 🦞's low surrogate; the safe slice drops the pair.
+      // The raw cap starts on 🥭's low surrogate; the safe slice drops the pair.
       const { stderrHint } = await captureFailedLaunchStderr({
         port: 55559,
-        chunks: [`${"x".repeat(50)}🦞${tail}`],
+        chunks: [`${"x".repeat(50)}🥭${tail}`],
       });
 
       expect(stderrHint).toBe(tail);

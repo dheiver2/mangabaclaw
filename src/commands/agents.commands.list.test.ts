@@ -203,7 +203,7 @@ describe("agentsListCommand", () => {
 
   it("sanitizes configured agent text without changing JSON summaries", async () => {
     const control = "\u001B]0;agents-list-injection\u0007";
-    const identityName = `${control}Operator 🦞\r\nforged-row`;
+    const identityName = `${control}Operator 🥭\r\nforged-row`;
     const workspace = `/tmp/workspace-${control}\tpath`;
     const model = `${control}provider/model\nvariant`;
     const cfg = {
@@ -230,7 +230,7 @@ describe("agentsListCommand", () => {
     const textOutput = vi.mocked(textRuntime.log).mock.calls.flat().join("\n");
     expect(textOutput).not.toContain("\u001B");
     expect(textOutput).not.toContain("\nforged-row");
-    expect(textOutput).toContain("Operator 🦞\\r\\nforged-row");
+    expect(textOutput).toContain("Operator 🥭\\r\\nforged-row");
     expect(textOutput).toContain("provider/model\\nvariant");
     expect(textOutput).toContain("Telegram\\nroute");
 

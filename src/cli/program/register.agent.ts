@@ -218,8 +218,14 @@ export function registerAgentsCommands(program: Command): void {
         `
 ${theme.heading("Examples:")}
 ${formatHelpExamples([
-  ['mangabaclaw agents set-identity --agent main --name "MangabaClaw" --emoji "🦞"', "Set name + emoji."],
-  ["mangabaclaw agents set-identity --agent main --avatar avatars/mangabaclaw.png", "Set avatar path."],
+  [
+    'mangabaclaw agents set-identity --agent main --name "MangabaClaw" --emoji "🥭"',
+    "Set name + emoji.",
+  ],
+  [
+    "mangabaclaw agents set-identity --agent main --avatar avatars/mangabaclaw.png",
+    "Set avatar path.",
+  ],
   [
     "mangabaclaw agents set-identity --workspace ~/.mangabaclaw/workspace --from-identity",
     "Load from IDENTITY.md.",

@@ -484,7 +484,7 @@ describe("cron CLI with the real Gateway pagination contract", () => {
   });
 
   it("preserves hostile stored values in cron show JSON", async () => {
-    const name = "job\u001B]0;cron-json\u0007🦞\r\nname";
+    const name = "job\u001B]0;cron-json\u0007🥭\r\nname";
     const model = "model\u001B[31m\tvariant";
     const lastError = "failed\u001B]0;cron-error\u0007\nreason";
     const job = createJob(123, {

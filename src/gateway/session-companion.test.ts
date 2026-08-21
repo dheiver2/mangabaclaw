@@ -469,8 +469,8 @@ describe("session companion asks", () => {
 
   it("caps replay by exchange count and UTF-8 bytes", () => {
     const exchanges = Array.from({ length: 30 }, (_, index) => ({
-      question: `${index}:${"🦞".repeat(400)}`,
-      answer: "🦀".repeat(1200),
+      question: `${index}:${"🥭".repeat(400)}`,
+      answer: "🥭".repeat(1200),
       ts: index,
     }));
     trimSessionCompanionExchanges(exchanges);
@@ -489,14 +489,14 @@ describe("session companion asks", () => {
 
   it("truncates answers without splitting a UTF-16 surrogate pair", async () => {
     vi.useFakeTimers();
-    const harness = createHarness({ run: async () => "🦞".repeat(601) });
+    const harness = createHarness({ run: async () => "🥭".repeat(601) });
     const result = await harness.service.ask({
       agentId: "main",
       sessionKey: "agent:main:main",
       question: "Long answer?",
       connId: "conn-1",
     });
-    expect(result.answer).toBe("🦞".repeat(600));
+    expect(result.answer).toBe("🥭".repeat(600));
     harness.service.dispose();
   });
 

@@ -1066,13 +1066,13 @@ describe("agents.update", () => {
   it("writes merged identity to IDENTITY.md when only emoji changes", async () => {
     const { respond, promise } = makeCall("agents.update", {
       agentId: "test-agent",
-      emoji: "🦀",
+      emoji: "🥭",
     });
     await promise;
 
     expectRespondOk(respond, { ok: true, agentId: "test-agent" });
     const configOptions = expectRecordFields(mockCallArg(mocks.applyAgentConfig, 0, 1), {});
-    expectRecordFields(configOptions.identity, { emoji: "🦀" });
+    expectRecordFields(configOptions.identity, { emoji: "🥭" });
     const write = expectRecordFields(mockCallArg(mocks.rootWrite), {
       rootDir: "/workspace/test-agent",
       relativePath: "IDENTITY.md",
@@ -1083,7 +1083,7 @@ describe("agents.update", () => {
         "",
         "- Name: Current Agent",
         "- Theme: steady",
-        "- Emoji: 🦀",
+        "- Emoji: 🥭",
         "",
       ].join("\n"),
     );
@@ -2568,7 +2568,9 @@ describe("agents.delete", () => {
       "/agents/test-agent/mangabaclaw-agent.sqlite",
     );
     expect(mocks.movePathToTrash).not.toHaveBeenCalledWith("/agents/test-agent");
-    expect(mocks.movePathToTrash).toHaveBeenCalledWith("/agents/test-agent/mangabaclaw-agent.sqlite");
+    expect(mocks.movePathToTrash).toHaveBeenCalledWith(
+      "/agents/test-agent/mangabaclaw-agent.sqlite",
+    );
     expect(mocks.beginAgentDeletionFinish).toHaveBeenCalledOnce();
   });
 

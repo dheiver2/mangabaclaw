@@ -377,7 +377,7 @@ it("falls back to the text avatar when the hero image fails to load", async () =
         id: "main",
         identity: {
           name: "Molty",
-          emoji: "🦞",
+          emoji: "🥭",
           avatarUrl: "data:image/png;base64,unloadable",
         },
       },
@@ -397,7 +397,7 @@ it("falls back to the text avatar when the hero image fails to load", async () =
   await page.updateComplete;
 
   expect(page.querySelector(".profile-hero__avatar-image")).toBeNull();
-  expect(page.querySelector(".profile-hero__avatar-text")?.textContent).toBe("🦞");
+  expect(page.querySelector(".profile-hero__avatar-text")?.textContent).toBe("🥭");
 });
 
 it("fetches a protected hero avatar with the current Control UI credential", async () => {
@@ -431,7 +431,7 @@ it("fetches a protected hero avatar with the current Control UI credential", asy
     agents: [
       {
         id: "main",
-        identity: { name: "Molty", emoji: "🦞", avatarUrl: "/avatar/main" },
+        identity: { name: "Molty", emoji: "🥭", avatarUrl: "/avatar/main" },
       },
     ],
   };

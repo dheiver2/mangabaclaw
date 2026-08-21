@@ -176,7 +176,7 @@ describe("AppSidebar session ownership", () => {
   it("derives owner initials from agent labels and whole grapheme clusters", async () => {
     for (const { type, label, expected } of [
       { type: "agent" as const, label: "Roboclaw", expected: "R" },
-      { type: "human" as const, label: "🦞小明", expected: "🦞" },
+      { type: "human" as const, label: "🥭小明", expected: "🥭" },
       { type: "human" as const, label: "👨‍👩‍👧‍👦Family", expected: "👨‍👩‍👧‍👦" },
     ]) {
       const gateway = createGateway({} as GatewayBrowserClient);

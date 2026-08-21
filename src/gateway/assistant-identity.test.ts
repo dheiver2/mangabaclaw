@@ -117,14 +117,17 @@ describe("resolveAssistantIdentity", () => {
   });
 
   it("identifies workspace and synthesized default names", async () => {
-    await withTestDir({ prefix: "mangabaclaw-assistant-identity-name-source-" }, async (workspace) => {
-      await fs.writeFile(path.join(workspace, "IDENTITY.md"), "- Name: Pacino\n");
+    await withTestDir(
+      { prefix: "mangabaclaw-assistant-identity-name-source-" },
+      async (workspace) => {
+        await fs.writeFile(path.join(workspace, "IDENTITY.md"), "- Name: Pacino\n");
 
-      expect(resolveAssistantIdentity({ cfg: {}, workspaceDir: workspace }).nameSource).toBe(
-        "workspace",
-      );
-      expect(resolveAssistantIdentity({ cfg: {}, workspaceDir: "" }).nameSource).toBe("default");
-    });
+        expect(resolveAssistantIdentity({ cfg: {}, workspaceDir: workspace }).nameSource).toBe(
+          "workspace",
+        );
+        expect(resolveAssistantIdentity({ cfg: {}, workspaceDir: "" }).nameSource).toBe("default");
+      },
+    );
   });
 
   it("drops sentence-like avatar placeholders", () => {
@@ -162,7 +165,9 @@ describe("resolveAssistantIdentity", () => {
       },
     };
 
-    expect(resolveAssistantIdentity({ cfg, workspaceDir: "" }).avatar).toBe("avatars/mangabaclaw.png");
+    expect(resolveAssistantIdentity({ cfg, workspaceDir: "" }).avatar).toBe(
+      "avatars/mangabaclaw.png",
+    );
   });
 
   it("preserves long image data URLs without truncating past 200 chars", () => {
@@ -195,22 +200,25 @@ describe("resolveAssistantIdentity", () => {
       expect(oversized).toHaveLength(AVATAR_MAX_DATA_URL_CHARS + 1);
       await fs.writeFile(
         path.join(workspace, "IDENTITY.md"),
-        `- Avatar: ${oversized}\n- Emoji: 🦞\n`,
+        `- Avatar: ${oversized}\n- Emoji: 🥭\n`,
       );
 
-      expect(resolveAssistantIdentity({ cfg: {}, workspaceDir: workspace }).avatar).toBe("🦞");
+      expect(resolveAssistantIdentity({ cfg: {}, workspaceDir: workspace }).avatar).toBe("🥭");
     });
   });
 
   it("rejects a non-image IDENTITY.md data URL and uses its emoji fallback", async () => {
-    await withTestDir({ prefix: "mangabaclaw-assistant-identity-data-type-" }, async (workspace) => {
-      await fs.writeFile(
-        path.join(workspace, "IDENTITY.md"),
-        "- Avatar: data:text/plain,avatar\n- Emoji: 🦞\n",
-      );
+    await withTestDir(
+      { prefix: "mangabaclaw-assistant-identity-data-type-" },
+      async (workspace) => {
+        await fs.writeFile(
+          path.join(workspace, "IDENTITY.md"),
+          "- Avatar: data:text/plain,avatar\n- Emoji: 🥭\n",
+        );
 
-      expect(resolveAssistantIdentity({ cfg: {}, workspaceDir: workspace }).avatar).toBe("🦞");
-    });
+        expect(resolveAssistantIdentity({ cfg: {}, workspaceDir: workspace }).avatar).toBe("🥭");
+      },
+    );
   });
 
   it.each(["data:text/plain,avatar", "slack://avatar.png"])(

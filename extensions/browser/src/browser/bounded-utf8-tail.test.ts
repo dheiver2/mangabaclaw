@@ -11,7 +11,7 @@ describe("bounded UTF-8 tail", () => {
   });
 
   it("drops a partial leading code point after byte truncation", () => {
-    const encoded = Buffer.from(`old🦞new`);
+    const encoded = Buffer.from(`old🥭new`);
 
     expect(decodeBoundedUtf8Tail(encoded, 5)).toBe("new");
   });

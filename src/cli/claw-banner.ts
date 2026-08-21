@@ -93,7 +93,7 @@ function staticBannerLines(): string[] {
 }
 
 function plainTitleLine(): string {
-  const icon = decorativeEmoji("🦞");
+  const icon = decorativeEmoji("🥭");
   return supportsDecorativeEmoji() && icon ? `${icon} MANGABACLAW ${icon}` : "MANGABACLAW";
 }
 

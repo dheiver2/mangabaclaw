@@ -340,7 +340,7 @@ describe("channels list", () => {
   it("sanitizes channel labels only in terminal output", async () => {
     const control = "\u001B]0;channels-list-injection\u0007";
     const accountId = `${control}default\nforged-row`;
-    const channelLabel = `${control}Telegram 🦞\r\nAdmin`;
+    const channelLabel = `${control}Telegram 🥭\r\nAdmin`;
     const accountName = `${control}Primary\tAccount`;
     mocks.listReadOnlyChannelPluginsForConfig.mockReturnValue([
       createMockChannelPlugin({ label: channelLabel, accountIds: [accountId] }),
@@ -360,7 +360,7 @@ describe("channels list", () => {
     const textOutput = loggedText(textRuntime);
     expect(textOutput).not.toContain("\u001B");
     expect(textOutput).not.toContain("\nforged-row");
-    expect(textOutput).toContain("Telegram 🦞\\r\\nAdmin");
+    expect(textOutput).toContain("Telegram 🥭\\r\\nAdmin");
     expect(textOutput).toContain("\\nforged-row");
     expect(textOutput).toContain("Primary\\tAccount");
 

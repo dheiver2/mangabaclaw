@@ -32,7 +32,7 @@ describe("AppSidebar session indicators", () => {
       throw new Error("expected icon sessions");
     }
     glyph.icon = "braces";
-    emoji.icon = "🦞";
+    emoji.icon = "🥭";
 
     const { sidebar } = await mountSidebar(
       createGatewayHarness({} as GatewayBrowserClient).gateway,
@@ -43,7 +43,7 @@ describe("AppSidebar session indicators", () => {
 
     expect(glyphRow?.querySelector(".session-glyph__icon svg")).not.toBeNull();
     expect(glyphRow?.querySelector(".session-glyph__emoji")).toBeNull();
-    expect(emojiRow?.querySelector(".session-glyph__emoji")?.textContent).toBe("🦞");
+    expect(emojiRow?.querySelector(".session-glyph__emoji")?.textContent).toBe("🥭");
     expect(emojiRow?.querySelector(".session-glyph__icon")).toBeNull();
   });
 
@@ -67,7 +67,7 @@ describe("AppSidebar session indicators", () => {
     if (!iconRow) {
       throw new Error("expected icon row");
     }
-    iconRow.icon = "🦞";
+    iconRow.icon = "🥭";
     result.owners = [
       { type: "human", id: "profile-ada", label: "Ada" },
       { type: "human", id: "profile-bob", label: "Bob" },
@@ -97,7 +97,7 @@ describe("AppSidebar session indicators", () => {
     });
 
     const icon = sidebar.querySelector(`[data-session-key="${iconKey}"]`);
-    expect(icon?.querySelector(".session-glyph__emoji")?.textContent).toBe("🦞");
+    expect(icon?.querySelector(".session-glyph__emoji")?.textContent).toBe("🥭");
     expect(icon?.querySelector("mangabaclaw-channel-avatar")).toBeNull();
     expect(icon?.querySelector(".session-owner-chip")).toBeNull();
 

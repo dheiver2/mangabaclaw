@@ -69,7 +69,7 @@ describe("terminal file upload", () => {
     expect(await stagedName("CON.txt")).toBe("_CON.txt");
     expect(await stagedName("COM¹.txt")).toBe("_COM¹.txt");
     expect(await stagedName("LPT³.log")).toBe("_LPT³.log");
-    expect(Buffer.byteLength(await stagedName("🦞".repeat(100)), "utf8")).toBeLessThanOrEqual(180);
+    expect(Buffer.byteLength(await stagedName("🥭".repeat(100)), "utf8")).toBeLessThanOrEqual(180);
     expect(await stagedName("..")).toBe("upload");
   });
 

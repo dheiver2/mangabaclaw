@@ -168,7 +168,7 @@ mangabaclaw agents set-identity --workspace ~/.mangabaclaw/workspace --from-iden
 Override fields explicitly:
 
 ```bash
-mangabaclaw agents set-identity --agent main --name "MangabaClaw" --emoji "🦞" --avatar avatars/mangabaclaw.png
+mangabaclaw agents set-identity --agent main --name "MangabaClaw" --emoji "🥭" --avatar avatars/mangabaclaw.png
 ```
 
 Config sample:
@@ -182,7 +182,7 @@ Config sample:
         identity: {
           name: "MangabaClaw",
           theme: "space lobster",
-          emoji: "🦞",
+          emoji: "🥭",
           avatar: "avatars/mangabaclaw.png",
         },
       },

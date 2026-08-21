@@ -309,13 +309,13 @@ test("lists and patches session store via sessions.* RPC", async () => {
     key: "agent:main:main",
     thinkingLevel: "medium",
     verboseLevel: "off",
-    icon: "🦞",
+    icon: "🥭",
   });
   expect(patched.ok).toBe(true);
   expect(patched.payload?.ok).toBe(true);
   expect(patched.payload?.key).toBe("agent:main:main");
-  expect(patched.payload?.entry.icon).toBe("🦞");
-  expect(loadSessionEntry({ sessionKey: "agent:main:main", storePath })?.icon).toBe("🦞");
+  expect(patched.payload?.entry.icon).toBe("🥭");
+  expect(loadSessionEntry({ sessionKey: "agent:main:main", storePath })?.icon).toBe("🥭");
 
   const sendPolicyPatched = await directSessionReq<{
     ok: true;
@@ -675,7 +675,10 @@ test("sessions.list configuredAgentsOnly keeps configured-agent children and hid
   await withEnvAsync({ MANGABACLAW_STATE_DIR: stateDir }, async () => {
     testState.agentsConfig = { ownership: "explicit", list: [{ id: "ops" }] };
     testState.agentConfig = { sessionStore: { agentId: "ops" } };
-    const configPath = expectDefined(process.env.MANGABACLAW_CONFIG_PATH, "MANGABACLAW_CONFIG_PATH");
+    const configPath = expectDefined(
+      process.env.MANGABACLAW_CONFIG_PATH,
+      "MANGABACLAW_CONFIG_PATH",
+    );
     const configJson = '{"acp":{"defaultAgent":"claude","allowedAgents":["gemini"]}}';
     await fs.writeFile(configPath, configJson, "utf-8");
     const agentsDir = path.join(stateDir, "agents");

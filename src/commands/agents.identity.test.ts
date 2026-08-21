@@ -170,7 +170,7 @@ describe("agents set-identity command", () => {
         workspace,
         fromIdentity: true,
         name: "Nova",
-        emoji: "🦞",
+        emoji: "🥭",
         avatar: "https://example.com/override.png",
       },
       runtime,
@@ -179,13 +179,13 @@ describe("agents set-identity command", () => {
     expect(getWrittenMainIdentity()).toEqual({
       name: "Nova",
       theme: "space lobster",
-      emoji: "🦞",
+      emoji: "🥭",
       avatar: "https://example.com/override.png",
     });
   });
 
   it("sanitizes identity echoes while preserving stored and JSON values", async () => {
-    const name = "Operator\u001B]0;identity-injection\u0007🦞\r\nforged-row\tbadge";
+    const name = "Operator\u001B]0;identity-injection\u0007🥭\r\nforged-row\tbadge";
     configMocks.readConfigFileSnapshot.mockResolvedValue({
       ...baseConfigSnapshot,
       config: { agents: { entries: { main: {} } } },
@@ -196,7 +196,7 @@ describe("agents set-identity command", () => {
     const textOutput = runtime.log.mock.calls.flat().join("\n");
     expect(textOutput).not.toContain("\u001B");
     expect(textOutput).not.toContain("\nforged-row");
-    expect(textOutput).toContain("Operator🦞\\r\\nforged-row\\tbadge");
+    expect(textOutput).toContain("Operator🥭\\r\\nforged-row\\tbadge");
     expect(getWrittenMainIdentity()).toEqual({ name });
 
     const jsonRuntime = createCapturingTestRuntime();

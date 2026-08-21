@@ -39,7 +39,7 @@ describe("DiffArtifactStore", () => {
   it("stores compressed viewer bytes and retrieves them with one authorized lookup", async () => {
     const lookup = vi.spyOn(blobStore, "lookup");
     const artifact = await store.createArtifact({
-      html: "<html>demo é 🦀</html>",
+      html: "<html>demo é 🥭</html>",
       title: "Demo",
       inputKind: "before_after",
       fileCount: 1,
@@ -55,7 +55,7 @@ describe("DiffArtifactStore", () => {
       version: 1,
       kind: "viewer",
       encoding: "gzip",
-      decodedBytes: Buffer.byteLength("<html>demo é 🦀</html>"),
+      decodedBytes: Buffer.byteLength("<html>demo é 🥭</html>"),
     });
     expect(JSON.stringify(stored?.metadata)).not.toContain(artifact.token);
     await expect(fs.stat(rootDir)).rejects.toMatchObject({ code: "ENOENT" });
@@ -69,7 +69,7 @@ describe("DiffArtifactStore", () => {
       messageChannel: "discord",
       agentAccountId: "default",
     });
-    expect(Buffer.from(loaded!.html).toString("utf8")).toBe("<html>demo é 🦀</html>");
+    expect(Buffer.from(loaded!.html).toString("utf8")).toBe("<html>demo é 🥭</html>");
     expect(lookup).toHaveBeenCalledTimes(1);
     await expect(store.readAuthorizedViewer(artifact.id, "0".repeat(48))).resolves.toBeNull();
     await expect(store.readAuthorizedViewer(artifact.id, "short")).resolves.toBeNull();

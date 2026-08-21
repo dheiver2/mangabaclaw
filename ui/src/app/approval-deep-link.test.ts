@@ -15,7 +15,7 @@ describe("resolveApprovalDocumentMode", () => {
   });
 
   it("decodes one stable path segment without narrowing valid approval ids", () => {
-    const approvalId = "plugin:a/b%🦞";
+    const approvalId = "plugin:a/b%🥭";
     expect(resolveApprovalDocumentMode(`/approve/${encodeURIComponent(approvalId)}`, "")).toEqual({
       kind: "approval",
       approvalId,

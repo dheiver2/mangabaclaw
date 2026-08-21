@@ -233,14 +233,14 @@ describe("web_search normalized output security", () => {
   });
 
   it("rejects citations whose normalized Unicode URL expands beyond the hard bound", () => {
-    const expandedUrl = `https://example.com/${"🦀".repeat(1_000)}`;
+    const expandedUrl = `https://example.com/${"🥭".repeat(1_000)}`;
     expect(expandedUrl.length).toBeLessThan(2_048);
     const normalized = normalizeWebSearchOutput({
       provider: "external-answer",
       query: "canonical citation length",
       result: {
         content: "body",
-        citations: [expandedUrl, "https://example.com/🦀"],
+        citations: [expandedUrl, "https://example.com/🥭"],
       },
     });
 

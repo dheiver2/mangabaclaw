@@ -953,7 +953,7 @@ describe("formatSkillExperienceReviewTranscript", () => {
   it("keeps tail truncation UTF-16 safe", () => {
     const messages = [
       { role: "user", content: "b".repeat(20_000) },
-      { role: "user", content: `🦞${"z".repeat(53_919)}` },
+      { role: "user", content: `🥭${"z".repeat(53_919)}` },
     ];
     const full = `[user]\n${messages[0]?.content}\n\n[user]\n${messages[1]?.content}`;
     expect(hasDanglingSurrogate(full.slice(-53_920))).toBe(true);

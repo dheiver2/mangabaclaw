@@ -221,12 +221,12 @@ describe("session workspace artifacts", () => {
 
   it.each([
     {
-      content: "Résumé 東京 🦀",
+      content: "Résumé 東京 🥭",
       fence: "```",
       mimeType: "text/plain",
     },
     {
-      content: JSON.stringify({ message: "Résumé 東京 🦀" }),
+      content: JSON.stringify({ message: "Résumé 東京 🥭" }),
       fence: "```json",
       mimeType: "application/json",
     },

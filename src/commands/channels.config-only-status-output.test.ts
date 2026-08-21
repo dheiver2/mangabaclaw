@@ -219,7 +219,7 @@ describe("config-only channels status output", () => {
       "token-only",
       makeDirectPlugin({
         id: "token-only",
-        label: `${control}TokenOnly 🦞\r\nAdmin`,
+        label: `${control}TokenOnly 🥭\r\nAdmin`,
         docsPath: "/channels/token-only",
         config: {
           listAccountIds: () => [`${control}primary\nforged-row`],
@@ -238,7 +238,7 @@ describe("config-only channels status output", () => {
 
     expect(output).not.toContain("\u001B");
     expect(output).not.toContain("\nforged-row");
-    expect(output).toContain("TokenOnly 🦞\\r\\nAdmin");
+    expect(output).toContain("TokenOnly 🥭\\r\\nAdmin");
     expect(output).toContain("\\nforged-row");
     expect(output).toContain("Primary\\tAccount");
   });

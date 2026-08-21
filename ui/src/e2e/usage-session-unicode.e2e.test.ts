@@ -108,14 +108,14 @@ suite.define(() => {
   it.each([
     {
       name: "surrogate pair at the truncation boundary",
-      key: "1234567🦞suffix",
+      key: "1234567🥭suffix",
       truncated: "1234567…",
       screenshot: "usage-session-boundary-emoji.png",
     },
     {
       name: "surrogate pair within the truncation boundary",
-      key: "123456🦞suffix",
-      truncated: "123456🦞…",
+      key: "123456🥭suffix",
+      truncated: "123456🥭…",
       screenshot: "usage-session-contained-emoji.png",
     },
     {

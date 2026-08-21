@@ -81,7 +81,7 @@ describe("renderAgentScopeControl", () => {
     render(
       renderAgentScopeControl({
         agents: [
-          { id: "main", name: "Main agent", identity: { emoji: "🦞" } },
+          { id: "main", name: "Main agent", identity: { emoji: "🥭" } },
           { id: "writer", name: "Writer" },
         ],
         additionalAgentIds: ["retired"],
@@ -100,7 +100,7 @@ describe("renderAgentScopeControl", () => {
       "writer",
     ]);
     expect(select?.querySelector(".agent-select__avatar--text")?.getAttribute("data-avatar")).toBe(
-      "🦞",
+      "🥭",
     );
 
     select?.onSelect("retired");

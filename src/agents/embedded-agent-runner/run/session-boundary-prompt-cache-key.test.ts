@@ -30,7 +30,7 @@ describe("resolveSessionBoundaryPromptCacheKey", () => {
   });
 
   it("keeps long Unicode derived keys distinct across boundaries within the 64-char limit", () => {
-    const longSessionId = `internal-session-effects-${"🦞".repeat(64)}`;
+    const longSessionId = `internal-session-effects-${"🥭".repeat(64)}`;
     const keys = [0, 1, 2].map((boundaryCount) =>
       resolveSessionBoundaryPromptCacheKey({
         api: "openai-responses",

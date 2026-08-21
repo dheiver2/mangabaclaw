@@ -184,14 +184,14 @@ describe("xai responses tool helpers", () => {
   });
 
   it("bounds canonical citations after Unicode URL percent-encoding", () => {
-    const expandedUrl = `https://example.com/${"🦀".repeat(1_000)}`;
+    const expandedUrl = `https://example.com/${"🥭".repeat(1_000)}`;
     expect(expandedUrl.length).toBeLessThan(2_048);
 
     expect(
       requireXaiResponseTextAndCitations(
         {
           output_text: "bounded citations",
-          citations: [expandedUrl, "https://example.com/🦀"],
+          citations: [expandedUrl, "https://example.com/🥭"],
         },
         "xAI tool failed",
       ).citations,

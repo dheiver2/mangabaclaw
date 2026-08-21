@@ -864,7 +864,7 @@ describe("task suggestion gateway methods", () => {
 
   it("rejects impossible byte admission without evicting accepted or pending suggestions", async () => {
     const acceptingTaskIds: string[] = [];
-    const largePrompt = "🦀".repeat(16_000);
+    const largePrompt = "🥭".repeat(16_000);
 
     try {
       for (let index = 0; index < 32; index += 1) {

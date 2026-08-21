@@ -8,7 +8,11 @@ import {
 } from "./config-paths.js";
 import { readConfigFileSnapshot } from "./config.js";
 import { findLegacyConfigIssues } from "./legacy.js";
-import { buildWebSearchProviderConfig, withTempHome, writeMangabaClawConfig } from "./test-helpers.js";
+import {
+  buildWebSearchProviderConfig,
+  withTempHome,
+  writeMangabaClawConfig,
+} from "./test-helpers.js";
 import { validateConfigObject, validateConfigObjectRaw } from "./validation.js";
 import { MangabaClawSchema } from "./zod-schema.js";
 
@@ -430,8 +434,9 @@ describe("models.catalogRefresh", () => {
       MangabaClawSchema.safeParse({ models: { catalogRefresh: { enabled: "false" } } }).success,
     ).toBe(false);
     expect(
-      MangabaClawSchema.safeParse({ models: { catalogRefresh: { url: "file:///tmp/catalog.json" } } })
-        .success,
+      MangabaClawSchema.safeParse({
+        models: { catalogRefresh: { url: "file:///tmp/catalog.json" } },
+      }).success,
     ).toBe(false);
     expect(
       MangabaClawSchema.safeParse({ models: { catalogRefresh: { url: "not a url" } } }).success,
@@ -704,7 +709,9 @@ describe("mcp.apps.enabled", () => {
         },
       }).success,
     ).toBe(true);
-    expect(MangabaClawSchema.safeParse({ mcp: { apps: { sandboxPort: 65536 } } }).success).toBe(false);
+    expect(MangabaClawSchema.safeParse({ mcp: { apps: { sandboxPort: 65536 } } }).success).toBe(
+      false,
+    );
     for (const sandboxOrigin of [
       "https://mcp-apps.example.com/path",
       "https://mcp-apps.example.com?query=1",
@@ -964,7 +971,7 @@ describe("config identity/materialization regressions", () => {
             identity: {
               name: "Samantha Sloth",
               theme: "space lobster",
-              emoji: "🦞",
+              emoji: "🥭",
             },
             groupChat: { mentionPatterns: ["@mangabaclaw"] },
           },

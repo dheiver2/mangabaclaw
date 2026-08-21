@@ -125,13 +125,13 @@ describe("firecrawl tools", () => {
   });
 
   it("bounds canonical provider URLs after percent-encoding hostile Unicode", () => {
-    const expandedUrl = `https://example.com/${"🦀".repeat(1_000)}`;
+    const expandedUrl = `https://example.com/${"🥭".repeat(1_000)}`;
     expect(expandedUrl.length).toBeLessThan(2_048);
 
     const items = firecrawlClientTesting.resolveSearchItems({
       data: [
         { title: "too large", url: expandedUrl },
-        { title: "safe unicode", url: "https://example.com/🦀" },
+        { title: "safe unicode", url: "https://example.com/🥭" },
       ],
     });
 

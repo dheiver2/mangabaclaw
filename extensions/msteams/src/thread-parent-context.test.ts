@@ -100,7 +100,7 @@ describe("summarizeParentMessage", () => {
     const msg: GraphThreadMessage = {
       id: "p1",
       from: { user: { displayName: "Dana" } },
-      body: { content: `${"a".repeat(398)}🦞${"b".repeat(50)}`, contentType: "text" },
+      body: { content: `${"a".repeat(398)}🥭${"b".repeat(50)}`, contentType: "text" },
     };
 
     const summary = summarizeParentMessage(msg);

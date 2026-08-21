@@ -1867,7 +1867,7 @@ describe("handleControlUiHttpRequest", () => {
         const exact = `data:image/svg+xml;base64,${Buffer.alloc(AVATAR_MAX_BYTES).toString("base64")}`;
         const oversized = `${exact}A`;
         expect(oversized).toHaveLength(AVATAR_MAX_DATA_URL_CHARS + 1);
-        await fs.writeFile(path.join(tmp, "IDENTITY.md"), `- Avatar: ${oversized}\n- Emoji: 🦞\n`);
+        await fs.writeFile(path.join(tmp, "IDENTITY.md"), `- Avatar: ${oversized}\n- Emoji: 🥭\n`);
         const { res, end } = makeMockHttpResponse();
         const handled = await handleControlUiHttpRequest(
           { url: CONTROL_UI_BOOTSTRAP_CONFIG_PATH, method: "GET" } as IncomingMessage,
@@ -1880,7 +1880,7 @@ describe("handleControlUiHttpRequest", () => {
 
         expect(handled).toBe(true);
         expect(parseBootstrapPayload(end)).toMatchObject({
-          assistantAvatar: "🦞",
+          assistantAvatar: "🥭",
           assistantAvatarSource: null,
           assistantAvatarStatus: null,
           assistantAvatarReason: null,
@@ -1903,7 +1903,7 @@ describe("handleControlUiHttpRequest", () => {
             config: {
               agents: {
                 defaults: { workspace: tmp },
-                list: [{ id: "main", workspace: tmp, identity: { emoji: "🦞" } }],
+                list: [{ id: "main", workspace: tmp, identity: { emoji: "🥭" } }],
               },
             },
           },
@@ -1911,7 +1911,7 @@ describe("handleControlUiHttpRequest", () => {
 
         expect(handled).toBe(true);
         expect(parseBootstrapPayload(end)).toMatchObject({
-          assistantAvatar: "🦞",
+          assistantAvatar: "🥭",
           assistantAvatarSource: null,
           assistantAvatarStatus: null,
           assistantAvatarReason: null,
@@ -2582,7 +2582,10 @@ describe("handleControlUiHttpRequest", () => {
       fn: async (tmp) => {
         const { res, end } = makeMockHttpResponse();
         const handled = await handleControlUiHttpRequest(
-          { url: `/mangabaclaw${CONTROL_UI_BOOTSTRAP_CONFIG_PATH}`, method: "GET" } as IncomingMessage,
+          {
+            url: `/mangabaclaw${CONTROL_UI_BOOTSTRAP_CONFIG_PATH}`,
+            method: "GET",
+          } as IncomingMessage,
           res,
           {
             basePath: "/mangabaclaw",
@@ -3614,7 +3617,9 @@ describe("handleControlUiHttpRequest", () => {
           } else {
             expect(responseBody(end)).toContain("standalone-spa");
             if (basePath) {
-              expect(responseBody(end)).toContain('data-mangabaclaw-control-ui-base-path="/mangabaclaw"');
+              expect(responseBody(end)).toContain(
+                'data-mangabaclaw-control-ui-base-path="/mangabaclaw"',
+              );
             }
           }
         }
@@ -3669,7 +3674,9 @@ describe("handleControlUiHttpRequest", () => {
   it("rejects symlinked SPA fallback index.html outside control-ui root", async () => {
     await withControlUiRoot({
       fn: async (tmp) => {
-        const outsideDir = await fs.mkdtemp(path.join(os.tmpdir(), "mangabaclaw-ui-index-outside-"));
+        const outsideDir = await fs.mkdtemp(
+          path.join(os.tmpdir(), "mangabaclaw-ui-index-outside-"),
+        );
         try {
           const outsideIndex = path.join(outsideDir, "index.html");
           await fs.writeFile(outsideIndex, "<html>outside</html>\n");
@@ -3692,7 +3699,9 @@ describe("handleControlUiHttpRequest", () => {
   it("rejects hardlinked index.html for non-package control-ui roots", async () => {
     await withControlUiRoot({
       fn: async (tmp) => {
-        const outsideDir = await fs.mkdtemp(path.join(os.tmpdir(), "mangabaclaw-ui-index-hardlink-"));
+        const outsideDir = await fs.mkdtemp(
+          path.join(os.tmpdir(), "mangabaclaw-ui-index-hardlink-"),
+        );
         try {
           const outsideIndex = path.join(outsideDir, "index.html");
           await fs.writeFile(outsideIndex, "<html>outside-hardlink</html>\n");

@@ -1128,7 +1128,9 @@ describe("runCli exit behavior", () => {
   });
 
   it("guards the config selected by trusted global dotenv before the default config", async () => {
-    const homeDir = await fs.mkdtemp(path.join(os.tmpdir(), "mangabaclaw-gateway-global-selection-"));
+    const homeDir = await fs.mkdtemp(
+      path.join(os.tmpdir(), "mangabaclaw-gateway-global-selection-"),
+    );
     const stateDir = path.join(homeDir, ".mangabaclaw");
     const selectedConfigPath = path.join(stateDir, "selected.json");
     await fs.mkdir(stateDir, { recursive: true });
@@ -1219,7 +1221,10 @@ describe("runCli exit behavior", () => {
     const legacyStateDir = path.join(homeDir, ".clawdbot");
     const newStateDir = path.join(homeDir, ".mangabaclaw");
     await fs.mkdir(legacyStateDir, { recursive: true });
-    await fs.writeFile(path.join(legacyStateDir, ".env"), "MANGABACLAW_GATEWAY_TOKEN=legacy-token\n");
+    await fs.writeFile(
+      path.join(legacyStateDir, ".env"),
+      "MANGABACLAW_GATEWAY_TOKEN=legacy-token\n",
+    );
     try {
       await withEnvAsync(
         {
@@ -1867,9 +1872,11 @@ describe("runCli exit behavior", () => {
     await fs.mkdir(gatewayEnvDir, { recursive: true });
     await fs.writeFile(
       path.join(gatewayEnvDir, "gateway.env"),
-      [`MANGABACLAW_STATE_DIR=${selectedStateDir}`, "MANGABACLAW_GATEWAY_TOKEN=fallback-token", ""].join(
-        "\n",
-      ),
+      [
+        `MANGABACLAW_STATE_DIR=${selectedStateDir}`,
+        "MANGABACLAW_GATEWAY_TOKEN=fallback-token",
+        "",
+      ].join("\n"),
     );
     await fs.writeFile(
       path.join(selectedStateDir, ".env"),
@@ -1900,7 +1907,9 @@ describe("runCli exit behavior", () => {
   });
 
   it("drops old state dotenv credentials when config selects another state", async () => {
-    const homeDir = await fs.mkdtemp(path.join(os.tmpdir(), "mangabaclaw-gateway-config-state-hop-"));
+    const homeDir = await fs.mkdtemp(
+      path.join(os.tmpdir(), "mangabaclaw-gateway-config-state-hop-"),
+    );
     const defaultStateDir = path.join(homeDir, ".mangabaclaw");
     const selectedStateDir = path.join(homeDir, "selected-state");
     await fs.mkdir(defaultStateDir, { recursive: true });
@@ -1951,7 +1960,10 @@ describe("runCli exit behavior", () => {
     const selectedStateDir = path.join(homeDir, "selected-state");
     await fs.mkdir(defaultStateDir, { recursive: true });
     await fs.mkdir(selectedStateDir, { recursive: true });
-    await fs.writeFile(path.join(defaultStateDir, ".env"), "MANGABACLAW_GATEWAY_TOKEN=early-token\n");
+    await fs.writeFile(
+      path.join(defaultStateDir, ".env"),
+      "MANGABACLAW_GATEWAY_TOKEN=early-token\n",
+    );
     await fs.writeFile(
       path.join(selectedStateDir, ".env"),
       "MANGABACLAW_GATEWAY_TOKEN=selected-token\n",
@@ -2155,7 +2167,9 @@ describe("runCli exit behavior", () => {
           | undefined;
         await hooks?.beforeRun?.({ reset: true });
 
-        expect(process.env.MANGABACLAW_CONFIG_PATH).toBe("/tmp/mangabaclaw-invocation/mangabaclaw.json");
+        expect(process.env.MANGABACLAW_CONFIG_PATH).toBe(
+          "/tmp/mangabaclaw-invocation/mangabaclaw.json",
+        );
         expect(process.env.MANGABACLAW_HOME).toBe("/tmp/mangabaclaw-invocation-home");
         expect(process.env.MANGABACLAW_PROFILE).toBeUndefined();
         expect(process.env.MANGABACLAW_STATE_DIR).toBe("/tmp/mangabaclaw-invocation-state");
@@ -2968,7 +2982,7 @@ describe("runCli exit behavior", () => {
   });
 
   it("bounds long unowned command diagnostics without splitting Unicode", async () => {
-    const primary = "🦞".repeat(1_000);
+    const primary = "🥭".repeat(1_000);
 
     let error: unknown;
     try {
@@ -2979,7 +2993,7 @@ describe("runCli exit behavior", () => {
 
     expect(error).toBeInstanceOf(Error);
     const message = (error as Error).message;
-    const displayPrimary = `${"🦞".repeat(63)}…`;
+    const displayPrimary = `${"🥭".repeat(63)}…`;
     expect(displayPrimary.length).toBeLessThanOrEqual(128);
     expect(message).toContain(`MangabaClaw does not know the command "${displayPrimary}".`);
     expect(message).not.toContain("�");

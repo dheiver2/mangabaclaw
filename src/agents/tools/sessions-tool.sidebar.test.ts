@@ -14,7 +14,7 @@ describe("sessions tool sidebar settings", () => {
     await tool.execute("declare", {
       action: "patch",
       label: "Waiting on staging",
-      icon: "🦞",
+      icon: "🥭",
       category: "P1 issues from beta feedback",
       statusNote: "Blocked: need the staging password",
       attention: "key",
@@ -37,7 +37,7 @@ describe("sessions tool sidebar settings", () => {
           params: {
             key: "agent:main:main",
             label: "Waiting on staging",
-            icon: "🦞",
+            icon: "🥭",
             category: "P1 issues from beta feedback",
             statusNote: "Blocked: need the staging password",
             attention: "key",

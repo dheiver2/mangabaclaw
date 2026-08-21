@@ -216,7 +216,7 @@ describe("sessionsCommand", () => {
   it("sanitizes persisted identifiers only for terminal output", async () => {
     const key = "agent:main:\u001B[31mpeer\nrow";
     const sessionId = "session-\u001B[31mid\r\nforged-id";
-    const model = "model-\u001B]0;session-model\u0007🦞\tvariant";
+    const model = "model-\u001B]0;session-model\u0007🥭\tvariant";
     const store = await writeStore({
       [key]: {
         sessionId,
@@ -233,7 +233,7 @@ describe("sessionsCommand", () => {
     expect(textOutput).not.toContain("\nrow");
     expect(textOutput).toContain("peer\\nrow");
     expect(textOutput).toContain("\\r\\nforged-id");
-    expect(textOutput).toContain("🦞\\tvariant");
+    expect(textOutput).toContain("🥭\\tvariant");
 
     const payload = await runSessionsJson<{
       sessions?: Array<{ key: string; sessionId?: string; model?: string }>;

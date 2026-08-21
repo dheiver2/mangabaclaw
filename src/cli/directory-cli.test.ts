@@ -403,7 +403,7 @@ describe("registerDirectoryCli", () => {
 
   it("sanitizes plugin directory entries only for terminal output", async () => {
     const entry = {
-      id: "user:\u001B]0;directory-id\u0007🦞\nforged-row",
+      id: "user:\u001B]0;directory-id\u0007🥭\nforged-row",
       name: "Alice\u001B[31m\r\nadmin\tbadge",
     };
     const listPeers = vi.fn().mockResolvedValue([entry]);
@@ -425,7 +425,7 @@ describe("registerDirectoryCli", () => {
     expect(textOutput).not.toContain("\nforged-row");
     expect(textOutput).toContain("\\nforged-row");
     expect(textOutput).toContain("\\r\\nadmin\\tbadge");
-    expect(textOutput).toContain("🦞");
+    expect(textOutput).toContain("🥭");
 
     runtimeState.defaultRuntime.writeJson.mockClear();
     const jsonProgram = new Command().name("mangabaclaw");

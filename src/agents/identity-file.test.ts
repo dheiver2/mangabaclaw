@@ -103,14 +103,14 @@ Fluent in over six million error messages.
 
     const merged = mergeIdentityMarkdownContent(content, {
       name: "Patch Agent",
-      emoji: "🦀",
+      emoji: "🥭",
       avatar: "avatars/patch.png",
     });
 
     expect(merged).toContain("- Name: Patch Agent");
     expect(merged).toContain("- **Creature:** Flustered Protocol Droid");
     expect(merged).toContain("- **Vibe:** Anxious, detail-obsessed");
-    expect(merged).toContain("- Emoji: 🦀");
+    expect(merged).toContain("- Emoji: 🥭");
     expect(merged).toContain("- Avatar: avatars/patch.png");
     expect(merged).toContain("## Role");
     expect(merged).toContain("Fluent in over six million error messages.");
@@ -123,12 +123,12 @@ Fluent in over six million error messages.
 - Name: Older Name
 - Emoji: 🙂
 `,
-      { name: "New Name", emoji: "🦀" },
+      { name: "New Name", emoji: "🥭" },
     );
 
     expect(merged.match(/Name:/g)).toHaveLength(1);
     expect(merged).toContain("- Name: New Name");
-    expect(merged).toContain("- Emoji: 🦀");
+    expect(merged).toContain("- Emoji: 🥭");
   });
 
   it("updates code-span-wrapped writable labels instead of inserting duplicates", () => {

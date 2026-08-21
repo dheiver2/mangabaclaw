@@ -205,7 +205,7 @@ suite.define(() => {
           cases: [
             {
               match: { agentId: "main" },
-              response: { agentId: "main", avatar: "", emoji: "🦞", name: "Main" },
+              response: { agentId: "main", avatar: "", emoji: "🥭", name: "Main" },
             },
             {
               match: { agentId: "research" },

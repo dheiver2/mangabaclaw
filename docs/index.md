@@ -5,7 +5,7 @@ read_when:
 title: "MangabaClaw"
 ---
 
-# MangabaClaw 🦞
+# MangabaClaw 🥭
 
 <p align="center">
     <img

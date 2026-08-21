@@ -276,7 +276,7 @@ describe("printCronList", () => {
     const job = createBaseJob({
       id: injected("job-id"),
       declarationKey: injected("declaration"),
-      name: injected("name 🦞"),
+      name: injected("name 🥭"),
       displayName: injected("display"),
       owner: { agentId: injected("owner"), sessionKey: injected("owner-session") },
       agentId: injected("agent"),
@@ -299,7 +299,7 @@ describe("printCronList", () => {
     expect(output).not.toContain("\u001B");
     expect(output).not.toContain("\nforged-row");
     expect(output).toContain("\\r\\nforged-row\\tfield");
-    expect(output).toContain("name 🦞");
+    expect(output).toContain("name 🥭");
   });
 
   it("tolerates malformed rows in human-readable output", () => {

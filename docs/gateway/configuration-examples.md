@@ -36,7 +36,7 @@ Save to `~/.mangabaclaw/mangabaclaw.json` and you can DM the bot from that numbe
         identity: {
           name: "Clawd",
           theme: "helpful assistant",
-          emoji: "🦞",
+          emoji: "🥭",
         },
       },
     },

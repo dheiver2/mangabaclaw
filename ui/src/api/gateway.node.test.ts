@@ -1185,13 +1185,13 @@ describe("GatewayBrowserClient", () => {
     {
       name: "UTF-8 method and params exactly at the limit",
       method: "méthod.界",
-      params: { value: "🦞" },
+      params: { value: "🥭" },
       delta: 0,
     },
     {
       name: "UTF-8 method and params one byte over",
       method: "méthod.界",
-      params: { value: "🦞" },
+      params: { value: "🥭" },
       delta: -1,
     },
   ])("enforces $name", async ({ method, params, delta }) => {

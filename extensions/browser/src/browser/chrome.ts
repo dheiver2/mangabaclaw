@@ -751,7 +751,9 @@ function resolveBrowserExecutable(
 }
 
 /** Resolve the user-data-dir path for a managed MangabaClaw Chrome profile. */
-export function resolveMangabaClawUserDataDir(profileName = DEFAULT_MANGABACLAW_BROWSER_PROFILE_NAME) {
+export function resolveMangabaClawUserDataDir(
+  profileName = DEFAULT_MANGABACLAW_BROWSER_PROFILE_NAME,
+) {
   return path.join(CONFIG_DIR, "browser", profileName, "user-data");
 }
 
@@ -1151,7 +1153,7 @@ export async function launchMangabaClawChrome(
         downloadDir: DEFAULT_DOWNLOAD_DIR,
         mockKeychain: useMockKeychain,
       });
-      log.info(`🦞 mangabaclaw browser profile decorated (${profile.color})`);
+      log.info(`🥭 mangabaclaw browser profile decorated (${profile.color})`);
     } catch (err) {
       log.warn(`mangabaclaw browser profile decoration failed: ${String(err)}`);
     }
@@ -1268,7 +1270,7 @@ export async function launchMangabaClawChrome(
       signal?.throwIfAborted();
       const pid = spawned.pid;
       log.info(
-        `🦞 mangabaclaw browser started (${exe.kind}) profile "${profile.name}" on 127.0.0.1:${profile.cdpPort} (pid ${pid})`,
+        `🥭 mangabaclaw browser started (${exe.kind}) profile "${profile.name}" on 127.0.0.1:${profile.cdpPort} (pid ${pid})`,
       );
 
       return runningForProcess(proc, pid);

@@ -8,7 +8,7 @@ import { icons } from "./icons.ts";
 import { resolveSessionIconGlyph } from "./session-icon-glyph-registry.ts";
 
 const SESSION_ICON_EMOJI_CHOICES = [
-  "🦞",
+  "🥭",
   "🚀",
   "🐛",
   "✅",

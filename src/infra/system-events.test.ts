@@ -752,7 +752,7 @@ describe("isCronSystemEvent", () => {
     "",
     "   ",
     "HEARTBEAT_OK",
-    "HEARTBEAT_OK 🦞",
+    "HEARTBEAT_OK 🥭",
     "heartbeat_ok",
     "HEARTBEAT_OK:",
     "HEARTBEAT_OK, continue",

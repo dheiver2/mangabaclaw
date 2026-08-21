@@ -1064,7 +1064,7 @@ describe("gateway agent handler", () => {
       mocks.loadConfigReturn = {
         agents: {
           defaults: { workspace },
-          list: [{ id: "main", workspace, identity: { emoji: "🦞" } }],
+          list: [{ id: "main", workspace, identity: { emoji: "🥭" } }],
         },
       };
 
@@ -1076,7 +1076,7 @@ describe("gateway agent handler", () => {
       expect(mockCallArg(respond)).toBe(true);
       expectRecordFields(mockCallArg(respond, 0, 1), {
         agentId: "main",
-        avatar: "🦞",
+        avatar: "🥭",
         avatarSource: undefined,
         avatarStatus: undefined,
         avatarReason: undefined,

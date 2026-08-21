@@ -140,7 +140,7 @@ describe("tavily client X-Client-Source header", () => {
   });
 
   it("rejects URLs whose canonical percent-encoded form exceeds the owner bound", async () => {
-    const expandedUrl = `https://example.com/${"🦀".repeat(1_000)}`;
+    const expandedUrl = `https://example.com/${"🥭".repeat(1_000)}`;
     expect(expandedUrl.length).toBeLessThan(2_048);
     postTrustedWebToolsJson.mockImplementationOnce(
       async (_params: unknown, parse: (response: Response) => Promise<unknown>) =>
@@ -148,7 +148,7 @@ describe("tavily client X-Client-Source header", () => {
           Response.json({
             results: [
               { title: "too large", url: expandedUrl },
-              { title: "safe unicode", url: "https://example.com/🦀" },
+              { title: "safe unicode", url: "https://example.com/🥭" },
             ],
           }),
         ),

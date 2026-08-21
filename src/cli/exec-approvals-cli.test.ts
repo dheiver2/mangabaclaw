@@ -322,7 +322,7 @@ describe("exec approvals CLI", () => {
   });
 
   it("sanitizes stored allowlist patterns in human output without changing JSON", async () => {
-    const pattern = "/tmp/safe\u001b[31mred\u001b[0m\u001b]0;pwned\u0007\nnext\trow\rback\bspace🦞";
+    const pattern = "/tmp/safe\u001b[31mred\u001b[0m\u001b]0;pwned\u0007\nnext\trow\rback\bspace🥭";
     localSnapshot.file = {
       version: 1,
       agents: { "*": { allowlist: [{ pattern }] } },
@@ -341,7 +341,7 @@ describe("exec approvals CLI", () => {
       );
     });
     expect(hasUnsafeControl).toBe(false);
-    expect(output).toContain("safered\\nnext\\trow\\rbackspace🦞");
+    expect(output).toContain("safered\\nnext\\trow\\rbackspace🥭");
 
     defaultRuntime.writeJson.mockClear();
     await runApprovalsCommand(["approvals", "get", "--json"]);

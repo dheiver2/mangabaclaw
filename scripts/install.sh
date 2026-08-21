@@ -396,7 +396,7 @@ print_gum_status() {
 print_installer_banner() {
     if [[ -n "$GUM" ]]; then
         local title tagline hint card
-        title="$("$GUM" style --foreground "#E94A12" --bold "🦞 MangabaClaw Installer")"
+        title="$("$GUM" style --foreground "#E94A12" --bold "🥭 MangabaClaw Installer")"
         tagline="$("$GUM" style --foreground "#8892b0" "$TAGLINE")"
         hint="$("$GUM" style --foreground "#5a6480" "modern installer mode")"
         card="$(printf '%s\n%s\n%s' "$title" "$tagline" "$hint")"
@@ -406,7 +406,7 @@ print_installer_banner() {
     fi
 
     echo -e "${ACCENT}${BOLD}"
-    echo "  🦞 MangabaClaw Installer"
+    echo "  🥭 MangabaClaw Installer"
     echo -e "${NC}${INFO}  ${TAGLINE}${NC}"
     echo ""
 }
@@ -1303,7 +1303,7 @@ TAGLINES+=("Shell yeah—I'm here to pinch the toil and leave you the glory.")
 TAGLINES+=("If it's repetitive, I'll automate it; if it's hard, I'll bring jokes and a rollback plan.")
 TAGLINES+=("WhatsApp, but make it ✨engineering✨.")
 TAGLINES+=("Turning \"I'll reply later\" into \"my bot replied instantly\".")
-TAGLINES+=("The only crab in your contacts you actually want to hear from. 🦞")
+TAGLINES+=("The only crab in your contacts you actually want to hear from. 🥭")
 TAGLINES+=("Chat automation for people who peaked at IRC.")
 TAGLINES+=("Because Siri wasn't answering at 3AM.")
 TAGLINES+=("IPC, but it's your phone.")
@@ -3917,9 +3917,9 @@ main() {
     installed_version="$(resolve_mangabaclaw_version)"
     echo ""
     if [[ -n "$installed_version" ]]; then
-        ui_celebrate "🦞 MangabaClaw installed successfully (${installed_version})!"
+        ui_celebrate "🥭 MangabaClaw installed successfully (${installed_version})!"
     else
-        ui_celebrate "🦞 MangabaClaw installed successfully!"
+        ui_celebrate "🥭 MangabaClaw installed successfully!"
     fi
     if [[ "$is_upgrade" == "true" ]]; then
         ui_info "Upgrade complete"

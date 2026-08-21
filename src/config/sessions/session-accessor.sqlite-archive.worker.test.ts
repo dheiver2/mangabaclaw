@@ -60,7 +60,7 @@ describe("SQLite transcript archive worker", () => {
         index === 0
           ? `first: 你好\n${randomBytes(576 * 1024).toString("base64")}`
           : index === 63
-            ? `last: 🦞\n${randomBytes(576 * 1024).toString("base64")}`
+            ? `last: 🥭\n${randomBytes(576 * 1024).toString("base64")}`
             : `${index}:${randomBytes(576 * 1024).toString("base64")}`,
       ),
     );

@@ -1299,7 +1299,7 @@ Membership and visibility changes are written into the session transcript as sys
 ```json5
 {
   messages: {
-    responsePrefix: "🦞", // or "auto"
+    responsePrefix: "🥭", // or "auto"
     ackReaction: "👀",
     ackReactionScope: "group-mentions", // group-mentions | group-all | direct | all | off | none
     queue: {

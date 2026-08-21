@@ -385,7 +385,7 @@ describe("resolveAgentAvatarUrl", () => {
 
   it("returns null for initials or emoji avatar values without a URL", () => {
     expect(resolveAgentAvatarUrl({ identity: { avatar: "A" } })).toBeNull();
-    expect(resolveAgentAvatarUrl({ identity: { avatar: "🦞" } })).toBeNull();
+    expect(resolveAgentAvatarUrl({ identity: { avatar: "🥭" } })).toBeNull();
   });
 });
 

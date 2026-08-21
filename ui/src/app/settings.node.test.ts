@@ -1119,16 +1119,16 @@ describe("loadSettings default gateway URL derivation", () => {
     });
     localStorage.setItem(
       "mangabaclaw.control.user.v1",
-      JSON.stringify({ name: "Buns", avatar: "🦞" }),
+      JSON.stringify({ name: "Buns", avatar: "🥭" }),
     );
 
     expect(loadLocalUserIdentity()).toEqual({
       name: "Buns",
-      avatar: "🦞",
+      avatar: "🥭",
     });
     expect(JSON.parse(localStorage.getItem("mangabaclaw.control.user.v1") ?? "{}")).toEqual({
       name: "Buns",
-      avatar: "🦞",
+      avatar: "🥭",
     });
   });
 

@@ -320,6 +320,20 @@ export function renderLobsterSvg(
     reading?: boolean;
   } = {},
 ) {
+  // Identidade Mangaba: o pet é a fruta oficial (favicon.svg), não a lagosta.
+  // As variantes de paleta/geometria abaixo ficam como legado não alcançável.
+  if (options.standalone || !options.standalone) {
+    return svg`
+      <svg
+        class="lobster-pet__svg"
+        viewBox="0 0 120 105"
+        preserveAspectRatio="xMidYMid meet"
+        aria-hidden="true"
+      >
+        <image href="/favicon.svg" x="12" y="2" width="96" height="96" />
+      </svg>
+    `;
+  }
   const isPixel = look.palette.id === "pixel";
   const isFlatpack = look.palette.id === "flatpack";
   const isLoading = look.palette.id === "loading";

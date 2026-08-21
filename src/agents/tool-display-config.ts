@@ -325,7 +325,7 @@ export const TOOL_DISPLAY_CONFIG: ToolDisplayConfig = {
       detailKeys: ["action", "name", "proposal_id"],
     },
     mangabaclaw: {
-      emoji: "🦀",
+      emoji: "🥭",
       title: "MangabaClaw",
       detailKeys: ["action", "path", "model"],
     },

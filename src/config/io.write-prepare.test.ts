@@ -229,17 +229,17 @@ const writeCases: WriteCase[] = [
   },
   {
     name: "preserves an entry-internal include while atomically adding an agent",
-    current: roster({ main: { ...main, identity: { name: "Main", emoji: "🦞" } } }),
+    current: roster({ main: { ...main, identity: { name: "Main", emoji: "🥭" } } }),
     authored: roster({ main: { ...main, identity: { $include: "./identity.json" } } }),
-    next: roster({ main: { ...main, identity: { name: "Main", emoji: "🦞" } }, worker }),
+    next: roster({ main: { ...main, identity: { name: "Main", emoji: "🥭" } }, worker }),
     expected: roster({ main: { ...main, identity: { $include: "./identity.json" } }, worker }),
   },
   {
     name: "preserves an entry-internal include authored in a legacy list while adding an agent",
-    current: roster({ main: { ...main, identity: { name: "Main", emoji: "🦞" } } }),
-    before: listRoster([{ id: "main", ...main, identity: { name: "Main", emoji: "🦞" } }]),
+    current: roster({ main: { ...main, identity: { name: "Main", emoji: "🥭" } } }),
+    before: listRoster([{ id: "main", ...main, identity: { name: "Main", emoji: "🥭" } }]),
     authored: listRoster([{ id: "main", ...main, identity: { $include: "./identity.json" } }]),
-    next: roster({ main: { ...main, identity: { name: "Main", emoji: "🦞" } }, worker }),
+    next: roster({ main: { ...main, identity: { name: "Main", emoji: "🥭" } }, worker }),
     expected: roster({ main: { ...main, identity: { $include: "./identity.json" } }, worker }),
   },
   {
@@ -252,9 +252,9 @@ const writeCases: WriteCase[] = [
   },
   {
     name: "rejects a roster write that changes an entry-internal included subtree",
-    current: roster({ main: { ...main, identity: { name: "Main", emoji: "🦞" } } }),
+    current: roster({ main: { ...main, identity: { name: "Main", emoji: "🥭" } } }),
     authored: roster({ main: { ...main, identity: { $include: "./identity.json" } } }),
-    next: roster({ main: { ...main, identity: { name: "Changed", emoji: "🦞" } }, worker }),
+    next: roster({ main: { ...main, identity: { name: "Changed", emoji: "🥭" } }, worker }),
     error: "flatten $include-owned config at agents.entries.main.identity",
   },
   {
@@ -815,7 +815,10 @@ describe("config io write prepare", () => {
           plugins: {
             entries: {},
             installs: {
-              "mangabaclaw-web-search": { ...install, spec: "@ollama/mangabaclaw-web-search@0.2.2" },
+              "mangabaclaw-web-search": {
+                ...install,
+                spec: "@ollama/mangabaclaw-web-search@0.2.2",
+              },
             },
           },
         },

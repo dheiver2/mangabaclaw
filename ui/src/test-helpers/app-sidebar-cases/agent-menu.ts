@@ -21,7 +21,7 @@ describe("AppSidebar agent chip", () => {
     const request = vi.fn().mockResolvedValue({
       agentId: "main",
       name: "Workspace Molty",
-      emoji: "🦞",
+      emoji: "🥭",
       avatar: "data:image/png;base64,d29ya3NwYWNl",
     });
     const gatewayHarness = createGatewayHarness({ request } as unknown as GatewayBrowserClient);
@@ -56,7 +56,7 @@ describe("AppSidebar agent chip", () => {
     const request = vi.fn().mockResolvedValue({
       agentId: "main",
       name: "Workspace Molty",
-      emoji: "🦞",
+      emoji: "🥭",
     });
     const gatewayHarness = createGatewayHarness({ request } as unknown as GatewayBrowserClient);
     const agentIdentity = createAgentIdentityCapability(gatewayHarness.gateway);
@@ -90,8 +90,8 @@ describe("AppSidebar agent chip", () => {
   it("keeps the configured roster label when identity hydration returns a fallback", async () => {
     const request = vi.fn(async (_method: string, params: { agentId: string }) =>
       params.agentId === "main"
-        ? { agentId: "main", name: "Workspace Molty", avatar: "🦞" }
-        : { agentId: "rust-claw", name: "Assistant", avatar: "🦀" },
+        ? { agentId: "main", name: "Workspace Molty", avatar: "🥭" }
+        : { agentId: "rust-claw", name: "Assistant", avatar: "🥭" },
     );
     const gatewayHarness = createGatewayHarness({ request } as unknown as GatewayBrowserClient);
     const agentIdentity = createAgentIdentityCapability(gatewayHarness.gateway);
@@ -129,7 +129,7 @@ describe("AppSidebar agent chip", () => {
       ].find((row) => row.textContent?.includes("rust-claw"));
       expect(
         rustRow?.querySelector(".agent-select__avatar--text")?.getAttribute("data-avatar"),
-      ).toBe("🦀");
+      ).toBe("🥭");
     });
   });
 
@@ -184,7 +184,7 @@ describe("AppSidebar agent chip", () => {
       {
         ...TWO_AGENTS,
         agents: [
-          { id: "main", identity: { name: "Molty", emoji: "🦞" } },
+          { id: "main", identity: { name: "Molty", emoji: "🥭" } },
           {
             id: "research",
             identity: { avatarUrl: "data:image/png;base64,eA==" },
@@ -222,7 +222,7 @@ describe("AppSidebar agent chip", () => {
     const agentRows = [...(menu?.querySelectorAll('wa-dropdown-item[type="checkbox"]') ?? [])];
     expect(agentRows).toHaveLength(2);
     expect(menu?.querySelector(".agent-select__avatar--text")?.getAttribute("data-avatar")).toBe(
-      "🦞",
+      "🥭",
     );
     expect(menu?.querySelector<HTMLImageElement>("img.agent-select__avatar")?.src).toContain(
       "data:image/png;base64,eA==",
@@ -344,7 +344,7 @@ describe("AppSidebar agent chip", () => {
         defaultId: "main",
         mainKey: "main",
         scope: "per-sender",
-        agents: [{ id: "main", identity: { name: "Molty", emoji: "🦞" } }],
+        agents: [{ id: "main", identity: { name: "Molty", emoji: "🥭" } }],
       },
     );
     sidebar.connected = true;

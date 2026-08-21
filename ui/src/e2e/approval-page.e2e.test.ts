@@ -19,7 +19,7 @@ const suite = createControlUiE2eSuite({
   unavailableMessage: (executablePath) => `Playwright Chromium is unavailable at ${executablePath}`,
 });
 
-const APPROVAL_ID = "Approval:Mobile/東京 100% 🦞";
+const APPROVAL_ID = "Approval:Mobile/東京 100% 🥭";
 const APPROVAL_NOW_MS = Date.UTC(2026, 6, 10, 18, 0, 0);
 const ARTIFACT_DIR = path.resolve(".artifacts/control-ui-e2e/approval-page");
 const CAPTURE_UI_PROOF = process.env.MANGABACLAW_CAPTURE_UI_PROOF === "1";

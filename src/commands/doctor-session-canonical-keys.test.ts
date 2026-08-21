@@ -225,52 +225,58 @@ describe("doctor canonical session-key repair", () => {
   });
 
   it("moves a legacy global heartbeat sibling to its agent-qualified key", async () => {
-    await withStateDirEnv("mangabaclaw-doctor-canonical-global-heartbeat-", async ({ stateDir }) => {
-      const env = { ...process.env, MANGABACLAW_STATE_DIR: stateDir };
-      const storeTemplate = path.join(stateDir, "agents", "{agentId}", "sessions.json");
-      const storePath = resolveSessionStorePathCore(storeTemplate, { agentId: "historian2", env });
-      const cfg = {
-        agents: { list: [{ id: "main", default: true }, { id: "historian2" }] },
-        session: { scope: "global", store: storeTemplate },
-      } as MangabaClawConfig;
-      insertLegacySession({
-        agentId: "historian2",
-        entry: {
-          heartbeatIsolatedBaseSessionKey: "global",
-          lastHeartbeatText: "legacy heartbeat",
-          sessionId: "heartbeat-session",
-          updatedAt: 10,
-        },
-        env,
-        sessionKey: "global:heartbeat",
-        storePath,
-      });
-
-      expect(await repairCanonicalSessionKeys({ apply: true, cfg, env })).toMatchObject({
-        foundGroups: 1,
-        repairedGroups: 1,
-      });
-      expect(
-        loadExactSessionEntryReadOnly({
+    await withStateDirEnv(
+      "mangabaclaw-doctor-canonical-global-heartbeat-",
+      async ({ stateDir }) => {
+        const env = { ...process.env, MANGABACLAW_STATE_DIR: stateDir };
+        const storeTemplate = path.join(stateDir, "agents", "{agentId}", "sessions.json");
+        const storePath = resolveSessionStorePathCore(storeTemplate, {
           agentId: "historian2",
           env,
-          sessionKey: "agent:historian2:global:heartbeat",
-          storePath,
-        })?.entry,
-      ).toMatchObject({
-        heartbeatIsolatedBaseSessionKey: "global",
-        lastHeartbeatText: "legacy heartbeat",
-        sessionId: "heartbeat-session",
-      });
-      expect(
-        loadExactSessionEntryReadOnly({
+        });
+        const cfg = {
+          agents: { list: [{ id: "main", default: true }, { id: "historian2" }] },
+          session: { scope: "global", store: storeTemplate },
+        } as MangabaClawConfig;
+        insertLegacySession({
           agentId: "historian2",
+          entry: {
+            heartbeatIsolatedBaseSessionKey: "global",
+            lastHeartbeatText: "legacy heartbeat",
+            sessionId: "heartbeat-session",
+            updatedAt: 10,
+          },
           env,
           sessionKey: "global:heartbeat",
           storePath,
-        }),
-      ).toBeUndefined();
-    });
+        });
+
+        expect(await repairCanonicalSessionKeys({ apply: true, cfg, env })).toMatchObject({
+          foundGroups: 1,
+          repairedGroups: 1,
+        });
+        expect(
+          loadExactSessionEntryReadOnly({
+            agentId: "historian2",
+            env,
+            sessionKey: "agent:historian2:global:heartbeat",
+            storePath,
+          })?.entry,
+        ).toMatchObject({
+          heartbeatIsolatedBaseSessionKey: "global",
+          lastHeartbeatText: "legacy heartbeat",
+          sessionId: "heartbeat-session",
+        });
+        expect(
+          loadExactSessionEntryReadOnly({
+            agentId: "historian2",
+            env,
+            sessionKey: "global:heartbeat",
+            storePath,
+          }),
+        ).toBeUndefined();
+      },
+    );
   });
 
   it("preserves in-flight recovery ownership while canonicalizing the main alias", async () => {
@@ -738,7 +744,7 @@ describe("doctor canonical session-key repair", () => {
         .prepare(
           `UPDATE session_nodes
              SET entry_json = 'not-json', archived_at = 30, category = 'investigation',
-                 icon = '🦞', label = 'Recovered metadata', last_activity_at = 29,
+                 icon = '🥭', label = 'Recovered metadata', last_activity_at = 29,
                  last_interaction_at = 28, last_read_at = 27, parent_session_key = 'agent:main:parent',
                  pinned_at = 26, spawned_by = 'agent:main:controller', status = 'failed',
                  display_name = 'Projected display name'
@@ -819,7 +825,7 @@ describe("doctor canonical session-key repair", () => {
         chatType: "group",
         endedAt: 24,
         label: "Recovered metadata",
-        icon: "🦞",
+        icon: "🥭",
         displayName: "Projected display name",
         lastActivityAt: 29,
         lastInteractionAt: 28,

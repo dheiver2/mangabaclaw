@@ -16,13 +16,13 @@ describe("mergeRealtimePartialTranscript", () => {
 
   it("does not split a surrogate pair at the tail cap boundary", () => {
     const tail = "x".repeat(239);
-    const next = `${"y".repeat(50)}🦞${tail}`;
+    const next = `${"y".repeat(50)}🥭${tail}`;
 
     expect(mergeRealtimePartialTranscript("", next)).toBe(tail);
   });
 
   it("keeps an intact surrogate pair that sits just inside the cap", () => {
-    const tail = `🦞${"w".repeat(238)}`;
+    const tail = `🥭${"w".repeat(238)}`;
     const next = `${"z".repeat(10)}${tail}`;
 
     expect(mergeRealtimePartialTranscript("", next)).toBe(tail);

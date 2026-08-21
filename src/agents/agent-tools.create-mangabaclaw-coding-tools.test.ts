@@ -142,7 +142,9 @@ function requireTool(tools: MangabaClawCodingTool[], name: string): MangabaClawC
   return tool;
 }
 
-function requireToolExecute(tool: MangabaClawCodingTool): NonNullable<MangabaClawCodingTool["execute"]> {
+function requireToolExecute(
+  tool: MangabaClawCodingTool,
+): NonNullable<MangabaClawCodingTool["execute"]> {
   if (!tool.execute) {
     throw new Error(`expected ${tool.name} tool execute`);
   }
@@ -1591,7 +1593,9 @@ describe("createMangabaClawCodingTools", () => {
       ),
     ).toBe(true);
     expect(latestCreateMangabaClawToolsOptions()).not.toHaveProperty("runtimePluginToolGrant");
-    expectListIncludes(latestCreateMangabaClawToolsOptions().pluginToolDenylist, ["workboard_block"]);
+    expectListIncludes(latestCreateMangabaClawToolsOptions().pluginToolDenylist, [
+      "workboard_block",
+    ]);
   });
 
   it("passes explicit denylist entries to MangabaClaw tool factory planning", () => {
@@ -1607,7 +1611,9 @@ describe("createMangabaClawCodingTools", () => {
   });
 
   it("removes message from persisted visible child sessions on every turn", async () => {
-    const storeDir = await fs.mkdtemp(path.join(os.tmpdir(), "mangabaclaw-visible-subagent-message-"));
+    const storeDir = await fs.mkdtemp(
+      path.join(os.tmpdir(), "mangabaclaw-visible-subagent-message-"),
+    );
     const storeTemplate = path.join(storeDir, "{agentId}", "sessions.json");
     const agentId = "visible-subagent-message";
     const childSessionKey = `agent:${agentId}:dashboard:child`;
@@ -2480,7 +2486,9 @@ describe("createMangabaClawCodingTools", () => {
   });
 
   it("records ordinary write, edit, and apply_patch memory provenance from turn taint", async () => {
-    const workspaceDir = await fs.mkdtemp(path.join(os.tmpdir(), "mangabaclaw-memory-write-taint-"));
+    const workspaceDir = await fs.mkdtemp(
+      path.join(os.tmpdir(), "mangabaclaw-memory-write-taint-"),
+    );
     let tainted = false;
     try {
       const tools = createMangabaClawCodingTools({
@@ -2575,7 +2583,9 @@ describe("createMangabaClawCodingTools", () => {
   });
 
   it("records sandbox-backed memory writes before mutation", async () => {
-    const workspaceDir = await fs.mkdtemp(path.join(os.tmpdir(), "mangabaclaw-memory-sandbox-taint-"));
+    const workspaceDir = await fs.mkdtemp(
+      path.join(os.tmpdir(), "mangabaclaw-memory-sandbox-taint-"),
+    );
     try {
       const sandbox = createAgentToolsSandboxContext({
         workspaceDir,
@@ -2932,7 +2942,7 @@ describe("createMangabaClawCodingTools read behavior", () => {
     { name: "with an explicit line limit", args: { limit: 1 } },
   ])("caps the first read page including its notice $name", async ({ args }) => {
     const root = tempDirs.make("mangabaclaw-read-first-page-cap-");
-    const original = "é🦞".repeat(9 * 1024);
+    const original = "é🥭".repeat(9 * 1024);
     await fs.writeFile(path.join(root, "unicode.txt"), original, "utf8");
     const read = createSandboxedReadTool({ root, bridge: createHostSandboxFsBridge(root) });
 

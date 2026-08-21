@@ -82,7 +82,7 @@ describe("fetchHttpJson error body boundary", () => {
     server = http.createServer((req, res) => {
       if (req.url === "/success-small") {
         res.writeHead(200, { "Content-Type": "application/json" });
-        res.end('{"payload":"control 🦞"}');
+        res.end('{"payload":"control 🥭"}');
         return;
       }
       const malformedStatus = Number(req.url?.match(/^\/malformed-utf8\/(\d+)$/)?.[1]);
@@ -220,7 +220,7 @@ describe("fetchHttpJson error body boundary", () => {
 
   it("preserves a normal successful JSON response", async () => {
     await expect(fetchBrowserJson(`${baseUrl}/success-small`)).resolves.toEqual({
-      payload: "control 🦞",
+      payload: "control 🥭",
     });
   });
 

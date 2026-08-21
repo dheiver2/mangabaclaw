@@ -6,11 +6,11 @@ describe("shared/entry-metadata", () => {
   it("prefers metadata emoji and homepage when present", () => {
     expect(
       resolveEmojiAndHomepage({
-        metadata: { emoji: "🦀", homepage: " https://mangabaclaw.ai " },
+        metadata: { emoji: "🥭", homepage: " https://mangabaclaw.ai " },
         frontmatter: { emoji: "🙂", homepage: "https://example.com" },
       }),
     ).toEqual({
-      emoji: "🦀",
+      emoji: "🥭",
       homepage: "https://mangabaclaw.ai",
     });
   });

@@ -4787,7 +4787,7 @@ describe("chat attachment picker", () => {
       },
     );
     const textarea = getComposerTextarea(container);
-    const text = `${"a".repeat(19)}🦞${"x".repeat(1100)}`;
+    const text = `${"a".repeat(19)}🥭${"x".repeat(1100)}`;
     textarea.dispatchEvent(createPasteEvent(text));
     container = renderChatView({ attachments });
 

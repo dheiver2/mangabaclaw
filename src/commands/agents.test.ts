@@ -153,12 +153,12 @@ describe("agents helpers", () => {
 
     const next = applyAgentConfig(cfg, {
       agentId: "work",
-      identity: { name: "New", emoji: "🦀" },
+      identity: { name: "New", emoji: "🥭" },
     });
 
     const work = next.agents?.entries?.work;
     expect(work?.identity?.name).toBe("New");
-    expect(work?.identity?.emoji).toBe("🦀");
+    expect(work?.identity?.emoji).toBe("🥭");
     expect(work?.identity?.theme).toBe("chill");
   });
 

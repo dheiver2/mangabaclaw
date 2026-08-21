@@ -279,7 +279,7 @@ describe("reefOutboundAdapter", () => {
   });
 
   it("chunks ordinary text by canonical plaintext bytes", () => {
-    const text = `${"a".repeat(40_000)}${"🦞".repeat(10_000)}`;
+    const text = `${"a".repeat(40_000)}${"🥭".repeat(10_000)}`;
     const chunks = reefOutboundAdapter.chunker!(text, REEF_MAX_PLAINTEXT_BYTES);
 
     expect(chunks.join("")).toBe(text);
@@ -296,7 +296,7 @@ describe("reefOutboundAdapter", () => {
   });
 
   it("honors a stricter configured chunk limit", () => {
-    const chunks = reefOutboundAdapter.chunker!("🦞".repeat(2_000), 1_024);
+    const chunks = reefOutboundAdapter.chunker!("🥭".repeat(2_000), 1_024);
 
     expect(chunks.length).toBeGreaterThan(1);
     for (const chunk of chunks) {
@@ -312,11 +312,11 @@ describe("reefOutboundAdapter", () => {
 
   it("searches chunk boundaries only between complete Unicode code points", () => {
     const limit = canonicalBytes({
-      text: "🦞",
+      text: "🥭",
       replyTo: "0".repeat(26),
       thread: "0".repeat(26),
     }).length;
 
-    expect(reefOutboundAdapter.chunker!("🦞🦞🦞", limit)).toEqual(["🦞", "🦞", "🦞"]);
+    expect(reefOutboundAdapter.chunker!("🥭🥭🥭", limit)).toEqual(["🥭", "🥭", "🥭"]);
   });
 });

@@ -41,7 +41,7 @@ describe("formatCliBannerLine", () => {
       mode: "off",
     });
 
-    expect(line).toBe("🦞 MangabaClaw 2026.3.7 (abc1234)");
+    expect(line).toBe("🥭 MangabaClaw 2026.3.7 (abc1234)");
   });
 
   it("uses the default tagline when explicitly requested", () => {
@@ -54,7 +54,7 @@ describe("formatCliBannerLine", () => {
       mode: "default",
     });
 
-    expect(line).toBe("🦞 MangabaClaw 2026.3.7 (abc1234) — All your chats, one MangabaClaw.");
+    expect(line).toBe("🥭 MangabaClaw 2026.3.7 (abc1234) — All your chats, one MangabaClaw.");
   });
 
   it("drops decorative emoji for generic Linux terminals", () => {
@@ -104,7 +104,7 @@ describe("emitCliBanner", () => {
       richTty: false,
     });
 
-    expect(writeSpy).toHaveBeenCalledWith("\n🦞 MangabaClaw 2026.3.7 (abc1234)\n\n");
+    expect(writeSpy).toHaveBeenCalledWith("\n🥭 MangabaClaw 2026.3.7 (abc1234)\n\n");
     expect(hasEmittedCliBanner()).toBe(true);
   });
 

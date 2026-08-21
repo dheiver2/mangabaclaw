@@ -1,6 +1,6 @@
 import { expect } from "vitest";
 
-const overlongUnicode = (unit: string, maxLength: number) => `${unit.repeat(maxLength - 1)}🦞tail`;
+const overlongUnicode = (unit: string, maxLength: number) => `${unit.repeat(maxLength - 1)}🥭tail`;
 
 export const adversarialResolved = {
   modelProvider: overlongUnicode("界", 48),

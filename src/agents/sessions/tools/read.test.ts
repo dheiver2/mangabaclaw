@@ -454,7 +454,7 @@ describe("read tool", () => {
       name: "minified JSON",
       text: JSON.stringify({ generated: "x".repeat(DEFAULT_MAX_BYTES * 2) }),
     },
-    { name: "astral emoji", text: `prefix${"🦞".repeat(DEFAULT_MAX_BYTES)}` },
+    { name: "astral emoji", text: `prefix${"🥭".repeat(DEFAULT_MAX_BYTES)}` },
   ])("continues an oversized $name line without splitting characters", async ({ text }) => {
     const tool = createReadToolDefinition("/workspace", {
       operations: {
@@ -493,7 +493,7 @@ describe("read tool", () => {
     const tool = createReadToolDefinition("/workspace", {
       operations: {
         access: async () => {},
-        readFile: async () => Buffer.from("a🦞b"),
+        readFile: async () => Buffer.from("a🥭b"),
       },
     });
 

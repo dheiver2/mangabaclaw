@@ -135,7 +135,7 @@ describe("bot-native-command-menu", () => {
         { command: "configured", description: "Configured" },
         { command: "canonical", description: "Canonical" },
         { command: "plugin", description: "Plugin" },
-        { command: "late_alias", description: "🦞".repeat(250), isAlias: true },
+        { command: "late_alias", description: "🥭".repeat(250), isAlias: true },
       ],
       maxTotalChars: TELEGRAM_COMMAND_TEXT_LIMIT,
       retry: false,

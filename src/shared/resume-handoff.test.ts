@@ -26,7 +26,8 @@ function decodeText(encoded: string): string {
 describe("resume handoff contract", () => {
   it("round-trips hostile cross-shell fields through only the inert base64url alphabet", () => {
     const sessionKey = "agent:runner:hostile-'\"$&;|<>^()%![]{}\\`-%PATH%-��";
-    const hostileGatewayUrl = "wss://gateway.example/mangabaclaw/$&;=()+,![]{}'`/%25PATH%25/%E2%98%83";
+    const hostileGatewayUrl =
+      "wss://gateway.example/mangabaclaw/$&;=()+,![]{}'`/%25PATH%25/%E2%98%83";
 
     const encoded = encodeResumeHandoff({ sessionKey, gatewayUrl: hostileGatewayUrl });
 
@@ -43,7 +44,7 @@ describe("resume handoff contract", () => {
   });
 
   it.each<[string, string]>([
-    ["astral emoji", `agent:main:${"🦀".repeat(300)}`],
+    ["astral emoji", `agent:main:${"🥭".repeat(300)}`],
     ["combining clusters", `agent:main:${"e\u0301".repeat(300)}`],
     ["ZWJ clusters", `agent:main:${"a\u200Db".repeat(300)}`],
   ])("round-trips 300 %s clusters", (_name, sessionKey) => {

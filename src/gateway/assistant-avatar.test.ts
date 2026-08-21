@@ -101,9 +101,9 @@ describe("resolveGatewayAssistantAvatar", () => {
     const { cfg, workspace } = createWorkspace();
     fs.writeFileSync(path.join(workspace, "identity.png"), REAL_PNG);
     fs.writeFileSync(path.join(workspace, "IDENTITY.md"), "- Avatar: identity.png\n");
-    cfg.agents!.list![0]!.identity = { emoji: "🦞" };
+    cfg.agents!.list![0]!.identity = { emoji: "🥭" };
 
-    expect(projectAvatar(cfg)).toEqual({ avatar: "🦞", resolution: null });
+    expect(projectAvatar(cfg)).toEqual({ avatar: "🥭", resolution: null });
   });
 
   it.each([
@@ -118,10 +118,10 @@ describe("resolveGatewayAssistantAvatar", () => {
 
   it("uses a configured emoji when the selected local path is rejected", () => {
     const { cfg } = createWorkspace();
-    cfg.agents!.list![0]!.identity = { avatar: "missing.png", emoji: "🦞" };
+    cfg.agents!.list![0]!.identity = { avatar: "missing.png", emoji: "🥭" };
 
     expect(projectAvatar(cfg)).toEqual({
-      avatar: "🦞",
+      avatar: "🥭",
       resolution: { kind: "none", reason: "missing", source: "missing.png" },
     });
   });
@@ -135,10 +135,10 @@ describe("resolveGatewayAssistantAvatar", () => {
     expect(
       resolveGatewayAssistantAvatar({
         cfg,
-        identity: { agentId: "main", avatar, emoji: "🦞" },
+        identity: { agentId: "main", avatar, emoji: "🥭" },
       }),
     ).toEqual({
-      avatar: "🦞",
+      avatar: "🥭",
       resolution: { kind: "none", reason, source: avatar },
     });
   });
@@ -165,7 +165,7 @@ describe("resolveGatewayAssistantAvatar", () => {
     });
   });
 
-  it.each(["A", "PS", "🦞"])("keeps the %s text avatar free of file metadata", (avatar) => {
+  it.each(["A", "PS", "🥭"])("keeps the %s text avatar free of file metadata", (avatar) => {
     const { cfg } = createWorkspace();
     cfg.agents!.list![0]!.identity = { avatar };
 
@@ -198,10 +198,10 @@ describe("resolveGatewayAssistantAvatar", () => {
       expect(
         resolveGatewayAssistantAvatar({
           cfg,
-          identity: { agentId: "main", avatar, emoji: "🦞" },
+          identity: { agentId: "main", avatar, emoji: "🥭" },
         }),
       ).toEqual({
-        avatar: "🦞",
+        avatar: "🥭",
         resolution: {
           kind: "none",
           reason: "outside_workspace",

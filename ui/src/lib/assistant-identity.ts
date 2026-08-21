@@ -3,7 +3,7 @@ import { normalizeOptionalString } from "@mangabaclaw/normalization-core/string-
 import { truncateUtf16Safe } from "@mangabaclaw/normalization-core/utf16-slice";
 import { isRenderableAvatarImageDataUrl } from "../../../src/shared/avatar-limits.js";
 
-// Short text/emoji avatars (e.g. "A", "PS", "🦞"). Anything longer that is not
+// Short text/emoji avatars (e.g. "A", "PS", "🥭"). Anything longer that is not
 // a renderable image URL is dropped during normalization.
 const MAX_ASSISTANT_TEXT_AVATAR = 64;
 const ASSISTANT_IDENTITY_LIMITS = {

@@ -101,7 +101,7 @@ async function runBrowserToggle(
   }
   const name = status.profile ?? "mangabaclaw";
   const headlessLabel = params.path === "/start" && status.headless ? " (headless)" : "";
-  defaultRuntime.log(info(`🦞 browser [${name}] running: ${status.running}${headlessLabel}`));
+  defaultRuntime.log(info(`🥭 browser [${name}] running: ${status.running}${headlessLabel}`));
 }
 
 function parseTabIndex(value: string): number {
@@ -442,11 +442,11 @@ export function registerBrowserManageCommands(
           return;
         }
         if (!result.moved) {
-          defaultRuntime.log(info(`🦞 browser profile already missing.`));
+          defaultRuntime.log(info(`🥭 browser profile already missing.`));
           return;
         }
         const dest = result.to ?? result.from;
-        defaultRuntime.log(info(`🦞 browser profile moved to Trash (${dest})`));
+        defaultRuntime.log(info(`🥭 browser profile moved to Trash (${dest})`));
       });
     });
 
@@ -796,7 +796,10 @@ export function registerBrowserManageCommands(
     .option("--color <hex>", "Profile color (hex format, e.g. #0066CC)")
     .option("--cdp-url <url>", "DevTools endpoint URL (http/https/ws/wss)")
     .option("--user-data-dir <path>", "User data dir for existing-session Chromium attach")
-    .option("--driver <driver>", "Profile driver (mangabaclaw|existing-session). Default: mangabaclaw")
+    .option(
+      "--driver <driver>",
+      "Profile driver (mangabaclaw|existing-session). Default: mangabaclaw",
+    )
     .action(
       async (
         opts: {
@@ -838,7 +841,7 @@ export function registerBrowserManageCommands(
           const loc = `  ${formatBrowserConnectionSummary(result)}`;
           defaultRuntime.log(
             info(
-              `🦞 Created profile "${result.profile}"\n${loc}\n  color: ${result.color}${
+              `🥭 Created profile "${result.profile}"\n${loc}\n  color: ${result.color}${
                 result.userDataDir ? `\n  userDataDir: ${shortenHomePath(result.userDataDir)}` : ""
               }${opts.driver === "existing-session" ? "\n  driver: existing-session" : ""}`,
             ),
@@ -866,8 +869,8 @@ export function registerBrowserManageCommands(
           return;
         }
         const msg = result.deleted
-          ? `🦞 Deleted profile "${result.profile}" (user data removed)`
-          : `🦞 Deleted profile "${result.profile}" (no user data found)`;
+          ? `🥭 Deleted profile "${result.profile}" (user data removed)`
+          : `🥭 Deleted profile "${result.profile}" (no user data found)`;
         defaultRuntime.log(info(msg));
       });
     });

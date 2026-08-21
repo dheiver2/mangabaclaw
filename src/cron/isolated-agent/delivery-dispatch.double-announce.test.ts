@@ -2040,7 +2040,7 @@ describe("dispatchCronDelivery — double-announce guard", () => {
   });
 
   it("cleans up the direct cron session after text delivery when deleteAfterRun is enabled", async () => {
-    const params = makeBaseParams({ synthesizedText: "HEARTBEAT_OK 🦞" });
+    const params = makeBaseParams({ synthesizedText: "HEARTBEAT_OK 🥭" });
     params.agentSessionKey = "agent:main:cron:test-job";
     (params.job as { deleteAfterRun?: boolean }).deleteAfterRun = true;
 

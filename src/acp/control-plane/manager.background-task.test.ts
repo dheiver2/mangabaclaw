@@ -10,8 +10,8 @@ import {
 import { ACP_TURN_TIMEOUT_DETAIL_CODE } from "./manager.turn-timeout.js";
 import type { AcpSessionManagerDeps } from "./manager.types.js";
 
-// U+1F99E (🦞) is a surrogate pair in UTF-16; a raw .slice() boundary can split it.
-const LOBSTER = "🦞";
+// U+1F99E (🥭) is a surrogate pair in UTF-16; a raw .slice() boundary can split it.
+const LOBSTER = "🥭";
 
 const HIGH_SURROGATE_WITHOUT_LOW = /[\uD800-\uDBFF](?![\uDC00-\uDFFF])/;
 

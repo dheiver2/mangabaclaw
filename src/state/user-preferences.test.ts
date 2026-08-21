@@ -58,7 +58,7 @@ describe("user preferences", () => {
       error: { code: "invalid-entry-count" },
     });
     expect(
-      setUserPreferences("profile-a", { valid: true, oversized: "🦞".repeat(1_025) }, options),
+      setUserPreferences("profile-a", { valid: true, oversized: "🥭".repeat(1_025) }, options),
     ).toMatchObject({ ok: false, error: { code: "value-too-large", key: "oversized" } });
     expect(getUserPreferences("profile-a", undefined, options)).toEqual({});
   });

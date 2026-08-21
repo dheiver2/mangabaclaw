@@ -82,7 +82,7 @@ describe("approval callback data", () => {
   it("preserves unicode approval ids exactly", () => {
     const action = {
       type: "approval" as const,
-      approvalId: "approval/🦀/%/:",
+      approvalId: "approval/🥭/%/:",
       approvalKind: "plugin" as const,
       decision: "allow-once" as const,
     };
