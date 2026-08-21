@@ -1,8 +1,8 @@
 // Safe recursive removal helpers for focused plugin file-access surfaces.
 import "./fs-safe-defaults.js";
 import path from "node:path";
-import { FsSafeError } from "@mangabaclaw/fs-safe/errors";
-import { root as fsSafeRoot, type Root } from "@mangabaclaw/fs-safe/root";
+import { FsSafeError } from "@openclaw/fs-safe/errors";
+import { root as fsSafeRoot, type Root } from "@openclaw/fs-safe/root";
 import { isMissingPathError } from "./errors.js";
 
 async function listDirectoryEntries(root: Root, relativePath: string) {

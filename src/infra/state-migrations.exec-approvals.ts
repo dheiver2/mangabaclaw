@@ -1,6 +1,6 @@
 // Doctor-only import for the retired exec approvals JSON store.
 import { isDeepStrictEqual } from "node:util";
-import { root, type Root } from "@mangabaclaw/fs-safe";
+import { root, type Root } from "@openclaw/fs-safe";
 import { runMangabaClawStateWriteTransaction } from "../state/mangabaclaw-state-db.js";
 import {
   resolveExecApprovalsPath,

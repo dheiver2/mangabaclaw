@@ -1,4 +1,4 @@
-import type { MangabaClawCrablineChannelDriverSelection } from "@mangabaclaw/crabline";
+import type { MangabaClawCrablineChannelDriverSelection } from "@openclaw/crabline";
 import { parseBooleanValue } from "mangabaclaw/plugin-sdk/string-coerce-runtime";
 import type { QaSuiteChannelDriverSelection } from "./crabline-artifacts.js";
 import type { QaProviderMode } from "./model-selection.js";
@@ -10,7 +10,7 @@ import type { QaScorecardChannelDriver } from "./scorecard-taxonomy.js";
 import { scenarioRequiresControlUi, splitModelRef } from "./suite-planning.js";
 import type { QaSuiteRunParams, QaSuiteScenarioResult, QaSuiteStartLabFn } from "./suite-types.js";
 
-type QaCrablineRuntime = typeof import("@mangabaclaw/crabline");
+type QaCrablineRuntime = typeof import("@openclaw/crabline");
 
 /**
  * One bounded retry for live-model flake: flow scenarios time out under model

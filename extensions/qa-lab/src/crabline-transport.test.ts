@@ -1,7 +1,7 @@
 // Qa Lab tests cover Crabline local-provider transport integration behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
-import type { MangabaClawCrablineChannelDriverSelection } from "@mangabaclaw/crabline";
+import type { MangabaClawCrablineChannelDriverSelection } from "@openclaw/crabline";
 import { fetchWithSsrFGuard } from "mangabaclaw/plugin-sdk/ssrf-runtime";
 import { withTempDir } from "mangabaclaw/plugin-sdk/test-env";
 import { afterEach, describe, expect, it, vi } from "vitest";
@@ -12,7 +12,9 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
-function createSelection(channel: MangabaClawCrablineChannelDriverSelection["channel"] = "telegram") {
+function createSelection(
+  channel: MangabaClawCrablineChannelDriverSelection["channel"] = "telegram",
+) {
   return {
     capabilityMatrixPath: "crabline-fake-provider-capabilities.json",
     channel,

@@ -2,7 +2,7 @@
 /* @vitest-environment-options {"url":"http://chat-page.test/"} */
 
 import { expectDefined } from "@mangabaclaw/normalization-core";
-import type { RouteLocation } from "@mangabaclaw/uirouter";
+import type { RouteLocation } from "@openclaw/uirouter";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const nativeGateways = vi.hoisted(() => ({ current: null as NativeGatewaysCapability | null }));
@@ -782,7 +782,11 @@ describe("chat page split layout host", () => {
     setNarrow(page, false);
     await page.updateComplete;
     expect(
-      itemAt(page.querySelectorAll<RenderedPane>("mangabaclaw-chat-pane"), 1, "active restored pane"),
+      itemAt(
+        page.querySelectorAll<RenderedPane>("mangabaclaw-chat-pane"),
+        1,
+        "active restored pane",
+      ),
     ).toBe(activePane);
   });
 
@@ -816,7 +820,9 @@ describe("chat page split layout host", () => {
     await page.updateComplete;
 
     const paneTitles = () =>
-      [...page.querySelectorAll<RenderedPane>("mangabaclaw-chat-pane")].map((pane) => pane.paneTitle);
+      [...page.querySelectorAll<RenderedPane>("mangabaclaw-chat-pane")].map(
+        (pane) => pane.paneTitle,
+      );
     expect(paneTitles()).toEqual(["Main Session", "Main Session"]);
 
     // Rows arrive under the canonical agent key while the route still says

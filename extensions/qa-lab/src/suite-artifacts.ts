@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import type { MangabaClawCrablineChannelDriverSelection } from "@mangabaclaw/crabline";
+import type { MangabaClawCrablineChannelDriverSelection } from "@openclaw/crabline";
 import { replaceFileAtomic } from "mangabaclaw/plugin-sdk/security-runtime";
 import { assertQaSuiteArtifactWritten } from "./artifact-assertion.js";
 import {
@@ -21,7 +21,7 @@ import { countQaSuiteFailedScenarios, type QaSuiteSummaryJson } from "./suite-su
 import { createQaSuiteReportNotes } from "./suite-support.js";
 import type { QaSuiteScenarioResult } from "./suite-types.js";
 
-type QaCrablineRuntime = typeof import("@mangabaclaw/crabline");
+type QaCrablineRuntime = typeof import("@openclaw/crabline");
 type QaCrablineChannelDriverSmokeResult = Awaited<
   ReturnType<QaCrablineRuntime["runMangabaClawCrablineChannelDriverSmoke"]>
 >;
@@ -176,7 +176,7 @@ export async function writeQaSuiteArtifacts(params: {
   // Non-Crabline package acceptance mounts this source without plugin-local
   // dependencies. Keep the owner runtime outside every unrelated live path.
   const crablineRuntime = crablineChannelDriverSelection
-    ? await import("@mangabaclaw/crabline")
+    ? await import("@openclaw/crabline")
     : undefined;
   let crablineChannelDriverSmoke: QaCrablineChannelDriverSmokeResult | undefined;
   if (crablineChannelDriverSelection) {
@@ -217,7 +217,8 @@ export async function writeQaSuiteArtifacts(params: {
     notes: createQaSuiteReportNotes({
       ...params,
       channelDriverSelection: effectiveChannelDriverSelection,
-      createCrablineChannelReportNotes: crablineRuntime?.createMangabaClawCrablineChannelReportNotes,
+      createCrablineChannelReportNotes:
+        crablineRuntime?.createMangabaClawCrablineChannelReportNotes,
     }),
   });
   const evidence =

@@ -10,9 +10,9 @@ export {
   safeStat,
   type PermissionCheck,
   type PermissionCheckOptions,
-} from "@mangabaclaw/fs-safe/permissions";
+} from "@openclaw/fs-safe/permissions";
 export {
   createIcaclsResetCommand,
   formatIcaclsResetCommand,
   type PermissionExec as ExecFn,
-} from "@mangabaclaw/fs-safe/advanced";
+} from "@openclaw/fs-safe/advanced";

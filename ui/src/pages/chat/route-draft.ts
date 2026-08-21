@@ -1,4 +1,4 @@
-import type { RouteLocation } from "@mangabaclaw/uirouter";
+import type { RouteLocation } from "@openclaw/uirouter";
 import { SESSION_COMPOSER_FOCUS_PARAM } from "../../lib/sessions/route-navigation.ts";
 
 type RouteDraftHint = { draft?: string; focusComposer?: boolean };

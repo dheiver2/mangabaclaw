@@ -1,8 +1,8 @@
 // Resolves command executables and wrapper policy paths for exec approvals.
 import crypto from "node:crypto";
 import path from "node:path";
-import { safeRealpathSync } from "@mangabaclaw/fs-safe/path";
 import { normalizeLowercaseStringOrEmpty } from "@mangabaclaw/normalization-core/string-coerce";
+import { safeRealpathSync } from "@openclaw/fs-safe/path";
 import { matchesExecAllowlistPattern } from "./exec-allowlist-pattern.js";
 import type { ExecAllowlistEntry } from "./exec-approvals.types.js";
 import { resolveExecWrapperTrustPlan } from "./exec-wrapper-trust-plan.js";

@@ -402,18 +402,20 @@ describe("Control UI Vite config", () => {
     const aliases = resolveExternalPackageAliasesForVite(resolvePackage);
 
     expect(resolvePackage.mock.calls).toEqual([
-      ["@mangabaclaw/libterminal/package.json"],
-      ["@mangabaclaw/uirouter/package.json"],
+      ["@openclaw/libterminal/package.json"],
+      ["@openclaw/uirouter/package.json"],
     ]);
-    expect(aliases.find((alias) => alias.find === "@mangabaclaw/libterminal/browser")).toEqual({
-      find: "@mangabaclaw/libterminal/browser",
-      replacement: path.join("/parent/node_modules/@mangabaclaw/libterminal", "dist/browser.js"),
+    expect(aliases.find((alias) => alias.find === "@openclaw/libterminal/browser")).toEqual({
+      find: "@openclaw/libterminal/browser",
+      replacement: path.join("/parent/node_modules/@openclaw/libterminal", "dist/browser.js"),
     });
   });
 
   it("keeps specific tsconfig aliases ahead of broad package aliases", () => {
     const aliases = resolveTsconfigPathAliasesForVite();
-    const netPolicyIpIndex = aliases.findIndex((alias) => alias.find === "@mangabaclaw/net-policy/ip");
+    const netPolicyIpIndex = aliases.findIndex(
+      (alias) => alias.find === "@mangabaclaw/net-policy/ip",
+    );
     const netPolicyPackageIndex = aliases.findIndex(
       (alias) => alias.find === "@mangabaclaw/net-policy",
     );

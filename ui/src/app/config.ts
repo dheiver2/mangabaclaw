@@ -1,4 +1,4 @@
-import { normalizeRouteBasePath } from "@mangabaclaw/uirouter";
+import { normalizeRouteBasePath } from "@openclaw/uirouter";
 import {
   CONTROL_UI_BOOTSTRAP_CONFIG_PATH,
   CONTROL_UI_TERMINAL_ENABLED_ATTRIBUTE,

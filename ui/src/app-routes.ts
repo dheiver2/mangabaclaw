@@ -1,4 +1,4 @@
-import { createRouter } from "@mangabaclaw/uirouter";
+import { createRouter } from "@openclaw/uirouter";
 import type {
   PageDefinition,
   RouteLocation,
@@ -6,7 +6,7 @@ import type {
   RouteNotFound,
   Router,
   RouterHistory,
-} from "@mangabaclaw/uirouter";
+} from "@openclaw/uirouter";
 import {
   agentRouteFromPath,
   INTERNAL_AGENT_PATH_PARAM,

@@ -1,4 +1,4 @@
-import { normalizeRouteBasePath } from "@mangabaclaw/uirouter";
+import { normalizeRouteBasePath } from "@openclaw/uirouter";
 
 export function buildAssistantMediaUrl(
   source: string,

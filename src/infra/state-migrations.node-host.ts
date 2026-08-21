@@ -1,7 +1,7 @@
 // Doctor-only import for the retired node-host JSON config.
 import path from "node:path";
-import { root, type Root } from "@mangabaclaw/fs-safe";
 import { isRecord } from "@mangabaclaw/normalization-core/record-coerce";
+import { root, type Root } from "@openclaw/fs-safe";
 import {
   LEGACY_NODE_HOST_CONFIG_CLAIM_SUFFIX,
   LEGACY_NODE_HOST_CONFIG_FILE,

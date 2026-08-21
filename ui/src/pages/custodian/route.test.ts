@@ -1,6 +1,6 @@
 /* @vitest-environment jsdom */
 
-import type { RouteLoaderOptions, RouteLocation } from "@mangabaclaw/uirouter";
+import type { RouteLoaderOptions, RouteLocation } from "@openclaw/uirouter";
 import { render } from "lit";
 import { afterEach, describe, expect, it } from "vitest";
 import type {

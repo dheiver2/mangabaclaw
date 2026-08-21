@@ -1,4 +1,4 @@
-import { definePage } from "@mangabaclaw/uirouter";
+import { definePage } from "@openclaw/uirouter";
 import { html, nothing } from "lit";
 import { routePageSpec } from "../../app-route-paths.ts";
 import type { ApplicationContext } from "../../app/context.ts";
@@ -63,6 +63,8 @@ export const page = definePage({
     import("./skills-page.ts").then(() => ({
       header: true,
       render: (data: SkillsRouteData | undefined) =>
-        data ? html`<mangabaclaw-skills-page .routeData=${data}></mangabaclaw-skills-page>` : nothing,
+        data
+          ? html`<mangabaclaw-skills-page .routeData=${data}></mangabaclaw-skills-page>`
+          : nothing,
     })),
 });

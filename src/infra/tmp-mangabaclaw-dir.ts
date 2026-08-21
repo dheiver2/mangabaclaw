@@ -23,7 +23,7 @@ export type ResolvePreferredMangabaClawTmpDirOptions = {
   warn?: (message: string) => void;
 };
 
-type ResolveSecureTempRoot = typeof import("@mangabaclaw/fs-safe/temp").resolveSecureTempRoot;
+type ResolveSecureTempRoot = typeof import("@openclaw/fs-safe/temp").resolveSecureTempRoot;
 
 let resolveSecureTempRootRuntime: ResolveSecureTempRoot | undefined;
 declare const WORKER_DEPLOY_BUILD: boolean;
@@ -57,7 +57,7 @@ function loadResolveSecureTempRoot(): ResolveSecureTempRoot {
     throw new Error("Node createRequire is unavailable for secure temp-root resolution");
   }
   const require = moduleNamespace.createRequire(import.meta.url);
-  const fsSafeTemp = require("@mangabaclaw/fs-safe/temp") as typeof import("@mangabaclaw/fs-safe/temp");
+  const fsSafeTemp = require("@openclaw/fs-safe/temp") as typeof import("@openclaw/fs-safe/temp");
   resolveSecureTempRootRuntime = fsSafeTemp.resolveSecureTempRoot;
   return resolveSecureTempRootRuntime;
 }

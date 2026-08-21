@@ -4,7 +4,7 @@ import {
   type RouteLocation,
   type RouteMatch,
   type Router,
-} from "@mangabaclaw/uirouter";
+} from "@openclaw/uirouter";
 import { html, nothing, type LitElement } from "lit";
 import { ref } from "lit/directives/ref.js";
 import { afterEach, describe, expect, it, vi } from "vitest";

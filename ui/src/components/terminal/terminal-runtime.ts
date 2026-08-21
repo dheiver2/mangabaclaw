@@ -1,5 +1,5 @@
-import type { CreateGhosttyTerminalOptions } from "@mangabaclaw/libterminal/browser";
 import { asOptionalRecord } from "@mangabaclaw/normalization-core/record-coerce";
+import type { CreateGhosttyTerminalOptions } from "@openclaw/libterminal/browser";
 
 function isEventListener(value: unknown): value is EventListener {
   return typeof value === "function";
@@ -8,7 +8,7 @@ function isEventListener(value: unknown): value is EventListener {
 /** Creates a terminal whose WASM memory is never reused by another tab. */
 export async function createIsolatedGhosttyTerminal(options: CreateGhosttyTerminalOptions) {
   const [{ createGhosttyTerminal, loadGhosttyRuntime }, ghosttyModule] = await Promise.all([
-    import("@mangabaclaw/libterminal/browser"),
+    import("@openclaw/libterminal/browser"),
     import("ghostty-web"),
   ]);
   // ghostty-web 0.4.0 reuses freed WASM pages, exposing stale cells and corrupting

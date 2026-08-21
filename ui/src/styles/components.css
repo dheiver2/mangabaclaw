@@ -4276,7 +4276,7 @@ td.data-table-key-col {
   overscroll-behavior: contain;
   padding: clamp(18px, 3vw, 28px);
   background:
-    radial-gradient(circle at top right, rgba(233, 74, 18, 0.055), transparent 32%),
+    radial-gradient(circle at top right, rgba(246, 162, 28, 0.055), transparent 32%),
     radial-gradient(circle at bottom left, rgba(20, 184, 166, 0.045), transparent 28%),
     linear-gradient(
       180deg,

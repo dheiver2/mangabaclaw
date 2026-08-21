@@ -1,4 +1,4 @@
-import { createRouter, definePage, type RouteMatch, type Router } from "@mangabaclaw/uirouter";
+import { createRouter, definePage, type RouteMatch, type Router } from "@openclaw/uirouter";
 import { html, nothing, type LitElement } from "lit";
 import { ref } from "lit/directives/ref.js";
 import { afterEach, describe, expect, it, vi } from "vitest";
@@ -147,7 +147,9 @@ describe("mangabaclaw-router-outlet", () => {
 
     const loadingState = outlet.querySelector('[role="status"]');
     expect(loadingState?.getAttribute("aria-label")).toBe("Loading…");
-    expect(loadingState?.querySelector("mangabaclaw-mascot")?.getAttribute("mood")).toBe("thinking");
+    expect(loadingState?.querySelector("mangabaclaw-mascot")?.getAttribute("mood")).toBe(
+      "thinking",
+    );
     expect(loadingState?.textContent?.trim()).toBe("");
     expect(outlet.textContent).not.toContain("Loading panel");
 

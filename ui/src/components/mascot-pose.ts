@@ -45,9 +45,9 @@ export type MascotPalette = {
 };
 
 const DARK_PALETTE: MascotPalette = {
-  gradientTop: "#E94A12",
+  gradientTop: "#F6A21C",
   gradientBottom: "#B33409",
-  antenna: "#E94A12",
+  antenna: "#F6A21C",
 };
 
 const LIGHT_PALETTE: MascotPalette = {

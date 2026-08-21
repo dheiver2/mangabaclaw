@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { root, type Root } from "@mangabaclaw/fs-safe";
+import { root, type Root } from "@openclaw/fs-safe";
 import { afterEach, describe, expect, it } from "vitest";
 import { useAutoCleanupTempDirTracker } from "../../test/helpers/temp-dir.js";
 import {

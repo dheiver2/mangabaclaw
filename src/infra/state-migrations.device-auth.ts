@@ -1,8 +1,8 @@
 // Doctor-only import for the retired device-auth JSON store.
 import fs from "node:fs";
 import path from "node:path";
-import { root } from "@mangabaclaw/fs-safe";
 import { isRecord } from "@mangabaclaw/normalization-core/record-coerce";
+import { root } from "@openclaw/fs-safe";
 import { normalizeDeviceAuthRole, normalizeDeviceAuthScopes } from "../shared/device-auth.js";
 import type { DB as MangabaClawStateKyselyDatabase } from "../state/mangabaclaw-state-db.generated.js";
 import { runMangabaClawStateWriteTransaction } from "../state/mangabaclaw-state-db.js";

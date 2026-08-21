@@ -1,4 +1,4 @@
-import type { RouteMatch, Router } from "@mangabaclaw/uirouter";
+import type { RouteMatch, Router } from "@openclaw/uirouter";
 import { nothing } from "lit";
 import type { ReactiveController, ReactiveControllerHost } from "lit";
 import { property } from "lit/decorators.js";

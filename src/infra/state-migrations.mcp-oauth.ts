@@ -1,7 +1,7 @@
 // Doctor-only import for retired per-server MCP OAuth JSON stores.
 import fs from "node:fs";
 import path from "node:path";
-import { root, type Root } from "@mangabaclaw/fs-safe";
+import { root, type Root } from "@openclaw/fs-safe";
 import { mcpOAuthStoreKeyFromLegacyFileName } from "../agents/mcp-oauth-identity.js";
 import { parseMcpOAuthStoreJson } from "../agents/mcp-oauth-store.js";
 import type { DB as MangabaClawStateKyselyDatabase } from "../state/mangabaclaw-state-db.generated.js";

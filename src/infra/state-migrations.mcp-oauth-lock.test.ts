@@ -1,7 +1,7 @@
 // Covers conservative stale recovery for retired MCP OAuth lock sidecars.
 import fs from "node:fs/promises";
 import path from "node:path";
-import { root } from "@mangabaclaw/fs-safe";
+import { root } from "@openclaw/fs-safe";
 import { afterEach, describe, expect, it } from "vitest";
 import { useAutoCleanupTempDirTracker } from "../../test/helpers/temp-dir.js";
 import { isDefinitelyStaleLegacyMcpOAuthLock } from "./state-migrations.mcp-oauth-lock-stale.js";

@@ -155,7 +155,7 @@ describe("check-cli-bootstrap-imports", () => {
         'await import("./lazy.mjs");',
         '__require("json5");',
         'createRequire(import.meta.url)("../../package.json");',
-        'moduleNamespace.createRequire(import.meta.url)("@mangabaclaw/fs-safe/temp");',
+        'moduleNamespace.createRequire(import.meta.url)("@openclaw/fs-safe/temp");',
       ].join("\n"),
     );
     writeFixture(root, "dist/worker/workspace-rsync-receiver.mjs", "export {};\n");
@@ -169,7 +169,7 @@ describe("check-cli-bootstrap-imports", () => {
     expect(collectWorkerDeployArtifactErrors({ rootDir: root })).toEqual([
       'Worker deploy artifact dist/worker/worker.mjs retains runtime import "../../package.json" instead of bundling it.',
       'Worker deploy artifact dist/worker/worker.mjs retains runtime import "./lazy.mjs" instead of bundling it.',
-      'Worker deploy artifact dist/worker/worker.mjs retains runtime import "@mangabaclaw/fs-safe/temp" instead of bundling it.',
+      'Worker deploy artifact dist/worker/worker.mjs retains runtime import "@openclaw/fs-safe/temp" instead of bundling it.',
       'Worker deploy artifact dist/worker/worker.mjs retains runtime import "json5" instead of bundling it.',
       'Worker deploy artifact dist/worker/worker.mjs retains runtime import "left-pad" instead of bundling it.',
       "Worker deploy artifact emits unstaged runtime asset dist/worker/lazy.mjs.",

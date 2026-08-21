@@ -1,4 +1,4 @@
-import type { RouteLocation, RouterHistory } from "@mangabaclaw/uirouter";
+import type { RouteLocation, RouterHistory } from "@openclaw/uirouter";
 import { sessionRouteNamespaceFromPath } from "../../app-route-paths.ts";
 import type { RouteId } from "../../app-routes.ts";
 import type { ApplicationContext } from "../../app/context.ts";

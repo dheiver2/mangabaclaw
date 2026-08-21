@@ -2,7 +2,7 @@
 import type {
   CreateGhosttyTerminalOptions,
   TerminalDefaultColors,
-} from "@mangabaclaw/libterminal/browser";
+} from "@openclaw/libterminal/browser";
 
 type TerminalTheme = NonNullable<
   NonNullable<CreateGhosttyTerminalOptions["terminalOptions"]>["theme"]
@@ -54,11 +54,11 @@ const LIGHT_ANSI = {
 } as const;
 
 // Dark mirrors the claw tokens in styles/base.css (`--bg` #0e1015,
-// `--accent` #E94A12) — keep them in sync when the tokens change. Light is a
+// `--accent` #F6A21C) — keep them in sync when the tokens change. Light is a
 // deliberate neutral cool white: the light theme families diverge (ivory,
 // cool white, parchment) and the canvas gets only a binary mode.
 const DYNAMIC_COLORS = {
-  dark: { background: "#0e1015", cursor: "#E94A12", foreground: "#d7dae0" },
+  dark: { background: "#0e1015", cursor: "#F6A21C", foreground: "#d7dae0" },
   light: { background: "#f7f8fa", cursor: "#1b1e26", foreground: "#1b1e26" },
 } as const satisfies Record<"dark" | "light", TerminalDefaultColors>;
 

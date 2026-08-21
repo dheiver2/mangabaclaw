@@ -1,6 +1,9 @@
 import { ContextProvider } from "@lit/context";
-import { buildControlUiFocusPath, type ControlUiFocusTarget } from "@mangabaclaw/session-url-contract";
-import type { RouteLocation, RouteNotFound } from "@mangabaclaw/uirouter";
+import {
+  buildControlUiFocusPath,
+  type ControlUiFocusTarget,
+} from "@mangabaclaw/session-url-contract";
+import type { RouteLocation, RouteNotFound } from "@openclaw/uirouter";
 import { html, nothing } from "lit";
 import { state } from "lit/decorators.js";
 import type { GatewayBrowserClient } from "../api/gateway.ts";
@@ -259,7 +262,9 @@ export class MangabaClawApp extends MangabaClawLightDomElement {
     }
     const approvalId =
       runtime.documentMode?.kind === "approval" ? runtime.documentMode.approvalId : "";
-    return html`<mangabaclaw-approval-page .approvalId=${approvalId ?? ""}></mangabaclaw-approval-page>`;
+    return html`<mangabaclaw-approval-page
+      .approvalId=${approvalId ?? ""}
+    ></mangabaclaw-approval-page>`;
   }
 
   private replaceFocusDashboardLocation(location: RouteLocation, source: RouteLocation): void {

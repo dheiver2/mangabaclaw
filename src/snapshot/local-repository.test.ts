@@ -30,8 +30,8 @@ const durabilityTestState = vi.hoisted(() => ({
     | undefined,
 }));
 
-vi.mock("@mangabaclaw/fs-safe/durability", async (importOriginal) => {
-  const actual = await importOriginal<typeof import("@mangabaclaw/fs-safe/durability")>();
+vi.mock("@openclaw/fs-safe/durability", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@openclaw/fs-safe/durability")>();
   return {
     ...actual,
     pinDirectory: async (...args: Parameters<typeof actual.pinDirectory>) => {

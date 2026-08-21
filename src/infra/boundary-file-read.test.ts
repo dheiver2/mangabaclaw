@@ -1,7 +1,7 @@
 // Tests safe boundary file reads against upstream fs-safe behavior.
 import fs from "node:fs";
 import path from "node:path";
-import * as upstream from "@mangabaclaw/fs-safe/advanced";
+import * as upstream from "@openclaw/fs-safe/advanced";
 import { afterEach, describe, expect, it } from "vitest";
 import { useAutoCleanupTempDirTracker } from "../../test/helpers/temp-dir.js";
 import * as shim from "./boundary-file-read.js";

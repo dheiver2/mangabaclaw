@@ -1,5 +1,5 @@
-import type { RouteLocation } from "@mangabaclaw/uirouter";
-import { definePage, redirect } from "@mangabaclaw/uirouter";
+import type { RouteLocation } from "@openclaw/uirouter";
+import { definePage, redirect } from "@openclaw/uirouter";
 import { html, nothing } from "lit";
 import { pathForRoute, routePageSpec } from "../../app-route-paths.ts";
 import type { ApplicationContext } from "../../app/context.ts";
@@ -31,7 +31,10 @@ function configPage(id: ConfigPageId) {
       import("./config-page.ts").then(() => ({
         header: true,
         render: (data: ConfigRouteData | undefined) => html`
-          <mangabaclaw-config-page .pageId=${id} .routeData=${data ?? null}></mangabaclaw-config-page>
+          <mangabaclaw-config-page
+            .pageId=${id}
+            .routeData=${data ?? null}
+          ></mangabaclaw-config-page>
         `,
       })),
   });

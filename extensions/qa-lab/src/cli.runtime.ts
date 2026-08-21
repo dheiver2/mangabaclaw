@@ -5,7 +5,7 @@ import {
   isCrablineServerChannel,
   MANGABACLAW_CRABLINE_DEFAULT_CHANNEL,
   resolveMangabaClawCrablineChannelDriverSelection,
-} from "@mangabaclaw/crabline";
+} from "@openclaw/crabline";
 import { formatErrorMessage } from "mangabaclaw/plugin-sdk/error-runtime";
 import { parseStrictPositiveInteger } from "mangabaclaw/plugin-sdk/number-runtime";
 import { parseBooleanValue, uniqueStrings } from "mangabaclaw/plugin-sdk/string-coerce-runtime";

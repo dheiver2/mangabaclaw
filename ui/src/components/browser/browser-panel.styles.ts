@@ -64,7 +64,7 @@ export const browserPanelStyles = css`
     text-overflow: ellipsis;
   }
   .bp-url:focus {
-    border-color: var(--accent, #E94A12);
+    border-color: var(--accent, #f6a21c);
     background: var(--bg, #0e1015);
   }
   .bp-annotatebar {
@@ -75,7 +75,7 @@ export const browserPanelStyles = css`
     font-size: 12px;
     color: var(--muted, #8a919e);
     border-bottom: 1px solid var(--border, #262b34);
-    background: color-mix(in srgb, var(--accent, #E94A12) 7%, transparent);
+    background: color-mix(in srgb, var(--accent, #f6a21c) 7%, transparent);
   }
   .bp-annotatebar__hint {
     flex: 1;
@@ -97,8 +97,8 @@ export const browserPanelStyles = css`
     background: color-mix(in srgb, var(--text, #d7dae0) 10%, transparent);
   }
   .bp-btn--primary {
-    border-color: var(--accent, #E94A12);
-    color: var(--accent, #E94A12);
+    border-color: var(--accent, #f6a21c);
+    color: var(--accent, #f6a21c);
   }
   .bp-viewport {
     position: relative;

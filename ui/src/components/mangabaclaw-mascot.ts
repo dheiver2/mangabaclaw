@@ -140,7 +140,12 @@ class MangabaClawMascot extends LitElement {
   }
 
   override render() {
-    return html`<canvas></canvas>`;
+    // Mascote oficial Mangaba: a fruta (favicon.svg) substitui o desenho em canvas.
+    return html`<img
+      src="/favicon.svg"
+      alt=""
+      style="width:100%;height:100%;object-fit:contain;"
+    />`;
   }
 
   private get resolvedMood(): MascotMood {

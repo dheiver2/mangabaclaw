@@ -2,7 +2,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { setTimeout as sleep } from "node:timers/promises";
-import type { MangabaClawCrablineChannelDriverSelection } from "@mangabaclaw/crabline";
+import type { MangabaClawCrablineChannelDriverSelection } from "@openclaw/crabline";
 import type { MangabaClawConfig } from "mangabaclaw/plugin-sdk/config-contracts";
 import { formatErrorMessage } from "mangabaclaw/plugin-sdk/error-runtime";
 import { parseStrictPositiveInteger } from "mangabaclaw/plugin-sdk/number-runtime";

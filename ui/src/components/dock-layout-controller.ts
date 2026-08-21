@@ -334,13 +334,13 @@ export const dockPanelStyles = css`
     color: var(--rail-header-action-hover-color, var(--text, #d7dae0));
   }
   .rail-header__action:focus-visible {
-    outline: 2px solid var(--ring, var(--accent, #E94A12));
+    outline: 2px solid var(--ring, var(--accent, #f6a21c));
     outline-offset: -3px;
   }
   .rail-header__action.is-active,
   .rail-header__action[aria-pressed="true"] {
     background: transparent;
-    color: var(--rail-header-action-active-color, var(--accent, #E94A12));
+    color: var(--rail-header-action-active-color, var(--accent, #f6a21c));
   }
   .rail-header__action:disabled,
   .rail-header__action[aria-disabled="true"] {

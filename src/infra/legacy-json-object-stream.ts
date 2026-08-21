@@ -1,7 +1,7 @@
 // Streams one-property legacy JSON object stores without buffering the whole file.
 import { createHash } from "node:crypto";
 import type { FileHandle } from "node:fs/promises";
-import type { Root } from "@mangabaclaw/fs-safe";
+import type { Root } from "@openclaw/fs-safe";
 
 const JSON_WHITESPACE = new Set([" ", "\t", "\r", "\n"]);
 

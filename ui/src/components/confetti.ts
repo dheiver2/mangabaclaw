@@ -1,5 +1,5 @@
 const FIRST_REPLY_CONFETTI_KEY = "mangabaclaw.confetti.firstReply";
-const CONFETTI_COLORS = ["#E94A12", "#ff7079", "#00e5cc", "#f2a833"] as const;
+const CONFETTI_COLORS = ["#F6A21C", "#ff7079", "#00e5cc", "#f2a833"] as const;
 const CONFETTI_DURATION_MS = 1_500;
 const PARTICLE_COUNT = 64;
 

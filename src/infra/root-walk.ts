@@ -1,8 +1,8 @@
 // Root-bounded directory walking facade for explicit plugin SDK consumers.
 import "./fs-safe-defaults.js";
-import { root, type RootWalkEntry, type RootWalkOptions } from "@mangabaclaw/fs-safe/root";
+import { root, type RootWalkEntry, type RootWalkOptions } from "@openclaw/fs-safe/root";
 
-export type { RootWalkEntry, RootWalkOptions } from "@mangabaclaw/fs-safe/root";
+export type { RootWalkEntry, RootWalkOptions } from "@openclaw/fs-safe/root";
 
 export async function* walkRootDirectory(
   rootDir: string,

@@ -299,7 +299,7 @@ async function resolveQaFlowChannelGroups(
     isCrablineServerChannel,
     MANGABACLAW_CRABLINE_DEFAULT_CHANNEL,
     resolveMangabaClawCrablineChannelDriverSelection,
-  } = await import("@mangabaclaw/crabline");
+  } = await import("@openclaw/crabline");
   if (runParams.expandScenarioChannels) {
     const groups = groupQaScenariosByExecutionCell(
       scenarios,

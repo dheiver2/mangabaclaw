@@ -1,5 +1,5 @@
 import path from "node:path";
-import type { MangabaClawCrablineChannelDriverSelection } from "@mangabaclaw/crabline";
+import type { MangabaClawCrablineChannelDriverSelection } from "@openclaw/crabline";
 import type { QaCliBackendAuthMode } from "./gateway-child.js";
 import type {
   QaLabLatestReport,

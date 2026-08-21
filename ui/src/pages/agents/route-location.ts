@@ -1,4 +1,4 @@
-import type { RouteLocation } from "@mangabaclaw/uirouter";
+import type { RouteLocation } from "@openclaw/uirouter";
 import {
   agentRouteFromPath,
   INTERNAL_AGENT_PATH_PARAM,

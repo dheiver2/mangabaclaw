@@ -1,6 +1,6 @@
 import { controlUiSessionSlug, SHORT_SESSION_ID_RE } from "@mangabaclaw/session-url-contract";
-import type { RouteLocation } from "@mangabaclaw/uirouter";
-import { notFound } from "@mangabaclaw/uirouter";
+import type { RouteLocation } from "@openclaw/uirouter";
+import { notFound } from "@openclaw/uirouter";
 import type { GatewayBrowserClient } from "../../api/gateway.ts";
 import type { GatewaySessionRow, SessionsListResult } from "../../api/types.ts";
 import { INTERNAL_SESSION_PATH_PARAM } from "../../app-route-paths.ts";

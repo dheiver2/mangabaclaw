@@ -519,7 +519,9 @@ describe("resolveNpmReleaseCheckCommandTimeoutMs", () => {
   it("parses only positive integer environment timeouts", () => {
     expect(resolveNpmReleaseCheckCommandTimeoutMs({})).toBe(10 * 60 * 1000);
     expect(
-      resolveNpmReleaseCheckCommandTimeoutMs({ MANGABACLAW_NPM_RELEASE_CHECK_COMMAND_TIMEOUT_MS: "" }),
+      resolveNpmReleaseCheckCommandTimeoutMs({
+        MANGABACLAW_NPM_RELEASE_CHECK_COMMAND_TIMEOUT_MS: "",
+      }),
     ).toBe(10 * 60 * 1000);
     expect(
       resolveNpmReleaseCheckCommandTimeoutMs({
@@ -881,10 +883,10 @@ describe("collectReleasePackageMetadataErrors", () => {
         license: "MIT",
         repository: { url: "git+https://github.com/mangabaclaw/mangabaclaw.git" },
         bin: { mangabaclaw: "mangabaclaw.mjs" },
-        dependencies: { "@mangabaclaw/fs-safe": "link:../fs-safe" },
+        dependencies: { "@openclaw/fs-safe": "link:../fs-safe" },
       }),
     ).toContain(
-      'package.json dependencies["@mangabaclaw/fs-safe"] must use a published semver range before npm release; found "link:../fs-safe".',
+      'package.json dependencies["@openclaw/fs-safe"] must use a published semver range before npm release; found "link:../fs-safe".',
     );
   });
 });

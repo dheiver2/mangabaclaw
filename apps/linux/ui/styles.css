@@ -139,9 +139,9 @@ button.update-dismiss {
   overflow: hidden;
   border: 0;
   border-radius: 999px;
-  color: #E94A12;
+  color: #F6A21C;
   background: #292d38;
-  accent-color: #E94A12;
+  accent-color: #F6A21C;
 }
 
 .update-progress::-webkit-progress-bar {
@@ -149,11 +149,11 @@ button.update-dismiss {
 }
 
 .update-progress::-webkit-progress-value {
-  background: #E94A12;
+  background: #F6A21C;
 }
 
 .update-progress::-moz-progress-bar {
-  background: #E94A12;
+  background: #F6A21C;
 }
 
 .status-row {
@@ -166,7 +166,7 @@ button.update-dismiss {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #E94A12;
+  background: #F6A21C;
   box-shadow: 0 0 0 5px rgb(255 92 92 / 10%);
 }
 
@@ -220,7 +220,7 @@ h1 {
   width: 17px;
   height: 17px;
   border: 2px solid #383c49;
-  border-top-color: #E94A12;
+  border-top-color: #F6A21C;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -284,9 +284,9 @@ button:disabled {
 }
 
 button.primary {
-  border-color: #E94A12;
+  border-color: #F6A21C;
   color: #180909;
-  background: #E94A12;
+  background: #F6A21C;
   box-shadow: 0 10px 26px rgb(255 92 92 / 16%);
 }
 
@@ -434,7 +434,7 @@ footer {
   width: 3px;
   height: 3px;
   border-radius: 50%;
-  background: #E94A12;
+  background: #F6A21C;
 }
 
 .hidden {

@@ -9,4 +9,4 @@ export {
   isWindowsNetworkPath,
   safeFileURLToPath,
   trySafeFileURLToPath,
-} from "@mangabaclaw/fs-safe/advanced";
+} from "@openclaw/fs-safe/advanced";

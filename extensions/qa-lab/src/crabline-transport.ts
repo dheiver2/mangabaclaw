@@ -6,7 +6,7 @@ import {
   type MangabaClawCrablineChannelDriverSelection,
   type MangabaClawCrablineInbound,
   type StartedMangabaClawCrablineAdapter,
-} from "@mangabaclaw/crabline";
+} from "@openclaw/crabline";
 import type { MangabaClawConfig } from "mangabaclaw/plugin-sdk/config-contracts";
 import { fetchWithSsrFGuard } from "mangabaclaw/plugin-sdk/ssrf-runtime";
 import {

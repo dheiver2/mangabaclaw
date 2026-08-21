@@ -2,7 +2,7 @@
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import { isCrablineServerChannel, MANGABACLAW_CRABLINE_DEFAULT_CHANNEL } from "@mangabaclaw/crabline";
+import { isCrablineServerChannel, MANGABACLAW_CRABLINE_DEFAULT_CHANNEL } from "@openclaw/crabline";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { readQaScenarioById, type QaScenarioPack } from "./scenario-catalog.js";
 
@@ -1058,7 +1058,9 @@ describe("qa cli runtime", () => {
         const scenario = scenarioById.get(scenarioId);
         return (
           scenario?.execution.kind !== "flow" ||
-          isCrablineServerChannel(scenario.execution.channel ?? MANGABACLAW_CRABLINE_DEFAULT_CHANNEL)
+          isCrablineServerChannel(
+            scenario.execution.channel ?? MANGABACLAW_CRABLINE_DEFAULT_CHANNEL,
+          )
         );
       }),
     ).toBe(true);
@@ -1659,7 +1661,9 @@ describe("qa cli runtime", () => {
         repoRoot: "/tmp/mangabaclaw-repo",
         scenarioIds: ["telegram-help-command"],
       }),
-    ).rejects.toThrow("MANGABACLAW_QA_TELEGRAM_SUT_MANGABACLAW_COMMAND must be an absolute file path.");
+    ).rejects.toThrow(
+      "MANGABACLAW_QA_TELEGRAM_SUT_MANGABACLAW_COMMAND must be an absolute file path.",
+    );
 
     expect(runQaFlowSuiteFromRuntime).not.toHaveBeenCalled();
   });

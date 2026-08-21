@@ -1,7 +1,7 @@
 // Doctor-only import for the retired APNs registration JSON store.
 import path from "node:path";
-import { root, type Root } from "@mangabaclaw/fs-safe";
 import { isRecord } from "@mangabaclaw/normalization-core/record-coerce";
+import { root, type Root } from "@openclaw/fs-safe";
 import type { DB as MangabaClawStateKyselyDatabase } from "../state/mangabaclaw-state-db.generated.js";
 import { runMangabaClawStateWriteTransaction } from "../state/mangabaclaw-state-db.js";
 import {

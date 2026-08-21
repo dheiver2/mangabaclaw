@@ -168,7 +168,9 @@ function normalizeBuildTimestamp(value: string | undefined): string | null {
   }
   const timestamp = normalizeControlUiBuildInfo({ builtAt: explicit }).builtAt;
   if (!timestamp) {
-    throw new Error("MANGABACLAW_BUILD_TIMESTAMP must be a valid UTC ISO-8601 timestamp ending in Z");
+    throw new Error(
+      "MANGABACLAW_BUILD_TIMESTAMP must be a valid UTC ISO-8601 timestamp ending in Z",
+    );
   }
   return timestamp;
 }
@@ -330,12 +332,12 @@ export function resolveExternalPackageAliasesForVite(
     path.dirname(resolvePackage(`${specifier}/package.json`));
   return [
     {
-      find: "@mangabaclaw/libterminal/browser",
-      replacement: path.join(packageRoot("@mangabaclaw/libterminal"), "dist/browser.js"),
+      find: "@openclaw/libterminal/browser",
+      replacement: path.join(packageRoot("@openclaw/libterminal"), "dist/browser.js"),
     },
     {
-      find: "@mangabaclaw/uirouter",
-      replacement: path.join(packageRoot("@mangabaclaw/uirouter"), "dist/index.js"),
+      find: "@openclaw/uirouter",
+      replacement: path.join(packageRoot("@openclaw/uirouter"), "dist/index.js"),
     },
   ];
 }

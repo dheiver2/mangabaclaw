@@ -2,7 +2,7 @@ import {
   parseControlUiFocusLocation,
   type ControlUiFocusLocation,
 } from "@mangabaclaw/session-url-contract";
-import type { RouteLocation } from "@mangabaclaw/uirouter";
+import type { RouteLocation } from "@openclaw/uirouter";
 import type { GatewayBrowserClient } from "../api/gateway.ts";
 import { sessionRouteNamespaceFromPath } from "../app-route-paths.ts";
 import {

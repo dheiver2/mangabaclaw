@@ -9,5 +9,5 @@ export {
   type FileIdentityStat,
   sameFileIdentity,
   sanitizeUntrustedFileName,
-} from "@mangabaclaw/fs-safe/advanced";
-export { readSecretFile } from "@mangabaclaw/fs-safe/secret";
+} from "@openclaw/fs-safe/advanced";
+export { readSecretFile } from "@openclaw/fs-safe/secret";

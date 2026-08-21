@@ -304,8 +304,8 @@ function shouldNeverBundleDeclarationDependency(id: string): boolean {
 function shouldAlwaysBundleDependency(id: string): boolean {
   return (
     id === "mangabaclaw/plugin-sdk/ssrf-runtime-internal" ||
-    id === "@mangabaclaw/fs-safe" ||
-    id.startsWith("@mangabaclaw/fs-safe/") ||
+    id === "@openclaw/fs-safe" ||
+    id.startsWith("@openclaw/fs-safe/") ||
     id === "@mangabaclaw/normalization-core" ||
     id.startsWith("@mangabaclaw/normalization-core/") ||
     id === "@mangabaclaw/retry" ||

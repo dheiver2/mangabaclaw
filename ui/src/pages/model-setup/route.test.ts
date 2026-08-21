@@ -1,4 +1,4 @@
-import type { RouteLoaderOptions, RouteLocation } from "@mangabaclaw/uirouter";
+import type { RouteLoaderOptions, RouteLocation } from "@openclaw/uirouter";
 import { describe, expect, it, vi } from "vitest";
 import type { GatewayBrowserClient } from "../../api/gateway.ts";
 import type { SystemAgentSetupDetectResult } from "../../api/types.ts";

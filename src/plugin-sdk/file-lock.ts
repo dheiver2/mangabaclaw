@@ -1,12 +1,12 @@
 // File lock helpers serialize plugin writes that share a filesystem-backed state file.
 import "../infra/fs-safe-defaults.js";
 import fs from "node:fs/promises";
+import { asNullableRecord } from "@mangabaclaw/normalization-core/record-coerce";
 import {
   acquireFileLock as acquireFsSafeFileLock,
   drainFileLockManagerForTest,
   resetFileLockManagerForTest,
-} from "@mangabaclaw/fs-safe/file-lock";
-import { asNullableRecord } from "@mangabaclaw/normalization-core/record-coerce";
+} from "@openclaw/fs-safe/file-lock";
 import {
   isLockOwnerDefinitelyStale,
   shouldRemoveDeadOwnerOrExpiredLock,

@@ -69,8 +69,8 @@ const desktopPanelStyles = css`
     background: color-mix(in srgb, var(--text, #d7dae0) 10%, transparent);
   }
   .desktop-button--primary {
-    border-color: var(--accent, #E94A12);
-    color: var(--accent, #E94A12);
+    border-color: var(--accent, #f6a21c);
+    color: var(--accent, #f6a21c);
   }
   .desktop-button:disabled {
     opacity: 0.5;
@@ -186,7 +186,7 @@ const desktopPanelStyles = css`
     cursor: var(--cursor-action, pointer);
   }
   .desktop-stage__take-control:focus-visible {
-    outline: 2px solid var(--accent, #E94A12);
+    outline: 2px solid var(--accent, #f6a21c);
     outline-offset: -2px;
   }
 `;

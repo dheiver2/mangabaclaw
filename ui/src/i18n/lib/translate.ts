@@ -92,9 +92,8 @@ class I18nManager {
     if (isSupportedLocale(saved)) {
       return { locale: saved, shouldPersist: true };
     }
-    const language =
-      typeof globalThis.navigator?.language === "string" ? globalThis.navigator.language : null;
-    return { locale: resolveNavigatorLocale(language ?? ""), shouldPersist: false };
+    // Padrão MangabaClaw: pt-BR quando não há preferência salva.
+    return { locale: "pt-BR", shouldPersist: false };
   }
 
   private loadLocale() {

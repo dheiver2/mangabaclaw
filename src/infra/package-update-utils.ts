@@ -1,5 +1,5 @@
 // Inspects installed package metadata for update/install verification.
-import { readRootJsonObjectSync } from "@mangabaclaw/fs-safe/json";
+import { readRootJsonObjectSync } from "@openclaw/fs-safe/json";
 
 // Package update utilities inspect installed package metadata without trusting
 // paths outside the provided package root.

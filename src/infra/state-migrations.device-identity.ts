@@ -1,5 +1,5 @@
 // Owner-authorized import for the retired primary device identity JSON.
-import { root, type Root } from "@mangabaclaw/fs-safe";
+import { root, type Root } from "@openclaw/fs-safe";
 import type { DB as MangabaClawStateKyselyDatabase } from "../state/mangabaclaw-state-db.generated.js";
 import {
   openMangabaClawStateDatabase,

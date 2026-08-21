@@ -495,7 +495,7 @@ describe("check-database-first-legacy-stores", () => {
         await (await root(stateDir)).writeJson("thread-bindings.json", {});
       `("fs-safe-root-write.ts", filesystemWriteViolations(4, 5)),
       "flags bare fs-safe package root writes to legacy paths": sourceCase`
-        import { root } from "@mangabaclaw/fs-safe";
+        import { root } from "@openclaw/fs-safe";
         const state = await root(stateDir);
         await state.writeJson("thread-bindings.json", {});
       `("bare-fs-safe-root-write.ts", filesystemWriteViolations(4)),
@@ -520,7 +520,7 @@ describe("check-database-first-legacy-stores", () => {
         await privateFileStore(stateDir).json("gateway-restart-intent.json").updateOr({}, (current) => current);
       `("private-file-json-store-write.ts", filesystemWriteViolations(3, 5, 6)),
       "flags direct fs-safe package store writes to legacy paths": sourceCase`
-        import { fileStore, jsonStore } from "@mangabaclaw/fs-safe/store";
+        import { fileStore, jsonStore } from "@openclaw/fs-safe/store";
         await fileStore({ rootDir: stateDir }).writeJson("thread-bindings.json", {});
         const options = { filePath: "plugin-binding-approvals.json" };
         await jsonStore(options).write({});
@@ -592,7 +592,7 @@ describe("check-database-first-legacy-stores", () => {
         await stores.state.writeJson("thread-bindings.json", {});
       `("exhaustive-fs-safe-store-property-partial-reassignment.ts", filesystemWriteViolations(9)),
       "flags direct fs-safe package namespace store writes to legacy paths": sourceCase`
-        import * as fsSafeStore from "@mangabaclaw/fs-safe/store";
+        import * as fsSafeStore from "@openclaw/fs-safe/store";
         const store = fsSafeStore.fileStoreSync({ rootDir: stateDir });
         store.writeJson("thread-bindings.json", {});
         const bindings = fsSafeStore.jsonStore({ filePath: "plugin-binding-approvals.json" });

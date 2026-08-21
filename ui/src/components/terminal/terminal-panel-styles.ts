@@ -176,8 +176,8 @@ export const terminalPanelStyles = css`
   .tp-connecting__spinner {
     width: 16px;
     height: 16px;
-    border: 2px solid color-mix(in srgb, var(--accent, #E94A12) 24%, transparent);
-    border-top-color: var(--accent, #E94A12);
+    border: 2px solid color-mix(in srgb, var(--accent, #f6a21c) 24%, transparent);
+    border-top-color: var(--accent, #f6a21c);
     border-radius: 50%;
     animation: tp-spin 0.8s linear infinite;
   }

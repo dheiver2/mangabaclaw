@@ -1,5 +1,5 @@
-import type { RouteLocation } from "@mangabaclaw/uirouter";
 import { isValidWorkboardBoardId } from "@mangabaclaw/workboard-contract";
+import type { RouteLocation } from "@openclaw/uirouter";
 import {
   INTERNAL_WORKBOARD_PATH_PARAM,
   pathForRoute,

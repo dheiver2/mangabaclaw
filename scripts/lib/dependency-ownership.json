@@ -72,7 +72,7 @@
       "class": "core-runtime",
       "risk": ["provider-routing", "model-io"]
     },
-    "@mangabaclaw/fs-safe": {
+    "@openclaw/fs-safe": {
       "owner": "core:filesystem-safety",
       "class": "core-runtime",
       "risk": ["filesystem", "path-safety"]
@@ -169,7 +169,7 @@
       "class": "core-runtime",
       "risk": ["pattern-matching"]
     },
-    "@mangabaclaw/proxyline": {
+    "@openclaw/proxyline": {
       "owner": "core:proxy",
       "class": "core-runtime",
       "risk": ["network", "proxy"]

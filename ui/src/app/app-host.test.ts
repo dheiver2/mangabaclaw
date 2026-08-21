@@ -1,6 +1,6 @@
 /* @vitest-environment jsdom */
 
-import type { RouteLocation, RouterState } from "@mangabaclaw/uirouter";
+import type { RouteLocation, RouterState } from "@openclaw/uirouter";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { GatewayBrowserClient } from "../api/gateway.ts";
 import type { AgentsListResult, GatewayAgentRow } from "../api/types.ts";
@@ -551,7 +551,9 @@ describe("MangabaClaw shell route session commits", () => {
     const calls: string[] = [];
     const setAgent = vi.fn((agentId: string | null) => calls.push(`agent:${agentId}`));
     const setSessionKey = vi.fn((sessionKey: string) => calls.push(`session:${sessionKey}`));
-    const shell = document.createElement("mangabaclaw-app-shell") as unknown as ShellRouteCommitState;
+    const shell = document.createElement(
+      "mangabaclaw-app-shell",
+    ) as unknown as ShellRouteCommitState;
     shell.runtime = {
       context: {
         gateway: {
@@ -743,7 +745,9 @@ describe("MangabaClaw shell keyboard shortcuts", () => {
 
   it("wires merged header window events for the shell lifecycle", () => {
     const addEventListener = vi.spyOn(window, "addEventListener");
-    const shell = document.createElement("mangabaclaw-app-shell") as unknown as ShellChromeEventState;
+    const shell = document.createElement(
+      "mangabaclaw-app-shell",
+    ) as unknown as ShellChromeEventState;
 
     shell.connectedCallback();
 
@@ -757,7 +761,9 @@ describe("MangabaClaw shell keyboard shortcuts", () => {
   });
 
   it("prevents unhandled window file drops without overriding accepted targets", () => {
-    const shell = document.createElement("mangabaclaw-app-shell") as unknown as ShellChromeEventState;
+    const shell = document.createElement(
+      "mangabaclaw-app-shell",
+    ) as unknown as ShellChromeEventState;
     const acceptedDropTarget = document.createElement("div");
     const nativeFileInput = document.createElement("input");
     nativeFileInput.type = "file";
@@ -862,7 +868,9 @@ describe("MangabaClaw shell keyboard shortcuts", () => {
     );
     const openPalette = vi.fn();
     const trigger = document.createElement("button");
-    const shell = document.createElement("mangabaclaw-app-shell") as unknown as ShellChromeEventState;
+    const shell = document.createElement(
+      "mangabaclaw-app-shell",
+    ) as unknown as ShellChromeEventState;
     shell.runtime = {
       context: {
         navigation: { snapshot: { navCollapsed: false }, update: vi.fn() },
@@ -890,7 +898,9 @@ describe("MangabaClaw shell keyboard shortcuts", () => {
 
   it("normalizes an unloaded palette toggle shortcut to open", async () => {
     const element = createLazyElementSpec("command palette");
-    const shell = document.createElement("mangabaclaw-app-shell") as unknown as ShellLazySurfaceState;
+    const shell = document.createElement(
+      "mangabaclaw-app-shell",
+    ) as unknown as ShellLazySurfaceState;
     shell.commandPaletteElement = element;
     const openPalette = vi.fn();
     Object.defineProperty(shell, "updateComplete", { get: () => Promise.resolve(true) });

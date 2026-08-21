@@ -1,5 +1,5 @@
-import type { RouteLocation, RouteMatch } from "@mangabaclaw/uirouter";
-import { definePage } from "@mangabaclaw/uirouter";
+import type { RouteLocation, RouteMatch } from "@openclaw/uirouter";
+import { definePage } from "@openclaw/uirouter";
 import { html, nothing } from "lit";
 import { INTERNAL_SESSION_PATH_PARAM, pathForRoute, routePageSpec } from "../../app-route-paths.ts";
 import type { ApplicationContext } from "../../app/context.ts";

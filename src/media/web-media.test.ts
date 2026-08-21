@@ -3,8 +3,8 @@ import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import { __setFsSafeTestHooksForTest } from "@mangabaclaw/fs-safe/test-hooks";
 import { expectDefined } from "@mangabaclaw/normalization-core";
+import { __setFsSafeTestHooksForTest } from "@openclaw/fs-safe/test-hooks";
 import JSZip from "jszip";
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { createSolidPngBuffer } from "../../test/helpers/image-fixtures.js";
@@ -883,7 +883,9 @@ describe("loadWebMedia", () => {
           1024 * 1024,
           "report.html",
         );
-        expect(path.resolve(saved.path)).toContain(path.resolve(resolvePreferredMangabaClawTmpDir()));
+        expect(path.resolve(saved.path)).toContain(
+          path.resolve(resolvePreferredMangabaClawTmpDir()),
+        );
         await expectLoadWebMediaErrorCode(
           loadWebMedia(saved.path, {
             maxBytes: 1024 * 1024,

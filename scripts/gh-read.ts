@@ -2,7 +2,7 @@
 import { spawnSync } from "node:child_process";
 import { createPrivateKey, createSign } from "node:crypto";
 import { pathToFileURL } from "node:url";
-import { readSecretFileSync } from "@mangabaclaw/fs-safe/secret";
+import { readSecretFileSync } from "@openclaw/fs-safe/secret";
 import { expectDefined } from "../packages/normalization-core/src/expect.js";
 import { truncateUtf16Safe } from "../packages/normalization-core/src/utf16-slice.js";
 import { readBoundedResponseText } from "./lib/bounded-response.mjs";
@@ -99,7 +99,9 @@ export function buildReadPermissions(
   return permissions;
 }
 
-export function resolveGitHubFetchTimeoutMs(raw = process.env.MANGABACLAW_GH_READ_FETCH_TIMEOUT_MS) {
+export function resolveGitHubFetchTimeoutMs(
+  raw = process.env.MANGABACLAW_GH_READ_FETCH_TIMEOUT_MS,
+) {
   return parseStrictIntegerOption({
     fallback: DEFAULT_GITHUB_FETCH_TIMEOUT_MS,
     label: "MANGABACLAW_GH_READ_FETCH_TIMEOUT_MS",

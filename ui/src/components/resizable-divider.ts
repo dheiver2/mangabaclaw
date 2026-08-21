@@ -64,7 +64,7 @@ class ResizableDivider extends MangabaClawLitElement {
       background: var(--resize-handle-active-color, currentColor);
     }
     :host(:focus-visible) {
-      outline: 2px solid var(--accent, #E94A12);
+      outline: 2px solid var(--accent, #f6a21c);
       outline-offset: 2px;
     }
     :host([orientation="horizontal"]) {

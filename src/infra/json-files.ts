@@ -24,9 +24,9 @@ export {
   writeJson,
   writeJson as writeJsonAtomic, // Sanctioned domain alias.
   writeJsonSync,
-} from "@mangabaclaw/fs-safe/json";
+} from "@openclaw/fs-safe/json";
 
-export { createAsyncLock } from "@mangabaclaw/fs-safe/advanced";
+export { createAsyncLock } from "@openclaw/fs-safe/advanced";
 
 export type WriteTextAtomicOptions = {
   mode?: number;

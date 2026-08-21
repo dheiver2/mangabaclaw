@@ -5,7 +5,7 @@
   "description": "1Password SecretRef resolver and audited agent secrets broker for MangabaClaw",
   "type": "module",
   "dependencies": {
-    "@mangabaclaw/fs-safe": "0.5.5"
+    "@openclaw/fs-safe": "0.5.5"
   },
   "devDependencies": {
     "@mangabaclaw/plugin-sdk": "workspace:*"

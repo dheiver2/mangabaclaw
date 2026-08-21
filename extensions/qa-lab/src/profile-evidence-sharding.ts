@@ -1,7 +1,7 @@
 // QA Lab owns bounded profile partitioning and canonical shard evidence aggregation.
 import fs from "node:fs/promises";
 import path from "node:path";
-import { isCrablineServerChannel, MANGABACLAW_CRABLINE_DEFAULT_CHANNEL } from "@mangabaclaw/crabline";
+import { isCrablineServerChannel, MANGABACLAW_CRABLINE_DEFAULT_CHANNEL } from "@openclaw/crabline";
 import {
   canonicalPathFromExistingAncestor,
   isPathInside,

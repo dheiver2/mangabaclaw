@@ -1,4 +1,4 @@
-import { normalizeRouteBasePath } from "@mangabaclaw/uirouter";
+import { normalizeRouteBasePath } from "@openclaw/uirouter";
 import { buildControlUiUserAvatarPath } from "../../../../src/gateway/control-ui-user-avatar-route.js";
 
 export function userProfileAvatarUrl(

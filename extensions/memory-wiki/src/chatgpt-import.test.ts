@@ -2,7 +2,7 @@
 import { createHash } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
-import { __setFsSafeTestHooksForTest } from "@mangabaclaw/fs-safe/test-hooks";
+import { __setFsSafeTestHooksForTest } from "@openclaw/fs-safe/test-hooks";
 import { KeyedAsyncQueue } from "mangabaclaw/plugin-sdk/keyed-async-queue";
 import type { OpenKeyedStoreOptions } from "mangabaclaw/plugin-sdk/plugin-state-runtime";
 import {
@@ -223,7 +223,9 @@ describe("ChatGPT import rollback recovery", () => {
     ).rejects.toThrow("simulated process crash");
     renameSpy.mockRestore();
     await expect(fs.readFile(targetPath, "utf8")).resolves.toBe("# Recreated before fence\n");
-    await expect(fs.stat(path.join(stateDir, "state", "mangabaclaw.sqlite"))).resolves.toBeDefined();
+    await expect(
+      fs.stat(path.join(stateDir, "state", "mangabaclaw.sqlite")),
+    ).resolves.toBeDefined();
 
     resetPluginStateStoreForTests();
     configureDurableImportRunStore(stateDir);

@@ -24,4 +24,4 @@ export {
   type ArchiveEntryKind,
   type ArchiveExtractLimits,
   type ExtractArchiveOptions,
-} from "@mangabaclaw/fs-safe/archive";
+} from "@openclaw/fs-safe/archive";

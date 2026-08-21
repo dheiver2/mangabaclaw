@@ -1,5 +1,5 @@
 // @vitest-environment node
-import type { RouteLoaderOptions, RouteLocation } from "@mangabaclaw/uirouter";
+import type { RouteLoaderOptions, RouteLocation } from "@openclaw/uirouter";
 import { describe, expect, it } from "vitest";
 import type { ApplicationContext } from "../../app/context.ts";
 import { page } from "./route.ts";

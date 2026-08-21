@@ -8,11 +8,11 @@ packages:
 minimumReleaseAge: 2880
 
 minimumReleaseAgeExclude:
-  - "@mangabaclaw/crabline@0.1.11"
-  - "@mangabaclaw/fs-safe@0.5.5"
-  - "@mangabaclaw/libterminal@0.3.2"
-  - "@mangabaclaw/proxyline@0.3.4"
-  - "@mangabaclaw/uirouter@0.1.1"
+  - "@openclaw/crabline@0.1.11"
+  - "@openclaw/fs-safe@0.5.5"
+  - "@openclaw/libterminal@0.3.2"
+  - "@openclaw/proxyline@0.3.4"
+  - "@openclaw/uirouter@0.1.1"
   - "acpx"
   - "tokenjuice"
   - "@agentclientprotocol/sdk"
@@ -162,7 +162,7 @@ overrides:
   uuid: 14.0.1
 
 allowBuilds:
-  "@mangabaclaw/fs-safe": true
+  "@openclaw/fs-safe": true
   "@google/genai": true
   "@lydell/node-pty": true
   "@matrix-org/matrix-sdk-crypto-nodejs": true
@@ -178,9 +178,9 @@ allowBuilds:
   sharp: true
   tree-sitter-bash: false
   mangabaclaw: true
-  "@mangabaclaw/proxyline": true
+  "@openclaw/proxyline": true
   clawpdf: true
-  "@mangabaclaw/crabline": true
+  "@openclaw/crabline": true
   rastermill: true
   node-pty: true
 

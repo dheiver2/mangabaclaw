@@ -7,7 +7,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 const createAmbientNodeProxyAgentMock = vi.hoisted(() => vi.fn(() => ({ proxy: true })));
 const hasAmbientNodeProxyConfiguredMock = vi.hoisted(() => vi.fn(() => true));
 
-vi.mock("@mangabaclaw/proxyline", () => ({
+vi.mock("@openclaw/proxyline", () => ({
   createAmbientNodeProxyAgent: createAmbientNodeProxyAgentMock,
   hasAmbientNodeProxyConfigured: hasAmbientNodeProxyConfiguredMock,
 }));

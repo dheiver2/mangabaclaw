@@ -33,8 +33,8 @@ describe("widget theme bridge", () => {
       "--bg": "  #faf9f7  ",
       "--card": "#ffffff",
       "--text": "   ",
-      "--accent": "#bd4531",
-      "--primary": "#bd4531",
+      "--accent": "#D97706",
+      "--primary": "#D97706",
       "--primary-foreground": "#fff",
       "--mono": " ui-monospace ",
     });
@@ -51,8 +51,8 @@ describe("widget theme bridge", () => {
       tokens: {
         surface: "#faf9f7",
         card: "#ffffff",
-        accent: "#bd4531",
-        "accent-fill": "#bd4531",
+        accent: "#D97706",
+        "accent-fill": "#D97706",
         "accent-fg": "#fff",
         "font-mono": "ui-monospace",
       },
@@ -77,7 +77,7 @@ describe("widget theme bridge", () => {
 
   it("targets the exact origin for authenticated cross-origin embeds", () => {
     document.documentElement.dataset.themeMode = "dark";
-    stubComputedStyles({ "--bg": "#0e1015", "--accent": "#E94A12" });
+    stubComputedStyles({ "--bg": "#0e1015", "--accent": "#F6A21C" });
     const postMessage = vi.fn();
     const frame = { contentWindow: { postMessage } } as unknown as HTMLIFrameElement;
 
@@ -87,7 +87,7 @@ describe("widget theme bridge", () => {
       {
         type: "mangabaclaw:widget-theme",
         mode: "dark",
-        tokens: { surface: "#0e1015", accent: "#E94A12" },
+        tokens: { surface: "#0e1015", accent: "#F6A21C" },
       },
       "https://discussion.example",
     ]);

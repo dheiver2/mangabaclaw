@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { readSecretFileSync } from "@mangabaclaw/fs-safe/secret";
+import { readSecretFileSync } from "@openclaw/fs-safe/secret";
 import { parseVaultSecretId } from "./vault-secret-id.js";
 
 const KUBERNETES_SERVICE_ACCOUNT_TOKEN_PATH = "/var/run/secrets/kubernetes.io/serviceaccount/token";

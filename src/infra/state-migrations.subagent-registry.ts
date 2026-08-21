@@ -1,6 +1,6 @@
 // Doctor-only removal for the retired subagent run registry JSON store.
 import path from "node:path";
-import { root, type Root } from "@mangabaclaw/fs-safe";
+import { root, type Root } from "@openclaw/fs-safe";
 import { withLegacyMigrationStateLock } from "./state-migrations.lock.js";
 import {
   LegacyMigrationSourceClaim,

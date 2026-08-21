@@ -49,8 +49,10 @@ async function createBuiltInQaTransport(
     return createQaChannelTransport(context.state, context.adapterOptions?.transportPolicy);
   }
   if (context.driver === "crabline") {
-    const { resolveMangabaClawCrablineChannelDriverSelection } = await import("@mangabaclaw/crabline");
-    const selection = resolveMangabaClawCrablineChannelDriverSelection({ channel: context.channelId });
+    const { resolveMangabaClawCrablineChannelDriverSelection } = await import("@openclaw/crabline");
+    const selection = resolveMangabaClawCrablineChannelDriverSelection({
+      channel: context.channelId,
+    });
     const { createQaCrablineTransportAdapter } = await import("./crabline-transport.js");
     return await createQaCrablineTransportAdapter({
       outputDir: context.outputDir,

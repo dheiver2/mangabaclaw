@@ -1,5 +1,5 @@
 // @vitest-environment node
-import { notFound, type RouteLocation, type RouterHistory } from "@mangabaclaw/uirouter";
+import { notFound, type RouteLocation, type RouterHistory } from "@openclaw/uirouter";
 import { describe, expect, it, vi } from "vitest";
 import {
   agentRouteFromPath,

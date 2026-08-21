@@ -3,7 +3,7 @@ import { randomUUID } from "node:crypto";
 import fs from "node:fs";
 import { access, mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
-import type { MangabaClawCrablineChannelDriverSelection } from "@mangabaclaw/crabline";
+import type { MangabaClawCrablineChannelDriverSelection } from "@openclaw/crabline";
 import { coerceErrorMessage, toStringifiedError } from "mangabaclaw/plugin-sdk/error-runtime";
 import { isPathInside } from "mangabaclaw/plugin-sdk/file-access-runtime";
 import { runExec } from "mangabaclaw/plugin-sdk/process-runtime";

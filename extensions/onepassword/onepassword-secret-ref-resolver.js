@@ -3,7 +3,7 @@
 import fsSync from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { DEFAULT_SECRET_FILE_MAX_BYTES, tryReadSecretFileSync } from "@mangabaclaw/fs-safe/secret";
+import { DEFAULT_SECRET_FILE_MAX_BYTES, tryReadSecretFileSync } from "@openclaw/fs-safe/secret";
 import { coerceErrorMessage as errorMessage } from "mangabaclaw/plugin-sdk/error-runtime";
 import { runCommandBuffered } from "mangabaclaw/plugin-sdk/process-runtime";
 import { resolveTrustedOnePasswordCli } from "./onepassword-op-path.js";

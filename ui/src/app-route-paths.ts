@@ -1,7 +1,7 @@
 import { inferControlUiFocusBasePath } from "@mangabaclaw/session-url-contract";
-import { normalizeRouteBasePath, normalizeRoutePath } from "@mangabaclaw/uirouter";
-import type { RouteLocation } from "@mangabaclaw/uirouter";
 import { isValidWorkboardBoardId } from "@mangabaclaw/workboard-contract";
+import { normalizeRouteBasePath, normalizeRoutePath } from "@openclaw/uirouter";
+import type { RouteLocation } from "@openclaw/uirouter";
 import { DEFAULT_AGENT_PANEL, isAgentsPanel, type AgentsPanel } from "./lib/agents/panels.ts";
 import type { BoardFace } from "./lib/board/settings.ts";
 export const INTERNAL_AGENT_PATH_PARAM = "__mangabaclawAgentPath";

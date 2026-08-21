@@ -409,7 +409,7 @@ describe("plugin manifest", () => {
     expect(resolverSource).toContain("#!/usr/bin/env node");
     const pluginSdkRootImport = ["mangabaclaw", "plugin-sdk"].join("/");
     expect(resolverSource).not.toContain(pluginSdkRootImport);
-    expect(resolverSource).toContain("@mangabaclaw/fs-safe/secret");
+    expect(resolverSource).toContain("@openclaw/fs-safe/secret");
     expect(packageJson.mangabaclaw?.build?.staticAssets).toContainEqual({
       source: "./vault-secret-ref-resolver.js",
       output: "vault-secret-ref-resolver.js",

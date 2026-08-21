@@ -1,4 +1,4 @@
-import { definePage } from "@mangabaclaw/uirouter";
+import { definePage } from "@openclaw/uirouter";
 import { html } from "lit";
 import { routePageSpec } from "../../app-route-paths.ts";
 import type { ApplicationContext } from "../../app/context.ts";
@@ -29,6 +29,8 @@ export const page = definePage({
     import("./model-providers-page.ts").then(() => ({
       header: true,
       render: (data: ModelProvidersRouteData | undefined) =>
-        html`<mangabaclaw-model-providers-page .routeData=${data}></mangabaclaw-model-providers-page>`,
+        html`<mangabaclaw-model-providers-page
+          .routeData=${data}
+        ></mangabaclaw-model-providers-page>`,
     })),
 });

@@ -1,4 +1,4 @@
-import type { RouteLocation, RouterState } from "@mangabaclaw/uirouter";
+import type { RouteLocation, RouterState } from "@openclaw/uirouter";
 import { isSessionRouteId } from "../app-route-paths.ts";
 import type { RouteId } from "../app-routes.ts";
 import { selectRenderedRouteMatch } from "./router-outlet.ts";

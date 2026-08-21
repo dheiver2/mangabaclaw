@@ -10,8 +10,8 @@ import {
   readFileDescriptorBoundedSync as readFileDescriptorBoundedSyncFsSafe,
   type RootFileOpenFailure,
   type RootFileOpenResult,
-} from "@mangabaclaw/fs-safe/advanced";
-import { FsSafeError } from "@mangabaclaw/fs-safe/errors";
+} from "@openclaw/fs-safe/advanced";
+import { FsSafeError } from "@openclaw/fs-safe/errors";
 
 // Root-scoped file open helpers. Use these for user paths that must stay under
 // an already trusted boundary.
@@ -22,7 +22,7 @@ export {
   openRootFileSync,
   type RootFileOpenFailure,
   type RootFileOpenResult,
-} from "@mangabaclaw/fs-safe/advanced";
+} from "@openclaw/fs-safe/advanced";
 
 /**
  * Opens a root-scoped file after canonicalizing symlink parents. fs-safe

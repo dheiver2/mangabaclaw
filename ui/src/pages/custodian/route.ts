@@ -1,5 +1,5 @@
-import type { RouteLocation } from "@mangabaclaw/uirouter";
-import { definePage } from "@mangabaclaw/uirouter";
+import type { RouteLocation } from "@openclaw/uirouter";
+import { definePage } from "@openclaw/uirouter";
 import { routePageSpec } from "../../app-route-paths.ts";
 import type { ApplicationContext } from "../../app/context.ts";
 import { resolveOnboardingMode } from "../../app/onboarding-mode.ts";

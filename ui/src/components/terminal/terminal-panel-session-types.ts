@@ -2,7 +2,7 @@ import type {
   createTerminalDefaultColorQueryResponder,
   CreateGhosttyTerminalOptions,
   GhosttyTerminalController,
-} from "@mangabaclaw/libterminal/browser";
+} from "@openclaw/libterminal/browser";
 import type { ReactiveControllerHost } from "lit";
 import { parseCatalogSessionKey } from "../../lib/sessions/catalog-key.ts";
 import type { TerminalGatewayClient } from "./terminal-connection.ts";

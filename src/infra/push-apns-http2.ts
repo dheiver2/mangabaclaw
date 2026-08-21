@@ -4,7 +4,7 @@ import http2 from "node:http2";
 import tls from "node:tls";
 import { decodeTextPrefix } from "@mangabaclaw/normalization-core";
 import { resolveTimerTimeoutMs } from "@mangabaclaw/normalization-core/number-coercion";
-import { openProxyConnectTunnel } from "@mangabaclaw/proxyline";
+import { openProxyConnectTunnel } from "@openclaw/proxyline";
 import { toErrorObject } from "./errors.js";
 import {
   getActiveManagedProxyUrl,

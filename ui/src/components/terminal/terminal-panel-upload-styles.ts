@@ -19,8 +19,8 @@ export const terminalPanelUploadStyles = css`
     inset: 8px;
     display: grid;
     place-items: center;
-    border: 1px dashed var(--accent, #E94A12);
-    background: color-mix(in srgb, var(--bg, #0e1015) 88%, var(--accent, #E94A12));
+    border: 1px dashed var(--accent, #f6a21c);
+    background: color-mix(in srgb, var(--bg, #0e1015) 88%, var(--accent, #f6a21c));
     color: var(--text, #d7dae0);
     font-size: 13px;
     pointer-events: none;
@@ -92,11 +92,11 @@ export const terminalPanelUploadStyles = css`
     color: var(--text, #d7dae0);
   }
   .tp-upload-card__action:focus-visible {
-    outline: 1px solid var(--accent, #E94A12);
+    outline: 1px solid var(--accent, #f6a21c);
     outline-offset: 1px;
   }
   .tp-upload-retry {
-    color: var(--accent, #E94A12);
+    color: var(--accent, #f6a21c);
   }
   .tp-upload-progress {
     position: relative;
@@ -112,7 +112,7 @@ export const terminalPanelUploadStyles = css`
     inset-block: 0;
     left: 0;
     border-radius: inherit;
-    background: var(--accent, #E94A12);
+    background: var(--accent, #f6a21c);
   }
   .tp-upload-progress__fill {
     transition: width 180ms ease-out;

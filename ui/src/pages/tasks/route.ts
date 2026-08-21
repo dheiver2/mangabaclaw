@@ -1,4 +1,4 @@
-import { definePage } from "@mangabaclaw/uirouter";
+import { definePage } from "@openclaw/uirouter";
 import { html } from "lit";
 import { routePageSpec } from "../../app-route-paths.ts";
 
