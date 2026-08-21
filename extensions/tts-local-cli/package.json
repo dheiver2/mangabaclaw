@@ -1,0 +1,15 @@
+{
+  "name": "@mangabaclaw/tts-local-cli",
+  "version": "2026.8.1",
+  "private": true,
+  "description": "MangabaClaw local CLI TTS plugin",
+  "type": "module",
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*"
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

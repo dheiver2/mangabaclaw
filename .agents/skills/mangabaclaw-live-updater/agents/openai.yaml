@@ -1,0 +1,4 @@
+interface:
+  display_name: "MangabaClaw Live Updater"
+  short_description: "Maintain live main, CI, gateway, and Mac app"
+  default_prompt: "Use $mangabaclaw-live-updater to fast-forward the canonical MangabaClaw main mirror, verify the managed runtime and exact-head CI, repair failures through a PR, or run full release validation without publishing."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "MangabaClaw Plugin Pre-Release Testing"
+  short_description: "Plan plugin release validation"
+  default_prompt: "Use $release-mangabaclaw-plugin-testing to plan or run pre-release MangabaClaw plugin validation across package, lifecycle, doctor, gateway, SDK, and live-ish proof."

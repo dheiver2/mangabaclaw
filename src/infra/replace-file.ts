@@ -1,0 +1,12 @@
+// Wraps fs-safe atomic replacement and move helpers for MangabaClaw install flows.
+import "./fs-safe-defaults.js";
+import { replaceFileAtomic as replaceFileAtomicBase } from "@mangabaclaw/fs-safe/atomic";
+
+export {
+  movePathWithCopyFallback,
+  replaceDirectoryAtomic,
+  replaceFileAtomicSync,
+} from "@mangabaclaw/fs-safe/atomic";
+
+/** Atomic file replacement primitive re-exported through the fs-safe defaults shim. */
+export const replaceFileAtomic = replaceFileAtomicBase;

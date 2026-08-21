@@ -1,0 +1,19 @@
+{
+  "name": "@mangabaclaw/xai-plugin",
+  "version": "2026.8.1",
+  "private": true,
+  "description": "MangabaClaw xAI plugin",
+  "type": "module",
+  "dependencies": {
+    "typebox": "1.3.6",
+    "ws": "8.21.1"
+  },
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*"
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "MangabaClaw CI Limits"
+  short_description: "Tune MangabaClaw CI fanout and runner budgets"
+  default_prompt: "Use $mangabaclaw-ci-limits to inspect MangabaClaw CI pressure, tune runner-registration fanout safely, and document the exact validation before landing."

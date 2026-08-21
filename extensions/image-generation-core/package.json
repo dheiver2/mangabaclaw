@@ -1,0 +1,10 @@
+{
+  "name": "@mangabaclaw/image-generation-core",
+  "version": "2026.8.1",
+  "private": true,
+  "description": "MangabaClaw image generation runtime package",
+  "type": "module",
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*"
+  }
+}

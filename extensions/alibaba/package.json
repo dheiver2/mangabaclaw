@@ -1,0 +1,15 @@
+{
+  "name": "@mangabaclaw/alibaba-provider",
+  "version": "2026.8.1",
+  "private": true,
+  "description": "MangabaClaw Alibaba Model Studio video provider plugin",
+  "type": "module",
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*"
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

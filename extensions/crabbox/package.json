@@ -1,0 +1,23 @@
+{
+  "name": "@mangabaclaw/crabbox-provider",
+  "version": "2026.8.1",
+  "private": true,
+  "description": "MangabaClaw cloud worker provider backed by the Crabbox CLI",
+  "type": "module",
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*"
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "build": {
+      "staticAssets": [
+        {
+          "source": "./assets/mangabaclaw-worker-wallpaper.png",
+          "output": "assets/mangabaclaw-worker-wallpaper.png"
+        }
+      ]
+    }
+  }
+}

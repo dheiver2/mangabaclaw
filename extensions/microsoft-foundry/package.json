@@ -1,0 +1,15 @@
+{
+  "name": "@mangabaclaw/microsoft-foundry",
+  "version": "2026.8.1",
+  "private": true,
+  "description": "MangabaClaw Microsoft Foundry provider plugin",
+  "type": "module",
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*"
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "@mangabaclaw/qa-lab",
+  "version": "2026.8.1",
+  "private": true,
+  "description": "MangabaClaw QA lab plugin with private debugger UI and scenario runner",
+  "type": "module",
+  "dependencies": {
+    "@copilotkit/aimock": "1.37.4",
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "@mangabaclaw/crabline": "0.1.11",
+    "playwright-core": "1.62.1",
+    "semver": "7.8.5",
+    "ws": "8.21.1",
+    "yaml": "2.9.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@mangabaclaw/discord": "workspace:*",
+    "@mangabaclaw/matrix": "workspace:*",
+    "@mangabaclaw/plugin-sdk": "workspace:*",
+    "@mangabaclaw/slack": "workspace:*",
+    "@mangabaclaw/whatsapp": "workspace:*",
+    "mangabaclaw": "workspace:*",
+    "vite": "8.1.5"
+  },
+  "peerDependencies": {
+    "mangabaclaw": ">=2026.8.1"
+  },
+  "peerDependenciesMeta": {
+    "mangabaclaw": {
+      "optional": true
+    }
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "compat": {
+      "pluginApi": ">=2026.8.1"
+    }
+  }
+}

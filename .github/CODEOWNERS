@@ -1,0 +1,71 @@
+# Protect the ownership rules themselves.
+/.github/CODEOWNERS @steipete
+
+# WARNING: GitHub CODEOWNERS uses last-match-wins semantics.
+# If you add overlapping rules below the secops block, include @mangabaclaw/mangabaclaw-secops
+# on those entries too or you can silently remove secops review routing.
+# Security-sensitive code, config, and docs require secops owner involvement
+# under repository policy. Live branch/ruleset settings decide merge enforcement.
+/SECURITY.md @mangabaclaw/mangabaclaw-secops
+/.github/dependabot.yml @mangabaclaw/mangabaclaw-secops
+/.github/codeql/ @mangabaclaw/mangabaclaw-secops
+/.github/workflows/codeql.yml @mangabaclaw/mangabaclaw-secops
+/.github/workflows/codeql-android-critical-security.yml @mangabaclaw/mangabaclaw-secops
+/.github/workflows/codeql-critical-quality.yml @mangabaclaw/mangabaclaw-secops
+/.github/workflows/dependency-guard.yml @mangabaclaw/mangabaclaw-secops
+/.github/workflows/security-sensitive-guard.yml @mangabaclaw/mangabaclaw-secops
+/test/scripts/dependency-guard-workflow.test.ts @mangabaclaw/mangabaclaw-secops
+/test/scripts/dependency-guard-script.test.ts @mangabaclaw/mangabaclaw-secops
+/test/scripts/security-sensitive-guard-workflow.test.ts @mangabaclaw/mangabaclaw-secops
+/test/scripts/security-sensitive-guard-script.test.ts @mangabaclaw/mangabaclaw-secops
+/scripts/github/dependency-guard.mjs @mangabaclaw/mangabaclaw-secops
+/scripts/github/guard-shared.mjs @mangabaclaw/mangabaclaw-secops
+/scripts/github/security-sensitive-guard.mjs @mangabaclaw/mangabaclaw-secops
+/.gitignore @mangabaclaw/mangabaclaw-secops
+/package-lock.json @mangabaclaw/mangabaclaw-secops
+/extensions/*/package-lock.json @mangabaclaw/mangabaclaw-secops
+/pnpm-lock.yaml @mangabaclaw/mangabaclaw-secops
+/scripts/generate-npm-package-lock.mjs @mangabaclaw/mangabaclaw-secops
+/src/security/ @mangabaclaw/mangabaclaw-secops
+/src/secrets/ @mangabaclaw/mangabaclaw-secops
+/src/config/*secret*.ts @mangabaclaw/mangabaclaw-secops
+/src/config/**/*secret*.ts @mangabaclaw/mangabaclaw-secops
+/src/gateway/*auth*.ts @mangabaclaw/mangabaclaw-secops
+/src/gateway/**/*auth*.ts @mangabaclaw/mangabaclaw-secops
+/src/gateway/*secret*.ts @mangabaclaw/mangabaclaw-secops
+/src/gateway/**/*secret*.ts @mangabaclaw/mangabaclaw-secops
+/src/gateway/security-path*.ts @mangabaclaw/mangabaclaw-secops
+/src/gateway/resolve-configured-secret-input-string*.ts @mangabaclaw/mangabaclaw-secops
+/packages/gateway-protocol/src/**/*secret*.ts @mangabaclaw/mangabaclaw-secops
+/src/gateway/server-methods/secrets*.ts @mangabaclaw/mangabaclaw-secops
+/src/agents/*auth*.ts @mangabaclaw/mangabaclaw-secops
+/src/agents/**/*auth*.ts @mangabaclaw/mangabaclaw-secops
+/src/agents/auth-profiles*.ts @mangabaclaw/mangabaclaw-secops
+/src/agents/auth-health*.ts @mangabaclaw/mangabaclaw-secops
+/src/agents/auth-profiles/ @mangabaclaw/mangabaclaw-secops
+/src/agents/sandbox.ts @mangabaclaw/mangabaclaw-secops
+/src/agents/sandbox-*.ts @mangabaclaw/mangabaclaw-secops
+/src/agents/sandbox/ @mangabaclaw/mangabaclaw-secops
+/src/infra/secret-file*.ts @mangabaclaw/mangabaclaw-secops
+/src/cron/stagger.ts @mangabaclaw/mangabaclaw-secops
+/src/cron/service/jobs.ts @mangabaclaw/mangabaclaw-secops
+/docs/security/ @mangabaclaw/mangabaclaw-secops
+/docs/gateway/authentication.md @mangabaclaw/mangabaclaw-secops
+/docs/gateway/sandbox-vs-tool-policy-vs-elevated.md @mangabaclaw/mangabaclaw-secops
+/docs/gateway/sandboxing.md @mangabaclaw/mangabaclaw-secops
+/docs/gateway/secrets-plan-contract.md @mangabaclaw/mangabaclaw-secops
+/docs/gateway/secrets.md @mangabaclaw/mangabaclaw-secops
+/docs/gateway/security/ @mangabaclaw/mangabaclaw-secops
+/docs/cli/approvals.md @mangabaclaw/mangabaclaw-secops
+/docs/cli/sandbox.md @mangabaclaw/mangabaclaw-secops
+/docs/cli/security.md @mangabaclaw/mangabaclaw-secops
+/docs/cli/secrets.md @mangabaclaw/mangabaclaw-secops
+/docs/reference/secretref-credential-surface.md @mangabaclaw/mangabaclaw-secops
+/docs/reference/secretref-user-supplied-credentials-matrix.json @mangabaclaw/mangabaclaw-secops
+
+# Release workflow and its supporting release-path checks.
+/.github/workflows/mangabaclaw-npm-release.yml @mangabaclaw/mangabaclaw-release-managers
+/docs/reference/RELEASING.md @mangabaclaw/mangabaclaw-release-managers
+/scripts/mangabaclaw-npm-publish.sh @mangabaclaw/mangabaclaw-release-managers
+/scripts/mangabaclaw-npm-release-check.ts @mangabaclaw/mangabaclaw-release-managers
+/scripts/release-check.ts @mangabaclaw/mangabaclaw-release-managers

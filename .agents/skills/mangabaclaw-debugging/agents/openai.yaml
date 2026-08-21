@@ -1,0 +1,4 @@
+interface:
+  display_name: "MangabaClaw Debugging"
+  short_description: "Debug model, tool, stream, and live behavior"
+  default_prompt: "Use $mangabaclaw-debugging to identify the right MangabaClaw debug boundary, turn on targeted logs, and choose the narrowest local or Crabbox proof."

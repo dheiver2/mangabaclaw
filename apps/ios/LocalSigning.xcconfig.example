@@ -1,0 +1,18 @@
+// Copy to LocalSigning.xcconfig for personal local signing overrides.
+// This file is only an example and should stay committed.
+
+MANGABACLAW_CODE_SIGN_STYLE = Automatic
+MANGABACLAW_CODE_SIGN_IDENTITY = Apple Development
+MANGABACLAW_DEVELOPMENT_TEAM = YOUR_TEAM_ID
+
+MANGABACLAW_APP_BUNDLE_ID = ai.mangabaclawfoundation.app
+MANGABACLAW_SHARE_BUNDLE_ID = ai.mangabaclawfoundation.app.share
+MANGABACLAW_APP_GROUP_ID = group.ai.mangabaclawfoundation.app.shared
+MANGABACLAW_ACTIVITY_WIDGET_BUNDLE_ID = ai.mangabaclawfoundation.app.activitywidget
+MANGABACLAW_WATCH_APP_BUNDLE_ID = ai.mangabaclawfoundation.app.watchkitapp
+
+// Leave empty with automatic signing.
+MANGABACLAW_APP_PROFILE =
+MANGABACLAW_SHARE_PROFILE =
+MANGABACLAW_ACTIVITY_WIDGET_PROFILE =
+MANGABACLAW_WATCH_APP_PROFILE =

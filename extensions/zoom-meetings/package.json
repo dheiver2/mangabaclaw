@@ -1,0 +1,47 @@
+{
+  "name": "@mangabaclaw/zoom-meetings",
+  "version": "2026.8.1",
+  "description": "MangabaClaw Zoom browser meeting participant plugin.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mangabaclaw/mangabaclaw"
+  },
+  "type": "module",
+  "dependencies": {
+    "typebox": "1.3.6"
+  },
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*",
+    "mangabaclaw": "workspace:*"
+  },
+  "peerDependencies": {
+    "mangabaclaw": ">=2026.8.1"
+  },
+  "peerDependenciesMeta": {
+    "mangabaclaw": {
+      "optional": true
+    }
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "install": {
+      "clawhubSpec": "clawhub:@mangabaclaw/zoom-meetings",
+      "npmSpec": "@mangabaclaw/zoom-meetings",
+      "defaultChoice": "npm",
+      "minHostVersion": ">=2026.7.2"
+    },
+    "compat": {
+      "pluginApi": ">=2026.8.1"
+    },
+    "build": {
+      "mangabaclawVersion": "2026.8.1",
+      "bundledDist": false
+    },
+    "release": {
+      "publishToClawHub": true,
+      "publishToNpm": true
+    }
+  }
+}

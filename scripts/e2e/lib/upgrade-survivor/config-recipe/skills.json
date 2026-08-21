@@ -1,0 +1,7 @@
+{
+  "allowBundled": ["memory", "mangabaclaw-testing"],
+  "limits": {
+    "maxSkillsInPrompt": 8,
+    "maxSkillsPromptChars": 30000
+  }
+}

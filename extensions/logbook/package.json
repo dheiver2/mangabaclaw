@@ -1,0 +1,24 @@
+{
+  "name": "@mangabaclaw/logbook",
+  "version": "2026.8.1",
+  "private": true,
+  "description": "MangabaClaw automatic work journal plugin",
+  "type": "module",
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*",
+    "mangabaclaw": "workspace:*"
+  },
+  "peerDependencies": {
+    "mangabaclaw": ">=2026.8.1"
+  },
+  "peerDependenciesMeta": {
+    "mangabaclaw": {
+      "optional": true
+    }
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

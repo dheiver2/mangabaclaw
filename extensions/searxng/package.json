@@ -1,0 +1,36 @@
+{
+  "name": "@mangabaclaw/searxng-plugin",
+  "version": "2026.8.1",
+  "description": "MangabaClaw SearXNG plugin",
+  "type": "module",
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*"
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "install": {
+      "clawhubSpec": "clawhub:@mangabaclaw/searxng-plugin",
+      "npmSpec": "@mangabaclaw/searxng-plugin",
+      "defaultChoice": "npm",
+      "minHostVersion": ">=2026.6.9",
+      "allowInvalidConfigRecovery": true
+    },
+    "compat": {
+      "pluginApi": ">=2026.8.1"
+    },
+    "build": {
+      "mangabaclawVersion": "2026.8.1",
+      "bundledDist": false
+    },
+    "release": {
+      "publishToClawHub": true,
+      "publishToNpm": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mangabaclaw/mangabaclaw"
+  }
+}

@@ -1,0 +1,30 @@
+/* MangabaClaw source: "MangabaClaw uses your calendars to show events and scheduling context when you enable calendar access." */
+"NSCalendarsFullAccessUsageDescription" = "يستخدم MangabaClaw تقويماتك لعرض الأحداث وسياق الجدولة عند تفعيل الوصول إلى التقويم.";
+/* MangabaClaw source: "MangabaClaw uses your calendars to show events and scheduling context when you enable calendar access." */
+"NSCalendarsUsageDescription" = "يستخدم MangabaClaw تقويماتك لعرض الأحداث وسياق الجدولة عند تفعيل الوصول إلى التقويم.";
+/* MangabaClaw source: "MangabaClaw uses your calendars to add events when you enable calendar access." */
+"NSCalendarsWriteOnlyAccessUsageDescription" = "يستخدم MangabaClaw تقويماتك لإضافة أحداث عند تفعيل الوصول إلى التقويم.";
+/* MangabaClaw source: "MangabaClaw uses the camera when you scan a Gateway setup QR code or ask your paired Gateway or assistant to capture a photo or short video from this iPhone, for example to connect to your Gateway or show your assistant a document, device screen, or workspace." */
+"NSCameraUsageDescription" = "يستخدم MangabaClaw الكاميرا عند مسح رمز QR لإعداد Gateway أو عندما تطلب من Gateway المقترن أو المساعد التقاط صورة أو فيديو قصير من هذا iPhone، مثلًا للاتصال بـ Gateway أو لعرض مستند أو شاشة جهاز أو مساحة عمل على مساعدك.";
+/* MangabaClaw source: "MangabaClaw uses your contacts so you can search and reference people while using the assistant." */
+"NSContactsUsageDescription" = "يستخدم MangabaClaw جهات اتصالك حتى تتمكن من البحث عن الأشخاص والإشارة إليهم أثناء استخدام المساعد.";
+/* MangabaClaw source: "MangabaClaw discovers and connects to your MangabaClaw gateway on the local network." */
+"NSLocalNetworkUsageDescription" = "يكتشف MangabaClaw ويتصل ببوابة MangabaClaw الخاصة بك على الشبكة المحلية.";
+/* MangabaClaw source: "MangabaClaw can share your location in the background when you enable Always." */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "يمكن لـ MangabaClaw مشاركة موقعك في الخلفية عند تفعيل دائمًا.";
+/* MangabaClaw source: "MangabaClaw uses your location when you allow location sharing." */
+"NSLocationWhenInUseUsageDescription" = "يستخدم MangabaClaw موقعك عندما تسمح بمشاركة الموقع.";
+/* MangabaClaw source: "MangabaClaw uses the microphone for realtime chat, voice wake, push-to-talk, and voice notes." */
+"NSMicrophoneUsageDescription" = "يستخدم MangabaClaw الميكروفون للدردشة الفورية، والتنبيه الصوتي، والضغط للتحدث، والملاحظات الصوتية.";
+/* MangabaClaw source: "MangabaClaw may use motion data to support device-aware interactions and automations." */
+"NSMotionUsageDescription" = "قد يستخدم MangabaClaw بيانات الحركة لدعم التفاعلات والأتمتة الواعية بالجهاز.";
+/* MangabaClaw source: "MangabaClaw reads your steps, sleep, resting heart rate, and workouts from the Apple Health app to create summaries you request and send them through your Gateway to your configured AI provider." */
+"NSHealthShareUsageDescription" = "يقرأ MangabaClaw بيانات خطواتك ونومك ومعدل نبض قلبك أثناء الراحة وتمارينك من تطبيق صحّة Apple لإنشاء الملخصات التي تطلبها وإرسالها عبر Gateway إلى مزوّد الذكاء الاصطناعي الذي أعددته.";
+/* MangabaClaw source: "MangabaClaw does not write to the Apple Health app. It uses read-only data to create summaries you request and send them through your Gateway to your configured AI provider." */
+"NSHealthUpdateUsageDescription" = "لا يكتب MangabaClaw أي بيانات إلى تطبيق صحّة Apple. بل يستخدم البيانات المتاحة للقراءة فقط لإنشاء الملخصات التي تطلبها وإرسالها عبر Gateway إلى مزوّد الذكاء الاصطناعي الذي أعددته.";
+/* MangabaClaw source: "MangabaClaw lets your assistant read photos you allow and lets you choose photos to share." */
+"NSPhotoLibraryUsageDescription" = "يتيح MangabaClaw لمساعدك قراءة الصور التي تسمح بها، ويتيح لك اختيار الصور لمشاركتها.";
+/* MangabaClaw source: "MangabaClaw uses your reminders to list, add, and complete tasks when you enable reminders access." */
+"NSRemindersFullAccessUsageDescription" = "يستخدم MangabaClaw تذكيراتك لعرض المهام وإضافتها وإكمالها عند تفعيل الوصول إلى التذكيرات.";
+/* MangabaClaw source: "MangabaClaw uses on-device speech recognition for talk mode and voice wake." */
+"NSSpeechRecognitionUsageDescription" = "يستخدم MangabaClaw التعرف على الكلام على الجهاز لوضع التحدث والتنبيه الصوتي.";

@@ -1,0 +1,236 @@
+---
+summary: "Run MangabaClaw in a sandboxed macOS VM (local or hosted) when you need isolation or iMessage"
+read_when:
+  - You want MangabaClaw isolated from your main macOS environment
+  - You want iMessage integration in a sandbox
+  - You want a resettable macOS environment you can clone
+  - You want to compare local vs hosted macOS VM options
+title: "macOS VMs"
+---
+
+## Recommended default (most users)
+
+- **Small Linux VPS** for an always-on Gateway and low cost. See [VPS hosting](/vps).
+- **Dedicated hardware** (Mac mini or Linux box) if you want full control and a **residential IP** for browser automation. Many sites block data center IPs, so local browsing often works better.
+- **Hybrid**: keep the Gateway on a cheap VPS, and connect your Mac as a **node** when you need browser/UI automation. See [Nodes](/nodes) and [Gateway remote](/gateway/remote).
+
+Use a macOS VM only when you specifically need macOS-only capabilities such as iMessage, or want strict isolation from your daily Mac.
+
+## macOS VM options
+
+### Local VM on your Apple Silicon Mac (Lume)
+
+Run MangabaClaw in a sandboxed macOS VM on your existing Apple Silicon Mac using [Lume](https://cua.ai/docs/lume). This gives you:
+
+- Full macOS environment in isolation (your host stays clean)
+- iMessage support via `imsg`; the default local path is impossible on Linux/Windows
+- Instant reset by cloning VMs
+- No extra hardware or cloud costs
+
+### Hosted Mac providers (cloud)
+
+If you want macOS in the cloud, hosted Mac providers work too:
+
+- [MacStadium](https://www.macstadium.com/) (hosted Macs)
+- Other hosted Mac vendors also work; follow their VM + SSH docs
+
+Once you have SSH access to a macOS VM, continue at [Install MangabaClaw](#6-install-mangabaclaw) below.
+
+## Quick path (Lume, experienced users)
+
+1. Install Lume.
+2. `lume create mangabaclaw --os macos --ipsw latest`
+3. Complete Setup Assistant, enable Remote Login (SSH).
+4. `lume run mangabaclaw --no-display`
+5. SSH in, install MangabaClaw, configure channels.
+6. Done.
+
+## What you need (Lume)
+
+- Apple Silicon Mac (M1/M2/M3/M4)
+- macOS Sequoia or later on the host
+- ~60 GB free disk space per VM
+- ~20 minutes
+
+## 1) Install Lume
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/trycua/cua/main/libs/lume/scripts/install.sh)"
+```
+
+If `~/.local/bin` is not in your PATH:
+
+```bash
+echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.zshrc && source ~/.zshrc
+```
+
+Verify:
+
+```bash
+lume --version
+```
+
+Docs: [Lume Installation](https://cua.ai/docs/lume/guide/getting-started/installation)
+
+## 2) Create the macOS VM
+
+```bash
+lume create mangabaclaw --os macos --ipsw latest
+```
+
+This downloads macOS and creates the VM. A VNC window opens automatically.
+
+<Note>
+The download can take a while depending on your connection.
+</Note>
+
+## 3) Complete Setup Assistant
+
+In the VNC window:
+
+1. Select language and region.
+2. Skip Apple ID (or sign in if you want iMessage later).
+3. Create a user account (remember the username and password).
+4. Skip all optional features.
+
+After setup completes:
+
+1. Enable SSH: System Settings -> General -> Sharing, enable "Remote Login".
+2. For headless VM use, enable auto-login: System Settings -> Users & Groups, select "Automatically log in as:", and choose the VM user.
+
+## 4) Get the VM IP address
+
+```bash
+lume get mangabaclaw
+```
+
+Look for the IP address (usually `192.168.64.x`).
+
+## 5) SSH into the VM
+
+```bash
+ssh youruser@192.168.64.X
+```
+
+Replace `youruser` with the account you created, and the IP with your VM's IP.
+
+## 6) Install MangabaClaw
+
+Inside the VM, use the following command on npm 12 or npm 11.16+. On npm 11.15
+and earlier, omit `--allow-scripts=mangabaclaw`.
+
+```bash
+npm install -g mangabaclaw@latest --allow-scripts=mangabaclaw
+mangabaclaw onboard --install-daemon
+```
+
+Follow the onboarding prompts to set up your model provider (Anthropic, OpenAI, etc.).
+
+## 7) Configure channels
+
+Keep the Telegram token in the Gateway environment rather than copying it into
+`mangabaclaw.json`. Add `TELEGRAM_BOT_TOKEN=<bot-token>` to
+`~/.mangabaclaw/.env`, then load it in the current shell and add the channel:
+
+```bash
+export TELEGRAM_BOT_TOKEN="<bot-token>"
+mangabaclaw channels add --channel telegram --use-env
+```
+
+The managed Gateway reads the same state-directory `.env` after restart. For
+WhatsApp, configure your allowlist and then scan the login QR code:
+
+```bash
+mangabaclaw config set channels.whatsapp.dmPolicy allowlist
+mangabaclaw config set channels.whatsapp.allowFrom '["+15551234567"]' --strict-json
+mangabaclaw channels login --channel whatsapp
+```
+
+## 8) Run the VM headlessly
+
+Stop the VM and restart without display:
+
+```bash
+lume stop mangabaclaw
+lume run mangabaclaw --no-display
+```
+
+The VM runs in the background; MangabaClaw's daemon keeps the gateway running. To check status:
+
+```bash
+ssh youruser@192.168.64.X "mangabaclaw status"
+```
+
+## Bonus: iMessage integration
+
+This is the killer feature of running on macOS. Use [iMessage](/channels/imessage) with `imsg` to add Messages to MangabaClaw.
+
+Inside the VM:
+
+1. Sign in to Messages.
+2. Install `imsg`.
+3. Grant Full Disk Access and Automation permission for the process running MangabaClaw/`imsg`.
+4. Verify RPC support with `imsg rpc --help`.
+
+Add to your MangabaClaw config:
+
+```json5
+{
+  channels: {
+    imessage: {
+      enabled: true,
+      cliPath: "imsg",
+      dbPath: "~/Library/Messages/chat.db",
+    },
+  },
+}
+```
+
+Restart the gateway. Your agent can now send and receive iMessages. Full setup details: [iMessage channel](/channels/imessage).
+
+## Save a golden image
+
+Before customizing further, snapshot your clean state:
+
+```bash
+lume stop mangabaclaw
+lume clone mangabaclaw mangabaclaw-golden
+```
+
+Reset anytime:
+
+```bash
+lume stop mangabaclaw && lume delete mangabaclaw
+lume clone mangabaclaw-golden mangabaclaw
+lume run mangabaclaw --no-display
+```
+
+## Running 24/7
+
+Keep the VM running by:
+
+- Keeping your Mac plugged in
+- Disabling sleep in System Settings -> Energy Saver
+- Using `caffeinate` if needed
+
+For true always-on, consider a dedicated Mac mini or a small VPS. See [VPS hosting](/vps).
+
+## Troubleshooting
+
+| Problem                  | Solution                                                                            |
+| ------------------------ | ----------------------------------------------------------------------------------- |
+| Cannot SSH into VM       | Check "Remote Login" is enabled in the VM's System Settings                         |
+| VM IP not showing        | Wait for VM to fully boot, run `lume get mangabaclaw` again                            |
+| Lume command not found   | Add `~/.local/bin` to your PATH                                                     |
+| WhatsApp QR not scanning | Ensure you are logged into the VM (not host) when running `mangabaclaw channels login` |
+
+## Related docs
+
+- [VPS hosting](/vps)
+- [Nodes](/nodes)
+- [Gateway remote](/gateway/remote)
+- [iMessage channel](/channels/imessage)
+- [Lume Quickstart](https://cua.ai/docs/lume/guide/getting-started/quickstart)
+- [Lume CLI Reference](https://cua.ai/docs/lume/reference/cli-reference)
+- [Unattended VM Setup](https://cua.ai/docs/lume/guide/fundamentals/unattended-setup) (advanced)
+- [Docker Sandboxing](/install/docker) (alternative isolation approach)

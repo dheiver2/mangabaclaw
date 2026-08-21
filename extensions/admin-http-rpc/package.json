@@ -1,0 +1,15 @@
+{
+  "name": "@mangabaclaw/admin-http-rpc",
+  "version": "2026.8.1",
+  "private": true,
+  "description": "MangabaClaw admin HTTP RPC endpoint",
+  "type": "module",
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*"
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

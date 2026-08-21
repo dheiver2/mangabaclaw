@@ -1,0 +1,38 @@
+{
+  "name": "@mangabaclaw/amazon-bedrock-mantle-provider",
+  "version": "2026.8.1",
+  "description": "MangabaClaw Amazon Bedrock Mantle provider plugin for OpenAI-compatible model routing.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mangabaclaw/mangabaclaw"
+  },
+  "type": "module",
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.115.0",
+    "@aws/bedrock-token-generator": "1.1.0"
+  },
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*"
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "install": {
+      "npmSpec": "@mangabaclaw/amazon-bedrock-mantle-provider",
+      "defaultChoice": "npm",
+      "minHostVersion": ">=2026.5.12-beta.1"
+    },
+    "compat": {
+      "pluginApi": ">=2026.8.1"
+    },
+    "build": {
+      "mangabaclawVersion": "2026.8.1",
+      "bundledDist": false
+    },
+    "release": {
+      "publishToClawHub": true,
+      "publishToNpm": true
+    }
+  }
+}

@@ -1,0 +1,157 @@
+// Defines web provider plugin schema and runtime types.
+import type { TSchema } from "typebox";
+import type { MangabaClawConfig } from "../config/types.mangabaclaw.js";
+import type { RuntimeEnv } from "../runtime.js";
+import type {
+  RuntimeWebFetchMetadata,
+  RuntimeWebSearchMetadata,
+} from "../secrets/runtime-web-tools.types.js";
+import type { WizardPrompter } from "../wizard/prompts.js";
+import type { SecretInputMode } from "./provider-auth-types.js";
+
+type WebSearchProviderId = string;
+type WebFetchProviderId = string;
+
+export type WebSearchProviderToolDefinition = {
+  description: string;
+  parameters: TSchema;
+  execute: (
+    args: Record<string, unknown>,
+    context?: WebSearchProviderToolExecutionContext,
+  ) => Promise<Record<string, unknown>>;
+};
+
+export type WebFetchProviderToolDefinition = {
+  description: string;
+  parameters: TSchema;
+  execute: (args: Record<string, unknown>) => Promise<Record<string, unknown>>;
+};
+
+type WebSearchProviderContext = {
+  config?: MangabaClawConfig;
+  searchConfig?: Record<string, unknown>;
+  runtimeMetadata?: RuntimeWebSearchMetadata;
+  agentDir?: string;
+};
+
+export type WebSearchProviderToolExecutionContext = {
+  signal?: AbortSignal;
+};
+
+type WebFetchProviderContext = {
+  config?: MangabaClawConfig;
+  fetchConfig?: Record<string, unknown>;
+  runtimeMetadata?: RuntimeWebFetchMetadata;
+};
+
+export type WebSearchCredentialResolutionSource = "config" | "secretRef" | "env" | "missing";
+
+type WebSearchProviderConfiguredCredentialFallback = {
+  path: string;
+  value: unknown;
+};
+
+type WebFetchProviderConfiguredCredentialFallback = {
+  path: string;
+  value: unknown;
+};
+
+type WebSearchRuntimeMetadataContext = {
+  config?: MangabaClawConfig;
+  searchConfig?: Record<string, unknown>;
+  runtimeMetadata?: RuntimeWebSearchMetadata;
+  resolvedCredential?: {
+    value?: string;
+    source: WebSearchCredentialResolutionSource;
+    fallbackEnvVar?: string;
+  };
+};
+
+export type WebSearchProviderSetupContext = {
+  config: MangabaClawConfig;
+  runtime: RuntimeEnv;
+  prompter: WizardPrompter;
+  quickstartDefaults?: boolean;
+  secretInputMode?: SecretInputMode;
+};
+
+export type WebFetchCredentialResolutionSource = "config" | "secretRef" | "env" | "missing";
+
+type WebFetchRuntimeMetadataContext = {
+  config?: MangabaClawConfig;
+  fetchConfig?: Record<string, unknown>;
+  runtimeMetadata?: RuntimeWebFetchMetadata;
+  resolvedCredential?: {
+    value?: string;
+    source: WebFetchCredentialResolutionSource;
+    fallbackEnvVar?: string;
+  };
+};
+
+export type WebSearchProviderPlugin = {
+  id: WebSearchProviderId;
+  label: string;
+  hint: string;
+  onboardingScopes?: readonly "text-inference"[];
+  requiresCredential?: boolean;
+  credentialLabel?: string;
+  envVars: string[];
+  /** Optional model-provider auth profile id that can satisfy this web provider without a tool-specific API key. */
+  authProviderId?: string;
+  placeholder: string;
+  signupUrl: string;
+  docsUrl?: string;
+  /** Optional note shown before credential collection for provider-specific prerequisites. */
+  credentialNote?: string;
+  autoDetectOrder?: number;
+  credentialPath: string;
+  inactiveSecretPaths?: string[];
+  getCredentialValue: (searchConfig?: Record<string, unknown>) => unknown;
+  setCredentialValue: (searchConfigTarget: Record<string, unknown>, value: unknown) => void;
+  getConfiguredCredentialValue?: (config?: MangabaClawConfig) => unknown;
+  setConfiguredCredentialValue?: (configTarget: MangabaClawConfig, value: unknown) => void;
+  getConfiguredCredentialFallback?: (
+    config?: MangabaClawConfig,
+  ) => WebSearchProviderConfiguredCredentialFallback | undefined;
+  applySelectionConfig?: (config: MangabaClawConfig) => MangabaClawConfig;
+  runSetup?: (ctx: WebSearchProviderSetupContext) => MangabaClawConfig | Promise<MangabaClawConfig>;
+  resolveRuntimeMetadata?: (
+    ctx: WebSearchRuntimeMetadataContext,
+  ) => Partial<RuntimeWebSearchMetadata> | Promise<Partial<RuntimeWebSearchMetadata>>;
+  createTool: (ctx: WebSearchProviderContext) => WebSearchProviderToolDefinition | null;
+};
+
+export type PluginWebSearchProviderEntry = WebSearchProviderPlugin & {
+  pluginId: string;
+};
+
+export type WebFetchProviderPlugin = {
+  id: WebFetchProviderId;
+  label: string;
+  hint: string;
+  requiresCredential?: boolean;
+  credentialLabel?: string;
+  envVars: string[];
+  placeholder: string;
+  signupUrl: string;
+  docsUrl?: string;
+  autoDetectOrder?: number;
+  credentialPath: string;
+  inactiveSecretPaths?: string[];
+  getCredentialValue: (fetchConfig?: Record<string, unknown>) => unknown;
+  setCredentialValue: (fetchConfigTarget: Record<string, unknown>, value: unknown) => void;
+  getConfiguredCredentialValue?: (config?: MangabaClawConfig) => unknown;
+  setConfiguredCredentialValue?: (configTarget: MangabaClawConfig, value: unknown) => void;
+  getConfiguredCredentialFallback?: (
+    config?: MangabaClawConfig,
+  ) => WebFetchProviderConfiguredCredentialFallback | undefined;
+  applySelectionConfig?: (config: MangabaClawConfig) => MangabaClawConfig;
+  resolveRuntimeMetadata?: (
+    ctx: WebFetchRuntimeMetadataContext,
+  ) => Partial<RuntimeWebFetchMetadata> | Promise<Partial<RuntimeWebFetchMetadata>>;
+  createTool: (ctx: WebFetchProviderContext) => WebFetchProviderToolDefinition | null;
+};
+
+export type PluginWebFetchProviderEntry = WebFetchProviderPlugin & {
+  pluginId: string;
+};

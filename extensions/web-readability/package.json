@@ -1,0 +1,19 @@
+{
+  "name": "@mangabaclaw/web-readability-plugin",
+  "version": "2026.8.1",
+  "private": true,
+  "description": "MangabaClaw local Readability web extraction plugin",
+  "type": "module",
+  "dependencies": {
+    "@mozilla/readability": "0.6.0",
+    "linkedom": "0.18.13"
+  },
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*"
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

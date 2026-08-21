@@ -1,0 +1,7 @@
+<resources>
+    <string-array name="ask_mangabaclaw_query_patterns">
+        <item>ask MangabaClaw $prompt</item>
+        <item>tell MangabaClaw to $prompt</item>
+        <item>open MangabaClaw and ask $prompt</item>
+    </string-array>
+</resources>

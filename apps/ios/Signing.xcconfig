@@ -1,0 +1,34 @@
+// Default signing values for shared/repo builds.
+// Auto-selected local team overrides live in .local-signing.xcconfig (git-ignored).
+// Manual local overrides can go in LocalSigning.xcconfig (git-ignored).
+
+#include "build/Version.xcconfig"
+
+MANGABACLAW_CODE_SIGN_STYLE = Manual
+MANGABACLAW_CODE_SIGN_IDENTITY = Apple Development
+MANGABACLAW_CODE_SIGN_ENTITLEMENTS = Sources/MangabaClaw.entitlements
+MANGABACLAW_DEVELOPMENT_TEAM = FWJYW4S8P8
+
+MANGABACLAW_APP_BUNDLE_ID = ai.mangabaclawfoundation.app
+MANGABACLAW_SHARE_BUNDLE_ID = ai.mangabaclawfoundation.app.share
+MANGABACLAW_APP_GROUP_ID = group.ai.mangabaclawfoundation.app.shared
+MANGABACLAW_WATCH_APP_BUNDLE_ID = ai.mangabaclawfoundation.app.watchkitapp
+MANGABACLAW_ACTIVITY_WIDGET_BUNDLE_ID = ai.mangabaclawfoundation.app.activitywidget
+MANGABACLAW_APNS_ENTITLEMENT_ENVIRONMENT = development
+
+MANGABACLAW_APP_PROFILE = ai.mangabaclawfoundation.app Development
+MANGABACLAW_SHARE_PROFILE = ai.mangabaclawfoundation.app.share Development
+MANGABACLAW_ACTIVITY_WIDGET_PROFILE =
+MANGABACLAW_WATCH_APP_PROFILE =
+
+// Keep local includes after defaults: xcconfig is evaluated top-to-bottom,
+// so later assignments in local files override the defaults above.
+#include? ".local-signing.xcconfig"
+#include? "LocalSigning.xcconfig"
+
+// Debug products install alongside release products and keep their app-group data separate.
+MANGABACLAW_DEBUG_APP_BUNDLE_ID = $(MANGABACLAW_APP_BUNDLE_ID).debug
+MANGABACLAW_DEBUG_SHARE_BUNDLE_ID = $(MANGABACLAW_DEBUG_APP_BUNDLE_ID).share
+MANGABACLAW_DEBUG_ACTIVITY_WIDGET_BUNDLE_ID = $(MANGABACLAW_DEBUG_APP_BUNDLE_ID).activitywidget
+MANGABACLAW_DEBUG_WATCH_APP_BUNDLE_ID = $(MANGABACLAW_DEBUG_APP_BUNDLE_ID).watchkitapp
+MANGABACLAW_DEBUG_APP_GROUP_ID = $(MANGABACLAW_APP_GROUP_ID).debug

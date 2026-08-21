@@ -1,0 +1,12 @@
+{
+  "$schema": "../../node_modules/oxlint/configuration_schema.json",
+  "plugins": [],
+  "jsPlugins": ["../../scripts/oxlint-boundary-guards.mjs"],
+  "categories": { "correctness": "off" },
+  "rules": {
+    "mangabaclaw-boundaries/no-raw-window-open-call": "error",
+    "mangabaclaw-boundaries/no-register-http-handler-call": "error",
+    "mangabaclaw-boundaries/no-widen-then-assert": "error",
+    "mangabaclaw-boundaries/no-chained-type-assertions": "error"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "@mangabaclaw/oc-path",
+  "version": "2026.8.1",
+  "private": true,
+  "description": "MangabaClaw oc:// workspace path plugin",
+  "type": "module",
+  "dependencies": {
+    "jsonc-parser": "3.3.1",
+    "markdown-it": "14.3.0",
+    "yaml": "2.9.0"
+  },
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*",
+    "mangabaclaw": "workspace:*"
+  },
+  "peerDependencies": {
+    "mangabaclaw": ">=2026.8.1"
+  },
+  "peerDependenciesMeta": {
+    "mangabaclaw": {
+      "optional": true
+    }
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

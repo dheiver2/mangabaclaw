@@ -1,0 +1,47 @@
+{
+  "name": "@mangabaclaw/voice-call",
+  "version": "2026.8.1",
+  "description": "MangabaClaw voice-call plugin for Twilio, Telnyx, and Plivo phone calls.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mangabaclaw/mangabaclaw"
+  },
+  "type": "module",
+  "dependencies": {
+    "typebox": "1.3.6",
+    "ws": "8.21.1",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*",
+    "mangabaclaw": "workspace:*"
+  },
+  "peerDependencies": {
+    "mangabaclaw": ">=2026.8.1"
+  },
+  "peerDependenciesMeta": {
+    "mangabaclaw": {
+      "optional": true
+    }
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "install": {
+      "npmSpec": "@mangabaclaw/voice-call",
+      "defaultChoice": "npm",
+      "minHostVersion": ">=2026.4.10"
+    },
+    "compat": {
+      "pluginApi": ">=2026.8.1"
+    },
+    "build": {
+      "mangabaclawVersion": "2026.8.1"
+    },
+    "release": {
+      "publishToClawHub": true,
+      "publishToNpm": true
+    }
+  }
+}

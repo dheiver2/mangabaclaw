@@ -1,0 +1,285 @@
+{
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "lib": ["DOM", "DOM.Iterable", "ES2023"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noEmit": true,
+    "noEmitOnError": true,
+    "noUncheckedSideEffectImports": true,
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es2023",
+    "types": ["node"],
+    "useDefineForClassFields": false,
+    "verbatimModuleSyntax": true,
+    "paths": {
+      "mangabaclaw/plugin-sdk/*": ["./src/plugin-sdk/*.ts"],
+      "@mangabaclaw/ai": ["./packages/ai/src/index.ts"],
+      "@mangabaclaw/ai/diagnostics": ["./packages/ai/src/utils/diagnostics.ts"],
+      "@mangabaclaw/ai/event-stream": ["./packages/ai/src/utils/event-stream.ts"],
+      "@mangabaclaw/ai/providers": ["./packages/ai/src/providers.ts"],
+      "@mangabaclaw/ai/transports": ["./packages/ai/src/transports.ts"],
+      "@mangabaclaw/ai/types": ["./packages/ai/src/types.ts"],
+      "@mangabaclaw/ai/validation": ["./packages/ai/src/validation.ts"],
+      "@mangabaclaw/ai/internal/anthropic": ["./packages/ai/src/internal/anthropic.ts"],
+      "@mangabaclaw/ai/internal/openai": ["./packages/ai/src/internal/openai.ts"],
+      "@mangabaclaw/ai/internal/openai-responses-payload-policy": [
+        "./packages/ai/src/internal/openai-responses-payload-policy.ts"
+      ],
+      "@mangabaclaw/ai/internal/retry-after": ["./packages/ai/src/internal/retry-after.ts"],
+      "@mangabaclaw/ai/internal/runtime": ["./packages/ai/src/internal/runtime.ts"],
+      "@mangabaclaw/ai/internal/shared": ["./packages/ai/src/internal/shared.ts"],
+      "@mangabaclaw/agent-core": ["./packages/agent-core/src/index.ts"],
+      "@mangabaclaw/agent-core/*": ["./packages/agent-core/src/*"],
+      "@mangabaclaw/llm-core": ["./packages/llm-core/src/index.ts"],
+      "@mangabaclaw/llm-core/diagnostics": ["./packages/llm-core/src/utils/diagnostics.ts"],
+      "@mangabaclaw/llm-core/event-stream": ["./packages/llm-core/src/utils/event-stream.ts"],
+      "@mangabaclaw/llm-core/validation": ["./packages/llm-core/src/validation.ts"],
+      "@mangabaclaw/llm-core/*": ["./packages/llm-core/src/*"],
+      "@mangabaclaw/model-catalog-core": ["./packages/model-catalog-core/src/index.ts"],
+      "@mangabaclaw/model-catalog-core/configured-model-refs": [
+        "./packages/model-catalog-core/src/configured-model-refs.ts"
+      ],
+      "@mangabaclaw/model-catalog-core/model-catalog-normalize": [
+        "./packages/model-catalog-core/src/model-catalog-normalize.ts"
+      ],
+      "@mangabaclaw/model-catalog-core/model-catalog-refs": [
+        "./packages/model-catalog-core/src/model-catalog-refs.ts"
+      ],
+      "@mangabaclaw/model-catalog-core/model-catalog-types": [
+        "./packages/model-catalog-core/src/model-catalog-types.ts"
+      ],
+      "@mangabaclaw/model-catalog-core/provider-id": [
+        "./packages/model-catalog-core/src/provider-id.ts"
+      ],
+      "@mangabaclaw/model-catalog-core/provider-model-id-normalization": [
+        "./packages/model-catalog-core/src/provider-model-id-normalization.ts"
+      ],
+      "@mangabaclaw/model-catalog-core/provider-model-id-normalize": [
+        "./packages/model-catalog-core/src/provider-model-id-normalize.ts"
+      ],
+      "@mangabaclaw/model-catalog-core/*": ["./packages/model-catalog-core/src/*"],
+      "@mangabaclaw/gateway-client": ["./packages/gateway-client/src/index.ts"],
+      "@mangabaclaw/gateway-client/browser": ["./packages/gateway-client/src/browser.ts"],
+      "@mangabaclaw/gateway-client/scope-upgrade": [
+        "./packages/gateway-client/src/scope-upgrade.ts"
+      ],
+      "@mangabaclaw/gateway-client/websocket-data": [
+        "./packages/gateway-client/src/websocket-data.ts"
+      ],
+      "@mangabaclaw/gateway-client/*": ["./packages/gateway-client/src/*"],
+      "@mangabaclaw/gateway-protocol": ["./packages/gateway-protocol/src/index.ts"],
+      "@mangabaclaw/gateway-protocol/client-info": [
+        "./packages/gateway-protocol/src/client-info.ts"
+      ],
+      "@mangabaclaw/gateway-protocol/connect-error-details": [
+        "./packages/gateway-protocol/src/connect-error-details.ts"
+      ],
+      "@mangabaclaw/gateway-protocol/gateway-error-details": [
+        "./packages/gateway-protocol/src/gateway-error-details.ts"
+      ],
+      "@mangabaclaw/gateway-protocol/frame-guards": [
+        "./packages/gateway-protocol/src/frame-guards.ts"
+      ],
+      "@mangabaclaw/gateway-protocol/schema": ["./packages/gateway-protocol/src/schema.ts"],
+      "@mangabaclaw/gateway-protocol/startup-unavailable": [
+        "./packages/gateway-protocol/src/startup-unavailable.ts"
+      ],
+      "@mangabaclaw/gateway-protocol/version": ["./packages/gateway-protocol/src/version.ts"],
+      "@mangabaclaw/gateway-protocol/*": ["./packages/gateway-protocol/src/*"],
+      "@mangabaclaw/media-generation-core": ["./packages/media-generation-core/src/index.ts"],
+      "@mangabaclaw/media-generation-core/capability-model-ref": [
+        "./packages/media-generation-core/src/capability-model-ref.ts"
+      ],
+      "@mangabaclaw/media-generation-core/catalog": [
+        "./packages/media-generation-core/src/catalog.ts"
+      ],
+      "@mangabaclaw/media-generation-core/model-ref": [
+        "./packages/media-generation-core/src/model-ref.ts"
+      ],
+      "@mangabaclaw/media-generation-core/normalization": [
+        "./packages/media-generation-core/src/normalization.ts"
+      ],
+      "@mangabaclaw/media-generation-core/*": ["./packages/media-generation-core/src/*"],
+      "@mangabaclaw/media-core": ["./packages/media-core/src/index.ts"],
+      "@mangabaclaw/media-core/attachment-classify": [
+        "./packages/media-core/src/attachment-classify.ts"
+      ],
+      "@mangabaclaw/media-core/base64": ["./packages/media-core/src/base64.ts"],
+      "@mangabaclaw/media-core/constants": ["./packages/media-core/src/constants.ts"],
+      "@mangabaclaw/media-core/content-length": ["./packages/media-core/src/content-length.ts"],
+      "@mangabaclaw/media-core/file-name": ["./packages/media-core/src/file-name.ts"],
+      "@mangabaclaw/media-core/inbound-path-policy": [
+        "./packages/media-core/src/inbound-path-policy.ts"
+      ],
+      "@mangabaclaw/media-core/inline-image-data-url": [
+        "./packages/media-core/src/inline-image-data-url.ts"
+      ],
+      "@mangabaclaw/media-core/media-source-url": [
+        "./packages/media-core/src/media-source-url.ts"
+      ],
+      "@mangabaclaw/media-core/mime": ["./packages/media-core/src/mime.ts"],
+      "@mangabaclaw/media-core/read-byte-stream-with-limit": [
+        "./packages/media-core/src/read-byte-stream-with-limit.ts"
+      ],
+      "@mangabaclaw/media-core/*": ["./packages/media-core/src/*"],
+      "@mangabaclaw/media-understanding-common/*": [
+        "./packages/media-understanding-common/src/*"
+      ],
+      "@mangabaclaw/markdown-core": ["./packages/markdown-core/src/index.ts"],
+      "@mangabaclaw/markdown-core/code-spans": ["./packages/markdown-core/src/code-spans.ts"],
+      "@mangabaclaw/markdown-core/fences": ["./packages/markdown-core/src/fences.ts"],
+      "@mangabaclaw/markdown-core/frontmatter": ["./packages/markdown-core/src/frontmatter.ts"],
+      "@mangabaclaw/markdown-core/ir": ["./packages/markdown-core/src/ir.ts"],
+      "@mangabaclaw/markdown-core/render": ["./packages/markdown-core/src/render.ts"],
+      "@mangabaclaw/markdown-core/render-aware-chunking": [
+        "./packages/markdown-core/src/render-aware-chunking.ts"
+      ],
+      "@mangabaclaw/markdown-core/tables": ["./packages/markdown-core/src/tables.ts"],
+      "@mangabaclaw/markdown-core/types": ["./packages/markdown-core/src/types.ts"],
+      "@mangabaclaw/markdown-core/*": ["./packages/markdown-core/src/*"],
+      "@mangabaclaw/normalization-core": ["./packages/normalization-core/src/index.ts"],
+      "@mangabaclaw/normalization-core/agent-id": [
+        "./packages/normalization-core/src/agent-id.ts"
+      ],
+      "@mangabaclaw/normalization-core/boolean-coercion": [
+        "./packages/normalization-core/src/boolean-coercion.ts"
+      ],
+      "@mangabaclaw/normalization-core/cjk-chars": [
+        "./packages/normalization-core/src/cjk-chars.ts"
+      ],
+      "@mangabaclaw/normalization-core/error-coercion": [
+        "./packages/normalization-core/src/error-coercion.ts"
+      ],
+      "@mangabaclaw/normalization-core/expect": ["./packages/normalization-core/src/expect.ts"],
+      "@mangabaclaw/normalization-core/json-coercion": [
+        "./packages/normalization-core/src/json-coercion.ts"
+      ],
+      "@mangabaclaw/normalization-core/json-schema": [
+        "./packages/normalization-core/src/json-schema.ts"
+      ],
+      "@mangabaclaw/normalization-core/markdown-plain-text": [
+        "./packages/normalization-core/src/markdown-plain-text.ts"
+      ],
+      "@mangabaclaw/normalization-core/number-coercion": [
+        "./packages/normalization-core/src/number-coercion.ts"
+      ],
+      "@mangabaclaw/normalization-core/phone-presentation": [
+        "./packages/normalization-core/src/phone-presentation.ts"
+      ],
+      "@mangabaclaw/normalization-core/promise-like": [
+        "./packages/normalization-core/src/promise-like.ts"
+      ],
+      "@mangabaclaw/normalization-core/record-coerce": [
+        "./packages/normalization-core/src/record-coerce.ts"
+      ],
+      "@mangabaclaw/normalization-core/result": [
+        "./packages/normalization-core/src/result.ts"
+      ],
+      "@mangabaclaw/normalization-core/stable-node-path": [
+        "./packages/normalization-core/src/stable-node-path.ts"
+      ],
+      "@mangabaclaw/normalization-core/stable-stringify": [
+        "./packages/normalization-core/src/stable-stringify.ts"
+      ],
+      "@mangabaclaw/normalization-core/string-coerce": [
+        "./packages/normalization-core/src/string-coerce.ts"
+      ],
+      "@mangabaclaw/normalization-core/string-normalization": [
+        "./packages/normalization-core/src/string-normalization.ts"
+      ],
+      "@mangabaclaw/normalization-core/utf16-slice": [
+        "./packages/normalization-core/src/utf16-slice.ts"
+      ],
+      "@mangabaclaw/normalization-core/*": ["./packages/normalization-core/src/*"],
+      "@mangabaclaw/retry": ["./packages/retry/src/index.ts"],
+      "@mangabaclaw/session-url-contract": ["./packages/session-url-contract/src/index.ts"],
+      "@mangabaclaw/session-url-contract/*": ["./packages/session-url-contract/src/*"],
+      "@mangabaclaw/workboard-contract": ["./packages/workboard-contract/src/index.ts"],
+      "@mangabaclaw/acp-core": ["./packages/acp-core/src/index.ts"],
+      "@mangabaclaw/acp-core/meta": ["./packages/acp-core/src/meta.ts"],
+      "@mangabaclaw/acp-core/session": ["./packages/acp-core/src/session.ts"],
+      "@mangabaclaw/acp-core/session-interaction-mode": [
+        "./packages/acp-core/src/session-interaction-mode.ts"
+      ],
+      "@mangabaclaw/acp-core/session-lineage-meta": [
+        "./packages/acp-core/src/session-lineage-meta.ts"
+      ],
+      "@mangabaclaw/acp-core/types": ["./packages/acp-core/src/types.ts"],
+      "@mangabaclaw/acp-core/runtime/error-text": [
+        "./packages/acp-core/src/runtime/error-text.ts"
+      ],
+      "@mangabaclaw/acp-core/runtime/errors": ["./packages/acp-core/src/runtime/errors.ts"],
+      "@mangabaclaw/acp-core/runtime/session-identifiers": [
+        "./packages/acp-core/src/runtime/session-identifiers.ts"
+      ],
+      "@mangabaclaw/acp-core/runtime/session-identity": [
+        "./packages/acp-core/src/runtime/session-identity.ts"
+      ],
+      "@mangabaclaw/acp-core/runtime/types": ["./packages/acp-core/src/runtime/types.ts"],
+      "@mangabaclaw/acp-core/*": ["./packages/acp-core/src/*"],
+      "@mangabaclaw/terminal-core": ["./packages/terminal-core/src/index.ts"],
+      "@mangabaclaw/terminal-core/ansi": ["./packages/terminal-core/src/ansi.ts"],
+      "@mangabaclaw/terminal-core/decorative-emoji": [
+        "./packages/terminal-core/src/decorative-emoji.ts"
+      ],
+      "@mangabaclaw/terminal-core/health-style": [
+        "./packages/terminal-core/src/health-style.ts"
+      ],
+      "@mangabaclaw/terminal-core/links": ["./packages/terminal-core/src/links.ts"],
+      "@mangabaclaw/terminal-core/note": ["./packages/terminal-core/src/note.ts"],
+      "@mangabaclaw/terminal-core/osc-progress": ["./packages/terminal-core/src/osc-progress.ts"],
+      "@mangabaclaw/terminal-core/palette": ["./packages/terminal-core/src/palette.ts"],
+      "@mangabaclaw/terminal-core/progress-line": [
+        "./packages/terminal-core/src/progress-line.ts"
+      ],
+      "@mangabaclaw/terminal-core/prompt-select-styled": [
+        "./packages/terminal-core/src/prompt-select-styled.ts"
+      ],
+      "@mangabaclaw/terminal-core/prompt-select-styled-params": [
+        "./packages/terminal-core/src/prompt-select-styled-params.ts"
+      ],
+      "@mangabaclaw/terminal-core/prompt-style": [
+        "./packages/terminal-core/src/prompt-style.ts"
+      ],
+      "@mangabaclaw/terminal-core/restore": ["./packages/terminal-core/src/restore.ts"],
+      "@mangabaclaw/terminal-core/safe-text": ["./packages/terminal-core/src/safe-text.ts"],
+      "@mangabaclaw/terminal-core/stream-writer": [
+        "./packages/terminal-core/src/stream-writer.ts"
+      ],
+      "@mangabaclaw/terminal-core/table": ["./packages/terminal-core/src/table.ts"],
+      "@mangabaclaw/terminal-core/terminal-link": [
+        "./packages/terminal-core/src/terminal-link.ts"
+      ],
+      "@mangabaclaw/terminal-core/theme": ["./packages/terminal-core/src/theme.ts"],
+      "@mangabaclaw/terminal-core/*": ["./packages/terminal-core/src/*"],
+      "@mangabaclaw/net-policy": ["./packages/net-policy/src/index.ts"],
+      "@mangabaclaw/net-policy/ip": ["./packages/net-policy/src/ip.ts"],
+      "@mangabaclaw/net-policy/ipv4": ["./packages/net-policy/src/ipv4.ts"],
+      "@mangabaclaw/net-policy/redact-sensitive-url": [
+        "./packages/net-policy/src/redact-sensitive-url.ts"
+      ],
+      "@mangabaclaw/net-policy/url-protocol": ["./packages/net-policy/src/url-protocol.ts"],
+      "@mangabaclaw/net-policy/url-userinfo": ["./packages/net-policy/src/url-userinfo.ts"],
+      "@mangabaclaw/net-policy/*": ["./packages/net-policy/src/*"],
+      "@mangabaclaw/sdk": ["./packages/sdk/src/index.ts"],
+      "@mangabaclaw/plugin-sdk/*": ["./src/plugin-sdk/*.ts"],
+      "mangabaclaw/plugin-sdk/account-id": ["./src/plugin-sdk/account-id.ts"],
+      "@mangabaclaw/*": ["./extensions/*"]
+    }
+  },
+  "include": ["src/**/*", "ui/**/*", "extensions/**/*", "packages/**/*"],
+  "exclude": ["node_modules", "dist", "**/dist/**"]
+}

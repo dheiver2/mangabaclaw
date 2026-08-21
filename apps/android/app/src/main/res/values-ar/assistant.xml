@@ -1,0 +1,7 @@
+<resources>
+    <string-array name="ask_mangabaclaw_query_patterns">
+        <item>"اسأل MangabaClaw %1$s"</item>
+        <item>"أخبر MangabaClaw أن %1$s"</item>
+        <item>"افتح MangabaClaw واسأل %1$s"</item>
+    </string-array>
+</resources>

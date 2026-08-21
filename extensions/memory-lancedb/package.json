@@ -1,0 +1,40 @@
+{
+  "name": "@mangabaclaw/memory-lancedb",
+  "version": "2026.8.1",
+  "description": "MangabaClaw LanceDB-backed long-term memory plugin with auto-recall, auto-capture, and vector search.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mangabaclaw/mangabaclaw"
+  },
+  "type": "module",
+  "dependencies": {
+    "@lancedb/lancedb": "0.31.0",
+    "apache-arrow": "18.1.0",
+    "openai": "6.49.0",
+    "typebox": "1.3.6"
+  },
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*"
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "install": {
+      "npmSpec": "@mangabaclaw/memory-lancedb",
+      "defaultChoice": "npm",
+      "minHostVersion": ">=2026.5.31"
+    },
+    "compat": {
+      "pluginApi": ">=2026.8.1"
+    },
+    "build": {
+      "mangabaclawVersion": "2026.8.1"
+    },
+    "release": {
+      "bundleRuntimeDependencies": false,
+      "publishToClawHub": true,
+      "publishToNpm": true
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@mangabaclaw/lmstudio-provider",
+  "version": "2026.8.1",
+  "private": true,
+  "description": "MangabaClaw LM Studio provider plugin",
+  "type": "module",
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "signingRepo": "git@github.com:mangabaclaw/apps-signing.git",
+  "signingBranch": "main",
+  "assetPath": "android/mangabaclaw",
+  "uploadKeystoreEncryptedFile": "upload-keystore.jks.enc",
+  "gradlePropertiesEncryptedFile": "gradle.properties.enc",
+  "apkCertificateSha256": "80dbc62315ea216dd6e8a7060735a866ddc464a48ed50fef29ff0550468b9a63",
+  "materializedRoot": "apps/android/build/release-signing",
+  "gradlePropertyNames": [
+    "MANGABACLAW_ANDROID_STORE_FILE",
+    "MANGABACLAW_ANDROID_STORE_PASSWORD",
+    "MANGABACLAW_ANDROID_KEY_ALIAS",
+    "MANGABACLAW_ANDROID_KEY_PASSWORD"
+  ]
+}

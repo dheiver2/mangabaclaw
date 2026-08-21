@@ -1,0 +1,33 @@
+// Shared iOS signing defaults for local development + CI.
+#include "../build/Version.xcconfig"
+
+MANGABACLAW_IOS_DEFAULT_TEAM = FWJYW4S8P8
+MANGABACLAW_IOS_SELECTED_TEAM = $(MANGABACLAW_IOS_DEFAULT_TEAM)
+MANGABACLAW_DEVELOPMENT_TEAM = $(MANGABACLAW_IOS_SELECTED_TEAM)
+MANGABACLAW_CODE_SIGN_STYLE = Automatic
+MANGABACLAW_CODE_SIGN_IDENTITY = Apple Development
+MANGABACLAW_CODE_SIGN_ENTITLEMENTS = Sources/MangabaClaw.entitlements
+MANGABACLAW_APP_BUNDLE_ID = ai.mangabaclawfoundation.app
+MANGABACLAW_APP_GROUP_ID = group.ai.mangabaclawfoundation.app.shared
+MANGABACLAW_WATCH_APP_BUNDLE_ID = ai.mangabaclawfoundation.app.watchkitapp
+MANGABACLAW_ACTIVITY_WIDGET_BUNDLE_ID = ai.mangabaclawfoundation.app.activitywidget
+MANGABACLAW_ACTIVITY_WIDGET_PROFILE =
+MANGABACLAW_WATCH_APP_PROFILE =
+
+// Local contributors can override this by running scripts/ios-configure-signing.sh.
+// Keep include after defaults: xcconfig is evaluated top-to-bottom.
+#include? "../.local-signing.xcconfig"
+#include? "../LocalSigning.xcconfig"
+
+// Debug products install alongside release products and keep their app-group data separate.
+MANGABACLAW_DEBUG_APP_BUNDLE_ID = $(MANGABACLAW_APP_BUNDLE_ID).debug
+MANGABACLAW_DEBUG_ACTIVITY_WIDGET_BUNDLE_ID = $(MANGABACLAW_DEBUG_APP_BUNDLE_ID).activitywidget
+MANGABACLAW_DEBUG_WATCH_APP_BUNDLE_ID = $(MANGABACLAW_DEBUG_APP_BUNDLE_ID).watchkitapp
+MANGABACLAW_DEBUG_APP_GROUP_ID = $(MANGABACLAW_APP_GROUP_ID).debug
+
+CODE_SIGN_STYLE = $(MANGABACLAW_CODE_SIGN_STYLE)
+CODE_SIGN_IDENTITY = $(MANGABACLAW_CODE_SIGN_IDENTITY)
+DEVELOPMENT_TEAM = $(MANGABACLAW_DEVELOPMENT_TEAM)
+
+// Let Xcode manage provisioning for the selected local team unless a local override pins one.
+PROVISIONING_PROFILE_SPECIFIER =

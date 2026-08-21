@@ -1,0 +1,7 @@
+<resources>
+    <string-array name="ask_mangabaclaw_query_patterns">
+        <item>"MangabaClaw\'a %1$s sor"</item>
+        <item>"MangabaClaw\'a %1$s söyle"</item>
+        <item>"MangabaClaw\'ı aç ve %1$s sor"</item>
+    </string-array>
+</resources>

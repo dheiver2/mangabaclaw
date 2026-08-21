@@ -1,0 +1,31 @@
+import { resolveAsciiShortcutKey } from "../lib/keyboard-shortcuts.ts";
+
+export const COMMAND_PALETTE_TARGET_EVENT = "mangabaclaw-command-palette-target";
+export const COMMAND_PALETTE_OPEN_EVENT = "mangabaclaw:command-palette-open";
+export const SHELL_NAV_DRAWER_TOGGLE_EVENT = "mangabaclaw:shell-nav-drawer-toggle";
+
+export type ShellNavDrawerToggleDetail = {
+  trigger: HTMLElement;
+};
+
+export function isCommandPaletteShortcut(event: KeyboardEvent): boolean {
+  return (
+    (event.metaKey || event.ctrlKey) &&
+    !event.altKey &&
+    !event.shiftKey &&
+    resolveAsciiShortcutKey(event) === "k"
+  );
+}
+
+export type CommandPaletteTargetDetail = {
+  owner: Element;
+  onSlashCommand: ((command: string) => void) | null;
+};
+
+export type CommandPaletteElement = HTMLElement & {
+  custodianAvailable: boolean;
+  desktopAvailable: boolean;
+  isOpen: boolean;
+  openPalette: () => void;
+  togglePalette: () => void;
+};

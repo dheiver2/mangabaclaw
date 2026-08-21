@@ -1,0 +1,24 @@
+{
+  "name": "@mangabaclaw/migrate-claude",
+  "version": "2026.8.1",
+  "private": true,
+  "description": "Claude to MangabaClaw migration provider",
+  "type": "module",
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*",
+    "mangabaclaw": "workspace:*"
+  },
+  "peerDependencies": {
+    "mangabaclaw": ">=2026.8.1"
+  },
+  "peerDependenciesMeta": {
+    "mangabaclaw": {
+      "optional": true
+    }
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

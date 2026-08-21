@@ -1,0 +1,781 @@
+{
+  "schemaVersion": 1,
+  "id": "mangabaclaw-official-external-plugins",
+  "generatedAt": "2026-06-22T00:00:00.000Z",
+  "sequence": 1,
+  "description": "Bundled fallback feed for official external MangabaClaw plugins.",
+  "entries": [
+    {
+      "name": "@mangabaclaw/acpx",
+      "description": "MangabaClaw ACP runtime backend",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "acpx",
+          "label": "ACPX Runtime"
+        },
+        "install": {
+          "npmSpec": "@mangabaclaw/acpx",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.4.25"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/brave-plugin",
+      "description": "MangabaClaw Brave plugin",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "brave",
+          "label": "Brave"
+        },
+        "webSearchProviders": [
+          {
+            "id": "brave",
+            "label": "Brave Search",
+            "hint": "Brave Search web results.",
+            "onboardingScopes": ["text-inference"],
+            "credentialLabel": "Brave Search API key",
+            "envVars": ["BRAVE_API_KEY"],
+            "placeholder": "BSA...",
+            "signupUrl": "https://api-dashboard.search.brave.com/app/keys",
+            "docsUrl": "https://docs.mangabaclaw.ai/tools/brave-search",
+            "credentialPath": "plugins.entries.brave.config.webSearch.apiKey",
+            "autoDetectOrder": 10
+          }
+        ],
+        "install": {
+          "npmSpec": "@mangabaclaw/brave-plugin",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.4.10",
+          "allowInvalidConfigRecovery": true
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/codex",
+      "description": "MangabaClaw Codex app-server harness and native session catalog",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "codex",
+          "label": "Codex"
+        },
+        "contracts": {
+          "migrationProviders": ["codex"]
+        },
+        "install": {
+          "npmSpec": "@mangabaclaw/codex",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.5.1-beta.1"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/copilot",
+      "description": "MangabaClaw GitHub Copilot agent runtime plugin",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "copilot",
+          "label": "GitHub Copilot agent runtime"
+        },
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/copilot",
+          "npmSpec": "@mangabaclaw/copilot",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.5.28"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/diagnostics-otel",
+      "description": "MangabaClaw diagnostics OpenTelemetry exporter",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "diagnostics-otel",
+          "label": "Diagnostics OpenTelemetry"
+        },
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/diagnostics-otel",
+          "npmSpec": "@mangabaclaw/diagnostics-otel",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.4.25"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/diagnostics-prometheus",
+      "description": "MangabaClaw diagnostics Prometheus exporter",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "diagnostics-prometheus",
+          "label": "Diagnostics Prometheus"
+        },
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/diagnostics-prometheus",
+          "npmSpec": "@mangabaclaw/diagnostics-prometheus",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.4.25"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/diffs",
+      "description": "MangabaClaw diff viewer plugin",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "diffs",
+          "label": "Diffs"
+        },
+        "catalog": {
+          "featured": true,
+          "order": 40
+        },
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/diffs",
+          "npmSpec": "@mangabaclaw/diffs",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.4.30"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/diffs-language-pack",
+      "description": "MangabaClaw diffs viewer syntax highlighting language pack",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "diffs-language-pack",
+          "label": "Diff Viewer Language Pack"
+        },
+        "install": {
+          "npmSpec": "@mangabaclaw/diffs-language-pack",
+          "clawhubSpec": "clawhub:@mangabaclaw/diffs-language-pack",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.5.27"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/duckduckgo-plugin",
+      "description": "MangabaClaw DuckDuckGo plugin.",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "duckduckgo",
+          "label": "DuckDuckGo"
+        },
+        "contracts": {
+          "webSearchProviders": [
+            "duckduckgo"
+          ]
+        },
+        "webSearchProviders": [
+          {
+            "id": "duckduckgo",
+            "label": "DuckDuckGo Search (experimental)",
+            "hint": "Free web search fallback with no API key required",
+            "onboardingScopes": [
+              "text-inference"
+            ],
+            "requiresCredential": false,
+            "envVars": [],
+            "placeholder": "(no key needed)",
+            "signupUrl": "https://duckduckgo.com/",
+            "docsUrl": "https://docs.mangabaclaw.ai/tools/duckduckgo-search",
+            "credentialPath": "",
+            "autoDetectOrder": 100
+          }
+        ],
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/duckduckgo-plugin",
+          "npmSpec": "@mangabaclaw/duckduckgo-plugin",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.7.2"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/exa-plugin",
+      "description": "MangabaClaw Exa plugin.",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "exa",
+          "label": "Exa"
+        },
+        "contracts": {
+          "webSearchProviders": [
+            "exa"
+          ]
+        },
+        "webSearchProviders": [
+          {
+            "id": "exa",
+            "label": "Exa Search",
+            "hint": "Neural + keyword search with date filters and content extraction",
+            "onboardingScopes": [
+              "text-inference"
+            ],
+            "credentialLabel": "Exa API key",
+            "envVars": [
+              "EXA_API_KEY"
+            ],
+            "placeholder": "exa-...",
+            "signupUrl": "https://exa.ai/",
+            "docsUrl": "https://docs.mangabaclaw.ai/tools/web",
+            "credentialPath": "plugins.entries.exa.config.webSearch.apiKey",
+            "autoDetectOrder": 65
+          }
+        ],
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/exa-plugin",
+          "npmSpec": "@mangabaclaw/exa-plugin",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.6.8"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/firecrawl-plugin",
+      "description": "MangabaClaw Firecrawl plugin.",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "firecrawl",
+          "label": "Firecrawl"
+        },
+        "contracts": {
+          "webFetchProviders": [
+            "firecrawl"
+          ],
+          "webSearchProviders": [
+            "firecrawl",
+            "firecrawl-free"
+          ],
+          "tools": [
+            "firecrawl_search",
+            "firecrawl_scrape"
+          ]
+        },
+        "webSearchProviders": [
+          {
+            "id": "firecrawl",
+            "label": "Firecrawl Search",
+            "hint": "Structured results with optional result scraping",
+            "onboardingScopes": [
+              "text-inference"
+            ],
+            "credentialLabel": "Firecrawl API key",
+            "envVars": [
+              "FIRECRAWL_API_KEY"
+            ],
+            "placeholder": "fc-...",
+            "signupUrl": "https://www.firecrawl.dev/",
+            "docsUrl": "https://docs.mangabaclaw.ai/tools/firecrawl",
+            "credentialPath": "plugins.entries.firecrawl.config.webSearch.apiKey",
+            "autoDetectOrder": 60
+          },
+          {
+            "id": "firecrawl-free",
+            "label": "Firecrawl Search (Free)",
+            "hint": "Free web search via Firecrawl's hosted starter tier — no API key required",
+            "onboardingScopes": [
+              "text-inference"
+            ],
+            "requiresCredential": false,
+            "envVars": [],
+            "placeholder": "(no key needed)",
+            "signupUrl": "https://www.firecrawl.dev/",
+            "docsUrl": "https://docs.mangabaclaw.ai/tools/firecrawl",
+            "credentialPath": ""
+          }
+        ],
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/firecrawl-plugin",
+          "npmSpec": "@mangabaclaw/firecrawl-plugin",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.6.8"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/fish-audio-speech",
+      "description": "MangabaClaw Fish Audio speech plugin.",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "legacyPluginIds": ["fish-audio"],
+        "plugin": {
+          "id": "fish-audio-speech",
+          "label": "Fish Audio Speech"
+        },
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/fish-audio-speech",
+          "npmSpec": "@mangabaclaw/fish-audio-speech",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.7.2"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/google-meet",
+      "description": "MangabaClaw Google Meet participant plugin",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "google-meet",
+          "label": "Google Meet"
+        },
+        "install": {
+          "npmSpec": "@mangabaclaw/google-meet",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.4.20"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/gradium-speech",
+      "description": "MangabaClaw Gradium speech plugin.",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "gradium",
+          "label": "Gradium"
+        },
+        "contracts": {
+          "speechProviders": [
+            "gradium"
+          ]
+        },
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/gradium-speech",
+          "npmSpec": "@mangabaclaw/gradium-speech",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.6.8"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/inworld-speech",
+      "description": "MangabaClaw Inworld speech plugin.",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "inworld",
+          "label": "Inworld"
+        },
+        "contracts": {
+          "speechProviders": [
+            "inworld"
+          ]
+        },
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/inworld-speech",
+          "npmSpec": "@mangabaclaw/inworld-speech",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.6.8"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/lobster",
+      "description": "Lobster workflow tool plugin (typed pipelines + resumable approvals)",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "lobster",
+          "label": "Lobster"
+        },
+        "catalog": {
+          "featured": true,
+          "order": 50
+        },
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/lobster",
+          "npmSpec": "@mangabaclaw/lobster",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.4.25"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/memory-lancedb",
+      "description": "MangabaClaw LanceDB-backed long-term memory plugin with auto-recall/capture",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "memory-lancedb",
+          "label": "Memory LanceDB"
+        },
+        "catalog": {
+          "featured": true,
+          "order": 70
+        },
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/memory-lancedb",
+          "npmSpec": "@mangabaclaw/memory-lancedb",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.5.31"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/llama-cpp-provider",
+      "description": "MangabaClaw managed llama.cpp server provider plugin",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "llama-cpp",
+          "label": "llama.cpp Provider"
+        },
+        "contracts": {
+          "embeddingProviders": ["local"]
+        },
+        "install": {
+          "npmSpec": "@mangabaclaw/llama-cpp-provider",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.6.2"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/mxc-sandbox",
+      "description": "MangabaClaw MXC sandbox execution plugin for MXC-capable hosts",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "mxc",
+          "label": "MXC Sandbox Execution"
+        },
+        "install": {
+          "npmSpec": "@mangabaclaw/mxc-sandbox",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.6.11"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/openshell-sandbox",
+      "description": "MangabaClaw OpenShell sandbox backend",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "openshell",
+          "label": "OpenShell Sandbox"
+        },
+        "install": {
+          "npmSpec": "@mangabaclaw/openshell-sandbox",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.5.12-beta.1"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/parallel-plugin",
+      "description": "MangabaClaw Parallel web search plugin.",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "parallel",
+          "label": "Parallel"
+        },
+        "contracts": {
+          "webSearchProviders": [
+            "parallel",
+            "parallel-free"
+          ]
+        },
+        "webSearchProviders": [
+          {
+            "id": "parallel",
+            "label": "Parallel Search",
+            "hint": "LLM-optimized dense excerpts from web sources",
+            "onboardingScopes": [
+              "text-inference"
+            ],
+            "credentialLabel": "Parallel API key",
+            "envVars": [
+              "PARALLEL_API_KEY"
+            ],
+            "placeholder": "par-...",
+            "signupUrl": "https://platform.parallel.ai",
+            "docsUrl": "https://docs.mangabaclaw.ai/tools/parallel-search",
+            "credentialPath": "plugins.entries.parallel.config.webSearch.apiKey",
+            "autoDetectOrder": 75
+          },
+          {
+            "id": "parallel-free",
+            "label": "Parallel Search (Free)",
+            "hint": "Free web search via Parallel's hosted Search MCP — no API key required",
+            "onboardingScopes": [
+              "text-inference"
+            ],
+            "requiresCredential": false,
+            "envVars": [],
+            "placeholder": "(no key needed)",
+            "signupUrl": "https://parallel.ai",
+            "docsUrl": "https://docs.mangabaclaw.ai/tools/parallel-search",
+            "credentialPath": ""
+          }
+        ],
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/parallel-plugin",
+          "npmSpec": "@mangabaclaw/parallel-plugin",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.6.8"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/perplexity-plugin",
+      "description": "MangabaClaw Perplexity plugin.",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "perplexity",
+          "label": "Perplexity"
+        },
+        "contracts": {
+          "webSearchProviders": [
+            "perplexity"
+          ]
+        },
+        "webSearchProviders": [
+          {
+            "id": "perplexity",
+            "label": "Perplexity Search",
+            "hint": "Requires Perplexity API key or OpenRouter API key · structured results",
+            "onboardingScopes": [
+              "text-inference"
+            ],
+            "credentialLabel": "Perplexity API key",
+            "envVars": [
+              "PERPLEXITY_API_KEY",
+              "OPENROUTER_API_KEY"
+            ],
+            "placeholder": "pplx-...",
+            "signupUrl": "https://www.perplexity.ai/settings/api",
+            "docsUrl": "https://docs.mangabaclaw.ai/perplexity",
+            "credentialPath": "plugins.entries.perplexity.config.webSearch.apiKey",
+            "autoDetectOrder": 50
+          }
+        ],
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/perplexity-plugin",
+          "npmSpec": "@mangabaclaw/perplexity-plugin",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.6.8"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/searxng-plugin",
+      "description": "MangabaClaw SearXNG plugin",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "searxng",
+          "label": "SearXNG"
+        },
+        "contracts": {
+          "webSearchProviders": [
+            "searxng"
+          ]
+        },
+        "webSearchProviders": [
+          {
+            "id": "searxng",
+            "label": "SearXNG Search",
+            "hint": "Self-hosted meta-search with no API key required",
+            "onboardingScopes": [
+              "text-inference"
+            ],
+            "requiresCredential": true,
+            "credentialLabel": "SearXNG Base URL",
+            "envVars": [
+              "SEARXNG_BASE_URL"
+            ],
+            "placeholder": "http://localhost:8080",
+            "signupUrl": "https://docs.searxng.org/",
+            "docsUrl": "https://docs.mangabaclaw.ai/tools/searxng-search",
+            "credentialPath": "plugins.entries.searxng.config.webSearch.baseUrl",
+            "autoDetectOrder": 200
+          }
+        ],
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/searxng-plugin",
+          "npmSpec": "@mangabaclaw/searxng-plugin",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.6.9",
+          "allowInvalidConfigRecovery": true
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/tavily-plugin",
+      "description": "MangabaClaw Tavily plugin",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "tavily",
+          "label": "Tavily"
+        },
+        "contracts": {
+          "webSearchProviders": [
+            "tavily"
+          ],
+          "tools": [
+            "tavily_search",
+            "tavily_extract"
+          ]
+        },
+        "webSearchProviders": [
+          {
+            "id": "tavily",
+            "label": "Tavily Search",
+            "hint": "Structured results with domain filters and AI answer summaries",
+            "onboardingScopes": [
+              "text-inference"
+            ],
+            "credentialLabel": "Tavily API key",
+            "envVars": [
+              "TAVILY_API_KEY"
+            ],
+            "placeholder": "tvly-...",
+            "signupUrl": "https://tavily.com/",
+            "docsUrl": "https://docs.mangabaclaw.ai/tools/tavily",
+            "credentialPath": "plugins.entries.tavily.config.webSearch.apiKey",
+            "autoDetectOrder": 70
+          }
+        ],
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/tavily-plugin",
+          "npmSpec": "@mangabaclaw/tavily-plugin",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.6.9",
+          "allowInvalidConfigRecovery": true
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/teams-meetings",
+      "description": "MangabaClaw Microsoft Teams browser meeting participant plugin.",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "teams-meetings",
+          "label": "Microsoft Teams meetings"
+        },
+        "contracts": {
+          "tools": [
+            "teams_meetings"
+          ],
+          "transcriptSourceProviders": [
+            "teams"
+          ]
+        },
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/teams-meetings",
+          "npmSpec": "@mangabaclaw/teams-meetings",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.7.2"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/tokenjuice",
+      "description": "MangabaClaw tokenjuice exec output compaction plugin",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "tokenjuice",
+          "label": "Tokenjuice"
+        },
+        "catalog": {
+          "featured": true,
+          "order": 60
+        },
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/tokenjuice",
+          "npmSpec": "@mangabaclaw/tokenjuice",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.5.28"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/voice-call",
+      "description": "MangabaClaw voice-call plugin",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "voice-call",
+          "label": "Voice Call"
+        },
+        "install": {
+          "npmSpec": "@mangabaclaw/voice-call",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.4.10"
+        }
+      }
+    },
+    {
+      "name": "@mangabaclaw/zoom-meetings",
+      "description": "MangabaClaw Zoom browser meeting participant plugin.",
+      "source": "official",
+      "kind": "plugin",
+      "mangabaclaw": {
+        "plugin": {
+          "id": "zoom-meetings",
+          "label": "Zoom meetings"
+        },
+        "contracts": {
+          "tools": [
+            "zoom_meetings"
+          ],
+          "transcriptSourceProviders": [
+            "zoom"
+          ]
+        },
+        "install": {
+          "clawhubSpec": "clawhub:@mangabaclaw/zoom-meetings",
+          "npmSpec": "@mangabaclaw/zoom-meetings",
+          "defaultChoice": "npm",
+          "minHostVersion": ">=2026.7.2"
+        }
+      }
+    }
+  ]
+}

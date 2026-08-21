@@ -1,0 +1,151 @@
+---
+summary: "Migration hub: cross-system imports, machine-to-machine moves, and plugin upgrades"
+read_when:
+  - You are moving MangabaClaw to a new laptop or server
+  - You are coming from another agent system and want to keep state
+  - You are upgrading an in-place plugin
+title: "Migration guide"
+---
+
+MangabaClaw supports three migration paths: importing from another agent system, moving an existing install to a new machine, and upgrading a plugin in place.
+
+## Import from another agent system
+
+Bundled migration providers bring instructions, MCP servers, skills, model config, and (opt-in) API keys into MangabaClaw. Plans are previewed before any change and secrets are redacted in reports. Standalone `mangabaclaw migrate` is backed by a verified backup; fresh onboarding imports instead stage and verify local artifacts before publishing them with configuration committed before any irreversible external activation.
+
+<CardGroup cols={2}>
+  <Card title="Migrating from Claude" href="/install/migrating-claude" icon="brain">
+    Import Claude Code and Claude Desktop state, including `CLAUDE.md`, MCP servers, skills, and project commands.
+  </Card>
+  <Card title="Migrating from Hermes" href="/install/migrating-hermes" icon="feather">
+    Import Hermes config, providers, MCP servers, memory, skills, and supported `.env` keys.
+  </Card>
+</CardGroup>
+
+The CLI entry point is [`mangabaclaw migrate`](/cli/migrate). Onboarding can also offer migration when it detects a known source (`mangabaclaw onboard --flow import`).
+
+## Move MangabaClaw to a new machine
+
+Copy the **state directory** (`~/.mangabaclaw/` by default) and your **workspace** to preserve:
+
+- **Config** — `mangabaclaw.json` and all gateway settings.
+- **Auth** — per-agent `auth-profiles.json` (API keys plus OAuth), plus any channel or provider state under `credentials/`.
+- **Sessions** — conversation history and agent state.
+- **Channel state** — WhatsApp login, Telegram session, and similar.
+- **Workspace files** — `MEMORY.md`, `USER.md`, skills, and prompts.
+
+<Tip>
+Run `mangabaclaw status` on the old machine to confirm your state directory path. Custom profiles use `~/.mangabaclaw-<profile>/` or a path set via `MANGABACLAW_STATE_DIR`.
+</Tip>
+
+### Migration steps
+
+<Steps>
+  <Step title="Stop the gateway and back up">
+    On the **old** machine, stop the Gateway, then create and verify a portable
+    archive:
+
+    ```bash
+    mangabaclaw gateway stop
+    mkdir -p ~/Backups/mangabaclaw
+    mangabaclaw backup create --output ~/Backups/mangabaclaw --verify
+    ```
+
+    Stop the Gateway before taking a machine-move snapshot. A raw copy of a
+    changing SQLite database can capture mismatched database and WAL files;
+    quiescing the Gateway also keeps the rest of the state tree stable. If you
+    use multiple profiles, run the command once with each profile selected.
+
+  </Step>
+
+  <Step title="Install MangabaClaw on the new machine">
+    [Install](/install) the CLI (and Node if needed) on the new machine. It is fine if onboarding creates a fresh `~/.mangabaclaw/` — you overwrite it next.
+  </Step>
+
+  <Step title="Transfer and restore to staging">
+    Transfer the generated `.tar.gz` archive via `scp`, an external drive, or
+    another protected channel. On the new machine, restore it to a fresh
+    staging directory:
+
+    ```bash
+    mangabaclaw backup restore <archive.tar.gz> --target ~/mangabaclaw-restored
+    ```
+
+    Restore never activates in place. With the Gateway stopped, use the
+    restored `manifest.json` mapping to move the state and workspace assets to
+    their recorded destinations, or point `MANGABACLAW_STATE_DIR` at the restored
+    state asset. Confirm ownership matches the user that will run the Gateway.
+
+    <Warning>
+    Restoring older channel state can desynchronize ratcheting credentials such
+    as WhatsApp. Approvals and delivery/dedupe state also roll back, and plugin
+    `node_modules` trees must be reinstalled. See [Restore a full archive](/install/backups#restore-a-full-archive).
+    </Warning>
+
+  </Step>
+
+  <Step title="Run doctor and verify">
+    On the new machine, run [Doctor](/gateway/doctor) to apply config migrations and repair services:
+
+    ```bash
+    mangabaclaw doctor
+    mangabaclaw gateway restart
+    mangabaclaw status
+    ```
+
+  </Step>
+</Steps>
+
+If Telegram or Discord uses the default env fallback (`TELEGRAM_BOT_TOKEN` or `DISCORD_BOT_TOKEN`), verify the migrated state-dir `.env` contains those keys without printing the secret values:
+
+```bash
+awk -F= '/^(TELEGRAM_BOT_TOKEN|DISCORD_BOT_TOKEN)=/ { print $1 "=present" }' ~/.mangabaclaw/.env
+```
+
+`mangabaclaw doctor` also warns when an enabled default Telegram or Discord account has no configured token and the matching env variable is unavailable to the doctor process.
+
+### Common pitfalls
+
+<AccordionGroup>
+  <Accordion title="Profile or state-dir mismatch">
+    If the old gateway used `--profile` or `MANGABACLAW_STATE_DIR` and the new one does not, channels will appear logged out and sessions will be empty. Launch the gateway with the **same** profile or state-dir you migrated, then rerun `mangabaclaw doctor`.
+  </Accordion>
+
+  <Accordion title="Copying only mangabaclaw.json">
+    The config file alone is not enough. Model auth profiles live under `agents/<agentId>/agent/auth-profiles.json`, and channel and provider state lives under `credentials/`. Always migrate the **entire** state directory.
+  </Accordion>
+
+  <Accordion title="Permissions and ownership">
+    If you copied as root or switched users, the gateway may fail to read credentials. Ensure the state directory and workspace are owned by the user running the gateway.
+  </Accordion>
+
+  <Accordion title="Remote mode">
+    If your UI points at a **remote** gateway, the remote host owns sessions and workspace. Migrate the gateway host itself, not your local laptop. See [FAQ](/help/faq#where-things-live-on-disk).
+  </Accordion>
+
+  <Accordion title="Secrets in backups">
+    The state directory contains auth profiles, channel credentials, and other provider state. Store backups encrypted, avoid insecure transfer channels, and rotate keys if you suspect exposure.
+  </Accordion>
+</AccordionGroup>
+
+### Verification checklist
+
+On the new machine, confirm:
+
+- [ ] `mangabaclaw status` shows the gateway running.
+- [ ] Channels are still connected (no re-pairing needed).
+- [ ] The dashboard opens and shows existing sessions.
+- [ ] Workspace files (memory, configs) are present.
+
+## Upgrade a plugin in place
+
+In-place plugin upgrades preserve the same plugin id and config keys but may move on-disk state into the current layout. Plugin-specific upgrade guides live alongside their channels:
+
+- [Matrix migration](/channels/matrix-migration): encrypted-state recovery limits, automatic snapshot behavior, and manual recovery commands.
+
+## Related
+
+- [`mangabaclaw migrate`](/cli/migrate): CLI reference for cross-system imports.
+- [Install overview](/install): all installation methods.
+- [Doctor](/gateway/doctor): post-migration health check.
+- [Uninstall](/install/uninstall): removing MangabaClaw cleanly.

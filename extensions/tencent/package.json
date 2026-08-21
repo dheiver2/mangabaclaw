@@ -1,0 +1,36 @@
+{
+  "name": "@mangabaclaw/tencent-provider",
+  "version": "2026.8.1",
+  "description": "MangabaClaw Tencent Cloud provider plugin (TokenHub + Token Plan)",
+  "type": "module",
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*"
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "setupEntry": "./setup-api.ts",
+    "install": {
+      "clawhubSpec": "clawhub:@mangabaclaw/tencent-provider",
+      "npmSpec": "@mangabaclaw/tencent-provider",
+      "defaultChoice": "npm",
+      "minHostVersion": ">=2026.6.9"
+    },
+    "compat": {
+      "pluginApi": ">=2026.8.1"
+    },
+    "build": {
+      "mangabaclawVersion": "2026.8.1",
+      "bundledDist": false
+    },
+    "release": {
+      "publishToClawHub": true,
+      "publishToNpm": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mangabaclaw/mangabaclaw"
+  }
+}

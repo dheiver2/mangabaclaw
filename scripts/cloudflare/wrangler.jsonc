@@ -1,0 +1,52 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mangabaclaw-cloudflare",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-12",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+  },
+  "vars": {
+    "LITESTREAM_BUCKET": "mangabaclaw-backups",
+    "LITESTREAM_ENDPOINT": "https://<account-id>.r2.cloudflarestorage.com",
+    "LITESTREAM_REGION": "auto",
+    // Keep false for Discord, Slack Socket Mode, WhatsApp, or any other socket channel.
+    "MANGABACLAW_WEBHOOK_ONLY": "false",
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "MANGABACLAW_CONTAINER",
+        "class_name": "MangabaClawContainer",
+      },
+    ],
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["MangabaClawContainer"],
+    },
+  ],
+  "r2_buckets": [
+    {
+      // Documentation/Worker access only. Litestream uses the R2 S3 API and
+      // credentials supplied with `wrangler secret put`, not this binding.
+      "binding": "MANGABACLAW_BACKUPS",
+      "bucket_name": "mangabaclaw-backups",
+    },
+  ],
+  "containers": [
+    {
+      "name": "mangabaclaw-cloudflare",
+      "class_name": "MangabaClawContainer",
+      // Build scripts/cloudflare/Dockerfile for linux/amd64, publish it publicly
+      // on Docker Hub, then replace this placeholder with its immutable digest.
+      "image": "docker.io/<docker-hub-user>/mangabaclaw-cloudflare@sha256:<derived-image-digest>",
+      "instance_type": "standard-2",
+      "max_instances": 1,
+      // For debugging you can add `"ssh": { "enabled": true }` to allow
+      // wrangler-mediated SSH for accounts with container write access.
+    },
+  ],
+}

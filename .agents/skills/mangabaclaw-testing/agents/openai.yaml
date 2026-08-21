@@ -1,0 +1,4 @@
+interface:
+  display_name: "MangabaClaw Testing"
+  short_description: "Choose cheap, targeted MangabaClaw validation"
+  default_prompt: "Use $mangabaclaw-testing to choose the cheapest safe test or CI verification path, inspect failures, and rerun only the relevant MangabaClaw lane."

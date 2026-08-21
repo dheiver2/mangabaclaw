@@ -1,0 +1,44 @@
+{
+  "name": "@mangabaclaw/mxc-sandbox",
+  "version": "2026.8.1",
+  "description": "MangabaClaw MXC sandbox execution plugin for MXC-capable hosts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mangabaclaw/mangabaclaw"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*"
+  },
+  "dependencies": {
+    "@microsoft/mxc-sdk": "0.7.0",
+    "zod": "4.4.3"
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "install": {
+      "npmSpec": "@mangabaclaw/mxc-sandbox",
+      "defaultChoice": "npm",
+      "minHostVersion": ">=2026.6.11"
+    },
+    "compat": {
+      "pluginApi": ">=2026.8.1"
+    },
+    "build": {
+      "mangabaclawVersion": "2026.8.1",
+      "bundledDist": false,
+      "staticAssets": [
+        {
+          "source": "./src/mxc-spawn-launcher.mjs",
+          "output": "mxc-spawn-launcher.mjs"
+        }
+      ]
+    },
+    "release": {
+      "publishToClawHub": true,
+      "publishToNpm": true
+    }
+  }
+}

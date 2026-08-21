@@ -1,0 +1,30 @@
+/* MangabaClaw source: "MangabaClaw uses your calendars to show events and scheduling context when you enable calendar access." */
+"NSCalendarsFullAccessUsageDescription" = "MangabaClaw utilise vos calendriers pour afficher les événements et le contexte de planification lorsque vous activez l’accès au calendrier.";
+/* MangabaClaw source: "MangabaClaw uses your calendars to show events and scheduling context when you enable calendar access." */
+"NSCalendarsUsageDescription" = "MangabaClaw utilise vos calendriers pour afficher les événements et le contexte de planification lorsque vous activez l’accès au calendrier.";
+/* MangabaClaw source: "MangabaClaw uses your calendars to add events when you enable calendar access." */
+"NSCalendarsWriteOnlyAccessUsageDescription" = "MangabaClaw utilise vos calendriers pour ajouter des événements lorsque vous activez l’accès au calendrier.";
+/* MangabaClaw source: "MangabaClaw uses the camera when you scan a Gateway setup QR code or ask your paired Gateway or assistant to capture a photo or short video from this iPhone, for example to connect to your Gateway or show your assistant a document, device screen, or workspace." */
+"NSCameraUsageDescription" = "MangabaClaw utilise l’appareil photo lorsque vous scannez un code QR de configuration de la Gateway ou demandez à votre Gateway appairée ou à votre assistant de prendre une photo ou une courte vidéo depuis cet iPhone, par exemple pour vous connecter à votre Gateway ou montrer à votre assistant un document, l’écran d’un appareil ou un espace de travail.";
+/* MangabaClaw source: "MangabaClaw uses your contacts so you can search and reference people while using the assistant." */
+"NSContactsUsageDescription" = "MangabaClaw utilise vos contacts afin que vous puissiez rechercher et mentionner des personnes lorsque vous utilisez l’assistant.";
+/* MangabaClaw source: "MangabaClaw discovers and connects to your MangabaClaw gateway on the local network." */
+"NSLocalNetworkUsageDescription" = "MangabaClaw détecte votre gateway MangabaClaw sur le réseau local et s’y connecte.";
+/* MangabaClaw source: "MangabaClaw can share your location in the background when you enable Always." */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "MangabaClaw peut partager votre position en arrière-plan lorsque vous activez Toujours.";
+/* MangabaClaw source: "MangabaClaw uses your location when you allow location sharing." */
+"NSLocationWhenInUseUsageDescription" = "MangabaClaw utilise votre position lorsque vous autorisez le partage de position.";
+/* MangabaClaw source: "MangabaClaw uses the microphone for realtime chat, voice wake, push-to-talk, and voice notes." */
+"NSMicrophoneUsageDescription" = "MangabaClaw utilise le microphone pour le chat en temps réel, l'activation vocale, le push-to-talk et les notes vocales.";
+/* MangabaClaw source: "MangabaClaw may use motion data to support device-aware interactions and automations." */
+"NSMotionUsageDescription" = "MangabaClaw peut utiliser les données de mouvement pour prendre en charge des interactions et automatisations adaptées à l’appareil.";
+/* MangabaClaw source: "MangabaClaw reads your steps, sleep, resting heart rate, and workouts from the Apple Health app to create summaries you request and send them through your Gateway to your configured AI provider." */
+"NSHealthShareUsageDescription" = "MangabaClaw lit vos pas, votre sommeil, votre fréquence cardiaque au repos et vos entraînements depuis l’app Santé d’Apple afin de créer les résumés que vous demandez et de les envoyer via votre Gateway au fournisseur d’IA que vous avez configuré.";
+/* MangabaClaw source: "MangabaClaw does not write to the Apple Health app. It uses read-only data to create summaries you request and send them through your Gateway to your configured AI provider." */
+"NSHealthUpdateUsageDescription" = "MangabaClaw n’écrit pas dans l’app Santé d’Apple. Il utilise les données en lecture seule pour créer les résumés que vous demandez et les envoyer via votre Gateway au fournisseur d’IA que vous avez configuré.";
+/* MangabaClaw source: "MangabaClaw lets your assistant read photos you allow and lets you choose photos to share." */
+"NSPhotoLibraryUsageDescription" = "MangabaClaw permet à votre assistant de lire les photos que vous autorisez et vous permet de choisir les photos à partager.";
+/* MangabaClaw source: "MangabaClaw uses your reminders to list, add, and complete tasks when you enable reminders access." */
+"NSRemindersFullAccessUsageDescription" = "MangabaClaw utilise vos rappels pour lister, ajouter et terminer des tâches lorsque vous activez l’accès aux rappels.";
+/* MangabaClaw source: "MangabaClaw uses on-device speech recognition for talk mode and voice wake." */
+"NSSpeechRecognitionUsageDescription" = "MangabaClaw utilise la reconnaissance vocale sur l’appareil pour le mode conversation et l’activation vocale.";

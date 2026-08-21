@@ -1,0 +1,15 @@
+{
+  "id": "twitch",
+  "name": "Twitch",
+  "description": "MangabaClaw Twitch channel plugin for chat and moderation workflows.",
+  "icon": "https://cdn.simpleicons.org/twitch",
+  "activation": {
+    "onStartup": false
+  },
+  "channels": ["twitch"],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

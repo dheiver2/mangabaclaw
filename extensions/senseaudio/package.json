@@ -1,0 +1,15 @@
+{
+  "name": "@mangabaclaw/senseaudio-provider",
+  "version": "2026.8.1",
+  "private": true,
+  "description": "MangabaClaw SenseAudio media-understanding provider",
+  "type": "module",
+  "devDependencies": {
+    "@mangabaclaw/plugin-sdk": "workspace:*"
+  },
+  "mangabaclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

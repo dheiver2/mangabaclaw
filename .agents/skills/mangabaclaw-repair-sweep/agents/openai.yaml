@@ -1,0 +1,4 @@
+interface:
+  display_name: "MangabaClaw Repair Sweep"
+  short_description: "Fix, refactor, land, and close MangabaClaw issues and PRs"
+  default_prompt: "Use $mangabaclaw-repair-sweep to orchestrate workers over MangabaClaw issues and PRs; prove root causes, prefer clean refactors over quick fixes, land verified repairs, and close items proven fixed or no longer useful."
