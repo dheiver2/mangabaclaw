@@ -91,7 +91,7 @@ mangabaclaw sessions export-trajectory
 ```
 
 Docs: `docs/reference/database-schemas.md` for the store layout,
-https://docs.mangabaclaw.ai/cli/sessions for the CLI.
+https://docs.openclaw.ai/cli/sessions for the CLI.
 
 Raw store (when the CLI is unavailable, e.g. inspecting a remote host over
 SSH, or you need event-level detail):

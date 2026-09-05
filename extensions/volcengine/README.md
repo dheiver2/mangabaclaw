@@ -10,4 +10,4 @@ mangabaclaw plugins install @mangabaclaw/volcengine-provider
 mangabaclaw gateway restart
 ```
 
-See <https://docs.mangabaclaw.ai/providers/volcengine> for model and speech setup.
+See <https://docs.openclaw.ai/providers/volcengine> for model and speech setup.

@@ -20,7 +20,7 @@ export default defineSelfHostedOpenAICompatibleProvider({
     buildUnknownModelHint: () =>
       "vLLM requires authentication to be registered as a provider. " +
       'Set VLLM_API_KEY (any value works) or run "mangabaclaw configure". ' +
-      "See: https://docs.mangabaclaw.ai/providers/vllm",
+      "See: https://docs.openclaw.ai/providers/vllm",
     resolveThinkingProfile,
     wrapStreamFn: wrapVllmProviderStream,
   },

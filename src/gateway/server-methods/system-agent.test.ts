@@ -206,7 +206,7 @@ function stubEngineOverview() {
     },
     gateway: { url: "ws://127.0.0.1:18789", source: "test", reachable: true },
     references: {
-      docsUrl: "https://docs.mangabaclaw.ai",
+      docsUrl: "https://docs.openclaw.ai",
       sourceUrl: "https://github.com/mangabaclaw/mangabaclaw",
     },
   } as never);
@@ -347,7 +347,10 @@ describe("mangabaclaw.setup", () => {
       "mangabaclaw.setup.auth.start" as const,
       { sessionId: "busy-auth", authChoice: "github-copilot" },
     ],
-    ["mangabaclaw.setup.prepare.start" as const, { sessionId: "busy-prepare", authChoice: "ollama" }],
+    [
+      "mangabaclaw.setup.prepare.start" as const,
+      { sessionId: "busy-prepare", authChoice: "ollama" },
+    ],
   ])("rejects %s before creating a wizard session when setup is busy", async (method, params) => {
     const ownerStarted = createDeferred();
     const releaseOwner = createDeferred();

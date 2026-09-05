@@ -23,7 +23,8 @@ const endpointMockState = vi.hoisted(() => ({
   responses: [] as Response[],
 }));
 vi.mock("mangabaclaw/plugin-sdk/provider-web-search", async (importOriginal) => {
-  const actual = await importOriginal<typeof import("mangabaclaw/plugin-sdk/provider-web-search")>();
+  const actual =
+    await importOriginal<typeof import("mangabaclaw/plugin-sdk/provider-web-search")>();
   return {
     ...actual,
     withTrustedWebSearchEndpoint: vi.fn(
@@ -187,7 +188,7 @@ describe("parallel web search provider", () => {
     expect(
       testing.resolveParallelSearchEndpoint({ baseUrl: "ftp://proxy.example/parallel" }),
     ).toEqual({
-      docs: "https://docs.mangabaclaw.ai/tools/parallel-search",
+      docs: "https://docs.openclaw.ai/tools/parallel-search",
       error: "invalid_base_url",
       message:
         "plugins.entries.parallel.config.webSearch.baseUrl must be a valid http(s) URL. Got: ftp://proxy.example/parallel",
@@ -302,7 +303,7 @@ describe("parallel web search provider", () => {
       error: "missing_parallel_api_key",
       message:
         "web_search (parallel) needs a Parallel API key. Set PARALLEL_API_KEY in the Gateway environment, or configure plugins.entries.parallel.config.webSearch.apiKey.",
-      docs: "https://docs.mangabaclaw.ai/tools/parallel-search",
+      docs: "https://docs.openclaw.ai/tools/parallel-search",
     });
   });
   it("identifies the plugin via a versioned User-Agent header", () => {
@@ -596,7 +597,11 @@ describe("parallel web search provider", () => {
     const sessionId = `session-${Date.now()}`;
     enqueueJson({ search_id: "first", session_id: sessionId, results: [] });
     const tool = paidTool();
-    await tool.execute({ objective, search_queries: ["mangabaclaw github"], session_id: sessionId });
+    await tool.execute({
+      objective,
+      search_queries: ["mangabaclaw github"],
+      session_id: sessionId,
+    });
     const cached = await tool.execute({
       objective,
       search_queries: ["mangabaclaw github"],

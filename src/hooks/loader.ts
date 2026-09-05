@@ -175,7 +175,7 @@ export async function loadInternalHooks(
             `Hook '${safeLogValue(entry.hook.name)}' subscribes to event${unknownEvents.length === 1 ? "" : "s"} ` +
               `${unknownEvents.map((event) => safeLogValue(event)).join(", ")} not emitted by MangabaClaw core — ` +
               `likely a typo; unless a plugin emits it, the hook never fires. ` +
-              `Known events: https://docs.mangabaclaw.ai/automation/hooks`,
+              `Known events: https://docs.openclaw.ai/automation/hooks`,
           );
         }
 

@@ -26,7 +26,7 @@ vi.mock("../config/config.js", () => ({
   getRuntimeConfig: () => mocks.config,
   resetConfigRuntimeState: () => undefined,
 }));
-vi.mock("../terminal/links.js", () => ({ formatDocsLink: () => "docs.mangabaclaw.ai/cli/skills" }));
+vi.mock("../terminal/links.js", () => ({ formatDocsLink: () => "docs.openclaw.ai/cli/skills" }));
 vi.mock("../terminal/theme.js", () => ({
   theme: {
     command: (value: string) => value,

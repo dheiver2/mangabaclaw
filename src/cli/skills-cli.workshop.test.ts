@@ -63,7 +63,7 @@ vi.mock("../infra/gateway-lock.js", () => ({
 }));
 
 vi.mock("../terminal/links.js", () => ({
-  formatDocsLink: () => "docs.mangabaclaw.ai/cli/skills",
+  formatDocsLink: () => "docs.openclaw.ai/cli/skills",
 }));
 
 vi.mock("../terminal/theme.js", () => ({

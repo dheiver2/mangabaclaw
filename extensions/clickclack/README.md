@@ -46,7 +46,7 @@ different server-to-server endpoint:
 {
   channels: {
     clickclack: {
-      baseUrl: "https://clack.mangabaclaw.ai",
+      baseUrl: "https://clack.openclaw.ai",
       apiBaseUrl: "http://127.0.0.1:8484",
       token: { source: "env", provider: "default", id: "CLICKCLACK_BOT_TOKEN" },
       workspace: "default",
@@ -90,7 +90,7 @@ support and return the managed-channel fields used by this integration.
       discussions: {
         enabled: true,
         workspace: "default",
-        controlUrlBase: "https://team.mangabaclaw.ai",
+        controlUrlBase: "https://team.openclaw.ai",
         section: "Sessions",
       },
     },
@@ -159,4 +159,4 @@ the discussion.
 
 ## Docs
 
-See `docs/channels/clickclack.md` in the MangabaClaw repository, or the published docs at `https://docs.mangabaclaw.ai/channels/clickclack`.
+See `docs/channels/clickclack.md` in the MangabaClaw repository, or the published docs at `https://docs.openclaw.ai/channels/clickclack`.

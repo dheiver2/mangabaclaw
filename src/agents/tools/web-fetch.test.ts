@@ -5,7 +5,7 @@ import { sanitizeWebFetchUrl } from "./web-fetch.test-support.js";
 
 describe("sanitizeWebFetchUrl", () => {
   it("removes whitespace between scheme and authority (reported bug)", () => {
-    expect(sanitizeWebFetchUrl("https:// docs.mangabaclaw.ai")).toBe("https://docs.mangabaclaw.ai");
+    expect(sanitizeWebFetchUrl("https:// docs.openclaw.ai")).toBe("https://docs.openclaw.ai");
   });
 
   it("trims leading and trailing whitespace", () => {
@@ -55,7 +55,7 @@ describe("sanitizeWebFetchUrl", () => {
   });
 
   it("does not modify already-valid URLs", () => {
-    expect(sanitizeWebFetchUrl("https://docs.mangabaclaw.ai")).toBe("https://docs.mangabaclaw.ai");
+    expect(sanitizeWebFetchUrl("https://docs.openclaw.ai")).toBe("https://docs.openclaw.ai");
   });
 
   it("handles https:// with tab after scheme", () => {

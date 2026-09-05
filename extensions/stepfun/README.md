@@ -9,4 +9,4 @@ mangabaclaw plugins install @mangabaclaw/stepfun-provider
 mangabaclaw gateway restart
 ```
 
-See <https://docs.mangabaclaw.ai/providers/stepfun> for setup and configuration.
+See <https://docs.openclaw.ai/providers/stepfun> for setup and configuration.

@@ -38,7 +38,7 @@ type AppSection = {
 
 const docsCta = (path: string): AppCardCta => ({
   kind: "external",
-  href: `https://docs.mangabaclaw.ai${path}`,
+  href: `https://docs.openclaw.ai${path}`,
   label: () => t("appsPage.ctaDocs"),
 });
 
@@ -172,7 +172,7 @@ const APP_SECTIONS: readonly AppSection[] = [
           },
           {
             kind: "external",
-            href: "https://docs.mangabaclaw.ai/tools/chrome-extension",
+            href: "https://docs.openclaw.ai/tools/chrome-extension",
             label: () => t("appsPage.ctaSetupGuide"),
           },
         ],
@@ -203,7 +203,7 @@ const COMMUNITY_LINKS: ReadonlyArray<{ href: string; icon: TemplateResult; label
       icon: brandIcons.discord,
       label: () => t("appsPage.linkDiscord"),
     },
-    { href: "https://docs.mangabaclaw.ai", icon: icons.book, label: () => t("appsPage.linkDocs") },
+    { href: "https://docs.openclaw.ai", icon: icons.book, label: () => t("appsPage.linkDocs") },
   ];
 
 function renderCta(cta: AppCardCta, index: number, props: AppsProps) {

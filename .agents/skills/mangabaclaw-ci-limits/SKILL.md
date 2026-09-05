@@ -54,8 +54,8 @@ ghx run list -R mangabaclaw/mangabaclaw --limit 20 --json databaseId,status,conc
 ghx run list -R mangabaclaw/clawsweeper --limit 20 --json databaseId,status,conclusion,workflowName,event,headBranch,createdAt,updatedAt,url
 ghx api repos/mangabaclaw/clawsweeper/actions/runs/<run-id>/jobs --paginate --jq '.jobs[] | {id,name,status,conclusion,labels,created_at,started_at,completed_at,runner_name,runner_group_name}'
 blacksmith testbox list --all
-curl -fsS https://clawsweeper.mangabaclaw.ai/api/status | jq '{generated_at,fleet,diagnostics:{errors:.diagnostics.errors}}'
-curl -fsS https://clawsweeper.mangabaclaw.ai/api/exact-review-queue | jq '{generated_at,review:.lanes.review,publication:.lanes.publication,state_writer,state_append}'
+curl -fsS https://clawsweeper.openclaw.ai/api/status | jq '{generated_at,fleet,diagnostics:{errors:.diagnostics.errors}}'
+curl -fsS https://clawsweeper.openclaw.ai/api/exact-review-queue | jq '{generated_at,review:.lanes.review,publication:.lanes.publication,state_writer,state_append}'
 node scripts/ci-run-timings.mjs --latest-main
 node scripts/ci-run-timings.mjs --recent 10
 ```
@@ -275,7 +275,7 @@ ghx run list -R mangabaclaw/mangabaclaw --limit 20 --json databaseId,status,conc
 for repo in mangabaclaw/clawsweeper mangabaclaw/clawhub mangabaclaw/clownfish mangabaclaw/mangabaclaw-rtt mangabaclaw/clawbench; do
   ghx run list -R "$repo" --limit 12 --json databaseId,status,conclusion,workflowName,event,headBranch,createdAt,updatedAt,url
 done
-curl -fsS https://clawsweeper.mangabaclaw.ai/api/exact-review-queue | jq '.'
+curl -fsS https://clawsweeper.openclaw.ai/api/exact-review-queue | jq '.'
 ```
 
 Report:

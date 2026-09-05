@@ -9,7 +9,7 @@ mangabaclaw plugins install @mangabaclaw/kimi-provider
 mangabaclaw gateway restart
 ```
 
-See <https://docs.mangabaclaw.ai/providers/moonshot> for setup and configuration.
+See <https://docs.openclaw.ai/providers/moonshot> for setup and configuration.
 
 ## Catalog notes
 

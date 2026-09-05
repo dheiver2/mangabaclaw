@@ -195,7 +195,7 @@ describeControlUiE2e("GitHub link hover cards", () => {
                 "A [missing item](https://github.com/mangabaclaw/mangabaclaw/issues/999999) stays usable.",
                 "The [repository](https://github.com/mangabaclaw/mangabaclaw) has no item preview.",
                 "The skill lives at https://github.com/blader/humanizer/blob/main/SKILL.md.",
-                "Styling notes live in [the docs](https://docs.mangabaclaw.ai/web/control-ui).",
+                "Styling notes live in [the docs](https://docs.openclaw.ai/web/control-ui).",
               ].join(" "),
             },
           ],

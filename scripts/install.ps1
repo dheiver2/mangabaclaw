@@ -1,6 +1,6 @@
 # MangabaClaw Installer for Windows
-# Usage: powershell -c "irm https://mangabaclaw.ai/install.ps1 | iex"
-#        powershell -c "& ([scriptblock]::Create((irm https://mangabaclaw.ai/install.ps1))) -Tag beta -NoOnboard -DryRun"
+# Usage: powershell -c "irm https://mangaba.ia.br/install.ps1 | iex"
+#        powershell -c "& ([scriptblock]::Create((irm https://mangaba.ia.br/install.ps1))) -Tag beta -NoOnboard -DryRun"
 
 [CmdletBinding(PositionalBinding = $false)]
 param(
@@ -20,7 +20,7 @@ if ($Help) {
     @"
 Usage:
   powershell -File install.ps1 [options]
-  & ([scriptblock]::Create((irm https://mangabaclaw.ai/install.ps1))) [options]
+  & ([scriptblock]::Create((irm https://mangaba.ia.br/install.ps1))) [options]
 
 Options:
   -InstallMethod npm|git  Install method (default: npm)
@@ -1575,7 +1575,7 @@ function Install-MangabaClaw {
                 Write-Host "  https://git-scm.com/download/win" -ForegroundColor Cyan
             } else {
                 Write-Host "Re-run with verbose output to see the full error:" -ForegroundColor Yellow
-                Write-Host '  powershell -c "irm https://mangabaclaw.ai/install.ps1 | iex"' -ForegroundColor Cyan
+                Write-Host '  powershell -c "irm https://mangaba.ia.br/install.ps1 | iex"' -ForegroundColor Cyan
             }
             Write-NpmInstallFailureDetails -Output $npmOutput -CacheRoots $npmDebugLogRoots
             return $false

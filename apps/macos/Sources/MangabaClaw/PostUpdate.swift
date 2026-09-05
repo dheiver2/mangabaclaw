@@ -257,7 +257,7 @@ enum PostUpdateNotificationOutcome: Equatable {
 @MainActor
 final class PostUpdateController: NSObject, NSWindowDelegate {
     static let shared = PostUpdateController()
-    static let updateGuideURL = URL(string: "https://docs.mangabaclaw.ai/install/updating")!
+    static let updateGuideURL = URL(string: "https://docs.openclaw.ai/install/updating")!
     static let discordURL = URL(string: "https://discord.gg/clawd")!
 
     private let model = PostUpdateModel()

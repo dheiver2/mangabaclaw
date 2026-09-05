@@ -121,7 +121,7 @@ Explicit tool parameters still win over these defaults.
 
 ## Docs
 
-- https://docs.mangabaclaw.ai/tools/diffs
+- https://docs.openclaw.ai/tools/diffs
 
 ## Package
 

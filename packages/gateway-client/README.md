@@ -7,7 +7,7 @@ timeouts, reconnect backoff, device-token handling, and event delivery.
 
 The current wire protocol is version 4. General clients must advertise exactly v4 with
 `minProtocol: 4` and `maxProtocol: 4`. See the
-[Gateway protocol specification](https://docs.mangabaclaw.ai/gateway/protocol) for
+[Gateway protocol specification](https://docs.openclaw.ai/gateway/protocol) for
 the complete handshake, authentication, role, scope, and method contracts.
 Exact node identities (`role: "node"` plus `mode: "node"`) and probe clients
 can use v3. The built-in node host starts with an exact v4 envelope, then retries
@@ -114,7 +114,7 @@ the next delay.
 
 The canonical defaults table and the server policy fields that can replace
 pre-handshake values are documented in the
-[Gateway protocol specification](https://docs.mangabaclaw.ai/gateway/protocol#client-constants).
+[Gateway protocol specification](https://docs.openclaw.ai/gateway/protocol#client-constants).
 
 Use the `./timeouts` entry point when a host must align readiness or watchdog
 budgets with these defaults. Use the `./readiness` entry point when startup must

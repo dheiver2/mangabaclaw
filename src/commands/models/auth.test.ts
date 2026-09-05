@@ -474,13 +474,16 @@ describe("modelsAuthLoginCommand", () => {
 
     await modelsAuthLoginCommand({ provider: "openai" }, runtime);
 
-    expect(mocks.loadAuthProfileStoreForRuntime).toHaveBeenCalledWith("/tmp/mangabaclaw/agents/main", {
-      externalCli: {
-        mode: "scoped",
-        allowKeychainPrompt: false,
-        providerIds: ["openai"],
+    expect(mocks.loadAuthProfileStoreForRuntime).toHaveBeenCalledWith(
+      "/tmp/mangabaclaw/agents/main",
+      {
+        externalCli: {
+          mode: "scoped",
+          allowKeychainPrompt: false,
+          providerIds: ["openai"],
+        },
       },
-    });
+    );
     expect(mocks.clearAuthProfileCooldown).toHaveBeenCalledWith({
       store: fakeStore,
       profileId: "openai:user@example.com",
@@ -514,7 +517,7 @@ describe("modelsAuthLoginCommand", () => {
       "Default model available: openai/gpt-5.5 (current default unchanged; run mangabaclaw models set openai/gpt-5.5 to apply)",
     );
     expect(runtime.log).toHaveBeenCalledWith(
-      "Tip: Codex-capable models can use native Codex web search. Configure the `web_search` tool with `mangabaclaw configure --section web`. Docs: https://docs.mangabaclaw.ai/tools/web",
+      "Tip: Codex-capable models can use native Codex web search. Configure the `web_search` tool with `mangabaclaw configure --section web`. Docs: https://docs.openclaw.ai/tools/web",
     );
     expect(mocks.callGateway).toHaveBeenCalledWith({
       method: "models.authStatus",

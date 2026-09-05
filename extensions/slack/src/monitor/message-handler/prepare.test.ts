@@ -12,7 +12,10 @@ import {
   type SessionBindingRecord,
 } from "mangabaclaw/plugin-sdk/conversation-runtime";
 import { resolveAgentRoute, resolveThreadSessionKeys } from "mangabaclaw/plugin-sdk/routing";
-import { upsertSessionEntry, type SessionEntry } from "mangabaclaw/plugin-sdk/session-store-runtime";
+import {
+  upsertSessionEntry,
+  type SessionEntry,
+} from "mangabaclaw/plugin-sdk/session-store-runtime";
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import type { ResolvedSlackAccount } from "../../accounts.js";
 import { registerSlackInstallationState } from "../../installation-identity-state.js";
@@ -81,7 +84,8 @@ vi.mock("mangabaclaw/plugin-sdk/runtime-env", async (importOriginal) => {
 });
 
 vi.mock("mangabaclaw/plugin-sdk/system-event-runtime", async (importOriginal) => {
-  const actual = await importOriginal<typeof import("mangabaclaw/plugin-sdk/system-event-runtime")>();
+  const actual =
+    await importOriginal<typeof import("mangabaclaw/plugin-sdk/system-event-runtime")>();
   return {
     ...actual,
     enqueueRoutedSystemEvent: (
@@ -249,7 +253,7 @@ describe("slack prepareSlackMessage inbound contract", () => {
         token: "token",
         channel: "C_DENIED",
         user: "U1",
-        text: "Personal Claw can’t reply here because this channel isn’t in its MangabaClaw channel allowlist. Ask the MangabaClaw owner to allow this channel. <https://docs.mangabaclaw.ai/channels/slack#access-control-and-routing|Learn how to configure Slack channel access.>",
+        text: "Personal Claw can’t reply here because this channel isn’t in its MangabaClaw channel allowlist. Ask the MangabaClaw owner to allow this channel. <https://docs.openclaw.ai/channels/slack#access-control-and-routing|Learn how to configure Slack channel access.>",
       });
       expect(enqueueSystemEventMock).not.toHaveBeenCalled();
     },
@@ -1458,7 +1462,9 @@ describe("slack prepareSlackMessage inbound contract", () => {
           channel: channelId,
           channel_type: "channel",
           user: userId,
-          text: implicit ? "and the time?" : "https://github.com/mangabaclaw/mangabaclaw/issues/50621",
+          text: implicit
+            ? "and the time?"
+            : "https://github.com/mangabaclaw/mangabaclaw/issues/50621",
           ts: "1777244714.000100",
           thread_ts: rootTs,
         } as SlackMessageEvent,

@@ -12,7 +12,7 @@ afterEach(() => {
 });
 
 describe("resolveSafeExternalUrl", () => {
-  const baseHref = "https://mangabaclaw.ai/chat";
+  const baseHref = "https://mangaba.ia.br/chat";
 
   it("allows absolute https URLs", () => {
     expect(resolveSafeExternalUrl("https://example.com/a.png?x=1#y", baseHref)).toBe(
@@ -22,13 +22,13 @@ describe("resolveSafeExternalUrl", () => {
 
   it("allows relative URLs resolved against the current origin", () => {
     expect(resolveSafeExternalUrl("/assets/pic.png", baseHref)).toBe(
-      "https://mangabaclaw.ai/assets/pic.png",
+      "https://mangaba.ia.br/assets/pic.png",
     );
   });
 
   it("allows blob URLs", () => {
-    expect(resolveSafeExternalUrl("blob:https://mangabaclaw.ai/abc-123", baseHref)).toBe(
-      "blob:https://mangabaclaw.ai/abc-123",
+    expect(resolveSafeExternalUrl("blob:https://mangaba.ia.br/abc-123", baseHref)).toBe(
+      "blob:https://mangaba.ia.br/abc-123",
     );
   });
 
@@ -99,7 +99,7 @@ describe("openExternalUrlSafe", () => {
       .mockImplementation(() => openedLikeProxy as unknown as Window);
 
     const opened = openExternalUrlSafe("https://example.com/safe.png", {
-      baseHref: "https://mangabaclaw.ai/chat",
+      baseHref: "https://mangaba.ia.br/chat",
     });
 
     expect(openMock).toHaveBeenCalledWith(

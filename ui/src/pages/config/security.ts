@@ -16,7 +16,7 @@ import {
 import { t } from "../../i18n/index.ts";
 import { PROFILE_OPTIONS } from "../../lib/agents/display.ts";
 
-const SECURITY_DOCS_URL = "https://docs.mangabaclaw.ai/gateway/security";
+const SECURITY_DOCS_URL = "https://docs.openclaw.ai/gateway/security";
 
 export type SecurityOverview = {
   gatewayAuth: string;

@@ -493,11 +493,11 @@ describe("ClawRouter plugin", () => {
       id: "openai/gpt-5.5",
       provider: "clawrouter",
       api: "openai-responses",
-      baseUrl: "https://clawrouter.mangabaclaw.ai/v1",
+      baseUrl: "https://clawrouter.openclaw.ai/v1",
       params: {
         clawrouterRoute: {
           api: "openai-responses",
-          baseUrl: "https://clawrouter.mangabaclaw.ai/v1",
+          baseUrl: "https://clawrouter.openclaw.ai/v1",
         },
       },
     });

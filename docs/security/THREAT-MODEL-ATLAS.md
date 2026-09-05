@@ -16,14 +16,14 @@ This threat model documents adversarial threats to the MangabaClaw AI agent plat
 
 ## 1. Scope
 
-| Component              | Included | Notes                                            |
-| ---------------------- | -------- | ------------------------------------------------ |
+| Component                 | Included | Notes                                            |
+| ------------------------- | -------- | ------------------------------------------------ |
 | MangabaClaw agent runtime | Yes      | Core agent execution, tool calls, sessions       |
-| Gateway                | Yes      | Authentication, routing, channel integration     |
-| Channel integrations   | Yes      | WhatsApp, Telegram, Discord, Signal, Slack, etc. |
-| ClawHub marketplace    | Yes      | Skill publishing, moderation, distribution       |
-| MCP servers            | Yes      | External tool providers                          |
-| User devices           | Partial  | Mobile apps, desktop clients                     |
+| Gateway                   | Yes      | Authentication, routing, channel integration     |
+| Channel integrations      | Yes      | WhatsApp, Telegram, Discord, Signal, Slack, etc. |
+| ClawHub marketplace       | Yes      | Skill publishing, moderation, distribution       |
+| MCP servers               | Yes      | External tool providers                          |
+| User devices              | Partial  | Mobile apps, desktop clients                     |
 
 Out-of-scope reports and false-positive patterns (public internet exposure, prompt-injection-only chains without a boundary bypass, mutually untrusted operators sharing one gateway host, and others) are enumerated in [`SECURITY.md`](https://github.com/mangabaclaw/mangabaclaw/blob/main/SECURITY.md); that file is the current source of truth for vulnerability-report scope, not this page.
 
@@ -118,7 +118,7 @@ Out-of-scope reports and false-positive patterns (public internet exposure, prom
 | Attribute               | Value                                                                |
 | ----------------------- | -------------------------------------------------------------------- |
 | **ATLAS ID**            | AML.T0006 - Active Scanning                                          |
-| **Description**         | Attacker scans for exposed MangabaClaw gateway endpoints                |
+| **Description**         | Attacker scans for exposed MangabaClaw gateway endpoints             |
 | **Attack vector**       | Network scanning, Shodan queries, DNS enumeration                    |
 | **Affected components** | Gateway, exposed API endpoints                                       |
 | **Current mitigations** | Tailscale auth option, bind to loopback by default                   |
@@ -514,7 +514,7 @@ T-EXEC-002 → T-EXFIL-001 → External exfiltration
 
 ### 7.1 ATLAS technique mapping
 
-| ATLAS ID      | Technique name                 | MangabaClaw threats                                                 |
+| ATLAS ID      | Technique name                 | MangabaClaw threats                                              |
 | ------------- | ------------------------------ | ---------------------------------------------------------------- |
 | AML.T0006     | Active Scanning                | T-RECON-001, T-RECON-002                                         |
 | AML.T0009     | Collection                     | T-EXFIL-001, T-EXFIL-002, T-EXFIL-003                            |
@@ -542,16 +542,16 @@ T-EXEC-002 → T-EXFIL-001 → External exfiltration
 | Term                 | Definition                                                |
 | -------------------- | --------------------------------------------------------- |
 | **ATLAS**            | MITRE's Adversarial Threat Landscape for AI Systems       |
-| **ClawHub**          | MangabaClaw's skill marketplace                              |
-| **Gateway**          | MangabaClaw's message routing and authentication layer       |
+| **ClawHub**          | MangabaClaw's skill marketplace                           |
+| **Gateway**          | MangabaClaw's message routing and authentication layer    |
 | **MCP**              | Model Context Protocol - tool provider interface          |
 | **Prompt injection** | Attack where malicious instructions are embedded in input |
-| **Skill**            | Downloadable extension for MangabaClaw agents                |
+| **Skill**            | Downloadable extension for MangabaClaw agents             |
 | **SSRF**             | Server-Side Request Forgery                               |
 
 ---
 
-_This threat model is a living document. Report security issues to `security@mangabaclaw.ai` or see the [Trust page](https://trust.mangabaclaw.ai)._
+_This threat model is a living document. Report security issues to `security@mangaba.ia.br` or see the [Trust page](https://trust.openclaw.ai)._
 
 ## Related
 

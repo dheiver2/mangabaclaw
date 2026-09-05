@@ -11,13 +11,13 @@ MangabaClaw connects to Zalo ClawBot through the catalog-listed external `@zalo-
 ## Compatibility
 
 | Plugin Version | MangabaClaw Version | npm dist-tag | Status        |
-| -------------- | ---------------- | ------------ | ------------- |
-| 0.1.4          | >=2026.4.10      | `latest`     | Active / Beta |
+| -------------- | ------------------- | ------------ | ------------- |
+| 0.1.4          | >=2026.4.10         | `latest`     | Active / Beta |
 
 ## Prerequisites
 
 - Node.js >= 22
-- [MangabaClaw](https://docs.mangabaclaw.ai/install) installed (`mangabaclaw` CLI available)
+- [MangabaClaw](https://docs.openclaw.ai/install) installed (`mangabaclaw` CLI available)
 - A Zalo account on a mobile device to scan the login QR code
 
 ## Install with onboard (recommended)

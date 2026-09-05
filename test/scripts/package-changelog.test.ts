@@ -18,7 +18,7 @@ function changelog(strings: TemplateStringsArray, ...values: string[]) {
 
 const cumulativeChangelog = changelog`
 # Changelog
-Docs: https://docs.mangabaclaw.ai
+Docs: https://docs.openclaw.ai
 ## Unreleased
 ### Fixes
 - Pending note.
@@ -58,7 +58,7 @@ describe("package-changelog", () => {
     expect(extractCurrentPackageChangelog(cumulativeChangelog, "2026.5.28-beta.1")).toBe(
       changelog`
 # Changelog
-Docs: https://docs.mangabaclaw.ai
+Docs: https://docs.openclaw.ai
 
 ## 2026.5.28
 ### Highlights
@@ -139,7 +139,7 @@ Docs: https://docs.mangabaclaw.ai
       }),
     ).toBe(changelog`
 # Changelog
-Docs: https://docs.mangabaclaw.ai
+Docs: https://docs.openclaw.ai
 
 ## Unreleased
 ### Fixes
@@ -178,7 +178,7 @@ ${"é".repeat(260_000)}
   it("fails closed when the extracted release section is effectively empty", () => {
     const source = changelog`
 # Changelog
-Docs: https://docs.mangabaclaw.ai
+Docs: https://docs.openclaw.ai
 ## 2026.5.28
 ### Fixes
 ## 2026.5.27

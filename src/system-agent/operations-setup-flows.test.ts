@@ -151,7 +151,9 @@ describe("system agent setup-flow operations", () => {
     const result = await executeSystemAgentOperation({ kind: "model-setup" }, runtime);
 
     expect(result.applied).toBe(false);
-    expect(lines.join("\n")).toContain("Run `mangabaclaw onboard` on the machine running MangabaClaw");
+    expect(lines.join("\n")).toContain(
+      "Run `mangabaclaw onboard` on the machine running MangabaClaw",
+    );
     expect(lines.join("\n")).toContain("Stop the MangabaClaw host");
     expect(lines.join("\n")).toContain("restart the host");
     expect(lines.join("\n")).not.toContain("mangabaclaw configure --section model");
@@ -197,7 +199,7 @@ describe("system agent setup-flow operations", () => {
     expect(knownOutput).toContain("Slack app messaging.");
     expect(knownOutput).toContain("Configured: yes");
     expect(knownOutput).toContain("Installed: yes");
-    expect(knownOutput).toContain("https://docs.mangabaclaw.ai/channels/slack");
+    expect(knownOutput).toContain("https://docs.openclaw.ai/channels/slack");
     expect(knownOutput).toContain("open channel wizard for slack");
 
     lines.length = 0;

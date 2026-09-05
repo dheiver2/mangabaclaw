@@ -23,8 +23,8 @@ Restart the Gateway after installing or updating the plugin.
 
 Use the ACP docs for harness-specific setup, permission modes, and model/runtime selection:
 
-- https://docs.mangabaclaw.ai/tools/acp-agents-setup
-- https://docs.mangabaclaw.ai/tools/acp-agents
+- https://docs.openclaw.ai/tools/acp-agents-setup
+- https://docs.openclaw.ai/tools/acp-agents
 
 ## Package
 

@@ -9,4 +9,4 @@ mangabaclaw plugins install @mangabaclaw/perplexity-plugin
 mangabaclaw gateway restart
 ```
 
-See <https://docs.mangabaclaw.ai/tools/perplexity-search> for setup and configuration.
+See <https://docs.openclaw.ai/tools/perplexity-search> for setup and configuration.

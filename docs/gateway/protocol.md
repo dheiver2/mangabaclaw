@@ -27,9 +27,9 @@ npm may return `E404` until the first package-bearing release is published.
   `@mangabaclaw/gateway-client/browser`.
 
 For application lifecycle guidance, see
-[Building a Gateway client](https://docs.mangabaclaw.ai/gateway/clients). For apps
+[Building a Gateway client](https://docs.openclaw.ai/gateway/clients). For apps
 that supervise the Gateway as a child process, see
-[Embedding MangabaClaw](https://docs.mangabaclaw.ai/gateway/embedding).
+[Embedding MangabaClaw](https://docs.openclaw.ai/gateway/embedding).
 
 ## Transport and framing
 
@@ -1134,24 +1134,24 @@ The reference client implementation lives in `packages/gateway-client/src/`
 defaults are stable across protocol v4 and are the expected baseline for
 third-party clients.
 
-| Constant                                  | Default                                               | Source                                                                                                                    |
-| ----------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| `PROTOCOL_VERSION`                        | `4`                                                   | `packages/gateway-protocol/src/version.ts`                                                                                |
-| `MIN_CLIENT_PROTOCOL_VERSION`             | `4`                                                   | `packages/gateway-protocol/src/version.ts`                                                                                |
-| `MIN_NODE_PROTOCOL_VERSION`               | `3`                                                   | `packages/gateway-protocol/src/version.ts`                                                                                |
-| `MIN_PROBE_PROTOCOL_VERSION`              | `3`                                                   | `packages/gateway-protocol/src/version.ts`                                                                                |
-| Request timeout (per RPC)                 | `30_000` ms                                           | `packages/gateway-client/src/client.ts` (`requestTimeoutMs`)                                                              |
+| Constant                                  | Default                                               | Source                                                                                                                       |
+| ----------------------------------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `PROTOCOL_VERSION`                        | `4`                                                   | `packages/gateway-protocol/src/version.ts`                                                                                   |
+| `MIN_CLIENT_PROTOCOL_VERSION`             | `4`                                                   | `packages/gateway-protocol/src/version.ts`                                                                                   |
+| `MIN_NODE_PROTOCOL_VERSION`               | `3`                                                   | `packages/gateway-protocol/src/version.ts`                                                                                   |
+| `MIN_PROBE_PROTOCOL_VERSION`              | `3`                                                   | `packages/gateway-protocol/src/version.ts`                                                                                   |
+| Request timeout (per RPC)                 | `30_000` ms                                           | `packages/gateway-client/src/client.ts` (`requestTimeoutMs`)                                                                 |
 | Preauth / connect-challenge timeout       | `15_000` ms                                           | `packages/gateway-client/src/timeouts.ts` (`MANGABACLAW_HANDSHAKE_TIMEOUT_MS` env can raise the paired server/client budget) |
-| Initial reconnect backoff                 | `1_000` ms                                            | `packages/gateway-client/src/client.ts` (`GATEWAY_RECONNECT_POLICY`)                                                      |
-| Max reconnect backoff                     | `30_000` ms                                           | `packages/gateway-client/src/client.ts` (`GATEWAY_RECONNECT_POLICY`)                                                      |
-| Fast-retry clamp after device-token close | `250` ms                                              | `packages/gateway-client/src/client.ts`                                                                                   |
-| Force-stop grace before `terminate()`     | `250` ms                                              | `FORCE_STOP_TERMINATE_GRACE_MS`                                                                                           |
-| `stopAndWait()` default timeout           | `1_000` ms                                            | `STOP_AND_WAIT_TIMEOUT_MS`                                                                                                |
-| Default tick interval (pre `hello-ok`)    | `30_000` ms                                           | `packages/gateway-client/src/client.ts`                                                                                   |
-| Tick-timeout close                        | code `4000` when silence exceeds `tickIntervalMs * 2` | `packages/gateway-client/src/client.ts`                                                                                   |
-| `MAX_PAYLOAD_BYTES`                       | `25 * 1024 * 1024` (25 MB)                            | `src/gateway/server-constants.ts`                                                                                         |
-| Chat attachment ceiling                   | `agents.defaults.mediaMaxMb`, default 20 MB decoded   | `src/gateway/chat-attachment-policy.ts`                                                                                   |
-| Chat attachment image ceiling             | `min(attachment ceiling, 6 MB)`                       | `src/gateway/chat-attachment-policy.ts`, `packages/media-core/src/constants.ts`                                           |
+| Initial reconnect backoff                 | `1_000` ms                                            | `packages/gateway-client/src/client.ts` (`GATEWAY_RECONNECT_POLICY`)                                                         |
+| Max reconnect backoff                     | `30_000` ms                                           | `packages/gateway-client/src/client.ts` (`GATEWAY_RECONNECT_POLICY`)                                                         |
+| Fast-retry clamp after device-token close | `250` ms                                              | `packages/gateway-client/src/client.ts`                                                                                      |
+| Force-stop grace before `terminate()`     | `250` ms                                              | `FORCE_STOP_TERMINATE_GRACE_MS`                                                                                              |
+| `stopAndWait()` default timeout           | `1_000` ms                                            | `STOP_AND_WAIT_TIMEOUT_MS`                                                                                                   |
+| Default tick interval (pre `hello-ok`)    | `30_000` ms                                           | `packages/gateway-client/src/client.ts`                                                                                      |
+| Tick-timeout close                        | code `4000` when silence exceeds `tickIntervalMs * 2` | `packages/gateway-client/src/client.ts`                                                                                      |
+| `MAX_PAYLOAD_BYTES`                       | `25 * 1024 * 1024` (25 MB)                            | `src/gateway/server-constants.ts`                                                                                            |
+| Chat attachment ceiling                   | `agents.defaults.mediaMaxMb`, default 20 MB decoded   | `src/gateway/chat-attachment-policy.ts`                                                                                      |
+| Chat attachment image ceiling             | `min(attachment ceiling, 6 MB)`                       | `src/gateway/chat-attachment-policy.ts`, `packages/media-core/src/constants.ts`                                              |
 
 The server advertises the effective `policy.tickIntervalMs`,
 `policy.maxPayload`, `policy.maxBufferedBytes`, and `policy.attachments` in
@@ -1325,7 +1325,7 @@ the TypeBox schemas re-exported from `packages/gateway-protocol/src/schema.ts`.
 
 ## Related
 
-- [Building a Gateway client](https://docs.mangabaclaw.ai/gateway/clients)
-- [Embedding MangabaClaw](https://docs.mangabaclaw.ai/gateway/embedding)
+- [Building a Gateway client](https://docs.openclaw.ai/gateway/clients)
+- [Embedding MangabaClaw](https://docs.openclaw.ai/gateway/embedding)
 - [Bridge protocol](/gateway/bridge-protocol)
 - [Gateway runbook](/gateway)

@@ -52,7 +52,7 @@ Every beta announcement must make beta status explicit and include:
   mangabaclaw --version
   ```
 - fresh install path:
-  `Install from https://mangabaclaw.ai`
+  `Install from https://mangaba.ia.br`
 - GitHub release link
 - concise validation note, without making CI the headline
 
@@ -67,7 +67,7 @@ mangabaclaw update --channel stable --yes
 mangabaclaw --version
 ```
 
-Fresh installs still point to `https://mangabaclaw.ai`.
+Fresh installs still point to `https://mangaba.ia.br`.
 
 For extended-stable, name the exact version and trailing month. Mention only
 observable backports, and use:

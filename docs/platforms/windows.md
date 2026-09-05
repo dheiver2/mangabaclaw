@@ -120,7 +120,7 @@ Mode matrix:
 For terminal-first use, install MangabaClaw from PowerShell:
 
 ```powershell
-iwr -useb https://mangabaclaw.ai/install.ps1 | iex
+iwr -useb https://mangaba.ia.br/install.ps1 | iex
 ```
 
 Verify:
@@ -184,7 +184,7 @@ wsl --shutdown
 Then install MangabaClaw inside WSL with the Linux quickstart:
 
 ```bash
-curl -fsSL https://mangabaclaw.ai/install.sh | bash
+curl -fsSL https://mangaba.ia.br/install.sh | bash
 mangabaclaw gateway status
 ```
 

@@ -1414,7 +1414,7 @@ extension SettingsProTab {
         if PushBuildConfig.current.usesMangabaClawHostedRelay {
             let host = PushBuildConfig.current.relayBaseURL.flatMap {
                 URLComponents(url: $0, resolvingAgainstBaseURL: false)?.host
-            } ?? "ios-push-relay.mangabaclaw.ai"
+            } ?? "ios-push-relay.openclaw.ai"
             return String(
                 format: String(
                     localized: "This build uses MangabaClaw's hosted push relay at %@ for notification delivery data."),

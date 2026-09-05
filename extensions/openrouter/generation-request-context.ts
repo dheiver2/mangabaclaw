@@ -32,7 +32,7 @@ export async function resolveOpenRouterGenerationRequestContext(params: {
     defaultHeaders: {
       Authorization: `Bearer ${auth.apiKey}`,
       ...(params.jsonContentType ? { "Content-Type": "application/json" } : {}),
-      "HTTP-Referer": "https://mangabaclaw.ai",
+      "HTTP-Referer": "https://mangaba.ia.br",
       "X-OpenRouter-Title": "MangabaClaw",
     },
     request: sanitizeConfiguredModelProviderRequest(

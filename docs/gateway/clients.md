@@ -13,7 +13,7 @@ the wire contract: authentication, capabilities, reconnect recovery, history,
 subscriptions, and version upgrades.
 
 For frame shapes, the handshake, errors, and the complete method surface, read the
-[Gateway protocol specification](https://docs.mangabaclaw.ai/gateway/protocol).
+[Gateway protocol specification](https://docs.openclaw.ai/gateway/protocol).
 
 ## Install the packages
 
@@ -56,7 +56,7 @@ A full interactive chat client that also renders approval prompts should request
 Add `operator.questions` only if the client handles interactive questions,
 `operator.pairing` only if it manages paired devices or nodes, and
 `operator.admin` only for administrative operations such as `config.patch`.
-The [operator scopes reference](https://docs.mangabaclaw.ai/gateway/operator-scopes)
+The [operator scopes reference](https://docs.openclaw.ai/gateway/operator-scopes)
 defines the complete method and approval-time rules.
 
 Do not create a per-client bearer token by hand-editing `mangabaclaw.json`. Configure
@@ -80,7 +80,7 @@ pairing mint the client token:
 
 Scope or role upgrades create a new pending pairing request. Token rotation cannot
 expand the approved pairing contract. See the
-[Devices CLI](https://docs.mangabaclaw.ai/cli/devices) for approval, rotation, and
+[Devices CLI](https://docs.openclaw.ai/cli/devices) for approval, rotation, and
 revocation commands.
 
 ## Advertise client capabilities
@@ -270,7 +270,7 @@ before each upgrade.
 
 ## Related
 
-- [Gateway protocol](https://docs.mangabaclaw.ai/gateway/protocol)
-- [Embedding MangabaClaw](https://docs.mangabaclaw.ai/gateway/embedding)
-- [Gateway RPC reference](https://docs.mangabaclaw.ai/reference/rpc)
-- [Gateway integrations for external apps](https://docs.mangabaclaw.ai/gateway/external-apps)
+- [Gateway protocol](https://docs.openclaw.ai/gateway/protocol)
+- [Embedding MangabaClaw](https://docs.openclaw.ai/gateway/embedding)
+- [Gateway RPC reference](https://docs.openclaw.ai/reference/rpc)
+- [Gateway integrations for external apps](https://docs.openclaw.ai/gateway/external-apps)

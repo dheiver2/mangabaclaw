@@ -20,7 +20,7 @@ export function buildXaiWebSearchProviderBase(): Omit<
     authProviderId: "xai",
     placeholder: "xai-...",
     signupUrl: "https://console.x.ai/",
-    docsUrl: "https://docs.mangabaclaw.ai/tools/web",
+    docsUrl: "https://docs.openclaw.ai/tools/web",
     autoDetectOrder: 30,
     credentialPath: XAI_WEB_SEARCH_CREDENTIAL_PATH,
     ...createWebSearchProviderContractFields({

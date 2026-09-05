@@ -9,4 +9,4 @@ mangabaclaw plugins install @mangabaclaw/arcee-provider
 mangabaclaw gateway restart
 ```
 
-See <https://docs.mangabaclaw.ai/providers/arcee> for setup and configuration.
+See <https://docs.openclaw.ai/providers/arcee> for setup and configuration.

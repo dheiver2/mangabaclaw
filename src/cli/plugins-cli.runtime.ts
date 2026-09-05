@@ -355,7 +355,9 @@ export async function runPluginsRegistryCommand(opts: PluginRegistryOptions): Pr
   ];
   if (inspection.refreshReasons.length > 0) {
     lines.push(`${theme.muted("Refresh reasons:")} ${inspection.refreshReasons.join(", ")}`);
-    lines.push(`${theme.muted("Repair:")} ${theme.command("mangabaclaw plugins registry --refresh")}`);
+    lines.push(
+      `${theme.muted("Repair:")} ${theme.command("mangabaclaw plugins registry --refresh")}`,
+    );
   }
   defaultRuntime.log(lines.join("\n"));
 }
@@ -520,7 +522,7 @@ export async function runPluginsDoctorCommand(opts: PluginDoctorOptions = {}): P
     }
     lines.push("No plugin install-tree issues detected; configuration warnings remain.");
   }
-  const docs = formatDocsLink("/plugin", "docs.mangabaclaw.ai/plugin");
+  const docs = formatDocsLink("/plugin", "docs.openclaw.ai/plugin");
   lines.push("");
   lines.push(`${theme.muted("Docs:")} ${docs}`);
   defaultRuntime.log(lines.join("\n"));

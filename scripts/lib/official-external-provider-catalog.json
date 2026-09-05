@@ -1682,7 +1682,7 @@
             ],
             "placeholder": "sk-...",
             "signupUrl": "https://platform.moonshot.cn/",
-            "docsUrl": "https://docs.mangabaclaw.ai/tools/web",
+            "docsUrl": "https://docs.openclaw.ai/tools/web",
             "credentialPath": "plugins.entries.moonshot.config.webSearch.apiKey",
             "autoDetectOrder": 40
           }

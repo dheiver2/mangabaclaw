@@ -13,7 +13,7 @@ replaceable runtime. This keeps process ownership, readiness, failure recovery,
 and upgrades explicit without depending on MangabaClaw's private state layout.
 
 For client authentication and reconnect state, read
-[Building a Gateway client](https://docs.mangabaclaw.ai/gateway/clients).
+[Building a Gateway client](https://docs.openclaw.ai/gateway/clients).
 
 ## Start the child with an embedding preset
 
@@ -47,12 +47,12 @@ project-local `mangabaclaw` binary is on the host process's `PATH`. The example
 inherits output so the child cannot block on full stdout or stderr pipes. If the
 host captures those streams instead, attach consumers immediately after spawning.
 
-| Setting                          | Embedding effect                                                                                                                                                                           |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `MANGABACLAW_DISABLE_BONJOUR=1`     | Disables Gateway-owned LAN multicast advertising when the host owns discovery.                                                                                                             |
+| Setting                             | Embedding effect                                                                                                                                                                              |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `MANGABACLAW_DISABLE_BONJOUR=1`     | Disables Gateway-owned LAN multicast advertising when the host owns discovery.                                                                                                                |
 | `MANGABACLAW_NO_RESPAWN=1`          | In an unmanaged embedding child, prevents MangabaClaw from handing an update restart to a detached child. Routine restarts remain in process, so the host keeps ownership of the tracked PID. |
-| `MANGABACLAW_EXEC_SHELL_SNAPSHOT=0` | Disables login-shell snapshot capture for host exec commands.                                                                                                                              |
-| `MANGABACLAW_SKIP_CHANNELS=1`       | Skips channel startup and reload. Set it only when the embedding app wants a control-plane or WebChat-only Gateway.                                                                        |
+| `MANGABACLAW_EXEC_SHELL_SNAPSHOT=0` | Disables login-shell snapshot capture for host exec commands.                                                                                                                                 |
+| `MANGABACLAW_SKIP_CHANNELS=1`       | Skips channel startup and reload. Set it only when the embedding app wants a control-plane or WebChat-only Gateway.                                                                           |
 
 `--allow-unconfigured` bypasses only the `gateway.mode=local` startup guard. It
 does not write configuration or repair an invalid file. Omit it when the embedding
@@ -155,7 +155,7 @@ bundle, or vendor selected extension files.
 
 ## Related
 
-- [Building a Gateway client](https://docs.mangabaclaw.ai/gateway/clients)
-- [Gateway protocol](https://docs.mangabaclaw.ai/gateway/protocol)
-- [Gateway CLI](https://docs.mangabaclaw.ai/cli/gateway)
-- [Gateway integrations for external apps](https://docs.mangabaclaw.ai/gateway/external-apps)
+- [Building a Gateway client](https://docs.openclaw.ai/gateway/clients)
+- [Gateway protocol](https://docs.openclaw.ai/gateway/protocol)
+- [Gateway CLI](https://docs.openclaw.ai/cli/gateway)
+- [Gateway integrations for external apps](https://docs.openclaw.ai/gateway/external-apps)

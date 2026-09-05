@@ -80,7 +80,7 @@ import { loadStoredGroupBy, saveStoredGroupBy } from "./page-state.ts";
 import { sessionsPageListQuery, type SessionsRouteData } from "./route.ts";
 import { renderSessions, type SessionsProps, type TranscriptSearchState } from "./view.ts";
 
-const SESSIONS_DOCS_URL = "https://docs.mangabaclaw.ai/concepts/session";
+const SESSIONS_DOCS_URL = "https://docs.openclaw.ai/concepts/session";
 
 type SessionsPageRequestScope = {
   epoch: number;

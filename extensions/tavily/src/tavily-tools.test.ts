@@ -206,7 +206,7 @@ describe("tavily tools", () => {
       max_results: 5,
       include_answer: true,
       time_range: "week",
-      include_domains: [" docs.mangabaclaw.ai ", "   ", "mangabaclaw.ai"],
+      include_domains: [" docs.openclaw.ai ", "   ", "mangabaclaw.ai"],
       exclude_domains: [" bad.example ", ""],
     });
 
@@ -218,7 +218,7 @@ describe("tavily tools", () => {
       maxResults: 5,
       includeAnswer: true,
       timeRange: "week",
-      includeDomains: ["docs.mangabaclaw.ai", "mangabaclaw.ai"],
+      includeDomains: ["docs.openclaw.ai", "mangabaclaw.ai"],
       excludeDomains: ["bad.example"],
     });
     const expectedResult = {
@@ -231,7 +231,7 @@ describe("tavily tools", () => {
         maxResults: 5,
         includeAnswer: true,
         timeRange: "week",
-        includeDomains: ["docs.mangabaclaw.ai", "mangabaclaw.ai"],
+        includeDomains: ["docs.openclaw.ai", "mangabaclaw.ai"],
         excludeDomains: ["bad.example"],
       },
     };

@@ -9,4 +9,4 @@ mangabaclaw plugins install @mangabaclaw/cloudflare-ai-gateway-provider
 mangabaclaw gateway restart
 ```
 
-See <https://docs.mangabaclaw.ai/providers/cloudflare-ai-gateway> for setup and configuration.
+See <https://docs.openclaw.ai/providers/cloudflare-ai-gateway> for setup and configuration.

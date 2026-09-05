@@ -723,8 +723,8 @@ function buildDocsSection(params: {
   }
   const lines = [
     "## Documentation",
-    docsPath ? `Docs: ${docsPath}` : "Docs: https://docs.mangabaclaw.ai",
-    docsPath ? "Mirror: https://docs.mangabaclaw.ai" : undefined,
+    docsPath ? `Docs: ${docsPath}` : "Docs: https://docs.openclaw.ai",
+    docsPath ? "Mirror: https://docs.openclaw.ai" : undefined,
     sourcePath ? `Source: ${sourcePath}` : "Source: https://github.com/mangabaclaw/mangabaclaw",
     docsPath
       ? `MangabaClaw behavior questions: docs first${params.readToolName ? ` via \`${params.readToolName}\`/local search` : " using available tools"}. AGENTS/project/workspace/profile/memory = instructions/user memory, not product design truth.`

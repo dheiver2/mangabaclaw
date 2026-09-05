@@ -860,7 +860,7 @@ echo "Telegram (bot token):"
 echo "  ${COMPOSE_HINT} run --rm mangabaclaw-cli channels add --channel telegram --token <token>"
 echo "Discord (bot token):"
 echo "  ${COMPOSE_HINT} run --rm mangabaclaw-cli channels add --channel discord --token <token>"
-echo "Docs: https://docs.mangabaclaw.ai/channels"
+echo "Docs: https://docs.openclaw.ai/channels"
 
 if [[ -n "$SANDBOX_ENABLED" && -n "$OFFLINE_MODE" ]]; then
   echo ""
@@ -951,7 +951,7 @@ if [[ -n "$SANDBOX_ENABLED" ]]; then
 
   if [[ "$sandbox_config_ok" == true ]]; then
     echo "Sandbox enabled: mode=non-main, scope=agent, workspaceAccess=none"
-    echo "Docs: https://docs.mangabaclaw.ai/gateway/sandboxing"
+    echo "Docs: https://docs.openclaw.ai/gateway/sandboxing"
     # Restart gateway with sandbox compose overlay to pick up socket mount + config.
     run_gateway_up current
   else

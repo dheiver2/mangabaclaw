@@ -9,4 +9,4 @@ mangabaclaw plugins install @mangabaclaw/featherless-provider
 mangabaclaw gateway restart
 ```
 
-See <https://docs.mangabaclaw.ai/providers/featherless> for setup and configuration.
+See <https://docs.openclaw.ai/providers/featherless> for setup and configuration.

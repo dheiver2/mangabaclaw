@@ -20,7 +20,7 @@ describe("shared/entry-status", () => {
       entry: {
         metadata: {
           emoji: "🥭",
-          homepage: "https://mangabaclaw.ai",
+          homepage: "https://mangaba.ia.br",
           requires: {
             bins: ["bun"],
             anyBins: ["ffmpeg", "sox"],
@@ -31,7 +31,7 @@ describe("shared/entry-status", () => {
         },
         frontmatter: {
           emoji: "🙂",
-          homepage: "https://docs.mangabaclaw.ai",
+          homepage: "https://docs.openclaw.ai",
         },
       },
       hasLocalBin: (bin) => bin === "bun",
@@ -44,7 +44,7 @@ describe("shared/entry-status", () => {
 
     expect(result).toEqual({
       emoji: "🥭",
-      homepage: "https://mangabaclaw.ai",
+      homepage: "https://mangaba.ia.br",
       required: {
         bins: ["bun"],
         anyBins: ["ffmpeg", "sox"],
@@ -95,7 +95,7 @@ describe("shared/entry-status", () => {
           },
         },
         frontmatter: {
-          website: " https://docs.mangabaclaw.ai ",
+          website: " https://docs.openclaw.ai ",
           emoji: "🙂",
         },
       },
@@ -106,7 +106,7 @@ describe("shared/entry-status", () => {
 
     expect(result).toEqual({
       emoji: "🙂",
-      homepage: "https://docs.mangabaclaw.ai",
+      homepage: "https://docs.openclaw.ai",
       required: {
         bins: ["missing-bin"],
         anyBins: [],

@@ -290,7 +290,7 @@ internal object AndroidScreenshotFixture {
             chatMessage(
               "assistant",
               "The release check is ready:\n\n```kotlin\nval ready = lint && tests\n```\n\n" +
-                "Review https://mangabaclaw.ai before tagging.",
+                "Review https://mangaba.ia.br before tagging.",
               1_783_555_200_000,
             ),
           )

@@ -109,7 +109,7 @@ async function runSetupWizardOnce(
         [
           ...snapshot.issues.map((iss) => `- ${iss.path}: ${iss.message}`),
           "",
-          "Docs: https://docs.mangabaclaw.ai/gateway/configuration",
+          "Docs: https://docs.openclaw.ai/gateway/configuration",
         ].join("\n"),
         "Config issues",
       );
@@ -274,7 +274,9 @@ async function runSetupWizardOnce(
     acknowledgeMigrationPromotion = migrationOutcome.acknowledgePromotion;
     const migratedSnapshot = await readSetupConfigFileSnapshot();
     if (!migratedSnapshot.valid) {
-      throw new Error("Migration produced an invalid MangabaClaw config. Run `mangabaclaw doctor`.");
+      throw new Error(
+        "Migration produced an invalid MangabaClaw config. Run `mangabaclaw doctor`.",
+      );
     }
     currentSetupSnapshot = migratedSnapshot;
     baseConfig = migratedSnapshot.runtimeConfig ?? migratedSnapshot.config;

@@ -3509,7 +3509,7 @@ describe("runCli exit behavior", () => {
         exists: true,
         valid: true,
         sourceConfig: {
-          $schema: "https://mangabaclaw.ai/config.json",
+          $schema: "https://mangaba.ia.br/config.json",
           meta: { updatedBy: "fixture" },
         },
       },

@@ -844,7 +844,7 @@ describe("config form renderer", () => {
     render(
       renderConfigForm({
         schema: rootAnalysis.schema,
-        uiHints: { gateway: { docsUrl: "https://docs.mangabaclaw.ai/gateway/configuration" } },
+        uiHints: { gateway: { docsUrl: "https://docs.openclaw.ai/gateway/configuration" } },
         unsupportedPaths: rootAnalysis.unsupportedPaths,
         value: {},
         activeSection: "gateway",
@@ -862,7 +862,7 @@ describe("config form renderer", () => {
       container.querySelector<HTMLAnchorElement>(".settings-section__help-popover a"),
       "section guide link",
     );
-    expect(link.getAttribute("href")).toBe("https://docs.mangabaclaw.ai/gateway/configuration");
+    expect(link.getAttribute("href")).toBe("https://docs.openclaw.ai/gateway/configuration");
     expect(link.getAttribute("target")).toBe("_blank");
     expect(link.getAttribute("rel")).toBe("noopener noreferrer");
   });

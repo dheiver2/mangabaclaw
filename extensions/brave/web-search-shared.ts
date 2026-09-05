@@ -38,7 +38,7 @@ export function buildBraveWebSearchProviderBase(): Omit<WebSearchProviderPlugin,
     envVars: ["BRAVE_API_KEY"],
     placeholder: "BSA...",
     signupUrl: "https://brave.com/search/api/",
-    docsUrl: "https://docs.mangabaclaw.ai/tools/brave-search",
+    docsUrl: "https://docs.openclaw.ai/tools/brave-search",
     autoDetectOrder: 10,
     credentialPath: BRAVE_CREDENTIAL_PATH,
     ...createWebSearchProviderContractFields({

@@ -18,7 +18,7 @@ Store your PixVerse API key in MangabaClaw config or expose the supported enviro
 
 Full setup and model/provider examples:
 
-- https://docs.mangabaclaw.ai/providers/pixverse
+- https://docs.openclaw.ai/providers/pixverse
 
 ## Package
 

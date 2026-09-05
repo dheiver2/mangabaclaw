@@ -39,7 +39,7 @@ describe("section docs URLs", () => {
 
   it("maps every URL to an existing task-oriented docs page", () => {
     const hints = buildBaseHints();
-    const docsOrigin = "https://docs.mangabaclaw.ai";
+    const docsOrigin = "https://docs.openclaw.ai";
 
     for (const [path, docsUrl] of Object.entries(SECTION_DOCS_URLS)) {
       const docsPath = docsUrl.slice(docsOrigin.length).replace(/^\//u, "");

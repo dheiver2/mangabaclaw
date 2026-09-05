@@ -187,7 +187,9 @@ describe("cli json stdout contract", () => {
         });
 
         expect(result.status, result.stderr).toBe(0);
-        expect(result.stdout.trim()).toBe(path.join(tempHome, ".mangabaclaw-work", "mangabaclaw.json"));
+        expect(result.stdout.trim()).toBe(
+          path.join(tempHome, ".mangabaclaw-work", "mangabaclaw.json"),
+        );
         await expect(fs.access(path.join(tempHome, ".mangabaclaw-work"))).rejects.toMatchObject({
           code: "ENOENT",
         });
@@ -734,7 +736,7 @@ describe("cli json stdout contract", () => {
           error: { message: string };
         };
         expect(payload.error.message).toBe(
-          'MangabaClaw sessions has no command "lst".\nDid you mean this?\n  mangabaclaw sessions list\nTry: mangabaclaw sessions --help\nDocs: https://docs.mangabaclaw.ai/cli',
+          'MangabaClaw sessions has no command "lst".\nDid you mean this?\n  mangabaclaw sessions list\nTry: mangabaclaw sessions --help\nDocs: https://docs.openclaw.ai/cli',
         );
         expect(payload.error.message).not.toMatch(/[\u001B\u0007]/u);
         expect(result.stdout).not.toContain("\\u001b");

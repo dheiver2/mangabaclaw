@@ -207,7 +207,7 @@ describe("ModelProvidersPage agent scope", () => {
 
     const link = page.querySelector<HTMLAnchorElement>(".page-subtitle a");
     expect(link?.textContent?.trim()).toBe("Learn more");
-    expect(link?.href).toBe("https://docs.mangabaclaw.ai/concepts/model-providers");
+    expect(link?.href).toBe("https://docs.openclaw.ai/concepts/model-providers");
   });
 
   it("patches thinking and fast mode through the shared config draft", async () => {

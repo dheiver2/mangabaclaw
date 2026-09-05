@@ -172,7 +172,7 @@ The runtime excerpt budget covers `memory_get`, live tool results, and post-comp
 
 ## Documentation
 
-The **Documentation** section points to local docs when available (`docs/` in a Git checkout or the bundled npm package docs), falling back to [https://docs.mangabaclaw.ai](https://docs.mangabaclaw.ai) otherwise. It also lists the MangabaClaw source location: Git checkouts expose the local source root, package installs get the GitHub source URL with instructions to review source there when docs are incomplete or stale.
+The **Documentation** section points to local docs when available (`docs/` in a Git checkout or the bundled npm package docs), falling back to [https://docs.openclaw.ai](https://docs.openclaw.ai) otherwise. It also lists the MangabaClaw source location: Git checkouts expose the local source root, package installs get the GitHub source URL with instructions to review source there when docs are incomplete or stale.
 
 The prompt frames docs as the authority for MangabaClaw self-knowledge before the model understands how MangabaClaw works (memory/daily notes, sessions, tools, Gateway, config, commands, project context), and tells the model to treat `AGENTS.md`, project context, workspace/profile/memory notes, and `memory_search` as instruction context or user memory rather than MangabaClaw design/implementation knowledge. If docs are silent or stale, the model should say so and inspect source. It also tells the model to run `mangabaclaw status` itself when possible, asking the user only when it lacks access.
 

@@ -19,7 +19,7 @@ Run from the MangabaClaw repo and branch under test:
 ```bash
 proof_cmd="${MANGABACLAW_TELEGRAM_USER_PROOF_CMD:-mangabaclaw-telegram-user-crabbox-proof}"
 "$proof_cmd" start \
-  --tdlib-url http://artifacts.mangabaclaw.ai/tdlib-v1.8.0-linux-x64.tgz \
+  --tdlib-url http://artifacts.openclaw.ai/tdlib-v1.8.0-linux-x64.tgz \
   --output-dir .artifacts/qa-e2e/telegram-user-crabbox/pr-review
 ```
 
@@ -42,7 +42,7 @@ pass it to `start`:
 ```bash
 proof_cmd="${MANGABACLAW_TELEGRAM_USER_PROOF_CMD:-mangabaclaw-telegram-user-crabbox-proof}"
 "$proof_cmd" start \
-  --tdlib-url http://artifacts.mangabaclaw.ai/tdlib-v1.8.0-linux-x64.tgz \
+  --tdlib-url http://artifacts.openclaw.ai/tdlib-v1.8.0-linux-x64.tgz \
   --mock-response-file .artifacts/qa-e2e/telegram-user-crabbox/reply.txt \
   --output-dir .artifacts/qa-e2e/telegram-user-crabbox/pr-review
 ```
@@ -52,7 +52,7 @@ set the SUT config before Gateway startup:
 
 ```bash
 "$proof_cmd" start \
-  --tdlib-url http://artifacts.mangabaclaw.ai/tdlib-v1.8.0-linux-x64.tgz \
+  --tdlib-url http://artifacts.openclaw.ai/tdlib-v1.8.0-linux-x64.tgz \
   --link-preview false \
   --mock-response-chunk-delay-ms 1200 \
   --mock-response-file .artifacts/qa-e2e/telegram-user-crabbox/reply.txt \

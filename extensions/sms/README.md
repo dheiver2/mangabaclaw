@@ -10,4 +10,4 @@ mangabaclaw plugins install @mangabaclaw/sms
 
 ## Docs
 
-See `docs/channels/sms.md` in the MangabaClaw repository, or the published docs at `https://docs.mangabaclaw.ai/channels/sms`.
+See `docs/channels/sms.md` in the MangabaClaw repository, or the published docs at `https://docs.openclaw.ai/channels/sms`.

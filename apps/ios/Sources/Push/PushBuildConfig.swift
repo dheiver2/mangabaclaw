@@ -45,8 +45,8 @@ struct PushBuildConfig {
     let proofPolicy: PushProofPolicy
 
     static let current = PushBuildConfig()
-    static let mangabaClawHostedRelayHost = "ios-push-relay.mangabaclaw.ai"
-    static let mangabaClawSandboxRelayHost = "ios-push-relay-sandbox.mangabaclaw.ai"
+    static let mangabaClawHostedRelayHost = "ios-push-relay.openclaw.ai"
+    static let mangabaClawSandboxRelayHost = "ios-push-relay-sandbox.openclaw.ai"
 
     var usesMangabaClawHostedRelay: Bool {
         guard self.transport == .relay, self.distribution == .official else { return false }

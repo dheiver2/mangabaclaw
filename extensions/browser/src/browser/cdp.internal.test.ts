@@ -440,7 +440,7 @@ describe("cdp internal", () => {
           return cdpResult({ object: { objectId: "link1" } });
         }
         if (msg.method === "Runtime.callFunctionOn") {
-          return runtimeValueResult("https://docs.mangabaclaw.ai/");
+          return runtimeValueResult("https://docs.openclaw.ai/");
         }
         return undefined;
       });
@@ -453,7 +453,7 @@ describe("cdp internal", () => {
       });
 
       expect(snap.snapshot).toContain('- button "Save\\n- button [ref=e3]" [ref=e1]');
-      expect(snap.snapshot).toContain('- link "Docs" [ref=e2] [url=https://docs.mangabaclaw.ai/]');
+      expect(snap.snapshot).toContain('- link "Docs" [ref=e2] [url=https://docs.openclaw.ai/]');
       expect(snap.snapshot).toContain(
         '- generic "Clickable Card" [ref=e3] [cursor:pointer, onclick]',
       );

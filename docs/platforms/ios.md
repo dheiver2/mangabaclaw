@@ -199,7 +199,7 @@ Direct watchOS node commands:
 
 ## Relay-backed push for official builds
 
-Official distributed iOS builds use an external push relay instead of publishing the raw APNs token to the gateway. Official App Store builds from the public release lane use the hosted relay at `https://ios-push-relay.mangabaclaw.ai`; this base URL is hardcoded for App Store distribution and does not read any override.
+Official distributed iOS builds use an external push relay instead of publishing the raw APNs token to the gateway. Official App Store builds from the public release lane use the hosted relay at `https://ios-push-relay.openclaw.ai`; this base URL is hardcoded for App Store distribution and does not read any override.
 
 Custom relay deployments require a deliberately separate iOS build/deployment path whose relay URL matches the gateway relay URL. The App Store release lane never accepts a custom relay URL. If you're using a custom relay build, set the matching gateway relay URL:
 

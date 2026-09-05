@@ -1215,7 +1215,12 @@ describe("launchctl list detection", () => {
       setLaunchAgentPlist({
         env,
         label,
-        programArguments: ["/usr/local/bin/node", "/opt/mangabaclaw/mangabaclaw.mjs", "update", "--yes"],
+        programArguments: [
+          "/usr/local/bin/node",
+          "/opt/mangabaclaw/mangabaclaw.mjs",
+          "update",
+          "--yes",
+        ],
       });
 
       await expect(
@@ -1348,9 +1353,9 @@ describe("launchctl list detection", () => {
   );
 
   it.runIf(process.platform === "darwin")("disables explicit legacy updater jobs", async () => {
-    await expect(disableMangabaClawUpdateLaunchdJob("ai.mangabaclaw.update.2026.5.12")).resolves.toBe(
-      true,
-    );
+    await expect(
+      disableMangabaClawUpdateLaunchdJob("ai.mangabaclaw.update.2026.5.12"),
+    ).resolves.toBe(true);
 
     const domain = typeof process.getuid === "function" ? `gui/${process.getuid()}` : "gui/501";
     expect(state.launchctlCalls).toContainEqual([
@@ -1416,7 +1421,8 @@ describe("launchd bootstrap repair", () => {
   it("migrates inline secrets before making an existing plist readable", async () => {
     const env = createDefaultLaunchdEnv();
     const plistPath = resolveLaunchAgentPlistPath(env);
-    const wrapperPath = "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway-env-wrapper.sh";
+    const wrapperPath =
+      "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway-env-wrapper.sh";
     const warn = vi.fn();
     const secret = "legacy-secret";
     state.files.set(wrapperPath, "custom wrapper");
@@ -1435,9 +1441,9 @@ describe("launchd bootstrap repair", () => {
     expect(warn).toHaveBeenCalledWith(expect.stringContaining("custom behavior"));
     expect(state.files.get(plistPath)).not.toContain(secret);
     expect(state.fileModes.get(plistPath)).toBe(0o644);
-    expect(state.files.get("/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway.env")).toContain(
-      secret,
-    );
+    expect(
+      state.files.get("/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway.env"),
+    ).toContain(secret);
   });
 
   it("enables and bootstraps the resolved label without kickstarting the fresh agent", async () => {
@@ -1859,7 +1865,8 @@ describe("launchd install", () => {
     const env = createDefaultLaunchdEnv();
     const plistPath = resolveLaunchAgentPlistPath(env);
     const envFilePath = "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway.env";
-    const wrapperPath = "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway-env-wrapper.sh";
+    const wrapperPath =
+      "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway-env-wrapper.sh";
     state.serviceLoaded = false;
     state.serviceRunning = false;
     state.bootstrapError = "Operation not permitted";
@@ -1913,7 +1920,8 @@ describe("launchd install", () => {
     const env = createDefaultLaunchdEnv();
     const plistPath = resolveLaunchAgentPlistPath(env);
     const envFilePath = "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway.env";
-    const wrapperPath = "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway-env-wrapper.sh";
+    const wrapperPath =
+      "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway-env-wrapper.sh";
     const previousEnv = "export MANGABACLAW_GATEWAY_PORT='18789'\n";
     const previousWrapper = '#!/bin/sh\n. "$1"\nshift\nexec "$@"\n';
     const previous = createTestLaunchAgentPlist({
@@ -2122,7 +2130,8 @@ describe("launchd install", () => {
 
     const plistPath = resolveLaunchAgentPlistPath(env);
     const envFilePath = "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway.env";
-    const wrapperPath = "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway-env-wrapper.sh";
+    const wrapperPath =
+      "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway-env-wrapper.sh";
     const plist = state.files.get(plistPath) ?? "";
     expect(plist).not.toContain("<key>EnvironmentVariables</key>");
     expect(plist).not.toContain(apiKey);
@@ -2151,7 +2160,8 @@ describe("launchd install", () => {
     const env = createDefaultLaunchdEnv();
     const extraCaCerts = "/Users/test/certs/corporate-ca.pem";
     const envFilePath = "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway.env";
-    const wrapperPath = "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway-env-wrapper.sh";
+    const wrapperPath =
+      "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway-env-wrapper.sh";
 
     await installLaunchAgent({
       env,
@@ -2187,7 +2197,8 @@ describe("launchd install", () => {
 
   it("warns before overwriting a customized generated LaunchAgent env wrapper", async () => {
     const env = createDefaultLaunchdEnv();
-    const wrapperPath = "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway-env-wrapper.sh";
+    const wrapperPath =
+      "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway-env-wrapper.sh";
     await installLaunchAgent({
       env,
       stdout: new PassThrough(),
@@ -2225,7 +2236,8 @@ describe("launchd install", () => {
 
   it("warns before overwriting a customized generated LaunchAgent env wrapper during restart rewrite", async () => {
     const env = createDefaultLaunchdEnv();
-    const wrapperPath = "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway-env-wrapper.sh";
+    const wrapperPath =
+      "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway-env-wrapper.sh";
     await installLaunchAgent({
       env,
       stdout: new PassThrough(),
@@ -2263,7 +2275,8 @@ describe("launchd install", () => {
   it("rewrites legacy LaunchAgent environment wrappers to a system shell executable", async () => {
     const env = createDefaultLaunchdEnv();
     const envFilePath = "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway.env";
-    const wrapperPath = "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway-env-wrapper.sh";
+    const wrapperPath =
+      "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway-env-wrapper.sh";
     await installLaunchAgent({
       env,
       stdout: new PassThrough(),
@@ -2325,7 +2338,8 @@ describe("launchd install", () => {
     });
 
     const plistPath = resolveLaunchAgentPlistPath(callerEnv);
-    const envFilePath = "/Users/test/service-env/custom-state/service-env/ai.mangabaclaw.gateway.env";
+    const envFilePath =
+      "/Users/test/service-env/custom-state/service-env/ai.mangabaclaw.gateway.env";
     const wrapperPath =
       "/Users/test/service-env/custom-state/service-env/ai.mangabaclaw.gateway-env-wrapper.sh";
     const callerEnvFilePath = "/Users/test/.mangabaclaw/service-env/ai.mangabaclaw.gateway.env";
@@ -3778,7 +3792,9 @@ describe("launchd install", () => {
       mode: "reload",
       waitForPid: process.pid,
     });
-    expect(state.files.get(plistPath)).toContain("/Users/test/Library/Logs/mangabaclaw/gateway.log");
+    expect(state.files.get(plistPath)).toContain(
+      "/Users/test/Library/Logs/mangabaclaw/gateway.log",
+    );
     expect(state.launchctlCalls).toStrictEqual([]);
   });
 
@@ -3865,7 +3881,7 @@ describe("launchd install", () => {
     }
     expect(message).toContain("logged-in macOS GUI session");
     expect(message).toContain("wrong user (including sudo)");
-    expect(message).toContain("https://docs.mangabaclaw.ai/gateway");
+    expect(message).toContain("https://docs.openclaw.ai/gateway");
   });
 
   it("surfaces generic bootstrap failures without GUI-specific guidance", async () => {

@@ -91,7 +91,7 @@ Run a persistent, always-on MangabaClaw Gateway on a Raspberry Pi. Since the Pi 
 
   <Step title="Install MangabaClaw">
     ```bash
-    curl -fsSL https://mangabaclaw.ai/install.sh | bash -s -- --no-onboard
+    curl -fsSL https://mangaba.ia.br/install.sh | bash -s -- --no-onboard
     ```
   </Step>
 

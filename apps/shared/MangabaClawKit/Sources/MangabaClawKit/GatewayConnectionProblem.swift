@@ -270,7 +270,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/tailscale"),
+                        fallback: "https://docs.openclaw.ai/gateway/tailscale"),
                     requestId: authError.requestId,
                     retryable: false,
                     pauseReconnect: true),
@@ -287,7 +287,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/tailscale"),
+                        fallback: "https://docs.openclaw.ai/gateway/tailscale"),
                     requestId: authError.requestId,
                     retryable: false,
                     pauseReconnect: true),
@@ -304,7 +304,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/tailscale"),
+                        fallback: "https://docs.openclaw.ai/gateway/tailscale"),
                     requestId: authError.requestId,
                     retryable: false,
                     pauseReconnect: true),
@@ -321,7 +321,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/tailscale"),
+                        fallback: "https://docs.openclaw.ai/gateway/tailscale"),
                     requestId: authError.requestId,
                     retryable: false,
                     pauseReconnect: true),
@@ -338,7 +338,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/troubleshooting"),
+                        fallback: "https://docs.openclaw.ai/gateway/troubleshooting"),
                     requestId: authError.requestId,
                     retryable: false,
                     pauseReconnect: true),
@@ -376,7 +376,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/authentication"),
+                        fallback: "https://docs.openclaw.ai/gateway/authentication"),
                     requestId: authError.requestId,
                     retryable: false,
                     pauseReconnect: true),
@@ -394,7 +394,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/authentication"),
+                        fallback: "https://docs.openclaw.ai/gateway/authentication"),
                     requestId: authError.requestId,
                     retryable: authError.canRetryWithDeviceToken,
                     pauseReconnect: !authError.canRetryWithDeviceToken),
@@ -412,7 +412,7 @@ public enum GatewayConnectionProblemMapper {
                         ?? "mangabaclaw config set gateway.auth.token <new-token>",
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/authentication"),
+                        fallback: "https://docs.openclaw.ai/gateway/authentication"),
                     requestId: authError.requestId,
                     retryable: false,
                     pauseReconnect: true),
@@ -429,7 +429,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/authentication"),
+                        fallback: "https://docs.openclaw.ai/gateway/authentication"),
                     requestId: authError.requestId,
                     retryable: false,
                     pauseReconnect: true),
@@ -446,7 +446,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/authentication"),
+                        fallback: "https://docs.openclaw.ai/gateway/authentication"),
                     requestId: authError.requestId,
                     retryable: false,
                     pauseReconnect: true),
@@ -465,7 +465,7 @@ public enum GatewayConnectionProblemMapper {
                         ?? "mangabaclaw config set gateway.auth.password <new-password>",
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/authentication"),
+                        fallback: "https://docs.openclaw.ai/gateway/authentication"),
                     requestId: authError.requestId,
                     retryable: false,
                     pauseReconnect: true),
@@ -494,7 +494,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/platforms/ios"),
+                        fallback: "https://docs.openclaw.ai/platforms/ios"),
                     requestId: authError.requestId,
                     retryable: false,
                     pauseReconnect: true),
@@ -511,7 +511,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand ?? pairingCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/pairing"),
+                        fallback: "https://docs.openclaw.ai/gateway/pairing"),
                     requestId: authError.requestId,
                     retryable: false,
                     pauseReconnect: true),
@@ -528,7 +528,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand ?? pairingCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/pairing"),
+                        fallback: "https://docs.openclaw.ai/gateway/pairing"),
                     requestId: authError.requestId,
                     retryable: false,
                     pauseReconnect: true),
@@ -556,7 +556,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/platforms/ios"),
+                        fallback: "https://docs.openclaw.ai/platforms/ios"),
                     requestId: authError.requestId,
                     retryable: false,
                     pauseReconnect: true),
@@ -572,7 +572,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/troubleshooting"),
+                        fallback: "https://docs.openclaw.ai/gateway/troubleshooting"),
                     requestId: authError.requestId,
                     retryable: true,
                     pauseReconnect: true),
@@ -589,7 +589,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/troubleshooting"),
+                        fallback: "https://docs.openclaw.ai/gateway/troubleshooting"),
                     requestId: authError.requestId,
                     retryable: true,
                     pauseReconnect: true),
@@ -605,7 +605,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/troubleshooting"),
+                        fallback: "https://docs.openclaw.ai/gateway/troubleshooting"),
                     requestId: authError.requestId,
                     retryable: true,
                     pauseReconnect: true),
@@ -622,7 +622,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/pairing"),
+                        fallback: "https://docs.openclaw.ai/gateway/pairing"),
                     requestId: authError.requestId,
                     retryable: false,
                     pauseReconnect: true),
@@ -639,7 +639,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/pairing"),
+                        fallback: "https://docs.openclaw.ai/gateway/pairing"),
                     requestId: authError.requestId,
                     retryable: false,
                     pauseReconnect: true),
@@ -656,7 +656,7 @@ public enum GatewayConnectionProblemMapper {
                     actionCommand: authError.actionCommand,
                     docsURL: self.docsURL(
                         authError.docsURLString,
-                        fallback: "https://docs.mangabaclaw.ai/gateway/pairing"),
+                        fallback: "https://docs.openclaw.ai/gateway/pairing"),
                     requestId: authError.requestId,
                     retryable: false,
                     pauseReconnect: true),
@@ -719,7 +719,7 @@ extension GatewayConnectionProblemMapper {
                 actionLabel: "Review certificate",
                 messagePresentation: messagePresentation,
                 actionCommand: nil,
-                docsURL: URL(string: "https://docs.mangabaclaw.ai/gateway/troubleshooting"),
+                docsURL: URL(string: "https://docs.openclaw.ai/gateway/troubleshooting"),
                 retryable: false,
                 pauseReconnect: true,
                 technicalDetails: tlsError.localizedDescription,
@@ -738,7 +738,7 @@ extension GatewayConnectionProblemMapper {
                     "MangabaClaw could not read the gateway certificate for %@.",
                     [failure.host]),
                 actionCommand: nil,
-                docsURL: URL(string: "https://docs.mangabaclaw.ai/gateway/troubleshooting"),
+                docsURL: URL(string: "https://docs.openclaw.ai/gateway/troubleshooting"),
                 retryable: true,
                 pauseReconnect: false,
                 technicalDetails: tlsError.localizedDescription)
@@ -753,7 +753,7 @@ extension GatewayConnectionProblemMapper {
                     "This device does not trust the TLS certificate presented by %@.",
                     [failure.host]),
                 actionCommand: nil,
-                docsURL: URL(string: "https://docs.mangabaclaw.ai/gateway/troubleshooting"),
+                docsURL: URL(string: "https://docs.openclaw.ai/gateway/troubleshooting"),
                 retryable: false,
                 pauseReconnect: true,
                 technicalDetails: tlsError.localizedDescription)
@@ -770,7 +770,7 @@ extension GatewayConnectionProblemMapper {
                     [failure.host]),
                 actionLabelPresentation: .localized("Retry"),
                 actionCommand: nil,
-                docsURL: URL(string: "https://docs.mangabaclaw.ai/gateway/troubleshooting"),
+                docsURL: URL(string: "https://docs.openclaw.ai/gateway/troubleshooting"),
                 retryable: true,
                 pauseReconnect: false,
                 technicalDetails: tlsError.localizedDescription)
@@ -786,7 +786,7 @@ extension GatewayConnectionProblemMapper {
                     "The TLS challenge came from a different host or port than the requested Gateway."),
                 actionLabelPresentation: .localized("Check certificate"),
                 actionCommand: nil,
-                docsURL: URL(string: "https://docs.mangabaclaw.ai/gateway/troubleshooting"),
+                docsURL: URL(string: "https://docs.openclaw.ai/gateway/troubleshooting"),
                 retryable: false,
                 pauseReconnect: true,
                 technicalDetails: tlsError.localizedDescription)
@@ -854,7 +854,7 @@ extension GatewayConnectionProblemMapper {
             title: facts.title,
             message: facts.message,
             actionLabel: facts.actionLabel,
-            docsURL: URL(string: "https://docs.mangabaclaw.ai/gateway/troubleshooting"),
+            docsURL: URL(string: "https://docs.openclaw.ai/gateway/troubleshooting"),
             retryable: true,
             pauseReconnect: false,
             technicalDetails: technicalDetails)
@@ -894,7 +894,7 @@ extension GatewayConnectionProblemMapper {
                 actionCommand: authError.actionCommand ?? self.approvalCommand(requestId: authError.requestId),
                 docsURL: self.docsURL(
                     authError.docsURLString,
-                    fallback: "https://docs.mangabaclaw.ai/gateway/pairing"),
+                    fallback: "https://docs.openclaw.ai/gateway/pairing"),
                 requestId: authError.requestId,
                 retryable: false,
                 pauseReconnect: true),
@@ -945,7 +945,7 @@ extension GatewayConnectionProblemMapper {
                 actionCommand: actionCommand,
                 docsURL: self.docsURL(
                     authError.docsURLString,
-                    fallback: "https://docs.mangabaclaw.ai/gateway/troubleshooting"),
+                    fallback: "https://docs.openclaw.ai/gateway/troubleshooting"),
                 requestId: authError.requestId,
                 retryable: false,
                 pauseReconnect: true),

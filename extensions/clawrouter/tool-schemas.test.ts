@@ -11,7 +11,7 @@ function schemaContext(modelId: string, tools: unknown[]) {
     model: {
       provider: "clawrouter",
       api: "openai-responses",
-      baseUrl: "https://clawrouter.mangabaclaw.ai/v1",
+      baseUrl: "https://clawrouter.openclaw.ai/v1",
       id: modelId,
     },
     tools,

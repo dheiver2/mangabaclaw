@@ -102,7 +102,7 @@ const SLACK_HISTORY_MEDIA_MAX_BYTES = 10 * 1024 * 1024;
 const SLACK_HISTORY_MEDIA_IDLE_TIMEOUT_MS = 1_000;
 const SLACK_HISTORY_MEDIA_TOTAL_TIMEOUT_MS = 3_000;
 const SLACK_CHANNEL_ACCESS_DOCS_URL =
-  "https://docs.mangabaclaw.ai/channels/slack#access-control-and-routing";
+  "https://docs.openclaw.ai/channels/slack#access-control-and-routing";
 
 function resolveSlackGroupSessionSubject(params: {
   channelId: string;

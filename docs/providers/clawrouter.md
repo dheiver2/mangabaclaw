@@ -19,9 +19,9 @@ you only need an issued ClawRouter credential.
 | Property      | Value                                    |
 | ------------- | ---------------------------------------- |
 | Provider      | `clawrouter`                             |
-| Plugin        | bundled (included in MangabaClaw)           |
+| Plugin        | bundled (included in MangabaClaw)        |
 | Auth          | `CLAWROUTER_API_KEY`                     |
-| Default URL   | `https://clawrouter.mangabaclaw.ai`         |
+| Default URL   | `https://clawrouter.openclaw.ai`         |
 | Model catalog | Credential-scoped via `/v1/catalog`      |
 | Quotas        | Monthly budget and usage via `/v1/usage` |
 
@@ -43,7 +43,7 @@ you only need an issued ClawRouter credential.
     `clawrouter` is bundled and enabled by default. If your configuration sets
     `plugins.allow`, add `clawrouter` to that list before enabling it. For a
     custom deployment, set `models.providers.clawrouter.baseUrl` to the
-    ClawRouter origin; the default is `https://clawrouter.mangabaclaw.ai`.
+    ClawRouter origin; the default is `https://clawrouter.openclaw.ai`.
 
   </Step>
   <Step title="List granted models">
@@ -208,7 +208,7 @@ it. A model that needs a new wire protocol requires plugin support first.
 ClawRouter owns upstream credentials; its catalog tells MangabaClaw which
 transport to use, so you never install every upstream company's auth plugin.
 
-| Catalog capability / route                               | MangabaClaw transport     |
+| Catalog capability / route                               | MangabaClaw transport  |
 | -------------------------------------------------------- | ---------------------- |
 | `llm.responses` (OpenAI-compatible provider)             | `openai-responses`     |
 | `llm.chat` (OpenAI-compatible provider)                  | `openai-completions`   |
@@ -253,7 +253,7 @@ the same ClawRouter policy can change the remaining percentage.
 | No ClawRouter models                     | Confirm the plugin is enabled and allowed by `plugins.allow`, then check that the credential is active and grants at least one ready provider. |
 | A configured ClawRouter model is missing | Inspect its `/v1/catalog` capability and route support. Unsupported transport contracts are intentionally filtered.                            |
 | Model override rejected by policy        | Add the exact catalog ref or `clawrouter/*` to `agents.defaults.modelPolicy.allow`.                                                            |
-| `401` or `403` from catalog or usage     | Reissue or re-scope the ClawRouter credential; MangabaClaw does not fall back to upstream provider keys.                                          |
+| `401` or `403` from catalog or usage     | Reissue or re-scope the ClawRouter credential; MangabaClaw does not fall back to upstream provider keys.                                       |
 | Model call fails after discovery         | Check the provider connection and upstream health in ClawRouter, then retry after its readiness state recovers.                                |
 | Usage has totals but no percentage       | The policy is unmetered; add a monthly budget in ClawRouter to expose a percentage window.                                                     |
 

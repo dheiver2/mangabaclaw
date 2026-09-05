@@ -441,7 +441,7 @@ describe("verifyPlivoWebhook", () => {
     const authToken = "test-auth-token";
     const nonce = "nonce-public-url-path";
     const postBody = "CallUUID=uuid&CallStatus=in-progress&From=%2B15550000000";
-    const attackerPathUrl = "https://voice.mangabaclaw.ai/admin?flow=answer&callId=abc";
+    const attackerPathUrl = "https://voice.openclaw.ai/admin?flow=answer&callId=abc";
     const signature = plivoV3Signature({
       authToken,
       urlWithQuery: attackerPathUrl,
@@ -452,7 +452,7 @@ describe("verifyPlivoWebhook", () => {
     const result = verifyPlivoWebhook(
       {
         headers: {
-          host: "voice.mangabaclaw.ai",
+          host: "voice.openclaw.ai",
           "x-forwarded-proto": "https",
           "x-plivo-signature-v3": signature,
           "x-plivo-signature-v3-nonce": nonce,
@@ -463,13 +463,13 @@ describe("verifyPlivoWebhook", () => {
         query: { flow: "answer", callId: "abc" },
       },
       authToken,
-      { publicUrl: "https://voice.mangabaclaw.ai/voice/webhook?provider=plivo" },
+      { publicUrl: "https://voice.openclaw.ai/voice/webhook?provider=plivo" },
     );
 
     expect(result.ok).toBe(false);
     expect(result.version).toBe("v3");
     expect(result.verificationUrl).toBe(
-      "https://voice.mangabaclaw.ai/voice/webhook?flow=answer&callId=abc",
+      "https://voice.openclaw.ai/voice/webhook?flow=answer&callId=abc",
     );
   });
 

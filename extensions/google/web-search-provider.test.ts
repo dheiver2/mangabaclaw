@@ -116,7 +116,7 @@ describe("google web search provider", () => {
       }
 
       await expect(tool.execute({ query: "MangabaClaw docs" })).resolves.toEqual({
-        docs: "https://docs.mangabaclaw.ai/tools/web",
+        docs: "https://docs.openclaw.ai/tools/web",
         error: "missing_gemini_api_key",
         message:
           "web_search (gemini) needs an API key. Set GEMINI_API_KEY in the Gateway environment, configure plugins.entries.google.config.webSearch.apiKey, or reuse models.providers.google.apiKey. If you do not want to configure a search API key, use web_fetch for a specific URL or the browser tool for interactive pages.",
@@ -880,7 +880,7 @@ describe("google web search provider", () => {
         date_after: "2026-04-01",
       }),
     ).resolves.toEqual({
-      docs: "https://docs.mangabaclaw.ai/tools/web",
+      docs: "https://docs.openclaw.ai/tools/web",
       error: "conflicting_time_filters",
       message:
         "freshness and date_after/date_before cannot be used together. Use either freshness (day/week/month/year) or a date range (date_after/date_before), not both.",

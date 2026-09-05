@@ -365,7 +365,7 @@ describe("provider attribution", () => {
       product: "MangabaClaw",
       version: "2026.3.22",
       headers: {
-        "HTTP-Referer": "https://mangabaclaw.ai",
+        "HTTP-Referer": "https://mangaba.ia.br",
         "X-OpenRouter-Title": "MangabaClaw",
         "X-OpenRouter-Categories":
           "cli-agent,cloud-agent,programming-app,creative-writing,writing-assistant,general-chat,personal-agent",
@@ -420,7 +420,7 @@ describe("provider attribution", () => {
         MANGABACLAW_VERSION: "2026.3.22",
       })?.headers,
     ).toEqual({
-      "HTTP-Referer": "https://mangabaclaw.ai",
+      "HTTP-Referer": "https://mangaba.ia.br",
       "X-OpenRouter-Title": "MangabaClaw",
       "X-OpenRouter-Categories":
         "cli-agent,cloud-agent,programming-app,creative-writing,writing-assistant,general-chat,personal-agent",
@@ -428,7 +428,9 @@ describe("provider attribution", () => {
   });
 
   it("returns a hidden-spec OpenAI attribution policy", () => {
-    expect(resolveProviderAttributionPolicy("openai", { MANGABACLAW_VERSION: "2026.3.22" })).toEqual({
+    expect(
+      resolveProviderAttributionPolicy("openai", { MANGABACLAW_VERSION: "2026.3.22" }),
+    ).toEqual({
       provider: "openai",
       enabledByDefault: true,
       verification: "vendor-hidden-api-spec",
@@ -453,7 +455,9 @@ describe("provider attribution", () => {
   });
 
   it("maps legacy OpenAI Codex attribution to canonical OpenAI policy", () => {
-    expect(resolveProviderAttributionPolicy("openai", { MANGABACLAW_VERSION: "2026.3.22" })).toEqual({
+    expect(
+      resolveProviderAttributionPolicy("openai", { MANGABACLAW_VERSION: "2026.3.22" }),
+    ).toEqual({
       provider: "openai",
       enabledByDefault: true,
       verification: "vendor-hidden-api-spec",

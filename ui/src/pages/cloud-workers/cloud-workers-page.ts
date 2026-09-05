@@ -36,7 +36,7 @@ import {
   type ConfiguredCloudWorkerProfile,
 } from "./cloud-worker-config.ts";
 
-const CLOUD_WORKERS_DOCS_URL = "https://docs.mangabaclaw.ai/gateway/cloud-workers";
+const CLOUD_WORKERS_DOCS_URL = "https://docs.openclaw.ai/gateway/cloud-workers";
 type EditorState = { kind: "add" } | { kind: "edit"; profileId: string } | null;
 
 function formControlValue(event: Event): string {

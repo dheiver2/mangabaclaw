@@ -162,7 +162,10 @@ export async function registerChannelsCli(
       () =>
         `\n${theme.heading("Examples:")}\n${formatHelpExamples([
           ["mangabaclaw channels list", "List configured channels."],
-          ["mangabaclaw channels list --all", "Show configured, bundled, and installable channels."],
+          [
+            "mangabaclaw channels list --all",
+            "Show configured, bundled, and installable channels.",
+          ],
           ["mangabaclaw channels add", "Open guided channel setup."],
           ["mangabaclaw channels status --probe", "Run channel status checks and probes."],
           [
@@ -172,7 +175,7 @@ export async function registerChannelsCli(
           ["mangabaclaw channels login --channel whatsapp", "Link a WhatsApp Web account."],
         ])}\n\n${theme.muted("Docs:")} ${formatDocsLink(
           "/cli/channels",
-          "docs.mangabaclaw.ai/cli/channels",
+          "docs.openclaw.ai/cli/channels",
         )}\n`,
     );
 

@@ -5,7 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { resolveMangabaClawPackageRoot } from "../infra/mangabaclaw-root.js";
 
-export const MANGABACLAW_DOCS_URL = "https://docs.mangabaclaw.ai";
+export const MANGABACLAW_DOCS_URL = "https://docs.openclaw.ai";
 export const MANGABACLAW_SOURCE_URL = "https://github.com/mangabaclaw/mangabaclaw";
 
 type ResolveMangabaClawReferencePathParams = {

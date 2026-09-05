@@ -193,7 +193,7 @@ export function registerOnboardCommand(program: Command): void {
     .addHelpText(
       "after",
       () =>
-        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/onboard", "docs.mangabaclaw.ai/cli/onboard")}\n`,
+        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/onboard", "docs.openclaw.ai/cli/onboard")}\n`,
     )
     .option(
       "--workspace <dir>",
@@ -333,7 +333,7 @@ export function registerOnboardCommand(program: Command): void {
           defaultRuntime.error(
             [
               "Non-interactive setup requires explicit risk acknowledgement.",
-              "Read: https://docs.mangabaclaw.ai/security",
+              "Read: https://docs.openclaw.ai/security",
               `Re-run with: ${formatCliCommand("mangabaclaw onboard --modern --non-interactive --accept-risk ...")}`,
             ].join("\n"),
           );

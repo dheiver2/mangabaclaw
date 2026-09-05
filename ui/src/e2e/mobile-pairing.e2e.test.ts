@@ -215,7 +215,7 @@ suite.define(() => {
         await captureUiProof(page, "10-mobile-pairing-help-focus-hover.png");
         const [helpPopup] = await Promise.all([page.waitForEvent("popup"), help.click()]);
         await helpPopup.waitForURL(/docs\.mangabaclaw\.ai\/channels\/pairing/u);
-        expect(helpPopup.url()).toContain("docs.mangabaclaw.ai/channels/pairing");
+        expect(helpPopup.url()).toContain("docs.openclaw.ai/channels/pairing");
         await helpPopup.close();
 
         await gateway.deferNext("device.pair.setupCode");

@@ -33,7 +33,7 @@ export function buildTavilyWebSearchProviderBase(): Omit<WebSearchProviderPlugin
     envVars: ["TAVILY_API_KEY"],
     placeholder: "tvly-...",
     signupUrl: "https://tavily.com/",
-    docsUrl: "https://docs.mangabaclaw.ai/tools/tavily",
+    docsUrl: "https://docs.openclaw.ai/tools/tavily",
     autoDetectOrder: 70,
     credentialPath: TAVILY_CREDENTIAL_PATH,
     ...createWebSearchProviderContractFields({

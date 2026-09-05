@@ -68,7 +68,7 @@ describe("legacy APNs Doctor migration", () => {
       topic: "ai.mangabaclaw.ios",
       environment: "sandbox",
       distribution: "official",
-      relayOrigin: "https://ios-push-relay-sandbox.mangabaclaw.ai/",
+      relayOrigin: "https://ios-push-relay-sandbox.openclaw.ai/",
       tokenDebugSuffix: " abcd-1234 ",
       updatedAtMs: 2_000,
       ...overrides,
@@ -146,7 +146,7 @@ describe("legacy APNs Doctor migration", () => {
       topic: "ai.mangabaclaw.ios",
       environment: "sandbox",
       distribution: "official",
-      relayOrigin: "https://ios-push-relay-sandbox.mangabaclaw.ai",
+      relayOrigin: "https://ios-push-relay-sandbox.openclaw.ai",
       tokenDebugSuffix: "abcd1234",
       updatedAtMs: 2_000,
     });

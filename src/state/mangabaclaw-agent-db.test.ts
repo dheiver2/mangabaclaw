@@ -945,7 +945,9 @@ describe("mangabaclaw agent database", () => {
       { env },
     );
 
-    expect(() => assertNoMangabaClawAgentDatabaseLeases("deleted", { env })).toThrow("deletion owns");
+    expect(() => assertNoMangabaClawAgentDatabaseLeases("deleted", { env })).toThrow(
+      "deletion owns",
+    );
     releaseMangabaClawAgentDatabaseLease(leaseId, { env });
     expect(() => assertNoMangabaClawAgentDatabaseLeases("deleted", { env })).not.toThrow();
     deletion.rollback();
@@ -1111,7 +1113,13 @@ describe("mangabaclaw agent database", () => {
     const stateDir = createTempStateDir();
     const externalStateDir = createTempStateDir();
     const env = { MANGABACLAW_STATE_DIR: stateDir };
-    const inRootPath = path.join(stateDir, "agents", "worker-1", "agent", "mangabaclaw-agent.sqlite");
+    const inRootPath = path.join(
+      stateDir,
+      "agents",
+      "worker-1",
+      "agent",
+      "mangabaclaw-agent.sqlite",
+    );
     const externalPath = path.join(externalStateDir, "external.sqlite");
 
     registerMangabaClawAgentDatabase({ agentId: "worker-1", path: inRootPath, env });
@@ -1155,7 +1163,13 @@ describe("mangabaclaw agent database", () => {
   it("keeps incompatible schema versions maintenance-only", () => {
     const stateDir = createTempStateDir();
     const env = { MANGABACLAW_STATE_DIR: stateDir };
-    const databasePath = path.join(stateDir, "agents", "legacy", "agent", "mangabaclaw-agent.sqlite");
+    const databasePath = path.join(
+      stateDir,
+      "agents",
+      "legacy",
+      "agent",
+      "mangabaclaw-agent.sqlite",
+    );
     registerMangabaClawAgentDatabase({
       agentId: "legacy",
       path: databasePath,
@@ -1339,7 +1353,9 @@ describe("mangabaclaw agent database", () => {
       { name: "board_tabs", strict: 1 },
       { name: "board_widgets", strict: 1 },
     ]);
-    expect(readSqliteNumberPragma(reopened.db, "user_version")).toBe(MANGABACLAW_AGENT_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(reopened.db, "user_version")).toBe(
+      MANGABACLAW_AGENT_SCHEMA_VERSION,
+    );
     expect(
       reopened.db
         .prepare("SELECT schema_version FROM schema_meta WHERE meta_key = 'primary'")
@@ -1519,7 +1535,9 @@ describe("mangabaclaw agent database", () => {
       integrity_check: "ok",
     });
     expect(migrated.db.prepare("PRAGMA foreign_key_check").all()).toEqual([]);
-    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(MANGABACLAW_AGENT_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(
+      MANGABACLAW_AGENT_SCHEMA_VERSION,
+    );
 
     migrated.db
       .prepare("DELETE FROM session_nodes WHERE session_key = ?")
@@ -1561,7 +1579,9 @@ describe("mangabaclaw agent database", () => {
         .prepare("SELECT name FROM sqlite_schema WHERE type = 'table' AND name = ?")
         .get("heartbeat_outcomes"),
     ).toEqual({ name: "heartbeat_outcomes" });
-    expect(readSqliteNumberPragma(reopened.db, "user_version")).toBe(MANGABACLAW_AGENT_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(reopened.db, "user_version")).toBe(
+      MANGABACLAW_AGENT_SCHEMA_VERSION,
+    );
     expect(
       reopened.db
         .prepare("SELECT schema_version FROM schema_meta WHERE meta_key = 'primary'")
@@ -1604,7 +1624,9 @@ describe("mangabaclaw agent database", () => {
         .prepare("SELECT strict FROM pragma_table_list WHERE name = ?")
         .get("transcript_rewrite_watermarks"),
     ).toEqual({ strict: 1 });
-    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(MANGABACLAW_AGENT_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(
+      MANGABACLAW_AGENT_SCHEMA_VERSION,
+    );
     expect(
       migrated.db
         .prepare("SELECT schema_version FROM schema_meta WHERE meta_key = 'primary'")
@@ -1684,7 +1706,9 @@ describe("mangabaclaw agent database", () => {
     legacy.close();
 
     const migrated = migrateAndOpenLegacyAgentDatabaseForTest({ agentId: "worker-1", env });
-    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(MANGABACLAW_AGENT_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(
+      MANGABACLAW_AGENT_SCHEMA_VERSION,
+    );
     expect(
       migrated.db
         .prepare("SELECT schema_version FROM schema_meta WHERE meta_key = 'primary'")
@@ -1802,7 +1826,9 @@ describe("mangabaclaw agent database", () => {
         (column) => column.name,
       );
 
-    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(MANGABACLAW_AGENT_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(
+      MANGABACLAW_AGENT_SCHEMA_VERSION,
+    );
     expect(tableColumns("acp_parent_stream_events")).toEqual([
       "session_id",
       "run_id",
@@ -1919,7 +1945,9 @@ describe("mangabaclaw agent database", () => {
         .all()
         .map((column) => (column as { name: string }).name),
     ).toEqual(expect.arrayContaining(["active_event_count", "active_message_count"]));
-    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(MANGABACLAW_AGENT_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(
+      MANGABACLAW_AGENT_SCHEMA_VERSION,
+    );
     expect(
       migrated.db
         .prepare("SELECT schema_version FROM schema_meta WHERE meta_key = 'primary'")
@@ -1975,7 +2003,9 @@ describe("mangabaclaw agent database", () => {
 
     const database = migrateAndOpenLegacyAgentDatabaseForTest({ agentId: "worker-1", env });
 
-    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(MANGABACLAW_AGENT_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(
+      MANGABACLAW_AGENT_SCHEMA_VERSION,
+    );
     expect(
       database.db.prepare("SELECT id, path, source FROM memory_index_sources ORDER BY id").all(),
     ).toEqual([
@@ -2019,7 +2049,9 @@ describe("mangabaclaw agent database", () => {
       { rowid: 84, path: "shared.md" },
     ]);
     expect(
-      listMangabaClawRegisteredAgentDatabases({ env }).find((entry) => entry.agentId === "worker-1"),
+      listMangabaClawRegisteredAgentDatabases({ env }).find(
+        (entry) => entry.agentId === "worker-1",
+      ),
     ).toMatchObject({ path: databasePath, schemaVersion: MANGABACLAW_AGENT_SCHEMA_VERSION });
 
     closeMangabaClawAgentDatabasesForTest();
@@ -2308,7 +2340,9 @@ describe("mangabaclaw agent database", () => {
       const redirectedRealPath = path.join(redirectedDir, "redirected-worker.sqlite");
       const redirectedAliasPath = path.join(stateDir, "redirected-worker-alias.sqlite");
       fs.symlinkSync("redirect-link/../redirected-worker.sqlite", redirectedAliasPath);
-      expect(isSameMangabaClawAgentDatabasePath(redirectedRealPath, redirectedAliasPath)).toBe(true);
+      expect(isSameMangabaClawAgentDatabasePath(redirectedRealPath, redirectedAliasPath)).toBe(
+        true,
+      );
       expect(
         isSameMangabaClawAgentDatabasePath(
           path.join(stateDir, "redirected-worker.sqlite"),
@@ -2470,7 +2504,9 @@ describe("mangabaclaw agent database", () => {
       fs.unlinkSync(composedUpperPath);
     }
 
-    expect(isSameMangabaClawAgentDatabasePath(composedUpperPath, decomposedLowerPath)).toBe(aliases);
+    expect(isSameMangabaClawAgentDatabasePath(composedUpperPath, decomposedLowerPath)).toBe(
+      aliases,
+    );
   });
 
   it("requires raw normalization after an ASCII-only case difference", () => {
@@ -2491,7 +2527,9 @@ describe("mangabaclaw agent database", () => {
       fs.unlinkSync(composedUpperPath);
     }
 
-    expect(isSameMangabaClawAgentDatabasePath(composedUpperPath, decomposedMixedPath)).toBe(aliases);
+    expect(isSameMangabaClawAgentDatabasePath(composedUpperPath, decomposedMixedPath)).toBe(
+      aliases,
+    );
   });
 
   it.runIf(tempVolumeIsCaseInsensitive)(
@@ -3251,7 +3289,9 @@ describe("mangabaclaw agent database", () => {
     expect(readSqliteNumberPragma(database.db, "foreign_keys")).toBe(1);
     expect(readSqliteNumberPragma(database.db, "synchronous")).toBe(1);
     expect(readSqliteNumberPragma(database.db, "auto_vacuum")).toBe(2);
-    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(MANGABACLAW_AGENT_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(
+      MANGABACLAW_AGENT_SCHEMA_VERSION,
+    );
     expect(readSqliteNumberPragma(database.db, "wal_autocheckpoint")).toBe(1000);
     expect(readSqliteNumberPragma(database.db, "journal_size_limit")).toBe(64 * 1024 * 1024);
     const journalMode = database.db.prepare("PRAGMA journal_mode").get() as
@@ -3308,7 +3348,9 @@ describe("mangabaclaw agent database", () => {
         .prepare("SELECT name FROM sqlite_master WHERE type = 'index' AND name = ?")
         .get("idx_agent_session_nodes_status"),
     ).toEqual({ name: "idx_agent_session_nodes_status" });
-    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(MANGABACLAW_AGENT_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(
+      MANGABACLAW_AGENT_SCHEMA_VERSION,
+    );
   });
 
   it("replaces the main v5 session indexes during migration", () => {
@@ -3358,7 +3400,9 @@ describe("mangabaclaw agent database", () => {
         ? transcriptIndex.sql.replace(/\s+/g, " ").trim()
         : transcriptIndex?.sql,
     ).toContain("ON transcript_event_identities(session_id, event_type, seq DESC)");
-    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(MANGABACLAW_AGENT_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(
+      MANGABACLAW_AGENT_SCHEMA_VERSION,
+    );
   });
 
   it("repairs a same-name transcript uniqueness index before accepting writes", () => {
@@ -3901,7 +3945,9 @@ describe("mangabaclaw agent database", () => {
       plugin_owner_id: "history-owner",
       hook_external_content_source: "webhook",
     });
-    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(MANGABACLAW_AGENT_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(
+      MANGABACLAW_AGENT_SCHEMA_VERSION,
+    );
   });
 
   it("adds transcript provenance when upgrading the v7 status schema", () => {
@@ -3962,7 +4008,9 @@ describe("mangabaclaw agent database", () => {
       peer_id: "peer-a",
       delivery_target: "reef:peer-a",
     });
-    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(MANGABACLAW_AGENT_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(
+      MANGABACLAW_AGENT_SCHEMA_VERSION,
+    );
   });
 
   it("adds the active transcript projection when upgrading v9 databases", () => {
@@ -4030,7 +4078,9 @@ describe("mangabaclaw agent database", () => {
         )
         .get("session-1"),
     ).toEqual({ generation_length: 32 });
-    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(MANGABACLAW_AGENT_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(
+      MANGABACLAW_AGENT_SCHEMA_VERSION,
+    );
   });
 
   it("adds durable conversation delivery state when upgrading the canonical v10 schema", () => {
@@ -4210,7 +4260,9 @@ describe("mangabaclaw agent database", () => {
       env: { MANGABACLAW_STATE_DIR: stateDir },
     });
 
-    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(MANGABACLAW_AGENT_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(
+      MANGABACLAW_AGENT_SCHEMA_VERSION,
+    );
     const session = database.db
       .prepare(
         `
@@ -4491,7 +4543,7 @@ describe("mangabaclaw agent database", () => {
     }
     expect(firstFailure).toMatchObject({
       name: "SqliteSchemaVersionError",
-      message: expect.stringContaining("https://docs.mangabaclaw.ai/reference/database-schemas"),
+      message: expect.stringContaining("https://docs.openclaw.ai/reference/database-schemas"),
     });
 
     for (const candidate of [databasePath, `${databasePath}-wal`, `${databasePath}-shm`]) {

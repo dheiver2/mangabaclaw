@@ -34,12 +34,12 @@ describe("qa-lab web search provider", () => {
       query: "MangabaClaw runtime parity fixed query",
       results: [
         {
-          url: "https://docs.mangabaclaw.ai/qa-lab/search-fixture/1",
-          siteName: "docs.mangabaclaw.ai",
+          url: "https://docs.openclaw.ai/qa-lab/search-fixture/1",
+          siteName: "docs.openclaw.ai",
         },
         {
-          url: "https://docs.mangabaclaw.ai/qa-lab/search-fixture/2",
-          siteName: "docs.mangabaclaw.ai",
+          url: "https://docs.openclaw.ai/qa-lab/search-fixture/2",
+          siteName: "docs.openclaw.ai",
         },
       ],
     });

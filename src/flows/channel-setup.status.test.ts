@@ -467,7 +467,7 @@ describe("resolveChannelSetupSelectionContributions", () => {
         "Approve with: mangabaclaw pairing approve <channel> <code>",
         'Open/public DMs require dmPolicy="open" plus allowFrom=["*"].',
         'For multi-user DMs, isolate sessions with: mangabaclaw config set session.dmScope "per-channel-peer" (or "per-account-channel-peer" for multi-account channels).',
-        "Docs: https://docs.mangabaclaw.ai/channels/pairing",
+        "Docs: https://docs.openclaw.ai/channels/pairing",
         "",
         "bad\\nid: Blurb\\nline",
       ].join("\n"),
@@ -543,7 +543,7 @@ describe("resolveChannelSetupSelectionContributions", () => {
     if (typeof docsLink !== "function") {
       throw new Error("Expected docs link formatter");
     }
-    expect(docsLink("/channels/zalo", "Docs")).toBe("https://docs.mangabaclaw.ai/channels/zalo");
+    expect(docsLink("/channels/zalo", "Docs")).toBe("https://docs.openclaw.ai/channels/zalo");
     expect(lines).toEqual(["Zalo\\nBot — Setup\\nhelp"]);
   });
 

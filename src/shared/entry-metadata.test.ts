@@ -6,12 +6,12 @@ describe("shared/entry-metadata", () => {
   it("prefers metadata emoji and homepage when present", () => {
     expect(
       resolveEmojiAndHomepage({
-        metadata: { emoji: "🥭", homepage: " https://mangabaclaw.ai " },
+        metadata: { emoji: "🥭", homepage: " https://mangaba.ia.br " },
         frontmatter: { emoji: "🙂", homepage: "https://example.com" },
       }),
     ).toEqual({
       emoji: "🥭",
-      homepage: "https://mangabaclaw.ai",
+      homepage: "https://mangaba.ia.br",
     });
   });
 
@@ -27,11 +27,11 @@ describe("shared/entry-metadata", () => {
   it("falls back through frontmatter homepage aliases and drops blanks", () => {
     expect(
       resolveEmojiAndHomepage({
-        frontmatter: { emoji: "🙂", website: " https://docs.mangabaclaw.ai " },
+        frontmatter: { emoji: "🙂", website: " https://docs.openclaw.ai " },
       }),
     ).toEqual({
       emoji: "🙂",
-      homepage: "https://docs.mangabaclaw.ai",
+      homepage: "https://docs.openclaw.ai",
     });
     expect(
       resolveEmojiAndHomepage({
@@ -41,10 +41,10 @@ describe("shared/entry-metadata", () => {
     ).toStrictEqual({});
     expect(
       resolveEmojiAndHomepage({
-        frontmatter: { url: " https://mangabaclaw.ai/install " },
+        frontmatter: { url: " https://mangaba.ia.br/install " },
       }),
     ).toEqual({
-      homepage: "https://mangabaclaw.ai/install",
+      homepage: "https://mangaba.ia.br/install",
     });
   });
 
@@ -53,8 +53,8 @@ describe("shared/entry-metadata", () => {
       resolveEmojiAndHomepage({
         frontmatter: {
           homepage: " ",
-          website: "https://docs.mangabaclaw.ai",
-          url: "https://mangabaclaw.ai/install",
+          website: "https://docs.openclaw.ai",
+          url: "https://mangaba.ia.br/install",
         },
       }),
     ).toStrictEqual({});

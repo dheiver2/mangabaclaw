@@ -204,7 +204,7 @@ Broker auth, not cloud keys:
 "$CRABBOX" config show
 "$CRABBOX" doctor
 "$CRABBOX" whoami
-"$CRABBOX" login --url https://crabbox.mangabaclaw.ai --provider aws
+"$CRABBOX" login --url https://crabbox.openclaw.ai --provider aws
 ```
 
 Normal validation asking for AWS keys usually means wrong path.

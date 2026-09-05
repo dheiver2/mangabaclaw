@@ -28,9 +28,9 @@ Start from this routing map before creating GitHub items:
 
 | Situation                                                | Use                                                                                                                                                                                  | Required evidence                                                                                                   |
 | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
-| Product bug, regression, crash, or behavior defect       | [Bug report](https://github.com/mangabaclaw/mangabaclaw/issues/new?template=bug_report.yml)                                                                                                | Repro steps, expected vs actual behavior, version, OS, model/provider route when relevant, logs/screenshots, impact |
-| Documentation bug or missing/contradictory docs          | [Docs bug report](https://github.com/mangabaclaw/mangabaclaw/issues/new?template=docs_bug_report.yml)                                                                                      | Affected docs path or URL, verification steps, expected docs content, actual docs content, impact, evidence         |
-| New feature, architecture change, or product improvement | [Feature request](https://github.com/mangabaclaw/mangabaclaw/issues/new?template=feature_request.yml) or Discord first                                                                     | Problem, proposed solution, alternatives, impact, examples or prior art                                             |
+| Product bug, regression, crash, or behavior defect       | [Bug report](https://github.com/mangabaclaw/mangabaclaw/issues/new?template=bug_report.yml)                                                                                          | Repro steps, expected vs actual behavior, version, OS, model/provider route when relevant, logs/screenshots, impact |
+| Documentation bug or missing/contradictory docs          | [Docs bug report](https://github.com/mangabaclaw/mangabaclaw/issues/new?template=docs_bug_report.yml)                                                                                | Affected docs path or URL, verification steps, expected docs content, actual docs content, impact, evidence         |
+| New feature, architecture change, or product improvement | [Feature request](https://github.com/mangabaclaw/mangabaclaw/issues/new?template=feature_request.yml) or Discord first                                                               | Problem, proposed solution, alternatives, impact, examples or prior art                                             |
 | Onboarding, setup help, or general support question      | Discord [#help](https://discord.com/channels/1456350064065904867/1459642797895319552) / [#users-helping-users](https://discord.com/channels/1456350064065904867/1459007081603403828) | Do not open a GitHub issue unless there is a concrete product defect or docs gap                                    |
 | Security vulnerability                                   | See [Report a Vulnerability](#report-a-vulnerability) below                                                                                                                          | Do not file public issues for private security reports                                                              |
 | PR for an existing or newly filed issue                  | Use the [PR template](.github/pull_request_template.md)                                                                                                                              | Visible `Closes #<issue>` or `Related: #<issue>`, problem, shipped solution, user impact, validation evidence       |
@@ -80,7 +80,7 @@ For coordinated change sets that genuinely need more than 20 PRs, join the **#cl
 
 ## Review Conversations Are Author-Owned
 
-After your PR receives Barnacle, ClawSweeper, or maintainer feedback, read the [pull request review flow](https://docs.mangabaclaw.ai/reference/pull-request-review-flow) for how to interpret rank-up moves, proof guidance, re-review requests, and review conversation follow-up.
+After your PR receives Barnacle, ClawSweeper, or maintainer feedback, read the [pull request review flow](https://docs.openclaw.ai/reference/pull-request-review-flow) for how to interpret rank-up moves, proof guidance, re-review requests, and review conversation follow-up.
 
 ## Control UI Decorators
 
@@ -108,7 +108,7 @@ Please include in your PR:
 - [ ] Include prompts or session logs if possible (super helpful!)
 - [ ] Confirm you understand what the code does
 - [ ] Run the `autoreview` skill when available and address accepted/actionable findings
-- [ ] Follow the [pull request review flow](https://docs.mangabaclaw.ai/reference/pull-request-review-flow) after Barnacle, ClawSweeper, or maintainer feedback
+- [ ] Follow the [pull request review flow](https://docs.openclaw.ai/reference/pull-request-review-flow) after Barnacle, ClawSweeper, or maintainer feedback
 
 AI PRs are first-class citizens here. We just want transparency so reviewers know what to look for.
 
@@ -133,7 +133,7 @@ If you're an experienced contributor who wants to help shape MangabaClaw's direc
 
 Being a maintainer is a responsibility, not an honorary title. We expect active, consistent involvement — triaging issues, reviewing PRs, and helping move the project forward.
 
-Still interested? Email contributing@mangabaclaw.ai with:
+Still interested? Email contributing@mangaba.ia.br with:
 
 - Links to your PRs on MangabaClaw (if you don't have any, start there first)
 - Links to open source projects you maintain or actively contribute to
@@ -156,7 +156,7 @@ We take security reports seriously. Report vulnerabilities directly to the repos
 - **Android app** — [mangabaclaw/mangabaclaw](https://github.com/mangabaclaw/mangabaclaw) (apps/android)
 - **ClawHub** — [mangabaclaw/clawhub](https://github.com/mangabaclaw/clawhub)
 
-For issues that don't fit a specific repo, or if you're unsure, email **security@mangabaclaw.ai** and we'll route it.
+For issues that don't fit a specific repo, or if you're unsure, email **security@mangaba.ia.br** and we'll route it.
 
 ### Required in Reports
 

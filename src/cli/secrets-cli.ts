@@ -116,7 +116,7 @@ export function registerSecretsCli(program: Command): void {
     .addHelpText(
       "after",
       () =>
-        `\n${theme.muted("Docs:")} ${formatDocsLink("/gateway/security", "docs.mangabaclaw.ai/gateway/security")}\n`,
+        `\n${theme.muted("Docs:")} ${formatDocsLink("/gateway/security", "docs.openclaw.ai/gateway/security")}\n`,
     );
 
   registerSecretStoreCli(secrets);

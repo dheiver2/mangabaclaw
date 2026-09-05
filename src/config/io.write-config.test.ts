@@ -477,12 +477,12 @@ describe("config io write", () => {
 
   itWithHome("preserves root $schema during partial writes", async (home) => {
     const { configPath } = await writeConfigFixture(home, {
-      $schema: "https://mangabaclaw.ai/config.json",
+      $schema: "https://mangaba.ia.br/config.json",
       gateway: { mode: "local" },
     });
 
     const persisted = await writeGatewayPortAndReadConfig(home, configPath);
-    expect(persisted.$schema).toBe("https://mangabaclaw.ai/config.json");
+    expect(persisted.$schema).toBe("https://mangaba.ia.br/config.json");
     expect(persisted.gateway).toEqual({ mode: "local", port: 18789 });
   });
 
@@ -1151,7 +1151,7 @@ describe("config io write", () => {
       const includePath = path.join(home, ".mangabaclaw", "extra.json5");
       await fs.mkdir(path.dirname(configPath), { recursive: true });
       await writeConfigJson(includePath, {
-        $schema: "https://mangabaclaw.ai/config-from-include.json",
+        $schema: "https://mangaba.ia.br/config-from-include.json",
       });
       await fs.writeFile(
         configPath,

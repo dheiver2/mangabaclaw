@@ -970,7 +970,7 @@ describe("buildAgentSystemPrompt", () => {
       workspaceDir: "/tmp/work",
     });
 
-    expect(prompt).toContain("Docs: https://docs.mangabaclaw.ai");
+    expect(prompt).toContain("Docs: https://docs.openclaw.ai");
     expect(prompt).toContain("Source: https://github.com/mangabaclaw/mangabaclaw");
     expect(prompt).toContain(
       "MangabaClaw behavior questions: docs mirror first when web exists. AGENTS/project/workspace/profile/memory = instructions/user memory, not product design truth.",

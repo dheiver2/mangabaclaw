@@ -370,7 +370,7 @@ export async function executeXaiWebSearchProviderTool(
       error: "missing_xai_api_key",
       message:
         "web_search (grok) needs xAI credentials. Run `mangabaclaw onboard --auth-choice xai-oauth` to sign in with Grok, run `mangabaclaw onboard --auth-choice xai-api-key`, set `XAI_API_KEY` in the Gateway environment, or configure `plugins.entries.xai.config.webSearch.apiKey`. If you do not want to configure search credentials, use web_fetch for a specific URL or the browser tool for interactive pages.",
-      docs: "https://docs.mangabaclaw.ai/tools/web",
+      docs: "https://docs.openclaw.ai/tools/web",
     };
   }
 

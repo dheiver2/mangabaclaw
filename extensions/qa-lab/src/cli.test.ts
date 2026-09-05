@@ -483,7 +483,7 @@ describe("qa cli registration", () => {
       "--output-dir",
       ".artifacts/qa-e2e/mantis/desktop-browser",
       "--browser-url",
-      "https://mangabaclaw.ai/docs",
+      "https://mangaba.ia.br/docs",
       "--html-file",
       "qa-artifacts/timeline.html",
       "--crabbox-bin",
@@ -502,7 +502,7 @@ describe("qa cli registration", () => {
     ]);
 
     expect(runMantisDesktopBrowserSmokeCommand).toHaveBeenCalledWith({
-      browserUrl: "https://mangabaclaw.ai/docs",
+      browserUrl: "https://mangaba.ia.br/docs",
       crabboxBin: "/tmp/crabbox",
       htmlFile: "qa-artifacts/timeline.html",
       idleTimeout: "30m",
@@ -825,7 +825,9 @@ describe("qa cli registration", () => {
     });
     registerQaLabCli(invalidProgram);
 
-    await expect(invalidProgram.parseAsync(["node", "mangabaclaw", ...args])).rejects.toThrow(message);
+    await expect(invalidProgram.parseAsync(["node", "mangabaclaw", ...args])).rejects.toThrow(
+      message,
+    );
   });
 
   it.each([
@@ -852,7 +854,9 @@ describe("qa cli registration", () => {
     });
     registerQaLabCli(invalidProgram);
 
-    await expect(invalidProgram.parseAsync(["node", "mangabaclaw", ...args])).rejects.toThrow(message);
+    await expect(invalidProgram.parseAsync(["node", "mangabaclaw", ...args])).rejects.toThrow(
+      message,
+    );
   });
 
   it("shows an enable hint when a discovered runner plugin is installed but blocked", async () => {

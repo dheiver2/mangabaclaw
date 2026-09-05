@@ -2181,8 +2181,8 @@ private data class AboutLink(
 
 private val aboutLinks =
   listOf(
-    AboutLink("Website", "mangabaclaw.ai", "https://mangabaclaw.ai"),
-    AboutLink("Docs", "docs.mangabaclaw.ai", "https://docs.mangabaclaw.ai"),
+    AboutLink("Website", "mangabaclaw.ai", "https://mangaba.ia.br"),
+    AboutLink("Docs", "docs.openclaw.ai", "https://docs.openclaw.ai"),
     AboutLink("GitHub", "github.com/mangabaclaw/mangabaclaw", "https://github.com/mangabaclaw/mangabaclaw"),
     AboutLink("Discord", "discord.gg/clawd", "https://discord.gg/clawd"),
   )

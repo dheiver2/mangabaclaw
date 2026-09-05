@@ -10,4 +10,4 @@ mangabaclaw plugins install @mangabaclaw/signal
 
 ## Docs
 
-See `docs/channels/signal.md` in the MangabaClaw repository, or the published docs at `https://docs.mangabaclaw.ai/channels/signal`.
+See `docs/channels/signal.md` in the MangabaClaw repository, or the published docs at `https://docs.openclaw.ai/channels/signal`.

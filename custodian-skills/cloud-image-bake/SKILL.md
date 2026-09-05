@@ -68,4 +68,4 @@ Record warmup total and compare against the pre-bake timing. Then confirm the Ma
 
 Report the profile, backend, new and previous image ids, tooling smoke result, timed warmup before/after, and rollback state. Only after successful proof, show the exact deletion target and get hard operator confirmation, then delete only that superseded snapshot (`crabbox image delete <id>` or `hcloud image delete <id>`) and verify it is gone. Without confirmation, leave it intact and report cleanup pending.
 
-Further reference: https://docs.mangabaclaw.ai/gateway/cloud-workers
+Further reference: https://docs.openclaw.ai/gateway/cloud-workers

@@ -252,7 +252,7 @@ function resolveOpenRouterVideoCatalogRequest(params: {
       defaultBaseUrl: OPENROUTER_BASE_URL,
       defaultHeaders: {
         Authorization: `Bearer ${params.apiKey}`,
-        "HTTP-Referer": "https://mangabaclaw.ai",
+        "HTTP-Referer": "https://mangaba.ia.br",
         "X-OpenRouter-Title": "MangabaClaw",
       },
       request,

@@ -610,8 +610,8 @@ export async function finalizeSetupWizard(
           await prompter.note(
             [
               t("common.docs"),
-              "https://docs.mangabaclaw.ai/gateway/health",
-              "https://docs.mangabaclaw.ai/gateway/troubleshooting",
+              "https://docs.openclaw.ai/gateway/health",
+              "https://docs.openclaw.ai/gateway/troubleshooting",
             ].join("\n"),
             t("wizard.finalize.healthCheckHelp"),
           );
@@ -627,8 +627,8 @@ export async function finalizeSetupWizard(
         await prompter.note(
           [
             t("common.docs"),
-            "https://docs.mangabaclaw.ai/gateway/health",
-            "https://docs.mangabaclaw.ai/gateway/troubleshooting",
+            "https://docs.openclaw.ai/gateway/health",
+            "https://docs.openclaw.ai/gateway/troubleshooting",
           ].join("\n"),
           t("wizard.finalize.healthCheckHelp"),
         );
@@ -913,7 +913,7 @@ export async function finalizeSetupWizard(
             `  ${formatCliCommand("mangabaclaw configure --section web")}`,
             "",
             t("wizard.finalize.webSearchGetKey", {
-              url: entry?.signupUrl ?? "https://docs.mangabaclaw.ai/tools/web",
+              url: entry?.signupUrl ?? "https://docs.openclaw.ai/tools/web",
             }),
             t("wizard.finalize.webDocs"),
           ].join("\n"),

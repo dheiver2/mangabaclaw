@@ -9,7 +9,7 @@
 {"seq":9,"at":2000,"dir":"in","kind":"tool-progress","data":{"name":"write","phase":"result"}}
 {"seq":10,"at":2000,"dir":"out","kind":"chat.appendStream","data":{"payload":{"channel":"C0TRACE","chunks":[{"id":"write_1_fdf08c92","status":"complete","title":"Write","type":"task_update"}],"ts":"ts#2"},"result":{"ok":true},"target":"ts#2"}}
 {"seq":11,"at":2000,"dir":"in","kind":"final","data":{"text":"The unified native Slack turn is complete."}}
-{"seq":12,"at":2000,"dir":"out","kind":"chat.appendStream","data":{"payload":{"channel":"C0TRACE","chunks":[{"id":"write_1_fdf08c92","output":"+2 −0","sources":[{"text":"Open in MangabaClaw","type":"url_source","url":"https://team.mangabaclaw.ai/mangabaclaw/chat/trace-agent/slack/channel/c0trace"}],"status":"complete","title":"Write","type":"task_update"}],"ts":"ts#2"},"result":{"ok":true},"target":"ts#2"}}
+{"seq":12,"at":2000,"dir":"out","kind":"chat.appendStream","data":{"payload":{"channel":"C0TRACE","chunks":[{"id":"write_1_fdf08c92","output":"+2 −0","sources":[{"text":"Open in MangabaClaw","type":"url_source","url":"https://team.openclaw.ai/mangabaclaw/chat/trace-agent/slack/channel/c0trace"}],"status":"complete","title":"Write","type":"task_update"}],"ts":"ts#2"},"result":{"ok":true},"target":"ts#2"}}
 {"seq":13,"at":2000,"dir":"in","kind":"idle"}
 {"seq":14,"at":2000,"dir":"out","kind":"assistant.threads.setStatus","data":{"payload":{"channel_id":"C0TRACE","status":"","thread_ts":"ts#1"},"result":{"ok":true},"target":"C0TRACE/ts#1"}}
 {"seq":15,"at":2000,"dir":"out","kind":"chat.stopStream","data":{"payload":{"channel":"C0TRACE","chunks":[{"text":"\nThe unified native Slack turn is complete.","type":"markdown_text"}],"ts":"ts#2"},"result":{"ok":true},"target":"ts#2"}}

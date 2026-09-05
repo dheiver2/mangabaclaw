@@ -42,7 +42,7 @@ import "../../styles/profile.css";
 import { renderIdentitySection } from "./identity-section.ts";
 import { userProfileAvatarUrl } from "./profile-avatar-url.ts";
 
-const PROFILE_DOCS_URL = "https://docs.mangabaclaw.ai/concepts/user-model";
+const PROFILE_DOCS_URL = "https://docs.openclaw.ai/concepts/user-model";
 
 function toIdentityErrorMessage(error: unknown): string {
   return formatUiError(error, t("profilePage.identity.profileUnavailable"));

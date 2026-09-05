@@ -18,7 +18,7 @@ Restart the Gateway after installing or updating the plugin.
 Follow the Zoom meetings guide for Chrome profiles, paired nodes, audio routing,
 and guest join setup:
 
-- https://docs.mangabaclaw.ai/plugins/zoom-meetings
+- https://docs.openclaw.ai/plugins/zoom-meetings
 
 ## Package
 

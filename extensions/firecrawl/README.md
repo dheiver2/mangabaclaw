@@ -9,4 +9,4 @@ mangabaclaw plugins install @mangabaclaw/firecrawl-plugin
 mangabaclaw gateway restart
 ```
 
-See <https://docs.mangabaclaw.ai/tools/firecrawl> for setup and configuration.
+See <https://docs.openclaw.ai/tools/firecrawl> for setup and configuration.

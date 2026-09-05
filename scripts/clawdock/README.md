@@ -39,7 +39,7 @@ mkdir -p ~/.clawdock && curl -sL https://raw.githubusercontent.com/mangabaclaw/m
 echo 'source ~/.clawdock/clawdock-helpers.sh' >> ~/.zshrc && source ~/.zshrc
 ```
 
-Canonical docs page: https://docs.mangabaclaw.ai/install/clawdock
+Canonical docs page: https://docs.openclaw.ai/install/clawdock
 
 If you previously installed ClawDock from `scripts/shell-helpers/clawdock-helpers.sh`, rerun the install command above. The old raw GitHub path has been removed.
 
@@ -98,7 +98,7 @@ clawdock-approve <request-id>
 | Command                   | Description                                    |
 | ------------------------- | ---------------------------------------------- |
 | `clawdock-shell`          | Interactive shell inside the gateway container |
-| `clawdock-cli <command>`  | Run MangabaClaw CLI commands                      |
+| `clawdock-cli <command>`  | Run MangabaClaw CLI commands                   |
 | `clawdock-exec <command>` | Execute arbitrary commands in the container    |
 
 ### Web UI & Devices
@@ -129,8 +129,8 @@ clawdock-approve <request-id>
 | ---------------------- | ----------------------------------------- |
 | `clawdock-health`      | Run gateway health check                  |
 | `clawdock-token`       | Display the gateway authentication token  |
-| `clawdock-cd`          | Jump to the MangabaClaw project directory    |
-| `clawdock-config`      | Open the MangabaClaw config directory        |
+| `clawdock-cd`          | Jump to the MangabaClaw project directory |
+| `clawdock-config`      | Open the MangabaClaw config directory     |
 | `clawdock-show-config` | Print config files with redacted values   |
 | `clawdock-workspace`   | Open the workspace directory              |
 | `clawdock-help`        | Show all available commands with examples |
@@ -141,22 +141,22 @@ The Docker setup uses three config files on the host. The container never stores
 
 ### Docker Files
 
-| File                          | Purpose                                                                        |
-| ----------------------------- | ------------------------------------------------------------------------------ |
-| `Dockerfile`                  | Builds the `mangabaclaw:local` image (Node 22, pnpm, non-root `node` user)        |
-| `docker-compose.yml`          | Defines `mangabaclaw-gateway` and `mangabaclaw-cli` services, bind-mounts, ports     |
-| `docker-compose.override.yml` | Standard Docker Compose overrides — auto-loaded by ClawDock helpers if present |
-| `docker-compose.extra.yml`    | Additional overrides — loaded after the standard override if present           |
-| `scripts/docker/setup.sh`     | First-time setup — builds image, creates `.env` from `.env.example`            |
-| `.env.example`                | Template for `<project>/.env` with all supported vars and docs                 |
+| File                          | Purpose                                                                          |
+| ----------------------------- | -------------------------------------------------------------------------------- |
+| `Dockerfile`                  | Builds the `mangabaclaw:local` image (Node 22, pnpm, non-root `node` user)       |
+| `docker-compose.yml`          | Defines `mangabaclaw-gateway` and `mangabaclaw-cli` services, bind-mounts, ports |
+| `docker-compose.override.yml` | Standard Docker Compose overrides — auto-loaded by ClawDock helpers if present   |
+| `docker-compose.extra.yml`    | Additional overrides — loaded after the standard override if present             |
+| `scripts/docker/setup.sh`     | First-time setup — builds image, creates `.env` from `.env.example`              |
+| `.env.example`                | Template for `<project>/.env` with all supported vars and docs                   |
 
 ### Config Files
 
-| File                        | Purpose                                          | Examples                                                                                                |
-| --------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------- |
-| `<project>/.env`            | **Docker infra** — image, ports, gateway token   | `MANGABACLAW_GATEWAY_TOKEN`, `MANGABACLAW_IMAGE`, `MANGABACLAW_GATEWAY_PORT`, `MANGABACLAW_AUTH_PROFILE_SECRET_DIR` |
-| `~/.mangabaclaw/.env`          | **Secrets** — API keys and bot tokens            | `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `TELEGRAM_BOT_TOKEN`                                             |
-| `~/.mangabaclaw/mangabaclaw.json` | **Behavior config** — models, channels, policies | Model selection, WhatsApp allowlists, agent settings                                                    |
+| File                              | Purpose                                          | Examples                                                                                                            |
+| --------------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| `<project>/.env`                  | **Docker infra** — image, ports, gateway token   | `MANGABACLAW_GATEWAY_TOKEN`, `MANGABACLAW_IMAGE`, `MANGABACLAW_GATEWAY_PORT`, `MANGABACLAW_AUTH_PROFILE_SECRET_DIR` |
+| `~/.mangabaclaw/.env`             | **Secrets** — API keys and bot tokens            | `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `TELEGRAM_BOT_TOKEN`                                                         |
+| `~/.mangabaclaw/mangabaclaw.json` | **Behavior config** — models, channels, policies | Model selection, WhatsApp allowlists, agent settings                                                                |
 
 **Do NOT** put API keys or bot tokens in `mangabaclaw.json`. Use `~/.mangabaclaw/.env` for all secrets.
 

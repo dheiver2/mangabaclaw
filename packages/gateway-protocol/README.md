@@ -5,7 +5,7 @@ Gateway WebSocket protocol.
 
 The current wire protocol is version 4. General clients must use v4; authenticated
 node clients and lightweight probes may use the N-1 window during rolling upgrades.
-See the [Gateway protocol specification](https://docs.mangabaclaw.ai/gateway/protocol)
+See the [Gateway protocol specification](https://docs.openclaw.ai/gateway/protocol)
 for transport, authentication, roles, scopes, and complete frame examples.
 
 ## Versioning
@@ -95,7 +95,10 @@ Protocol levels and client capabilities live in TypeBox-free entry points.
 
 ```ts
 import { GATEWAY_CLIENT_CAPS } from "@mangabaclaw/gateway-protocol/client-info";
-import { MIN_CLIENT_PROTOCOL_VERSION, PROTOCOL_VERSION } from "@mangabaclaw/gateway-protocol/version";
+import {
+  MIN_CLIENT_PROTOCOL_VERSION,
+  PROTOCOL_VERSION,
+} from "@mangabaclaw/gateway-protocol/version";
 
 const handshake = {
   minProtocol: MIN_CLIENT_PROTOCOL_VERSION,

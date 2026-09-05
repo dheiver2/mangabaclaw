@@ -196,7 +196,7 @@ This is idempotent and safe to run multiple times.
     cd /opt/mangabaclaw/mangabaclaw
     sudo -u mangabaclaw ./scripts/sandbox-setup.sh
     # For npm installs without a source checkout, see
-    # https://docs.mangabaclaw.ai/gateway/sandboxing#images-and-setup
+    # https://docs.openclaw.ai/gateway/sandboxing#images-and-setup
     ```
 
   </Accordion>

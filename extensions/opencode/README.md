@@ -13,4 +13,4 @@ mangabaclaw gateway restart
 ## Docs
 
 See `docs/providers/opencode.md` in the MangabaClaw repository, or the published
-docs at `https://docs.mangabaclaw.ai/providers/opencode`.
+docs at `https://docs.openclaw.ai/providers/opencode`.

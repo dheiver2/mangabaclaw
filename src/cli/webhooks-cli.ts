@@ -33,7 +33,7 @@ export function registerWebhooksCli(program: Command) {
     .addHelpText(
       "after",
       () =>
-        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/webhooks", "docs.mangabaclaw.ai/cli/webhooks")}\n`,
+        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/webhooks", "docs.openclaw.ai/cli/webhooks")}\n`,
     );
 
   const gmail = webhooks.command("gmail").description("Gmail Pub/Sub hooks (via gogcli)");

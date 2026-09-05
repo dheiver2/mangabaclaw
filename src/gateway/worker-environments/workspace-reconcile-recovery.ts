@@ -101,7 +101,7 @@ async function writeRawWorkspaceTree(params: {
   }
   chunks.push(
     Buffer.from(
-      `commit ${ref}\ncommitter MangabaClaw <noreply@mangabaclaw.ai> 0 +0000\ndata 0\ndeleteall\n`,
+      `commit ${ref}\ncommitter MangabaClaw <noreply@mangaba.ia.br> 0 +0000\ndata 0\ndeleteall\n`,
     ),
   );
   for (const blob of blobs) {

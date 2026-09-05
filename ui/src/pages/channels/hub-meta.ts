@@ -41,5 +41,5 @@ export function channelHubMeta(channelId: string): ChannelHubMeta {
 }
 
 export function channelDocsUrl(channelId: string): string {
-  return `https://docs.mangabaclaw.ai/channels/${encodeURIComponent(channelId)}`;
+  return `https://docs.openclaw.ai/channels/${encodeURIComponent(channelId)}`;
 }

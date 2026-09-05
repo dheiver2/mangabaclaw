@@ -852,7 +852,9 @@ export function collectSandboxDockerNoopFindings(cfg: MangabaClawConfig): Securi
   return findings;
 }
 
-export function collectSandboxDangerousConfigFindings(cfg: MangabaClawConfig): SecurityAuditFinding[] {
+export function collectSandboxDangerousConfigFindings(
+  cfg: MangabaClawConfig,
+): SecurityAuditFinding[] {
   const findings: SecurityAuditFinding[] = [];
   const agents = listAgentEntries(cfg);
 
@@ -964,7 +966,9 @@ export function collectSandboxDangerousConfigFindings(cfg: MangabaClawConfig): S
   return findings;
 }
 
-export function collectNodeDenyCommandPatternFindings(cfg: MangabaClawConfig): SecurityAuditFinding[] {
+export function collectNodeDenyCommandPatternFindings(
+  cfg: MangabaClawConfig,
+): SecurityAuditFinding[] {
   const findings: SecurityAuditFinding[] = [];
   const denyListRaw = cfg.gateway?.nodes?.commands?.deny;
   if (!Array.isArray(denyListRaw) || denyListRaw.length === 0) {
@@ -1061,7 +1065,9 @@ export function collectNodeDangerousAllowCommandFindings(
   return findings;
 }
 
-export function collectMinimalProfileOverrideFindings(cfg: MangabaClawConfig): SecurityAuditFinding[] {
+export function collectMinimalProfileOverrideFindings(
+  cfg: MangabaClawConfig,
+): SecurityAuditFinding[] {
   const findings: SecurityAuditFinding[] = [];
   if (cfg.tools?.profile !== "minimal") {
     return findings;
@@ -1237,7 +1243,9 @@ export function collectExposureMatrixFindings(cfg: MangabaClawConfig): SecurityA
   return findings;
 }
 
-export function collectLikelyMultiUserSetupFindings(cfg: MangabaClawConfig): SecurityAuditFinding[] {
+export function collectLikelyMultiUserSetupFindings(
+  cfg: MangabaClawConfig,
+): SecurityAuditFinding[] {
   const findings: SecurityAuditFinding[] = [];
   const mainGroupScopes = listEffectiveGroupRouteBindings(cfg)
     .filter((binding) => binding.session?.groupScope === "main")
@@ -1260,7 +1268,7 @@ export function collectLikelyMultiUserSetupFindings(cfg: MangabaClawConfig): Sec
         mainGroupScopes.join("\n") +
         "\nEvery member of each affected room shares the main-session context. Use this only for mutually trusted rooms.",
       remediation:
-        'Use session.groupScope="per-group" globally and remove binding overrides, or reserve "main" for rooms whose members you trust: https://docs.mangabaclaw.ai/channels/groups#session-keys',
+        'Use session.groupScope="per-group" globally and remove binding overrides, or reserve "main" for rooms whose members you trust: https://docs.openclaw.ai/channels/groups#session-keys',
     });
   }
 
@@ -1286,7 +1294,7 @@ export function collectLikelyMultiUserSetupFindings(cfg: MangabaClawConfig): Sec
       "Heuristic signals indicate this gateway may be reachable by multiple users:\n" +
       signals.map((signal) => `- ${signal}`).join("\n") +
       `\n${impactLine}\n${riskyContextsDetail}\n` +
-      "MangabaClaw's default security model is personal-assistant (one trusted operator boundary), not hostile multi-tenant isolation on one shared gateway. For multiple users or organizations, run one isolated Gateway cell per tenant: https://docs.mangabaclaw.ai/gateway/multi-tenant-hosting",
+      "MangabaClaw's default security model is personal-assistant (one trusted operator boundary), not hostile multi-tenant isolation on one shared gateway. For multiple users or organizations, run one isolated Gateway cell per tenant: https://docs.openclaw.ai/gateway/multi-tenant-hosting",
     remediation:
       'If users may be mutually untrusted, split trust boundaries (separate gateways + credentials, ideally separate OS users/hosts). If you intentionally run shared-user access, set agents.defaults.sandbox.mode="all", keep tools.fs.workspaceOnly=true, deny runtime/fs/web tools unless required, and keep personal/private identities + credentials off that runtime.',
   });

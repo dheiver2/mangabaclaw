@@ -9,4 +9,4 @@ mangabaclaw plugins install @mangabaclaw/qianfan-provider
 mangabaclaw gateway restart
 ```
 
-See <https://docs.mangabaclaw.ai/providers/qianfan> for setup and configuration.
+See <https://docs.openclaw.ai/providers/qianfan> for setup and configuration.

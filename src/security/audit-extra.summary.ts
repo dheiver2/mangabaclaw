@@ -132,7 +132,9 @@ function isBrowserEnabled(cfg: MangabaClawConfig): boolean {
 }
 
 /** Produce a concise inventory of major security-relevant surfaces. */
-export function collectAttackSurfaceSummaryFindings(cfg: MangabaClawConfig): SecurityAuditFinding[] {
+export function collectAttackSurfaceSummaryFindings(
+  cfg: MangabaClawConfig,
+): SecurityAuditFinding[] {
   const group = summarizeGroupPolicy(cfg);
   const elevated = cfg.tools?.elevated?.enabled !== false;
   const webhooksEnabled = cfg.hooks?.enabled === true;
@@ -150,7 +152,7 @@ export function collectAttackSurfaceSummaryFindings(cfg: MangabaClawConfig): Sec
     `\n` +
     `browser control: ${browserEnabled ? "enabled" : "disabled"}` +
     `\n` +
-    "trust model: personal assistant (one trusted operator boundary), not hostile multi-tenant on one shared gateway. For multiple users or organizations, run one isolated Gateway cell per tenant: https://docs.mangabaclaw.ai/gateway/multi-tenant-hosting";
+    "trust model: personal assistant (one trusted operator boundary), not hostile multi-tenant on one shared gateway. For multiple users or organizations, run one isolated Gateway cell per tenant: https://docs.openclaw.ai/gateway/multi-tenant-hosting";
 
   return [
     {

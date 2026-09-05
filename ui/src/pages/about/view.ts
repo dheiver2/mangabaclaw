@@ -38,8 +38,8 @@ const SHORT_COMMIT_LENGTH = 12;
 // Docs-first where a docs page exists; GitHub/Discord match the native
 // macOS/iOS About screens (AboutSettings.swift, SettingsProTabSections.swift).
 const ABOUT_LINKS: ReadonlyArray<{ href: string; icon: TemplateResult; label: () => string }> = [
-  { href: "https://mangabaclaw.ai", icon: icons.globe, label: () => t("aboutPage.linkWebsite") },
-  { href: "https://docs.mangabaclaw.ai", icon: icons.book, label: () => t("aboutPage.linkDocs") },
+  { href: "https://mangaba.ia.br", icon: icons.globe, label: () => t("aboutPage.linkWebsite") },
+  { href: "https://docs.openclaw.ai", icon: icons.book, label: () => t("aboutPage.linkDocs") },
   {
     href: "https://github.com/mangabaclaw/mangabaclaw",
     icon: brandIcons.github,
@@ -56,7 +56,7 @@ const ABOUT_LINKS: ReadonlyArray<{ href: string; icon: TemplateResult; label: ()
     label: () => t("aboutPage.linkX"),
   },
   {
-    href: "https://docs.mangabaclaw.ai/releases",
+    href: "https://docs.openclaw.ai/releases",
     icon: icons.scrollText,
     label: () => t("aboutPage.linkChangelog"),
   },

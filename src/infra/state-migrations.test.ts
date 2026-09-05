@@ -186,7 +186,10 @@ const APNS_DEVICE_FIELD = "token";
 
 type UpdateCheckStateDatabase = Pick<MangabaClawStateKyselyDatabase, "update_check_state">;
 type ConfigHealthDatabase = Pick<MangabaClawStateKyselyDatabase, "config_health_entries">;
-type PluginBindingApprovalsDatabase = Pick<MangabaClawStateKyselyDatabase, "plugin_binding_approvals">;
+type PluginBindingApprovalsDatabase = Pick<
+  MangabaClawStateKyselyDatabase,
+  "plugin_binding_approvals"
+>;
 type CurrentConversationBindingsDatabase = Pick<
   MangabaClawStateKyselyDatabase,
   "current_conversation_bindings"
@@ -3614,7 +3617,7 @@ describe("state migrations", () => {
     await fs.writeFile(
       vapidKeysPath,
       JSON.stringify(
-        createWebPushVapidKeyPair("doctor-public", "doctor-private", "https://mangabaclaw.ai"),
+        createWebPushVapidKeyPair("doctor-public", "doctor-private", "https://mangaba.ia.br"),
       ),
       "utf8",
     );
@@ -3635,7 +3638,7 @@ describe("state migrations", () => {
     expect(result.warnings).toStrictEqual([]);
     expect(listWebPushSubscriptions(stateDir)).toStrictEqual([subscription]);
     expect(readPersistedVapidKeyPair(stateDir)).toStrictEqual(
-      createWebPushVapidKeyPair("doctor-public", "doctor-private", "https://mangabaclaw.ai"),
+      createWebPushVapidKeyPair("doctor-public", "doctor-private", "https://mangaba.ia.br"),
     );
     await expectMissingPath(subscriptionsPath);
     await expectMissingPath(vapidKeysPath);

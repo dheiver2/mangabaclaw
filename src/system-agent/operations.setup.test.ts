@@ -141,7 +141,7 @@ vi.mock("./overview.js", () => ({
       error: "offline",
     },
     references: {
-      docsUrl: "https://docs.mangabaclaw.ai",
+      docsUrl: "https://docs.openclaw.ai",
       sourceUrl: "https://github.com/mangabaclaw/mangabaclaw",
     },
   })),
@@ -1017,7 +1017,9 @@ describe("parseSystemAgentOperation", () => {
       expect(requireRecord(agents.defaults, "defaults").model).toEqual({
         primary: "anthropic/global-default",
       });
-      const work = listAgentEntries(config as MangabaClawConfig).find((entry) => entry.id === "work");
+      const work = listAgentEntries(config as MangabaClawConfig).find(
+        (entry) => entry.id === "work",
+      );
       expect(work?.model).toEqual({
         primary: "openai/gpt-5.5",
       });

@@ -15,7 +15,7 @@ import {
   normalizeOptionalString,
 } from "mangabaclaw/plugin-sdk/string-coerce-runtime";
 
-const CLAWROUTER_DEFAULT_BASE_URL = "https://clawrouter.mangabaclaw.ai";
+const CLAWROUTER_DEFAULT_BASE_URL = "https://clawrouter.openclaw.ai";
 
 const PROVIDER_ID = "clawrouter";
 const CATALOG_CACHE_TTL_MS = 60_000;

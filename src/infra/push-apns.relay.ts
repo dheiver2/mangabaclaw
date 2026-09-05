@@ -62,8 +62,8 @@ export type ApnsRelayRequestSender = (params: {
 }) => Promise<ApnsRelayPushResponse>;
 
 /** Hosted APNs relay origin used only when registrations prove they were minted there. */
-const DEFAULT_APNS_RELAY_BASE_URL = "https://ios-push-relay.mangabaclaw.ai";
-const DEFAULT_APNS_SANDBOX_RELAY_BASE_URL = "https://ios-push-relay-sandbox.mangabaclaw.ai";
+const DEFAULT_APNS_RELAY_BASE_URL = "https://ios-push-relay.openclaw.ai";
+const DEFAULT_APNS_SANDBOX_RELAY_BASE_URL = "https://ios-push-relay-sandbox.openclaw.ai";
 const DEFAULT_APNS_RELAY_TIMEOUT_MS = 10_000;
 // Hard cap on the relay response body. The hosted relay reply is a tiny JSON status object;
 // without a cap a buggy/hostile/compromised relay could stream an unbounded body and exhaust
@@ -269,7 +269,8 @@ export function resolveApnsRelayConfigFromEnv(
     value: {
       baseUrl: normalizedBaseUrl.value,
       timeoutMs: normalizeTimeoutMs(
-        normalizeNonEmptyString(env.MANGABACLAW_APNS_RELAY_TIMEOUT_MS) ?? configuredRelay?.timeoutMs,
+        normalizeNonEmptyString(env.MANGABACLAW_APNS_RELAY_TIMEOUT_MS) ??
+          configuredRelay?.timeoutMs,
       ),
     },
   };

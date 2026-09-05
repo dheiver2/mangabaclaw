@@ -939,12 +939,12 @@ extension SettingsProTab {
                     title: "Website",
                     icon: "globe",
                     color: .blue,
-                    url: URL(string: "https://mangabaclaw.ai")!)
+                    url: URL(string: "https://mangaba.ia.br")!)
                 self.aboutLinkRow(
                     title: "Docs",
                     icon: "book.fill",
                     color: .orange,
-                    url: URL(string: "https://docs.mangabaclaw.ai")!)
+                    url: URL(string: "https://docs.openclaw.ai")!)
                 self.aboutLinkRow(
                     title: "GitHub",
                     icon: "chevron.left.slash.chevron.right",

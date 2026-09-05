@@ -16,7 +16,7 @@ const readStoredCatalog = vi.fn();
 beforeEach(() => {
   resetRemoteModelCatalogOverlayForTest();
   readStoredCatalog.mockReset().mockReturnValue({
-    source_url: "https://catalog.mangabaclaw.ai/models/v1/catalog.json",
+    source_url: "https://catalog.openclaw.ai/models/v1/catalog.json",
     bundle_json: JSON.stringify({
       schemaVersion: 1,
       generatedAt: 200,
@@ -286,7 +286,7 @@ describe("hosted model pricing", () => {
     const bundleJson = JSON.stringify(bundle);
     expect(Buffer.byteLength(bundleJson)).toBeGreaterThan(2 * 1024 * 1024);
     readStoredCatalog.mockReturnValue({
-      source_url: "https://catalog.mangabaclaw.ai/models/v1/catalog.json",
+      source_url: "https://catalog.openclaw.ai/models/v1/catalog.json",
       bundle_json: bundleJson,
     });
     resetRemoteModelCatalogOverlayForTest();

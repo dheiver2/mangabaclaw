@@ -13,7 +13,7 @@ export function registerConfigureCommand(program: Command): void {
     .addHelpText(
       "after",
       () =>
-        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/configure", "docs.mangabaclaw.ai/cli/configure")}\n`,
+        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/configure", "docs.openclaw.ai/cli/configure")}\n`,
     )
     .option(
       "--section <section>",

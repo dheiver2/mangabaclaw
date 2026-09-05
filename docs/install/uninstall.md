@@ -143,7 +143,7 @@ If you used a profile, delete the matching task name and the `gateway.cmd` /
 
 ### Normal install (install.sh / npm / pnpm / bun)
 
-If you used `https://mangabaclaw.ai/install.sh` or `install.ps1`, the CLI was installed with `npm install -g mangabaclaw@latest`.
+If you used `https://mangaba.ia.br/install.sh` or `install.ps1`, the CLI was installed with `npm install -g mangabaclaw@latest`.
 Remove it with `npm rm -g mangabaclaw` (or `pnpm remove -g` / `bun remove -g` if you installed that way).
 
 ### Source checkout (git clone)

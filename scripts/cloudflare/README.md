@@ -149,7 +149,7 @@ Set `MANGABACLAW_WEBHOOK_ONLY` to `true` only when every enabled channel receive
 - **Experimental:** Cloudflare Container lifecycle and rollout behavior can change. Test crash, sleep, rollout, and restore paths with non-production credentials first.
 - **Single-writer fence:** Cloudflare guarantees one live Durable Object instance for a given name, and all Worker requests use the same name. This is the fence around one Litestream replica. A brief old/new Container overlap during replacement or rollout remains an accepted experimental tradeoff; do not raise `max_instances` or route around the named object.
 - **Ephemeral disk:** Every Container restart or sleep starts with a fresh filesystem. The entrypoint lists R2 objects, derives the concrete SQLite restore manifest, restores each database, then starts MangabaClaw under Litestream.
-- **Partial durability:** Litestream covers `/home/node/.mangabaclaw/state/*.sqlite` and recursive per-agent SQLite databases only. Use a separate, private [`mangabaclaw backup create`](https://docs.mangabaclaw.ai/install/backups#full-archives) workflow for config, credential files, plugins, and workspaces.
+- **Partial durability:** Litestream covers `/home/node/.mangabaclaw/state/*.sqlite` and recursive per-agent SQLite databases only. Use a separate, private [`mangabaclaw backup create`](https://docs.openclaw.ai/install/backups#full-archives) workflow for config, credential files, plugins, and workspaces.
 - **RPO:** `sync-interval: 1s` normally yields a seconds-scale recovery point, not zero data loss. Abrupt termination can lose writes that were not uploaded yet.
 - **Rollback is time travel:** Restoring older state can desynchronize ratcheting channel credentials (especially WhatsApp), roll back approvals, and roll back delivery/dedupe state. Relink affected channels and review pending approvals before resuming.
 - **WebSocket limit:** Cloudflare accepts received WebSocket messages up to 32 MiB. The Worker/Container proxy supports WebSockets; larger individual messages are closed by the platform.
@@ -178,7 +178,7 @@ Treat rollbacks like restores: stop traffic where possible, preserve the current
 - **`wrangler containers ssh` rejected:** SSH ships disabled; add `"ssh": { "enabled": true }`, redeploy, then connect.
 - **Config missing after sleep or redeploy:** Litestream restores SQLite only. Reapply the bootstrap runbook or stay always-on and take full archives.
 
-Full operator guide: <https://docs.mangabaclaw.ai/install/cloudflare>.
+Full operator guide: <https://docs.openclaw.ai/install/cloudflare>.
 
 ## Files
 

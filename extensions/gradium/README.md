@@ -9,4 +9,4 @@ mangabaclaw plugins install @mangabaclaw/gradium-speech
 mangabaclaw gateway restart
 ```
 
-See <https://docs.mangabaclaw.ai/providers/gradium> for setup and configuration.
+See <https://docs.openclaw.ai/providers/gradium> for setup and configuration.

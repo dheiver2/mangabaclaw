@@ -73,10 +73,10 @@ describe("AppSidebar footer identity menu", () => {
         (link) => link.getAttribute("href"),
       ),
     ).toEqual([
-      "https://docs.mangabaclaw.ai",
-      "https://docs.mangabaclaw.ai/help",
+      "https://docs.openclaw.ai",
+      "https://docs.openclaw.ai/help",
       "https://discord.gg/clawd",
-      "https://docs.mangabaclaw.ai/releases",
+      "https://docs.openclaw.ai/releases",
     ]);
 
     menu?.querySelector<HTMLElement>('wa-dropdown-item[value="command:profile"]')?.focus();

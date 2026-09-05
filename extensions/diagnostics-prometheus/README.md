@@ -18,7 +18,7 @@ Enable the plugin and set the scrape endpoint options in `plugins.entries.diagno
 
 The full config surface, metric names, and scrape examples live in the docs:
 
-- https://docs.mangabaclaw.ai/gateway/prometheus
+- https://docs.openclaw.ai/gateway/prometheus
 
 ## Package
 

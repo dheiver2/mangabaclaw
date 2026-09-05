@@ -173,7 +173,7 @@ function renderSchedule(dreaming: DreamingStatus) {
         title: t("memoryPage.overview.schedule.learnMore"),
         control: html`<a
           class="memory-page__link"
-          href="https://docs.mangabaclaw.ai/concepts/dreaming"
+          href="https://docs.openclaw.ai/concepts/dreaming"
           target="_blank"
           rel="noreferrer noopener"
           >${t("memoryPage.overview.schedule.openDocs")}</a

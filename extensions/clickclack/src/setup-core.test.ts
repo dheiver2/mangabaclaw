@@ -184,7 +184,7 @@ describe("ClickClack setup adapter", () => {
     await prepare(
       {
         code: "ABCD-EFGH-JKMN",
-        baseUrl: "https://clack.mangabaclaw.ai",
+        baseUrl: "https://clack.openclaw.ai",
       },
       {
         channels: {

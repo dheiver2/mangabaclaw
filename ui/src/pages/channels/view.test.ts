@@ -320,7 +320,7 @@ describe("channel detail", () => {
     );
 
     const docs = container.querySelector<HTMLAnchorElement>(".channels-detail__header-actions a");
-    expect(docs?.href).toBe("https://docs.mangabaclaw.ai/channels/telegram");
+    expect(docs?.href).toBe("https://docs.openclaw.ai/channels/telegram");
     expect(docs?.textContent?.trim()).toBe("Docs");
   });
 

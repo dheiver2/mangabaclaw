@@ -164,7 +164,7 @@ export function registerSecretStoreCli(secrets: Command): void {
     .addHelpText(
       "after",
       () =>
-        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/secrets", "docs.mangabaclaw.ai/cli/secrets")}\n`,
+        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/secrets", "docs.openclaw.ai/cli/secrets")}\n`,
     );
 
   store

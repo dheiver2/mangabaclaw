@@ -593,7 +593,9 @@ function expectHydratedWindowsShell(run: ParsedWrapperRun, command: string): voi
     "$env:CRABBOX_PNPM_MODULES_DIR) { $env:CRABBOX_PNPM_MODULES_DIR } else { $env:PNPM_CONFIG_MODULES_DIR }",
   );
   expect(run.remoteCommand).toContain("hydrated pnpm modules directory does not exist");
-  expect(run.remoteCommand).toContain('mklink /J "$mangabaclawSelfModules" "$mangabaclawModulesDir"');
+  expect(run.remoteCommand).toContain(
+    'mklink /J "$mangabaclawSelfModules" "$mangabaclawModulesDir"',
+  );
   expect(run.remoteCommand).toContain(
     'mklink /J "$mangabaclawWorkspaceModules" "$mangabaclawModulesDir"',
   );
@@ -1121,7 +1123,7 @@ describe("scripts/crabbox-wrapper", () => {
     expect(result.stderr).toContain(
       "provider=aws requires managed Crabbox broker authentication for MangabaClaw proof",
     );
-    expect(result.stderr).toContain("login --url https://crabbox.mangabaclaw.ai");
+    expect(result.stderr).toContain("login --url https://crabbox.openclaw.ai");
   });
 
   it("fails closed without auth guidance on a legacy non-auth doctor failure", () => {
@@ -1487,7 +1489,9 @@ describe("scripts/crabbox-wrapper", () => {
 
       expect(result.status).toBe(2);
       expect(result.stdout).toBe("");
-      expect(result.stderr).toContain(`provider=${provider} failed readiness for MangabaClaw proof`);
+      expect(result.stderr).toContain(
+        `provider=${provider} failed readiness for MangabaClaw proof`,
+      );
     },
   );
 
@@ -2190,7 +2194,7 @@ describe("scripts/crabbox-wrapper", () => {
 
   it("fails closed for AWS proof when broker auth is stale", () => {
     const result = runDefaultWrapper(["run", "--provider", "aws", "--", "echo ok"], {
-      configJson: { coordinator: "https://crabbox.mangabaclaw.ai", brokerAuth: "configured" },
+      configJson: { coordinator: "https://crabbox.openclaw.ai", brokerAuth: "configured" },
       env: {
         MANGABACLAW_FAKE_CRABBOX_VERSION: "crabbox 0.40.0",
         MANGABACLAW_FAKE_CRABBOX_UNAUTHORIZED_PROVIDERS: "aws",
@@ -2202,7 +2206,7 @@ describe("scripts/crabbox-wrapper", () => {
     expect(result.stderr).toContain(
       "provider=aws requires managed Crabbox broker authentication for MangabaClaw proof",
     );
-    expect(result.stderr).toContain("login --url https://crabbox.mangabaclaw.ai");
+    expect(result.stderr).toContain("login --url https://crabbox.openclaw.ai");
   });
 
   it("ignores the legacy direct AWS override", () => {
@@ -2557,7 +2561,9 @@ describe("scripts/crabbox-wrapper", () => {
         LC_CTYPE: "C.UTF-8",
       },
     });
-    expect(remoteCommand).toContain('macos_locale="${MANGABACLAW_CRABBOX_MACOS_LOCALE:-en_US.UTF-8}"');
+    expect(remoteCommand).toContain(
+      'macos_locale="${MANGABACLAW_CRABBOX_MACOS_LOCALE:-en_US.UTF-8}"',
+    );
     expect(remoteCommand).toContain(
       'case "${LANG:-}" in C.UTF-8|C.utf8|c.UTF-8|c.utf8) export LANG="$macos_locale" ;; esac;',
     );
@@ -2601,7 +2607,10 @@ describe("scripts/crabbox-wrapper", () => {
     },
     {
       command: ["env", "-i", "PATH=/usr/bin:/bin", "pnpm", "--version"],
-      excludes: ["export -f env mangabaclaw_crabbox_env", 'env() { mangabaclaw_crabbox_env "$@"; };'],
+      excludes: [
+        "export -f env mangabaclaw_crabbox_env",
+        'env() { mangabaclaw_crabbox_env "$@"; };',
+      ],
       expectedCommand: "mangabaclaw_crabbox_env -i PATH=/usr/bin:/bin pnpm --version",
       includes: [
         "mangabaclaw_crabbox_env",

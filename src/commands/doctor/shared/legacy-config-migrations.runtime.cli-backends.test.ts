@@ -28,7 +28,7 @@ describe("CLI backend config migration", () => {
       agents: { defaults: { model: "anthropic/claude-sonnet-4-6" } },
     });
     expect(changes).toEqual([
-      "Removed agents.defaults.cliBackends; CLI backend adapters now register through plugins (https://docs.mangabaclaw.ai/plugins/cli-backend-plugins).",
+      "Removed agents.defaults.cliBackends; CLI backend adapters now register through plugins (https://docs.openclaw.ai/plugins/cli-backend-plugins).",
     ]);
   });
 

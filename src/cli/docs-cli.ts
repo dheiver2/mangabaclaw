@@ -15,7 +15,7 @@ export function registerDocsCli(program: Command) {
     .addHelpText(
       "after",
       () =>
-        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/docs", "docs.mangabaclaw.ai/cli/docs")}\n`,
+        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/docs", "docs.openclaw.ai/cli/docs")}\n`,
     )
     .action(async (queryParts: string[], opts: { json?: boolean }) => {
       await runCommandWithRuntime(defaultRuntime, async () => {

@@ -64,4 +64,4 @@ If sending fails, report the exact account, permission, destination, or network 
 
 State the channel and account changed, the exact config paths written (never values), the test destination, and the observed delivery result. List any remaining operator action.
 
-Further reference: https://docs.mangabaclaw.ai/channels/telegram (and the matching page for other channels)
+Further reference: https://docs.openclaw.ai/channels/telegram (and the matching page for other channels)

@@ -72,4 +72,4 @@ new directory taxonomy.
 - Add or update focused tests under `test/scripts/` when changing script
   behavior.
 
-See also [Scripts](https://docs.mangabaclaw.ai/help/scripts) for public-facing script guidance.
+See also [Scripts](https://docs.openclaw.ai/help/scripts) for public-facing script guidance.

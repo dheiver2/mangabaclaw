@@ -882,7 +882,9 @@ describe("official external plugin catalog", () => {
   });
 
   it("rejects signed payload changes at the same sequence while allowing re-signing", async () => {
-    const stateDir = mkdtempSync(path.join(os.tmpdir(), "mangabaclaw-signed-snapshot-equivocation-"));
+    const stateDir = mkdtempSync(
+      path.join(os.tmpdir(), "mangabaclaw-signed-snapshot-equivocation-"),
+    );
     const feed = hostedCatalogFeed({ sequence: 10, pluginName: "@mangabaclaw/signed-v10" });
     const original = signedHostedCatalogFeed({ feed });
     const resigned = signedHostedCatalogFeed({ feed, keyId: "acme-rotated" });
@@ -1248,7 +1250,9 @@ describe("official external plugin catalog", () => {
       });
 
       expect(acceptedCurrent.source, JSON.stringify(acceptedCurrent)).toBe("hosted");
-      expect(acceptedCurrent.entries.map((entry) => entry.name)).toEqual(["@mangabaclaw/signed-v9"]);
+      expect(acceptedCurrent.entries.map((entry) => entry.name)).toEqual([
+        "@mangabaclaw/signed-v9",
+      ]);
       if (acceptedCurrent.source === "hosted") {
         expect(acceptedCurrent.trust?.signedBy).toBe("acme-root-2026-q3");
       }
@@ -1279,7 +1283,9 @@ describe("official external plugin catalog", () => {
         snapshotStore,
       });
       expectHostedSnapshot(retainedCurrent);
-      expect(retainedCurrent.entries.map((entry) => entry.name)).toEqual(["@mangabaclaw/signed-v9"]);
+      expect(retainedCurrent.entries.map((entry) => entry.name)).toEqual([
+        "@mangabaclaw/signed-v9",
+      ]);
     } finally {
       closeMangabaClawStateDatabaseForTest();
       rmSync(stateDir, { recursive: true, force: true });
@@ -2203,7 +2209,7 @@ describe("official external plugin catalog", () => {
         envVars: [],
         placeholder: "(no key needed)",
         signupUrl: "https://duckduckgo.com/",
-        docsUrl: "https://docs.mangabaclaw.ai/tools/duckduckgo-search",
+        docsUrl: "https://docs.openclaw.ai/tools/duckduckgo-search",
         credentialPath: "",
         autoDetectOrder: 100,
       },

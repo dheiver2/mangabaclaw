@@ -345,18 +345,18 @@ describe("scripts/mangabaclaw-cross-os-release-checks", () => {
 
   it("bounds public installer fetches on Windows and POSIX", () => {
     const windowsScript = buildInstallerSmokeScript({
-      installerUrl: "https://mangabaclaw.ai/install.ps1",
+      installerUrl: "https://mangaba.ia.br/install.ps1",
       installTarget: "2026.7.1",
       platform: "win32",
     });
     const posixScript = buildInstallerSmokeScript({
-      installerUrl: "https://mangabaclaw.ai/install.sh",
+      installerUrl: "https://mangaba.ia.br/install.sh",
       installTarget: "2026.7.1",
       platform: "linux",
     });
 
     expect(windowsScript).toContain(
-      "curl.exe -fsSL --connect-timeout 10 --max-time 120 -o $installerPath 'https://mangabaclaw.ai/install.ps1'",
+      "curl.exe -fsSL --connect-timeout 10 --max-time 120 -o $installerPath 'https://mangaba.ia.br/install.ps1'",
     );
     expect(windowsScript).toContain("mangabaclaw-installer-");
     expect(windowsScript).toContain("if ($LASTEXITCODE -ne 0)");
@@ -372,7 +372,7 @@ describe("scripts/mangabaclaw-cross-os-release-checks", () => {
     );
     expect(posixScript).toContain("trap 'rm -f \"$installer_path\"' EXIT");
     expect(posixScript).toContain(
-      "curl -fsSL --connect-timeout 10 --max-time 120 -o \"$installer_path\" 'https://mangabaclaw.ai/install.sh'",
+      "curl -fsSL --connect-timeout 10 --max-time 120 -o \"$installer_path\" 'https://mangaba.ia.br/install.sh'",
     );
     expect(posixScript).toContain("bash -- \"$installer_path\" --version '2026.7.1' --no-onboard");
     expect(posixScript).not.toContain("| bash");
@@ -764,7 +764,9 @@ describe("scripts/mangabaclaw-cross-os-release-checks", () => {
   });
 
   it("rejects malformed cross-OS positive integer environment values", () => {
-    expect(parsePositiveIntegerEnv("MANGABACLAW_CROSS_OS_COMMAND_HEARTBEAT_SECONDS", 60, {})).toBe(60);
+    expect(parsePositiveIntegerEnv("MANGABACLAW_CROSS_OS_COMMAND_HEARTBEAT_SECONDS", 60, {})).toBe(
+      60,
+    );
     expect(
       parsePositiveIntegerEnv("MANGABACLAW_CROSS_OS_COMMAND_HEARTBEAT_SECONDS", 60, {
         MANGABACLAW_CROSS_OS_COMMAND_HEARTBEAT_SECONDS: "25",
@@ -1021,7 +1023,9 @@ describe("scripts/mangabaclaw-cross-os-release-checks", () => {
   });
 
   it("rejects unsafe npm pack tarball filenames before staging release artifacts", () => {
-    expect(resolveNpmPackTarballFileName("mangabaclaw-2026.6.17.tgz")).toBe("mangabaclaw-2026.6.17.tgz");
+    expect(resolveNpmPackTarballFileName("mangabaclaw-2026.6.17.tgz")).toBe(
+      "mangabaclaw-2026.6.17.tgz",
+    );
 
     const unsafeFilenames = [
       "../mangabaclaw.tgz",
@@ -1043,7 +1047,9 @@ describe("scripts/mangabaclaw-cross-os-release-checks", () => {
   it("accepts pnpm pack tarballs reported under the requested destination", () => {
     const packDir = resolvePath("/tmp/mangabaclaw-pack");
 
-    expect(resolvePackDestinationTarball("mangabaclaw-2026.6.17.tgz", packDir, "pnpm pack")).toEqual({
+    expect(
+      resolvePackDestinationTarball("mangabaclaw-2026.6.17.tgz", packDir, "pnpm pack"),
+    ).toEqual({
       fileName: "mangabaclaw-2026.6.17.tgz",
       path: resolvePath(packDir, "mangabaclaw-2026.6.17.tgz"),
     });
@@ -1461,7 +1467,9 @@ describe("scripts/mangabaclaw-cross-os-release-checks", () => {
   it("serves installer scripts as UTF-8 text and package payloads as binary", () => {
     expect(resolveStaticFileContentType("scripts/install.sh")).toBe("text/plain; charset=utf-8");
     expect(resolveStaticFileContentType("scripts/install.ps1")).toBe("text/plain; charset=utf-8");
-    expect(resolveStaticFileContentType("mangabaclaw-2026.4.14.tgz")).toBe("application/octet-stream");
+    expect(resolveStaticFileContentType("mangabaclaw-2026.4.14.tgz")).toBe(
+      "application/octet-stream",
+    );
   });
 
   it("streams release artifacts from the static file server", async () => {
@@ -1570,9 +1578,9 @@ describe("scripts/mangabaclaw-cross-os-release-checks", () => {
       decide: resolvePublishedInstallerUrl,
       inputs: ["darwin", "linux", "win32"] as const,
       expected: [
-        "https://mangabaclaw.ai/install.sh",
-        "https://mangabaclaw.ai/install.sh",
-        "https://mangabaclaw.ai/install.ps1",
+        "https://mangaba.ia.br/install.sh",
+        "https://mangaba.ia.br/install.sh",
+        "https://mangaba.ia.br/install.ps1",
       ],
     },
     {
@@ -2574,11 +2582,25 @@ describe("scripts/mangabaclaw-cross-os-release-checks", () => {
   it("rejects legacy plugin dependency staging debris before candidate inventory generation", async () => {
     await withTempDirAsync("mangabaclaw-cross-os-stage-debris-", async (packageRoot) => {
       mkdirSync(
-        join(packageRoot, "dist", "Extensions", "demo", ".MangabaClaw-Install-Stage", "node_modules"),
+        join(
+          packageRoot,
+          "dist",
+          "Extensions",
+          "demo",
+          ".MangabaClaw-Install-Stage",
+          "node_modules",
+        ),
         { recursive: true },
       );
       writeFileSync(
-        join(packageRoot, "dist", "Extensions", "demo", ".MangabaClaw-Install-Stage", "package.json"),
+        join(
+          packageRoot,
+          "dist",
+          "Extensions",
+          "demo",
+          ".MangabaClaw-Install-Stage",
+          "package.json",
+        ),
         "{}\n",
         "utf8",
       );

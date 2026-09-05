@@ -46,7 +46,7 @@ import {
 } from "./mutations.ts";
 import { renderModelProviders, type ModelProviderRowMessage } from "./view.ts";
 
-const MODEL_PROVIDERS_DOCS_URL = "https://docs.mangabaclaw.ai/concepts/model-providers";
+const MODEL_PROVIDERS_DOCS_URL = "https://docs.openclaw.ai/concepts/model-providers";
 
 export type ModelProvidersRouteData = {
   data: ModelProvidersData;

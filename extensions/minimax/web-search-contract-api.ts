@@ -23,7 +23,7 @@ export function createMiniMaxWebSearchProvider(): WebSearchProviderPlugin {
     envVars: [...MINIMAX_WEB_SEARCH_ENV_VARS],
     placeholder: "sk-cp-...",
     signupUrl: "https://platform.minimax.io/user-center/basic-information/interface-key",
-    docsUrl: "https://docs.mangabaclaw.ai/tools/minimax-search",
+    docsUrl: "https://docs.openclaw.ai/tools/minimax-search",
     autoDetectOrder: 15,
     credentialPath,
     ...createWebSearchProviderContractFields({

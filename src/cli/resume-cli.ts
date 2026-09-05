@@ -25,7 +25,7 @@ export function registerResumeCli(program: Command) {
     .addHelpText(
       "after",
       () =>
-        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/resume", "docs.mangabaclaw.ai/cli/resume")}\n`,
+        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/resume", "docs.openclaw.ai/cli/resume")}\n`,
     )
     .action(async (query: string | undefined, opts: ResumeCliOptions) => {
       try {

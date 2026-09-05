@@ -1487,7 +1487,13 @@ describe("mangabaclaw state database", () => {
         VITEST_WORKER_ID: "7",
       } as NodeJS.ProcessEnv),
     ).toBe(
-      path.join(os.tmpdir(), "mangabaclaw-test-state", `${process.pid}-7`, "state", "mangabaclaw.sqlite"),
+      path.join(
+        os.tmpdir(),
+        "mangabaclaw-test-state",
+        `${process.pid}-7`,
+        "state",
+        "mangabaclaw.sqlite",
+      ),
     );
   });
 
@@ -1585,7 +1591,13 @@ describe("mangabaclaw state database", () => {
     const env = { MANGABACLAW_STATE_DIR: stateDir };
     const databasePath = materializeCurrentStateDatabase(stateDir);
     const inRootPath = path.join(stateDir, "agents", "main", "agent", "mangabaclaw-agent.sqlite");
-    const dualInRootPath = path.join(stateDir, "agents", "dual", "agent", "mangabaclaw-agent.sqlite");
+    const dualInRootPath = path.join(
+      stateDir,
+      "agents",
+      "dual",
+      "agent",
+      "mangabaclaw-agent.sqlite",
+    );
     const dualForeignPath = path.join(
       foreignStateDir,
       "agents",
@@ -1789,7 +1801,9 @@ describe("mangabaclaw state database", () => {
     legacy.close();
 
     const migrated = openMangabaClawStateDatabase(options);
-    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(MANGABACLAW_STATE_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(
+      MANGABACLAW_STATE_SCHEMA_VERSION,
+    );
     expect(
       migrated.db.prepare("SELECT name FROM sqlite_schema WHERE name = 'commitments'").get(),
     ).toBeUndefined();
@@ -2153,7 +2167,9 @@ describe("mangabaclaw state database", () => {
     unrelated.close();
 
     const migrated = openMangabaClawStateDatabase(options);
-    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(MANGABACLAW_STATE_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(
+      MANGABACLAW_STATE_SCHEMA_VERSION,
+    );
     expect(migrated.db.prepare("SELECT commitments FROM commitment_metrics").get()).toEqual({
       commitments: 1,
     });
@@ -2290,7 +2306,9 @@ INSERT INTO device_identities VALUES (
       created_at_ms: 10,
       updated_at_ms: 20,
     });
-    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(MANGABACLAW_STATE_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(
+      MANGABACLAW_STATE_SCHEMA_VERSION,
+    );
     expect(collectSqliteSchemaShape(database.db)).toEqual(createInitialStateSchemaShape());
   });
 
@@ -2327,7 +2345,9 @@ INSERT INTO macos_port_guardian_records VALUES (4242, 18789, '/usr/bin/ssh', 're
       mode: "remote",
       timestamp: 42.5,
     });
-    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(MANGABACLAW_STATE_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(
+      MANGABACLAW_STATE_SCHEMA_VERSION,
+    );
     expect(collectSqliteSchemaShape(database.db)).toEqual(createInitialStateSchemaShape());
   });
 
@@ -2487,7 +2507,9 @@ INSERT INTO macos_port_guardian_records VALUES (4242, 18789, '/usr/bin/ssh', 're
         updated_at: 600,
       },
     ]);
-    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(MANGABACLAW_STATE_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(
+      MANGABACLAW_STATE_SCHEMA_VERSION,
+    );
     expect(
       migrated.db
         .prepare("SELECT schema_version FROM schema_meta WHERE meta_key = 'primary'")
@@ -2517,7 +2539,9 @@ INSERT INTO macos_port_guardian_records VALUES (4242, 18789, '/usr/bin/ssh', 're
       { target_session_key: seeded.bomTarget, provenance: "ambient-group" },
       { target_session_key: seeded.corruptTarget, provenance: "explicit" },
     ]);
-    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(MANGABACLAW_STATE_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(
+      MANGABACLAW_STATE_SCHEMA_VERSION,
+    );
     expect(detectMangabaClawStateDatabaseSchemaMigrations(options)).toEqual([]);
   });
 
@@ -3131,10 +3155,14 @@ INSERT INTO macos_port_guardian_records VALUES (4242, 18789, '/usr/bin/ssh', 're
       DROP INDEX idx_github_publication_requests_pending;
       DROP TABLE github_publication_requests;
     `);
-    expect(readSqliteNumberPragma(previousV9, "user_version")).toBe(MANGABACLAW_STATE_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(previousV9, "user_version")).toBe(
+      MANGABACLAW_STATE_SCHEMA_VERSION,
+    );
     previousV9.close();
 
-    const beforeFirstUse = await openExistingMangabaClawStateDatabaseReadOnly({ path: databasePath });
+    const beforeFirstUse = await openExistingMangabaClawStateDatabaseReadOnly({
+      path: databasePath,
+    });
     expect(
       beforeFirstUse?.db
         .prepare("SELECT name FROM sqlite_schema WHERE name = 'github_publication_requests'")
@@ -3241,7 +3269,9 @@ INSERT INTO macos_port_guardian_records VALUES (4242, 18789, '/usr/bin/ssh', 're
     drifted.exec("DROP TABLE auth_profile_stores;");
     drifted.close();
 
-    expect(() => openMangabaClawStateDatabase(options)).toThrow(/missing table auth_profile_stores/iu);
+    expect(() => openMangabaClawStateDatabase(options)).toThrow(
+      /missing table auth_profile_stores/iu,
+    );
     expect(repairMangabaClawStateDatabaseSchema(options)).toEqual({
       changes: [],
       warnings: [expect.stringContaining("missing table auth_profile_stores")],
@@ -3323,7 +3353,9 @@ INSERT INTO macos_port_guardian_records VALUES (4242, 18789, '/usr/bin/ssh', 're
     legacy.close();
 
     const migrated = openMangabaClawStateDatabase(options);
-    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(MANGABACLAW_STATE_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(migrated.db, "user_version")).toBe(
+      MANGABACLAW_STATE_SCHEMA_VERSION,
+    );
     const tables = migrated.db
       .prepare(
         `SELECT name FROM sqlite_schema
@@ -3758,7 +3790,9 @@ INSERT INTO macos_port_guardian_records VALUES (4242, 18789, '/usr/bin/ssh', 're
         .prepare("SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'audit_events'")
         .get(),
     ).toEqual({ name: "audit_events" });
-    expect(readSqliteNumberPragma(opened.db, "user_version")).toBe(MANGABACLAW_STATE_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(opened.db, "user_version")).toBe(
+      MANGABACLAW_STATE_SCHEMA_VERSION,
+    );
   });
 
   it("refuses to rebuild a noncanonical audit table with unknown data columns", () => {
@@ -4564,7 +4598,9 @@ INSERT INTO macos_port_guardian_records VALUES (4242, 18789, '/usr/bin/ssh', 're
       .prepare("PRAGMA table_info(worker_workspace_pending_results)")
       .all() as Array<{ name?: string }>;
     expect(columns.map((column) => column.name)).toContain("staged_result_ref");
-    expect(readSqliteNumberPragma(reopened.db, "user_version")).toBe(MANGABACLAW_STATE_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(reopened.db, "user_version")).toBe(
+      MANGABACLAW_STATE_SCHEMA_VERSION,
+    );
     expect(
       reopened.db
         .prepare("SELECT schema_version FROM schema_meta WHERE meta_key = 'primary'")
@@ -5894,7 +5930,9 @@ INSERT INTO macos_port_guardian_records VALUES (4242, 18789, '/usr/bin/ssh', 're
     ]) {
       expect(failureRows.some((row) => row.id === id)).toBe(false);
     }
-    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(MANGABACLAW_STATE_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(
+      MANGABACLAW_STATE_SCHEMA_VERSION,
+    );
 
     closeMangabaClawStateDatabaseForTest();
     const reopened = openMangabaClawStateDatabase({ env: { MANGABACLAW_STATE_DIR: stateDir } });
@@ -5921,7 +5959,9 @@ INSERT INTO macos_port_guardian_records VALUES (4242, 18789, '/usr/bin/ssh', 're
     expect(readSqliteNumberPragma(database.db, "foreign_keys")).toBe(1);
     expect(readSqliteNumberPragma(database.db, "synchronous")).toBe(1);
     expect(readSqliteNumberPragma(database.db, "auto_vacuum")).toBe(2);
-    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(MANGABACLAW_STATE_SCHEMA_VERSION);
+    expect(readSqliteNumberPragma(database.db, "user_version")).toBe(
+      MANGABACLAW_STATE_SCHEMA_VERSION,
+    );
     expect(readSqliteNumberPragma(database.db, "wal_autocheckpoint")).toBe(1000);
     expect(readSqliteNumberPragma(database.db, "journal_size_limit")).toBe(64 * 1024 * 1024);
     const journalMode = database.db.prepare("PRAGMA journal_mode").get() as
@@ -6014,7 +6054,7 @@ INSERT INTO macos_port_guardian_records VALUES (4242, 18789, '/usr/bin/ssh', 're
     }
     expect(firstFailure).toMatchObject({
       name: "SqliteSchemaVersionError",
-      message: expect.stringContaining("https://docs.mangabaclaw.ai/reference/database-schemas"),
+      message: expect.stringContaining("https://docs.openclaw.ai/reference/database-schemas"),
     });
 
     for (const candidate of [databasePath, `${databasePath}-wal`, `${databasePath}-shm`]) {

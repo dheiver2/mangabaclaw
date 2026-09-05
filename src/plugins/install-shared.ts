@@ -49,7 +49,7 @@ export function formatUnresolvedMangabaClawPeerLinkError(packageName: string): s
 }
 
 const MISSING_EXTENSIONS_ERROR =
-  'package.json missing mangabaclaw.extensions; update the plugin package to include mangabaclaw.extensions (for example ["./dist/index.js"]). See https://docs.mangabaclaw.ai/help/troubleshooting#plugin-install-fails-with-missing-mangabaclaw-extensions';
+  'package.json missing mangabaclaw.extensions; update the plugin package to include mangabaclaw.extensions (for example ["./dist/index.js"]). See https://docs.openclaw.ai/help/troubleshooting#plugin-install-fails-with-missing-mangabaclaw-extensions';
 function validateMangabaClawPackageCompatibility(params: {
   pluginId: string;
   currentHostVersion: string;

@@ -120,7 +120,7 @@ class AndroidScreenshotFixtureTest {
         listOf(
           "assistant",
           "The release check is ready:\n\n```kotlin\nval ready = lint && tests\n```\n\n" +
-            "Review https://mangabaclaw.ai before tagging.",
+            "Review https://mangaba.ia.br before tagging.",
           "1783555200000",
         ),
         listOf("system", "Compaction", "1783555220000"),

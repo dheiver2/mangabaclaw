@@ -35,7 +35,7 @@ export function registerNodeCli(program: Command) {
           ["mangabaclaw node install", "Install the node host service."],
           ["mangabaclaw node start", "Start the installed node host service."],
           ["mangabaclaw node restart", "Restart the installed node host service."],
-        ])}\n\n${theme.muted("Docs:")} ${formatDocsLink("/cli/node", "docs.mangabaclaw.ai/cli/node")}\n`,
+        ])}\n\n${theme.muted("Docs:")} ${formatDocsLink("/cli/node", "docs.openclaw.ai/cli/node")}\n`,
     );
 
   node

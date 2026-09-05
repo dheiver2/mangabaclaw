@@ -11,7 +11,7 @@ export function registerClawbotCli(program: Command) {
     .addHelpText(
       "after",
       () =>
-        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/clawbot", "docs.mangabaclaw.ai/cli/clawbot")}\n`,
+        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/clawbot", "docs.openclaw.ai/cli/clawbot")}\n`,
     );
   registerQrCli(clawbot);
 }

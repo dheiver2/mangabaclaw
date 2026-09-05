@@ -74,7 +74,7 @@ type MantisDesktopBrowserSmokeSummary = {
   status: "pass" | "fail";
 };
 
-const DEFAULT_BROWSER_URL = "https://mangabaclaw.ai";
+const DEFAULT_BROWSER_URL = "https://mangaba.ia.br";
 const DEFAULT_PROVIDER = "hetzner";
 const DEFAULT_CLASS = "beast";
 const DEFAULT_IDLE_TIMEOUT = "60m";

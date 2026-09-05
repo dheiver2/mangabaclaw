@@ -117,7 +117,7 @@ describe("resolveSearchItems", () => {
     const result = firecrawlClient.resolveSearchItems({
       data: [
         { url: "https://example.com", title: "Example" },
-        { url: "https://mangabaclaw.ai", title: "MangabaClaw" },
+        { url: "https://mangaba.ia.br", title: "MangabaClaw" },
       ],
     });
 
@@ -127,7 +127,7 @@ describe("resolveSearchItems", () => {
       title: "Example",
     });
     expect(requireSearchResult(result, 1)).toMatchObject({
-      url: "https://mangabaclaw.ai",
+      url: "https://mangaba.ia.br",
       title: "MangabaClaw",
     });
   });

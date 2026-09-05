@@ -9,4 +9,4 @@ mangabaclaw plugins install @mangabaclaw/kilocode-provider
 mangabaclaw gateway restart
 ```
 
-See <https://docs.mangabaclaw.ai/providers/kilocode> for setup and configuration.
+See <https://docs.openclaw.ai/providers/kilocode> for setup and configuration.

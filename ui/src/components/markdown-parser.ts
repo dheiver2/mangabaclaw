@@ -306,7 +306,7 @@ export function createMarkdownParser(): MarkdownIt {
           continue;
         }
         // Only trim linkify-generated autolinks, not explicit markdown links
-        // like [MangabaClaw中文](https://docs.mangabaclaw.ai) where CJK in display
+        // like [MangabaClaw中文](https://docs.openclaw.ai) where CJK in display
         // text is intentional and href must not be rewritten.
         if (token.markup !== "linkify") {
           continue;

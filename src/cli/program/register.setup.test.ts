@@ -165,7 +165,10 @@ describe("registerSetupCommand", () => {
 
     await runInteractiveBareSetup();
 
-    expect(readLocalOnboardingStateMock).toHaveBeenCalledWith("/tmp/mangabaclaw.json", sourceConfig);
+    expect(readLocalOnboardingStateMock).toHaveBeenCalledWith(
+      "/tmp/mangabaclaw.json",
+      sourceConfig,
+    );
     expect(setupWizardCommandMock).toHaveBeenCalledWith(lastWizardOptions(), runtime);
     expect(runSystemAgentMock).not.toHaveBeenCalled();
   });
@@ -178,7 +181,7 @@ describe("registerSetupCommand", () => {
         valid: true,
         path: "/tmp/mangabaclaw.json",
         sourceConfig: {
-          $schema: "https://mangabaclaw.ai/config.json",
+          $schema: "https://mangaba.ia.br/config.json",
           meta: { updatedBy: "fixture" },
           wizard: { securityAcknowledgedAt: "2026-08-02T00:00:00.000Z", accessMode },
         },
@@ -252,7 +255,10 @@ describe("registerSetupCommand", () => {
 
     await runInteractiveBareSetup();
 
-    expect(readLocalOnboardingStateMock).toHaveBeenCalledWith("/tmp/mangabaclaw.json", sourceConfig);
+    expect(readLocalOnboardingStateMock).toHaveBeenCalledWith(
+      "/tmp/mangabaclaw.json",
+      sourceConfig,
+    );
     expect(runSystemAgentMock).toHaveBeenCalledOnce();
     expect(setupWizardCommandMock).not.toHaveBeenCalled();
   });

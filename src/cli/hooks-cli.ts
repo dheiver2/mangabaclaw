@@ -76,7 +76,10 @@ type HooksReportTarget = {
   workspaceDir: string;
 };
 
-function resolveHooksReportTarget(config: MangabaClawConfig, rawAgentId?: string): HooksReportTarget {
+function resolveHooksReportTarget(
+  config: MangabaClawConfig,
+  rawAgentId?: string,
+): HooksReportTarget {
   const requested = rawAgentId?.trim();
   if (rawAgentId !== undefined && !requested) {
     throw new Error("--agent must not be blank");
@@ -614,7 +617,7 @@ export function registerHooksCli(program: Command): void {
     .addHelpText(
       "after",
       () =>
-        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/hooks", "docs.mangabaclaw.ai/cli/hooks")}\n`,
+        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/hooks", "docs.openclaw.ai/cli/hooks")}\n`,
     );
   const hasJsonOutput = (opts: { json?: boolean } | undefined): boolean =>
     Boolean(opts?.json || hooks.opts<{ json?: boolean }>().json);

@@ -43,7 +43,7 @@ jobs:
         with:
           args: >-
             --no-progress
-            --base-url https://docs.mangabaclaw.ai
+            --base-url https://docs.openclaw.ai
             --exclude-all-private
             --accept '100..=399,401,403,429,500..=599'
             --accept-timeouts
@@ -76,7 +76,7 @@ jobs:
         run: >-
           lychee
           --no-progress
-          --base-url https://docs.mangabaclaw.ai
+          --base-url https://docs.openclaw.ai
           --exclude-all-private
           --accept '100..=300,302..=307,309..=599'
           --accept-timeouts

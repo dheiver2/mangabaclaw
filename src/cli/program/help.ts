@@ -30,12 +30,18 @@ const ROOT_COMMANDS_HINT =
 const EXAMPLES = [
   ["mangabaclaw onboard", "Run guided setup for a local Gateway, workspace, auth, and channels."],
   ["mangabaclaw setup", "Create the baseline config, workspace, and session folders."],
-  ["mangabaclaw configure", "Change models, Gateway, channels, plugins, skills, and health checks."],
+  [
+    "mangabaclaw configure",
+    "Change models, Gateway, channels, plugins, skills, and health checks.",
+  ],
   ["mangabaclaw status", "Check Gateway, channel, model, and recent-session status."],
   ["mangabaclaw doctor --fix", "Repair common config, service, plugin, and channel problems."],
   ["mangabaclaw channels add", "Add or update a chat channel account with guided prompts."],
   ["mangabaclaw channels status", "See connected messaging accounts and login state."],
-  ["mangabaclaw --dev gateway", "Run a dev Gateway (isolated state/config) on ws://127.0.0.1:19001."],
+  [
+    "mangabaclaw --dev gateway",
+    "Run a dev Gateway (isolated state/config) on ws://127.0.0.1:19001.",
+  ],
   ["mangabaclaw gateway run --force", "Start the Gateway and replace anything bound to its port."],
   ["mangabaclaw models status", "Show model/provider auth health before running agents."],
   ["mangabaclaw plugins list", "Inspect enabled, disabled, and installed plugins."],
@@ -136,7 +142,9 @@ export function configureProgramHelp(
   if (isRootVersionInvocation(process.argv)) {
     const commit = resolveCommitHash({ moduleUrl: import.meta.url });
     console.log(
-      commit ? `MangabaClaw ${ctx.programVersion} (${commit})` : `MangabaClaw ${ctx.programVersion}`,
+      commit
+        ? `MangabaClaw ${ctx.programVersion} (${commit})`
+        : `MangabaClaw ${ctx.programVersion}`,
     );
     process.exit(0);
   }
@@ -158,7 +166,7 @@ export function configureProgramHelp(
     if (command !== program) {
       return "";
     }
-    const docs = formatDocsLink("/cli", "docs.mangabaclaw.ai/cli");
+    const docs = formatDocsLink("/cli", "docs.openclaw.ai/cli");
     return `\n${theme.heading("Examples:")}\n${fmtExamples}\n\n${theme.muted("Docs:")} ${docs}\n`;
   });
 }

@@ -6,7 +6,10 @@ import { createPluginRegistry } from "../../plugins/registry.js";
 import { setActivePluginRegistry } from "../../plugins/runtime.js";
 import type { PluginRuntime } from "../../plugins/runtime/types.js";
 import { createBundledPluginRecord } from "../../plugins/status.test-fixtures.js";
-import type { MangabaClawPluginCommandDefinition, PluginCommandContext } from "../../plugins/types.js";
+import type {
+  MangabaClawPluginCommandDefinition,
+  PluginCommandContext,
+} from "../../plugins/types.js";
 import { normalizeSessionDeliveryState } from "../../utils/delivery-context.shared.js";
 
 type PluginCommandHandler = MangabaClawPluginCommandDefinition["handler"];
@@ -317,7 +320,7 @@ describe("diagnostics command", () => {
       "Diagnostics can include sensitive local logs and host-level runtime metadata.",
     );
     expect(execCall.defaults.approvalWarningText).toContain(
-      "https://docs.mangabaclaw.ai/gateway/diagnostics",
+      "https://docs.openclaw.ai/gateway/diagnostics",
     );
     expect(execCall.params.security).toBe("allowlist");
     expect(execCall.params.ask).toBe("always");
@@ -388,7 +391,7 @@ describe("diagnostics command", () => {
     expect(result?.reply?.text).toContain(
       "Diagnostics can include sensitive local logs and host-level runtime metadata.",
     );
-    expect(result?.reply?.text).toContain("https://docs.mangabaclaw.ai/gateway/diagnostics");
+    expect(result?.reply?.text).toContain("https://docs.openclaw.ai/gateway/diagnostics");
     expect(result?.reply?.text).toContain("no interactive approval client");
     expect(execCalls).toHaveLength(1);
   });

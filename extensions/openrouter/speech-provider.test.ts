@@ -153,7 +153,7 @@ describe("openrouter speech provider", () => {
       defaultHeaders: {
         Authorization: "Bearer sk-openrouter",
         "Content-Type": "application/json",
-        "HTTP-Referer": "https://mangabaclaw.ai",
+        "HTTP-Referer": "https://mangaba.ia.br",
         "X-OpenRouter-Title": "MangabaClaw",
       },
       provider: "openrouter",
@@ -166,7 +166,7 @@ describe("openrouter speech provider", () => {
     expect(Object.fromEntries(headers.entries())).toEqual({
       authorization: "Bearer sk-openrouter",
       "content-type": "application/json",
-      "http-referer": "https://mangabaclaw.ai",
+      "http-referer": "https://mangaba.ia.br",
       "x-openrouter-title": "MangabaClaw",
     });
     expect(request).toEqual({

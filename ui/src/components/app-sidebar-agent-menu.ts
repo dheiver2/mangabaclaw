@@ -32,15 +32,15 @@ const IDENTITY_MENU_LINKS: ReadonlyArray<{
   icon: IconName;
   label: () => string;
 }> = [
-  { href: "https://docs.mangabaclaw.ai", icon: "book", label: () => t("common.docs") },
+  { href: "https://docs.openclaw.ai", icon: "book", label: () => t("common.docs") },
   {
-    href: "https://docs.mangabaclaw.ai/help",
+    href: "https://docs.openclaw.ai/help",
     icon: "messageSquare",
     label: () => t("agentChip.getHelp"),
   },
   { href: "https://discord.gg/clawd", icon: "users", label: () => t("agentChip.discord") },
   {
-    href: "https://docs.mangabaclaw.ai/releases",
+    href: "https://docs.openclaw.ai/releases",
     icon: "scrollText",
     label: () => t("agentChip.viewChangelog"),
   },
@@ -517,7 +517,9 @@ export function renderSidebarIdentityMenu(params: SidebarIdentityMenuParams) {
             }}
           ></mangabaclaw-sidebar-build-chip>
           <span class="sidebar-mode-switch">
-            <mangabaclaw-theme-mode-toggle .mode=${params.themeMode}></mangabaclaw-theme-mode-toggle>
+            <mangabaclaw-theme-mode-toggle
+              .mode=${params.themeMode}
+            ></mangabaclaw-theme-mode-toggle>
           </span>
         </div>
       </wa-dropdown>

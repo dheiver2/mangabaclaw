@@ -567,7 +567,7 @@ function throwIfFetchAborted(signal: AbortSignal | undefined): void {
  * Sanitize a web_fetch URL parameter that may contain LLM-injected whitespace.
  *
  * Fixes the reported case where a model emits a space between the scheme and
- * authority (e.g. `https:// docs.mangabaclaw.ai`), which causes `new URL()` to
+ * authority (e.g. `https:// docs.openclaw.ai`), which causes `new URL()` to
  * throw. Path and query whitespace is intentionally preserved — the WHATWG URL
  * parser percent-encodes those characters correctly per RFC 3986.
  */

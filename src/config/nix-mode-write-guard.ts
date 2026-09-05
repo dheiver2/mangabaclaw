@@ -2,9 +2,10 @@
 import { resolveIsNixMode } from "./paths.js";
 
 /** Agent-first Nix install docs shown when runtime config writes are blocked. */
-const NIX_MANGABACLAW_AGENT_FIRST_URL = "https://github.com/mangabaclaw/nix-mangabaclaw#quick-start";
+const NIX_MANGABACLAW_AGENT_FIRST_URL =
+  "https://github.com/mangabaclaw/nix-mangabaclaw#quick-start";
 /** Public MangabaClaw Nix overview shown with immutable-config errors. */
-const MANGABACLAW_NIX_OVERVIEW_URL = "https://docs.mangabaclaw.ai/install/nix";
+const MANGABACLAW_NIX_OVERVIEW_URL = "https://docs.openclaw.ai/install/nix";
 
 /** Error thrown when a mutating config path is attempted while Nix owns config state. */
 export class NixModeConfigMutationError extends Error {

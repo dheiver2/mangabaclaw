@@ -97,7 +97,7 @@ describe("openrouter media understanding provider", () => {
       defaultHeaders: {
         Authorization: "Bearer sk-openrouter",
         "Content-Type": "application/json",
-        "HTTP-Referer": "https://mangabaclaw.ai",
+        "HTTP-Referer": "https://mangaba.ia.br",
         "X-OpenRouter-Title": "MangabaClaw",
       },
       provider: "openrouter",
@@ -127,7 +127,7 @@ describe("openrouter media understanding provider", () => {
       throw new Error("expected OpenRouter request headers");
     }
     expect(headers.get("authorization")).toBe("Bearer sk-openrouter");
-    expect(headers.get("http-referer")).toBe("https://mangabaclaw.ai");
+    expect(headers.get("http-referer")).toBe("https://mangaba.ia.br");
     expect(headers.get("x-openrouter-title")).toBe("MangabaClaw");
     expect(release).toHaveBeenCalledOnce();
   });

@@ -188,7 +188,7 @@ type MemoryViewProps = {
 
 const MEMORY_PANEL_ID = "memory-settings-panel";
 
-const MEMORY_DOCS_URL = "https://docs.mangabaclaw.ai/concepts/memory";
+const MEMORY_DOCS_URL = "https://docs.openclaw.ai/concepts/memory";
 
 const MEMORY_ENGINE_OFF = "";
 

@@ -330,8 +330,8 @@ OpenRouter's documented app-attribution headers:
 
 | Header                    | Value                                                                                                  |
 | ------------------------- | ------------------------------------------------------------------------------------------------------ |
-| `HTTP-Referer`            | `https://mangabaclaw.ai`                                                                                  |
-| `X-OpenRouter-Title`      | `MangabaClaw`                                                                                             |
+| `HTTP-Referer`            | `https://mangaba.ia.br`                                                                                |
+| `X-OpenRouter-Title`      | `MangabaClaw`                                                                                          |
 | `X-OpenRouter-Categories` | `cli-agent,cloud-agent,programming-app,creative-writing,writing-assistant,general-chat,personal-agent` |
 
 <Warning>

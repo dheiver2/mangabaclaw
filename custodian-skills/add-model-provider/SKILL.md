@@ -69,4 +69,4 @@ Expect the exact probe string; record model id and wall time. Known dependency: 
 
 State the provider added, the SecretRef path written (never the value), the probe result with model id and latency, and whether the default model changed. If the probe failed, report the exact error and the next command to try.
 
-Further reference: https://docs.mangabaclaw.ai/providers/models and https://docs.mangabaclaw.ai/providers/openai
+Further reference: https://docs.openclaw.ai/providers/models and https://docs.openclaw.ai/providers/openai

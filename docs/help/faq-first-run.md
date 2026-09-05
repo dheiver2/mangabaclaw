@@ -3,7 +3,7 @@ summary: "FAQ: quick-start and first-run setup — install, onboard, auth, subsc
 read_when:
   - New install, onboarding stuck, or first-run errors
   - Choosing auth and provider subscriptions
-  - Cannot access docs.mangabaclaw.ai, cannot open dashboard, install stuck
+  - Cannot access docs.openclaw.ai, cannot open dashboard, install stuck
 title: "FAQ: first-run setup"
 sidebarTitle: "First-run FAQ"
 ---
@@ -26,7 +26,7 @@ and troubleshooting see the main [FAQ](/help/faq).
     code + docs and reason about the exact version you run:
 
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash -s -- --install-method git
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash -s -- --install-method git
     ```
 
     Ask the agent to plan and supervise the fix step-by-step, then execute only the
@@ -68,7 +68,7 @@ and troubleshooting see the main [FAQ](/help/faq).
 
   <Accordion title="Recommended way to install and set up MangabaClaw">
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash
     mangabaclaw onboard --install-daemon
     ```
 
@@ -241,9 +241,9 @@ and troubleshooting see the main [FAQ](/help/faq).
 
   </Accordion>
 
-  <Accordion title="Cannot access docs.mangabaclaw.ai (SSL error)">
-    Some Comcast/Xfinity connections incorrectly block `docs.mangabaclaw.ai` via Xfinity
-    Advanced Security. Disable it or allowlist `docs.mangabaclaw.ai`, then retry. Help us
+  <Accordion title="Cannot access docs.openclaw.ai (SSL error)">
+    Some Comcast/Xfinity connections incorrectly block `docs.openclaw.ai` via Xfinity
+    Advanced Security. Disable it or allowlist `docs.openclaw.ai`, then retry. Help us
     get it unblocked: [https://spa.xfinity.com/check_url_status](https://spa.xfinity.com/check_url_status).
 
     Still blocked? Docs are mirrored on GitHub:
@@ -275,14 +275,14 @@ and troubleshooting see the main [FAQ](/help/faq).
     One-liners (macOS/Linux):
 
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash -s -- --beta
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash -s -- --beta
     ```
 
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash -s -- --install-method git
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash -s -- --install-method git
     ```
 
-    Windows installer (PowerShell): `iwr -useb https://mangabaclaw.ai/install.ps1 | iex`
+    Windows installer (PowerShell): `iwr -useb https://mangaba.ia.br/install.ps1 | iex`
 
     More detail: [Development channels](/install/development-channels) and [Installer flags](/install/installer).
 
@@ -303,7 +303,7 @@ and troubleshooting see the main [FAQ](/help/faq).
     2. **Hackable (git) install (fresh machine):**
 
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash -s -- --install-method git
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash -s -- --install-method git
     ```
 
     Prefer a manual clone:
@@ -337,9 +337,9 @@ and troubleshooting see the main [FAQ](/help/faq).
     Re-run with `--verbose`:
 
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash -s -- --verbose
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash -s -- --beta --verbose
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash -s -- --install-method git --verbose
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash -s -- --verbose
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash -s -- --beta --verbose
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash -s -- --install-method git --verbose
     ```
 
     `install.ps1` has no dedicated verbose switch; wrap it in `Set-PSDebug -Trace 1` /
@@ -397,7 +397,7 @@ and troubleshooting see the main [FAQ](/help/faq).
     your bot (or Claude/Codex) **from that folder** so it can read the repo and answer precisely.
 
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash -s -- --install-method git
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash -s -- --install-method git
     ```
 
     More detail: [Install](/install) and [Installer flags](/install/installer).
@@ -757,8 +757,8 @@ and troubleshooting see the main [FAQ](/help/faq).
     The installer can force either mode too:
 
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash -s -- --install-method git
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash -s -- --install-method npm
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash -s -- --install-method git
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash -s -- --install-method npm
     ```
 
     Backup tips: [Where things live on disk](/help/faq#where-things-live-on-disk).

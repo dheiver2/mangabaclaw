@@ -13,7 +13,7 @@ export function createDuckDuckGoWebSearchProviderBase() {
     envVars: [],
     placeholder: "(no key needed)",
     signupUrl: "https://duckduckgo.com/",
-    docsUrl: "https://docs.mangabaclaw.ai/tools/web",
+    docsUrl: "https://docs.openclaw.ai/tools/web",
     autoDetectOrder: 100,
     credentialPath: "",
     ...createWebSearchProviderContractFields({

@@ -42,7 +42,7 @@ async function writeJsonSchema(jsonSchemaPath: string) {
 
   const rootSchema = {
     $schema: "http://json-schema.org/draft-07/schema#",
-    $id: "https://mangabaclaw.ai/protocol.schema.json",
+    $id: "https://mangaba.ia.br/protocol.schema.json",
     title: "MangabaClaw Gateway Protocol",
     description: "Handshake, request/response, and event frames for the Gateway WebSocket.",
     oneOf: [

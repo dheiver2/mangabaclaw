@@ -5,7 +5,8 @@ import { describe, expect, it, vi } from "vitest";
 const withTrustedWebSearchEndpointMock = vi.hoisted(() => vi.fn());
 
 vi.mock("mangabaclaw/plugin-sdk/provider-web-search", async (importOriginal) => {
-  const actual = await importOriginal<typeof import("mangabaclaw/plugin-sdk/provider-web-search")>();
+  const actual =
+    await importOriginal<typeof import("mangabaclaw/plugin-sdk/provider-web-search")>();
   return {
     ...actual,
     withTrustedWebSearchEndpoint: withTrustedWebSearchEndpointMock,
@@ -63,7 +64,7 @@ describe("perplexity web search provider", () => {
           error: "missing_perplexity_api_key",
           message:
             "web_search (perplexity) needs an API key. Set PERPLEXITY_API_KEY or OPENROUTER_API_KEY in the Gateway environment, or configure plugins.entries.perplexity.config.webSearch.apiKey. If you do not want to configure a search API key, use web_fetch for a specific URL or the browser tool for interactive pages.",
-          docs: "https://docs.mangabaclaw.ai/tools/web",
+          docs: "https://docs.openclaw.ai/tools/web",
         });
       },
     );

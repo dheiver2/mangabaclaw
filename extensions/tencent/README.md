@@ -10,4 +10,4 @@ mangabaclaw plugins install @mangabaclaw/tencent-provider
 
 ## Docs
 
-See `docs/providers/tencent.md` in the MangabaClaw repository, or the published docs at `https://docs.mangabaclaw.ai/providers/tencent`.
+See `docs/providers/tencent.md` in the MangabaClaw repository, or the published docs at `https://docs.openclaw.ai/providers/tencent`.

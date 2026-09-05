@@ -304,11 +304,11 @@ describe("model provider localService config", () => {
 describe("$schema key in config (#14998)", () => {
   it("accepts config with $schema string", () => {
     const result = MangabaClawSchema.safeParse({
-      $schema: "https://mangabaclaw.ai/config.json",
+      $schema: "https://mangaba.ia.br/config.json",
     });
     expect(result.success).toBe(true);
     if (result.success) {
-      expect(result.data.$schema).toBe("https://mangabaclaw.ai/config.json");
+      expect(result.data.$schema).toBe("https://mangaba.ia.br/config.json");
     }
   });
 
@@ -332,11 +332,11 @@ describe("$schema key in config (#14998)", () => {
 
   it("preserves $schema through validateConfigObject round-trip", () => {
     const res = validateConfigObject({
-      $schema: "https://mangabaclaw.ai/config.json",
+      $schema: "https://mangaba.ia.br/config.json",
     });
     expect(res.ok).toBe(true);
     if (res.ok) {
-      expect(res.config.$schema).toBe("https://mangabaclaw.ai/config.json");
+      expect(res.config.$schema).toBe("https://mangaba.ia.br/config.json");
     }
   });
 });

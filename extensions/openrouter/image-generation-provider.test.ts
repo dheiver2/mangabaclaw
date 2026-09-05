@@ -135,7 +135,7 @@ describe("openrouter image generation provider", () => {
       allowPrivateNetwork: false,
       defaultHeaders: {
         Authorization: "Bearer openrouter-key",
-        "HTTP-Referer": "https://mangabaclaw.ai",
+        "HTTP-Referer": "https://mangaba.ia.br",
         "X-OpenRouter-Title": "MangabaClaw",
       },
       request: undefined,
@@ -148,7 +148,7 @@ describe("openrouter image generation provider", () => {
     const headers = requireHeaders(request.headers);
     expect(Object.fromEntries(headers.entries())).toEqual({
       authorization: "Bearer openrouter-key",
-      "http-referer": "https://mangabaclaw.ai",
+      "http-referer": "https://mangaba.ia.br",
       "x-openrouter-title": "MangabaClaw",
     });
     expect(request).toEqual({

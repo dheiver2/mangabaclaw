@@ -27,7 +27,7 @@ function createOverview(gatewayReachable: boolean): SystemAgentOverview {
       reachable: gatewayReachable,
     },
     references: {
-      docsUrl: "https://docs.mangabaclaw.ai",
+      docsUrl: "https://docs.openclaw.ai",
       sourceUrl: "https://github.com/mangabaclaw/mangabaclaw",
     },
   };

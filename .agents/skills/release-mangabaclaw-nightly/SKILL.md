@@ -69,7 +69,7 @@ Tideclaw should commit under its own machine identity on release branches and fo
 
 ```bash
 git config user.name "Tideclaw"
-git config user.email "tideclaw@mangabaclaw.ai"
+git config user.email "tideclaw@mangaba.ia.br"
 ```
 
 This is good for auditability if commits are clearly machine-authored and gated by CI. Avoid direct pushes to protected `main`; forward-port via PR/automerge unless the repo policy explicitly allows the bot to push after green checks. Include human `Co-authored-by` only when a human supplied the patch or explicit commit text.

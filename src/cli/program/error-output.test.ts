@@ -72,7 +72,7 @@ describe("formatCliParseErrorOutput", () => {
 
     expect(error.message).toBe('MangabaClaw does not know the command "pairng".');
     expect(error.humanOutput).toBe(
-      'MangabaClaw does not know the command "pairng".\nDid you mean this?\n  mangabaclaw pairing\nTry: mangabaclaw --help\nPlugin command? mangabaclaw plugins list\nDocs: https://docs.mangabaclaw.ai/cli\n',
+      'MangabaClaw does not know the command "pairng".\nDid you mean this?\n  mangabaclaw pairing\nTry: mangabaclaw --help\nPlugin command? mangabaclaw plugins list\nDocs: https://docs.openclaw.ai/cli\n',
     );
   });
 
@@ -94,7 +94,7 @@ describe("formatCliParseErrorOutput", () => {
     });
 
     expect(output).toBe(
-      'MangabaClaw does not know the command "wat".\nTry: mangabaclaw --help\nPlugin command? mangabaclaw plugins list\nDocs: https://docs.mangabaclaw.ai/cli\n',
+      'MangabaClaw does not know the command "wat".\nTry: mangabaclaw --help\nPlugin command? mangabaclaw plugins list\nDocs: https://docs.openclaw.ai/cli\n',
     );
   });
 
@@ -105,7 +105,7 @@ describe("formatCliParseErrorOutput", () => {
     });
 
     expect(output).toBe(
-      'MangabaClaw webhooks has no command "list".\nTry: mangabaclaw webhooks --help\nDocs: https://docs.mangabaclaw.ai/cli\n',
+      'MangabaClaw webhooks has no command "list".\nTry: mangabaclaw webhooks --help\nDocs: https://docs.openclaw.ai/cli\n',
     );
   });
 
@@ -117,7 +117,7 @@ describe("formatCliParseErrorOutput", () => {
     });
 
     expect(output).toBe(
-      'MangabaClaw webhooks has no command "gmial".\nDid you mean this?\n  mangabaclaw webhooks gmail\nTry: mangabaclaw webhooks --help\nDocs: https://docs.mangabaclaw.ai/cli\n',
+      'MangabaClaw webhooks has no command "gmial".\nDid you mean this?\n  mangabaclaw webhooks gmail\nTry: mangabaclaw webhooks --help\nDocs: https://docs.openclaw.ai/cli\n',
     );
   });
 
@@ -130,7 +130,7 @@ describe("formatCliParseErrorOutput", () => {
 
     expect(error.code).toBe("commander.unknownCommand");
     expect(output).toBe(
-      'MangabaClaw sessions has no command "lst".\nDid you mean this?\n  mangabaclaw sessions list\nTry: mangabaclaw sessions --help\nDocs: https://docs.mangabaclaw.ai/cli\n',
+      'MangabaClaw sessions has no command "lst".\nDid you mean this?\n  mangabaclaw sessions list\nTry: mangabaclaw sessions --help\nDocs: https://docs.openclaw.ai/cli\n',
     );
   });
 
@@ -143,7 +143,7 @@ describe("formatCliParseErrorOutput", () => {
 
     expect(error.code).toBe("commander.unknownCommand");
     expect(output).toBe(
-      'MangabaClaw config has no command "gett".\nDid you mean this?\n  mangabaclaw config get\nTry: mangabaclaw config --help\nDocs: https://docs.mangabaclaw.ai/cli\n',
+      'MangabaClaw config has no command "gett".\nDid you mean this?\n  mangabaclaw config get\nTry: mangabaclaw config --help\nDocs: https://docs.openclaw.ai/cli\n',
     );
   });
 
@@ -158,7 +158,7 @@ describe("formatCliParseErrorOutput", () => {
     expect(error.exitCode).toBe(1);
     expect(stdout).toBe("");
     expect(output).toBe(
-      'MangabaClaw sessions has no command "lst".\nDid you mean this?\n  mangabaclaw sessions list\nTry: mangabaclaw sessions --help\nDocs: https://docs.mangabaclaw.ai/cli\n',
+      'MangabaClaw sessions has no command "lst".\nDid you mean this?\n  mangabaclaw sessions list\nTry: mangabaclaw sessions --help\nDocs: https://docs.openclaw.ai/cli\n',
     );
   });
 
@@ -205,7 +205,7 @@ describe("formatCliParseErrorOutput", () => {
     });
 
     expect(output).toBe(
-      'MangabaClaw does not know the command "upate".\nDid you mean this?\n  mangabaclaw update\nTry: mangabaclaw --help\nPlugin command? mangabaclaw plugins list\nDocs: https://docs.mangabaclaw.ai/cli\n',
+      'MangabaClaw does not know the command "upate".\nDid you mean this?\n  mangabaclaw update\nTry: mangabaclaw --help\nPlugin command? mangabaclaw plugins list\nDocs: https://docs.openclaw.ai/cli\n',
     );
   });
 

@@ -157,7 +157,11 @@ export type ChannelStatusAdapter<ResolvedAccount, Probe = unknown, Audit = unkno
     }) => Record<string, unknown> | Promise<Record<string, unknown>>
   >;
   probeAccount?: ChannelAdapterCallback<
-    (params: { account: ResolvedAccount; timeoutMs: number; cfg: MangabaClawConfig }) => Promise<Probe>
+    (params: {
+      account: ResolvedAccount;
+      timeoutMs: number;
+      cfg: MangabaClawConfig;
+    }) => Promise<Probe>
   >;
   formatCapabilitiesProbe?: ChannelAdapterCallback<
     (params: { probe: Probe }) => ChannelCapabilitiesDisplayLine[]
@@ -277,7 +281,7 @@ export type ChannelGatewayContext<ResolvedAccount = unknown> = {
    * - External plugins should check for undefined before using
    *
    * @since Plugin SDK 2026.2.19
-   * @see {@link https://docs.mangabaclaw.ai/plugins/building-plugins | Plugin SDK documentation}
+   * @see {@link https://docs.openclaw.ai/plugins/building-plugins | Plugin SDK documentation}
    */
   channelRuntime?: ChannelRuntimeSurface;
 };
@@ -483,7 +487,9 @@ export type ChannelDoctorAdapter = {
   groupAllowFromFallbackToAllowFrom?: boolean;
   warnOnEmptyGroupSenderAllowlist?: boolean;
   legacyConfigRules?: LegacyConfigRule[];
-  normalizeCompatibilityConfig?: (params: { cfg: MangabaClawConfig }) => ChannelDoctorConfigMutation;
+  normalizeCompatibilityConfig?: (params: {
+    cfg: MangabaClawConfig;
+  }) => ChannelDoctorConfigMutation;
   collectPreviewWarnings?: (params: {
     cfg: MangabaClawConfig;
     doctorFixCommand: string;

@@ -83,7 +83,7 @@ Notes:
 
 ## Docs
 
-- https://docs.mangabaclaw.ai/tools/lobster
+- https://docs.openclaw.ai/tools/lobster
 
 ## Package
 

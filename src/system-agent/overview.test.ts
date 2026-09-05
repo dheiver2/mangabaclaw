@@ -19,7 +19,7 @@ function createOverview(defaultModel?: string): SystemAgentOverview {
       hash: null,
     },
     references: {
-      docsUrl: "https://docs.mangabaclaw.ai",
+      docsUrl: "https://docs.openclaw.ai",
       sourceUrl: "https://github.com/mangabaclaw/mangabaclaw",
     },
     agents: [{ id: "main", isDefault: true, ...(defaultModel ? { model: defaultModel } : {}) }],

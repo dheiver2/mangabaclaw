@@ -24,7 +24,7 @@ Restart the Gateway after installing or updating the plugin.
 
 Use the OpenShell docs for credentials, workspace mirroring, runtime selection, and troubleshooting:
 
-- https://docs.mangabaclaw.ai/gateway/openshell
+- https://docs.openclaw.ai/gateway/openshell
 
 ## Package
 

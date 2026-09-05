@@ -43,7 +43,7 @@ export async function startGatewayTailscaleExposure(params: {
         `external Tailscale Funnel for port ${params.port} remains active only for plugin-authenticated webhook routes; Gateway-authenticated routes reject its unattributable ingress. ` +
           "First configure a durable gateway password (gateway.auth.password or MANGABACLAW_GATEWAY_PASSWORD) and set gateway.auth.mode=password, " +
           "then run `mangabaclaw config set gateway.tailscale.mode funnel` and `mangabaclaw config unset gateway.tailscale.preserveFunnel`; " +
-          "see https://docs.mangabaclaw.ai/gateway/tailscale#public-internet-funnel--shared-password",
+          "see https://docs.openclaw.ai/gateway/tailscale#public-internet-funnel--shared-password",
       );
       return null;
     }

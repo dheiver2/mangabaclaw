@@ -9,7 +9,7 @@ read_when:
 The [threat model](/security/THREAT-MODEL-ATLAS) is a living document. Contributions are welcome from anyone; you do not need security or MITRE ATLAS background.
 
 <Note>
-This is for adding to the threat model, not reporting live vulnerabilities. If you found an exploitable vulnerability, follow the responsible-disclosure instructions on the [Trust page](https://trust.mangabaclaw.ai) instead.
+This is for adding to the threat model, not reporting live vulnerabilities. If you found an exploitable vulnerability, follow the responsible-disclosure instructions on the [Trust page](https://trust.openclaw.ai) instead.
 </Note>
 
 ## Ways to contribute
@@ -69,7 +69,7 @@ Threats are mapped to [MITRE ATLAS](https://atlas.mitre.org/) (Adversarial Threa
 
 ## Contact
 
-- **Security vulnerabilities:** [Trust page](https://trust.mangabaclaw.ai) for reporting instructions, or `security@mangabaclaw.ai`.
+- **Security vulnerabilities:** [Trust page](https://trust.openclaw.ai) for reporting instructions, or `security@mangaba.ia.br`.
 - **Threat model questions:** open a [documentation issue](https://github.com/mangabaclaw/mangabaclaw/issues/new?template=docs_bug_report.yml).
 - **General chat:** Discord `#security` channel.
 

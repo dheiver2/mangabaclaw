@@ -263,7 +263,9 @@ export function buildStatusSecurityAuditLines(params: {
     params.theme.muted(`Full report: ${params.formatCliCommand("mangabaclaw security audit")}`),
   );
   lines.push(
-    params.theme.muted(`Deep probe: ${params.formatCliCommand("mangabaclaw security audit --deep")}`),
+    params.theme.muted(
+      `Deep probe: ${params.formatCliCommand("mangabaclaw security audit --deep")}`,
+    ),
   );
   return lines;
 }
@@ -400,7 +402,7 @@ export function buildStatusModelSelectionLines(params: {
       `  Session selected: ${selected}`,
       reasonLine,
       clearLine,
-      "  Docs: https://docs.mangabaclaw.ai/concepts/models#selection-source-and-fallback-behavior",
+      "  Docs: https://docs.openclaw.ai/concepts/models#selection-source-and-fallback-behavior",
     );
   }
   if (mismatches.length > limit) {
@@ -418,8 +420,8 @@ export function buildStatusFooterLines(params: {
   gatewayReachable: boolean;
 }) {
   return [
-    "FAQ: https://docs.mangabaclaw.ai/faq",
-    "Troubleshooting: https://docs.mangabaclaw.ai/troubleshooting",
+    "FAQ: https://docs.openclaw.ai/faq",
+    "Troubleshooting: https://docs.openclaw.ai/troubleshooting",
     ...(params.updateHint ? ["", params.warn(params.updateHint)] : []),
     "Next steps:",
     `  Need to share?      ${params.formatCliCommand("mangabaclaw status --all")}`,

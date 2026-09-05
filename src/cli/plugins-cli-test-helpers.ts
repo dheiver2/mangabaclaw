@@ -262,7 +262,7 @@ vi.mock("../config/config.js", () => ({
           "Config is managed by Nix (`MANGABACLAW_NIX_MODE=1`), so MangabaClaw treats mangabaclaw.json as immutable.",
           "Do not run setup, onboarding, mangabaclaw update, plugin install/update/uninstall/enable, doctor repair/token-generation, or config set against this file.",
           "Agent-first Nix setup: https://github.com/mangabaclaw/nix-mangabaclaw#quick-start",
-          "MangabaClaw Nix overview: https://docs.mangabaclaw.ai/install/nix",
+          "MangabaClaw Nix overview: https://docs.openclaw.ai/install/nix",
         ].join("\n"),
       );
     }
@@ -1012,7 +1012,11 @@ export function resetPluginsCliTestState() {
   });
   refreshPluginRegistryMock.mockResolvedValue(defaultRegistryIndex);
   notifyGatewayPluginMetadataChangedMock.mockResolvedValue(true);
-  applyExclusiveSlotSelectionMock.mockImplementation((({ config }: { config: MangabaClawConfig }) => ({
+  applyExclusiveSlotSelectionMock.mockImplementation((({
+    config,
+  }: {
+    config: MangabaClawConfig;
+  }) => ({
     config,
     warnings: [],
   })) as (...args: unknown[]) => unknown);

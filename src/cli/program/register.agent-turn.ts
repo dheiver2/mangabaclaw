@@ -104,7 +104,7 @@ ${formatHelpExamples([
   ],
 ])}
 
-${theme.muted("Docs:")} ${formatDocsLink("/cli/agent", "docs.mangabaclaw.ai/cli/agent")}`,
+${theme.muted("Docs:")} ${formatDocsLink("/cli/agent", "docs.openclaw.ai/cli/agent")}`,
     )
     .action(async (opts): Promise<void> => {
       const verboseLevel =
@@ -173,7 +173,7 @@ ${theme.muted("Docs:")} ${formatDocsLink("/cli/agent", "docs.mangabaclaw.ai/cli/
             'mangabaclaw agent exec "Inspect this repo" --model ollama/qwen3.5:9b --code-mode code --local-model-lean --json',
             "Force Code Mode with the lean local-model tool surface.",
           ],
-        ])}\n\n${theme.muted("Docs:")} ${formatDocsLink("/cli/agent#agent-exec", "docs.mangabaclaw.ai/cli/agent#agent-exec")}`,
+        ])}\n\n${theme.muted("Docs:")} ${formatDocsLink("/cli/agent#agent-exec", "docs.openclaw.ai/cli/agent#agent-exec")}`,
     )
     .action(async (message: string | undefined, opts, command): Promise<void> => {
       const parentOpts = command.parent?.opts() as

@@ -4,7 +4,7 @@ import { renderDocsLink } from "../../components/settings-ui.ts";
 import { t } from "../../i18n/index.ts";
 import { renderPluginsHubTabs, type PluginsHubTab } from "./plugins-hub.ts";
 
-const PLUGINS_DOCS_URL = "https://docs.mangabaclaw.ai/plugins/manage-plugins";
+const PLUGINS_DOCS_URL = "https://docs.openclaw.ai/plugins/manage-plugins";
 
 type PluginsHubHeaderProps = {
   active: PluginsHubTab;

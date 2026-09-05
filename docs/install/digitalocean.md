@@ -49,7 +49,7 @@ DigitalOcean is a straightforward paid VPS path. For cheaper or free options:
     apt install -y nodejs
 
     # Install MangabaClaw; run onboarding later as the non-root owner.
-    curl -fsSL https://mangabaclaw.ai/install.sh | bash -s -- --no-onboard
+    curl -fsSL https://mangaba.ia.br/install.sh | bash -s -- --no-onboard
 
     # Create the non-root user that will own MangabaClaw state and services.
     adduser mangabaclaw

@@ -366,7 +366,7 @@ function buildOpenRouterAttributionPolicy(
     reviewNote: "Documented app attribution headers. Verified in MangabaClaw runtime wrapper.",
     ...identity,
     headers: {
-      "HTTP-Referer": "https://mangabaclaw.ai",
+      "HTTP-Referer": "https://mangaba.ia.br",
       "X-OpenRouter-Title": identity.product,
       "X-OpenRouter-Categories": OPENROUTER_ATTRIBUTION_CATEGORIES,
     },

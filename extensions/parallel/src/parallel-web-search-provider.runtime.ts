@@ -73,7 +73,7 @@ function invalidBaseUrlPayload(value: string) {
   return {
     error: "invalid_base_url",
     message: `plugins.entries.parallel.config.webSearch.baseUrl must be a valid http(s) URL. Got: ${value}`,
-    docs: "https://docs.mangabaclaw.ai/tools/parallel-search",
+    docs: "https://docs.openclaw.ai/tools/parallel-search",
   };
 }
 
@@ -110,7 +110,7 @@ function missingParallelKeyPayload() {
     error: "missing_parallel_api_key",
     message:
       "web_search (parallel) needs a Parallel API key. Set PARALLEL_API_KEY in the Gateway environment, or configure plugins.entries.parallel.config.webSearch.apiKey.",
-    docs: "https://docs.mangabaclaw.ai/tools/parallel-search",
+    docs: "https://docs.openclaw.ai/tools/parallel-search",
   };
 }
 

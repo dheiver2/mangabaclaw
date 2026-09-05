@@ -121,7 +121,7 @@ First-run Q&A - install, onboard, auth routes, subscriptions, initial failures -
     - Always-on Gateway (run on a VPS, interact from anywhere).
     - Nodes for local browser/screen/camera/exec.
 
-    Showcase: [https://mangabaclaw.ai/showcase](https://mangabaclaw.ai/showcase).
+    Showcase: [https://openclaw.ai/showcase](https://openclaw.ai/showcase).
 
   </Accordion>
 </AccordionGroup>

@@ -172,7 +172,7 @@ describe("noteSecurityWarnings gateway exposure", () => {
         "  Fix: mangabaclaw config set gateway.bind loopback",
         "  Safer remote access: keep bind loopback and use Tailscale Serve/Funnel or an SSH tunnel.",
         "  Example tunnel: ssh -N -L 18789:127.0.0.1:18789 user@gateway-host",
-        "  Docs: https://docs.mangabaclaw.ai/gateway/remote",
+        "  Docs: https://docs.openclaw.ai/gateway/remote",
         "  Fix: mangabaclaw doctor --fix to generate a token",
         "  Or set token directly: mangabaclaw config set gateway.auth.mode token",
         "- Run: mangabaclaw security audit --deep",

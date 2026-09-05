@@ -1,7 +1,7 @@
 ---
 name: command-logger
 description: "Log all command events to a centralized audit file"
-homepage: https://docs.mangabaclaw.ai/automation/hooks#command-logger
+homepage: https://docs.openclaw.ai/automation/hooks#command-logger
 metadata:
   {
     "mangabaclaw":

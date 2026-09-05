@@ -105,7 +105,7 @@ export function buildGatewayConnectionDetailsWithResolvers(
           ? undefined
           : "Break-glass (trusted private networks only): set MANGABACLAW_ALLOW_INSECURE_PRIVATE_WS=1",
         "Doctor: mangabaclaw doctor --fix",
-        "Docs: https://docs.mangabaclaw.ai/gateway/remote",
+        "Docs: https://docs.openclaw.ai/gateway/remote",
       ].join("\n"),
     );
   }

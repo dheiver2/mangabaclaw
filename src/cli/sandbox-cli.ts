@@ -31,7 +31,10 @@ const SANDBOX_EXAMPLES = {
   recreate: [
     ["mangabaclaw sandbox recreate --all", "Recreate all containers."],
     ["mangabaclaw sandbox recreate --session main", "Recreate a specific session."],
-    ["mangabaclaw sandbox recreate --agent mybot", "Recreate a specific agent (includes sub-agents)."],
+    [
+      "mangabaclaw sandbox recreate --agent mybot",
+      "Recreate a specific agent (includes sub-agents).",
+    ],
     ["mangabaclaw sandbox recreate --browser --all", "Recreate only browser containers."],
     ["mangabaclaw sandbox recreate --all --force", "Skip confirmation."],
   ],
@@ -66,7 +69,7 @@ export function registerSandboxCli(program: Command) {
     .addHelpText(
       "after",
       () =>
-        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/sandbox", "docs.mangabaclaw.ai/cli/sandbox")}\n`,
+        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/sandbox", "docs.openclaw.ai/cli/sandbox")}\n`,
     )
     .action(() => {
       sandbox.help({ error: true });

@@ -51,7 +51,7 @@ Or set `APP_STORE_CONNECT_API_KEY_PATH`.
 - Production release notes require the exact encoded App Store heading, such as `## 2026.7.21`; they do not fall back to the gateway or `## Unreleased` section.
 - Generated App Store release notes begin with the associated gateway version.
 - The release upload flow uploads release notes, screenshots, and the App Review PDF attachment before the IPA, and never submits for App Review.
-- `privacy_url.txt` is set to `https://mangabaclaw.ai/privacy`.
+- `privacy_url.txt` is set to `https://mangaba.ia.br/privacy`.
 - If app lookup fails in `deliver`, set one of:
   - `APP_STORE_CONNECT_APP_IDENTIFIER` (bundle ID)
   - `APP_STORE_CONNECT_APP_ID` (numeric App Store Connect app ID, e.g. from `/apps/<id>/...` URL)

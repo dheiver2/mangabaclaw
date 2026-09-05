@@ -36,7 +36,7 @@ const report: HookStatusReport = {
       handlerPath: "/tmp/hooks/session-memory/handler.js",
       hookKey: "session-memory",
       emoji: "💾",
-      homepage: "https://docs.mangabaclaw.ai/automation/hooks#session-memory",
+      homepage: "https://docs.openclaw.ai/automation/hooks#session-memory",
       events: ["command:new"],
       unknownEvents: [],
       always: false,

@@ -5221,7 +5221,7 @@ extension NodeAppModel {
 
         let payload = SharedContentPayload(
             title: "MangabaClaw Share Self-Test",
-            url: URL(string: "https://mangabaclaw.ai/share-self-test"),
+            url: URL(string: "https://mangaba.ia.br/share-self-test"),
             text: "Validate iOS share->deep-link->gateway forwarding.")
         guard let deepLink = ShareToAgentDeepLink.buildURL(
             from: payload,

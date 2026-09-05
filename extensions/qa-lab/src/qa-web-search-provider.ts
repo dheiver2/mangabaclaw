@@ -33,7 +33,7 @@ const QaLabWebSearchSchema = {
 } satisfies Record<string, unknown>;
 
 function buildQaLabSearchResult(query: string, index: number) {
-  const url = `https://docs.mangabaclaw.ai/qa-lab/search-fixture/${index + 1}`;
+  const url = `https://docs.openclaw.ai/qa-lab/search-fixture/${index + 1}`;
   return {
     title: wrapWebContent(`QA Lab search fixture result ${index + 1}`, "web_search"),
     url,
@@ -41,7 +41,7 @@ function buildQaLabSearchResult(query: string, index: number) {
       `Deterministic QA Lab web_search result for query: ${query}`,
       "web_search",
     ),
-    siteName: resolveSiteName(url) || "docs.mangabaclaw.ai",
+    siteName: resolveSiteName(url) || "docs.openclaw.ai",
   };
 }
 

@@ -1,6 +1,9 @@
 import path from "node:path";
 import { registerSessionResourceCleanup } from "@mangabaclaw/ai/internal/runtime";
-import { createAssistantMessageEventStream, type AssistantMessage } from "mangabaclaw/plugin-sdk/llm";
+import {
+  createAssistantMessageEventStream,
+  type AssistantMessage,
+} from "mangabaclaw/plugin-sdk/llm";
 // Agent session SDK tests cover default tool wiring, prompt preservation, and
 // session write-settlement behavior.
 import { Type } from "typebox";
@@ -539,12 +542,12 @@ describe("createAgentSession attribution headers", () => {
     });
 
     expect(providerOptions.headers).toMatchObject({
-      "HTTP-Referer": "https://mangabaclaw.ai",
+      "HTTP-Referer": "https://mangaba.ia.br",
       "X-OpenRouter-Title": "MangabaClaw",
       "X-OpenRouter-Categories": "cli-agent",
     });
     expect(endpointOptions.headers).toMatchObject({
-      "HTTP-Referer": "https://mangabaclaw.ai",
+      "HTTP-Referer": "https://mangaba.ia.br",
       "X-OpenRouter-Title": "MangabaClaw",
       "X-OpenRouter-Categories": "cli-agent",
     });

@@ -106,14 +106,14 @@ describe("push APNs registration store", () => {
       topic: "ai.mangabaclaw.ios",
       environment: "sandbox",
       distribution: "official",
-      relayOrigin: "https://ios-push-relay-sandbox.mangabaclaw.ai/",
+      relayOrigin: "https://ios-push-relay-sandbox.openclaw.ai/",
       tokenDebugSuffix: " abcd-1234 ",
       baseDir,
     });
 
     await expect(loadApnsRegistration("ios-node-relay", baseDir)).resolves.toEqual({
       ...relay,
-      relayOrigin: "https://ios-push-relay-sandbox.mangabaclaw.ai",
+      relayOrigin: "https://ios-push-relay-sandbox.openclaw.ai",
       tokenDebugSuffix: "abcd1234",
     });
   });

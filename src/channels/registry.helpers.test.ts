@@ -60,7 +60,7 @@ describe("channel registry helpers", () => {
     const line = formatChannelSelectionLine(telegram, formatTestLink);
     expect(line).not.toContain("Docs:");
     expect(line).toContain("/channels/telegram");
-    expect(line).toContain("https://mangabaclaw.ai");
+    expect(line).toContain("https://mangaba.ia.br");
   });
 
   it("prefers an exact channel id over an earlier plugin alias", () => {

@@ -93,7 +93,7 @@ const defaultOptions = (): WindowsOptions => ({
   hostIp: undefined,
   hostPort: 18426,
   hostPortExplicit: false,
-  installUrl: "https://mangabaclaw.ai/install.ps1",
+  installUrl: "https://mangaba.ia.br/install.ps1",
   installVersion: "",
   json: false,
   keepServer: false,
@@ -125,7 +125,7 @@ Options:
   --model <provider/model>    Override the model used for the agent-turn smoke.
   --api-key-env <var>        Host env var name for provider API key.
   --openai-api-key-env <var> Alias for --api-key-env (backward compatible)
-  --install-url <url>        Installer URL for latest release. Default: https://mangabaclaw.ai/install.ps1
+  --install-url <url>        Installer URL for latest release. Default: https://mangaba.ia.br/install.ps1
   --host-port <port>         Host HTTP port for current-main tgz. Default: 18426
   --host-ip <ip>             Override Parallels host IP.
   --latest-version <ver>     Override npm latest version lookup.
@@ -756,7 +756,11 @@ if (-not $agentOk) { throw 'mangabaclaw agent finished without OK response' }`,
   }
 
   private async extractLastVersion(phaseName: string): Promise<string> {
-    return await extractLastMangabaClawVersion(this.runDir, phaseName, /MangabaClaw\s+([0-9][^\s]*)/gi);
+    return await extractLastMangabaClawVersion(
+      this.runDir,
+      phaseName,
+      /MangabaClaw\s+([0-9][^\s]*)/gi,
+    );
   }
 
   protected async writeSummary(): Promise<string> {

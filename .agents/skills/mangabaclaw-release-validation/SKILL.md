@@ -104,11 +104,11 @@ not exist, generate it:
 1. Read the GitHub release notes for the exact tag. If they are empty or
    incomplete, also read that tag's section of `CHANGELOG.md`.
 2. Fetch the live scorecard Markdown from
-   `https://docs.mangabaclaw.ai/maturity/scorecard.md`. From its **All surfaces**
+   `https://docs.openclaw.ai/maturity/scorecard.md`. From its **All surfaces**
    table, extract each unique surface's display name, taxonomy link, M-level,
    and maturity label. Also extract the score bands. Treat this live response as
    the complete catalog; do not use a cached or hardcoded surface list. Resolve
-   relative taxonomy links against `https://docs.mangabaclaw.ai` before publishing.
+   relative taxonomy links against `https://docs.openclaw.ai` before publishing.
    Stop before issue creation when the scorecard is unavailable or cannot be
    parsed.
 3. Read the complete release notes and group every user-visible or

@@ -83,7 +83,7 @@ describe("doctor database schema preflight", () => {
     expect((failure as Error).message).toContain("restore this file from a verified backup");
     expect((failure as Error).message).toContain("mangabaclaw doctor --fix");
     expect((failure as Error).message).toContain(
-      "https://docs.mangabaclaw.ai/reference/database-schemas",
+      "https://docs.openclaw.ai/reference/database-schemas",
     );
     expect(fs.readFileSync(statePath, "utf8")).toBe("not a sqlite database");
     expect(autoMigrateLegacyStateDir).not.toHaveBeenCalled();

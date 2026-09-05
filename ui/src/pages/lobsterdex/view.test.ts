@@ -25,7 +25,7 @@ describe("renderLobsterdex", () => {
     expect(seen?.id).toBe("lobsterdex-crimson");
     expect(seen?.querySelector("h3")?.textContent).toBe("Ruby");
     expect(seen?.querySelector(".lobsterdex-page__lore")?.textContent).toBe(
-      "The classic red, first in every tide pool.",
+      "The classic amber, first off every mangaba tree.",
     );
     expect(seen?.querySelector(".lobsterdex-page__date")?.textContent).toContain(
       new Date(firstSeenAt).toLocaleDateString("en"),

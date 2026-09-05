@@ -29,7 +29,7 @@ import { SubscriptionsController } from "../../lit/subscriptions-controller.ts";
 
 const APPROVAL_HISTORY_PAGE_SIZE = 50;
 const APPROVAL_HISTORY_REQUIRED_SCOPE = "operator.approvals";
-const APPROVALS_DOCS_URL = "https://docs.mangabaclaw.ai/tools/exec-approvals";
+const APPROVALS_DOCS_URL = "https://docs.openclaw.ai/tools/exec-approvals";
 
 function formatResolvedAt(timestampMs: number): string {
   return new Intl.DateTimeFormat(i18n.getLocale(), {

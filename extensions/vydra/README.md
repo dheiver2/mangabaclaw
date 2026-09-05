@@ -10,4 +10,4 @@ mangabaclaw gateway restart
 ```
 
 Set `VYDRA_API_KEY`, then configure an image, video, or speech model. See
-<https://docs.mangabaclaw.ai/providers/vydra> for capability details and examples.
+<https://docs.openclaw.ai/providers/vydra> for capability details and examples.

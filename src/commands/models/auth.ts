@@ -980,7 +980,7 @@ function maybeLogOpenAICodexNativeSearchTip(runtime: RuntimeEnv, providerId: str
     return;
   }
   runtime.log(
-    `Tip: Codex-capable models can use native Codex web search. Configure the \`web_search\` tool with \`${formatCliCommand("mangabaclaw configure --section web")}\`. Docs: https://docs.mangabaclaw.ai/tools/web`,
+    `Tip: Codex-capable models can use native Codex web search. Configure the \`web_search\` tool with \`${formatCliCommand("mangabaclaw configure --section web")}\`. Docs: https://docs.openclaw.ai/tools/web`,
   );
 }
 

@@ -8,5 +8,5 @@ installation is required.
 Configure `OPENCODE_API_KEY` or `OPENCODE_ZEN_API_KEY`, then select an
 `opencode-go/...` model.
 
-See <https://docs.mangabaclaw.ai/providers/opencode-go> for setup and the current
+See <https://docs.openclaw.ai/providers/opencode-go> for setup and the current
 model catalog.

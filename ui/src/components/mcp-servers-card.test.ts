@@ -229,7 +229,7 @@ describe("mangabaclaw-mcp-servers-card", () => {
     );
     const setupLink = card.querySelector<HTMLAnchorElement>(".settings-empty a");
     expect(setupLink?.textContent?.trim()).toBe("Set up your first MCP server");
-    expect(setupLink?.href).toBe("https://docs.mangabaclaw.ai/tools/mcp");
+    expect(setupLink?.href).toBe("https://docs.openclaw.ai/tools/mcp");
     expect(setupLink?.target).toBe("_blank");
     expect(setupLink?.rel).toBe("noopener noreferrer");
   });

@@ -181,7 +181,7 @@ export function registerSetupCommand(program: Command): void {
         `    ${theme.muted("Run one system-agent request.")}\n` +
         `  ${theme.command("mangabaclaw setup --wizard")}\n` +
         `    ${theme.muted("Run full onboarding.")}\n\n` +
-        `${theme.muted("Docs:")} ${formatDocsLink("/cli/setup", "docs.mangabaclaw.ai/cli/setup")}\n`,
+        `${theme.muted("Docs:")} ${formatDocsLink("/cli/setup", "docs.openclaw.ai/cli/setup")}\n`,
     )
     .option(
       "--workspace <dir>",

@@ -586,10 +586,10 @@ See [Notifications](/web/notifications) for the browser and macOS setup steps.
 
 If the page shows **Protocol mismatch** right after an MangabaClaw update, first reopen the dashboard with `mangabaclaw dashboard` and hard-refresh. If it still fails, clear site data for the dashboard origin or test in a private browser window; an old tab or browser service-worker cache can keep running a pre-update Control UI bundle against the newer Gateway.
 
-| Surface                                            | What it does                                                                 |
-| -------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `ui/public/manifest.webmanifest`                   | PWA manifest. Browsers offer "Install app" once it is reachable.             |
-| `ui/public/sw.js`                                  | Service worker that handles `push` events and notification clicks.           |
+| Surface                                               | What it does                                                                 |
+| ----------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `ui/public/manifest.webmanifest`                      | PWA manifest. Browsers offer "Install app" once it is reachable.             |
+| `ui/public/sw.js`                                     | Service worker that handles `push` events and notification clicks.           |
 | `state/mangabaclaw.sqlite` → `web_push_vapid_keys`    | Auto-generated VAPID keypair used to sign Web Push payloads.                 |
 | `state/mangabaclaw.sqlite` → `web_push_subscriptions` | Persisted browser subscription endpoints, keys, and registration timestamps. |
 
@@ -599,7 +599,7 @@ Override the VAPID keypair through env vars on the Gateway process when you want
 
 - `MANGABACLAW_VAPID_PUBLIC_KEY`
 - `MANGABACLAW_VAPID_PRIVATE_KEY`
-- `MANGABACLAW_VAPID_SUBJECT` (defaults to `https://mangabaclaw.ai`)
+- `MANGABACLAW_VAPID_SUBJECT` (defaults to `https://mangaba.ia.br`)
 
 The Control UI uses these scope-gated Gateway methods to register and test browser subscriptions:
 

@@ -9,4 +9,4 @@ mangabaclaw plugins install @mangabaclaw/qwen-provider
 mangabaclaw gateway restart
 ```
 
-See <https://docs.mangabaclaw.ai/providers/qwen> for setup and configuration.
+See <https://docs.openclaw.ai/providers/qwen> for setup and configuration.

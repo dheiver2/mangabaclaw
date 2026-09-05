@@ -118,7 +118,7 @@ async function transcribeOpenRouterAudio(
       defaultHeaders: {
         Authorization: `Bearer ${params.apiKey}`,
         "Content-Type": "application/json",
-        "HTTP-Referer": "https://mangabaclaw.ai",
+        "HTTP-Referer": "https://mangaba.ia.br",
         "X-OpenRouter-Title": "MangabaClaw",
       },
       provider: "openrouter",

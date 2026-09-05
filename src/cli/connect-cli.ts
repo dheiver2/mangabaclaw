@@ -277,7 +277,7 @@ export function registerConnectCli(program: Command): void {
             "mangabaclaw connect https://gateway.example/j/<code> --service --session-host",
             "Install a worker-session host service.",
           ],
-        ])}\n\n${theme.muted("Docs:")} ${formatDocsLink("/cli/connect", "docs.mangabaclaw.ai/cli/connect")}\n`,
+        ])}\n\n${theme.muted("Docs:")} ${formatDocsLink("/cli/connect", "docs.openclaw.ai/cli/connect")}\n`,
     )
     .action(async (target: string | undefined, opts: ConnectCommandOptions) => {
       try {

@@ -62,7 +62,7 @@ export function registerCapabilityCli(program: Command): void {
     .addHelpText(
       "after",
       () =>
-        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/infer", "docs.mangabaclaw.ai/cli/infer")}\n`,
+        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/infer", "docs.openclaw.ai/cli/infer")}\n`,
     );
 
   registerCapabilityListAndInspect(capability);

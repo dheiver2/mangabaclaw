@@ -26,7 +26,7 @@ import {
 } from "./view-appearance-preferences.ts";
 import type { ConfigProps } from "./view-types.ts";
 
-const APPEARANCE_DOCS_URL = "https://docs.mangabaclaw.ai/web/control-ui";
+const APPEARANCE_DOCS_URL = "https://docs.openclaw.ai/web/control-ui";
 
 const TEXT_SCALE_LABELS: Record<TextScaleStop, string> = {
   90: "configView.textSizes.small",

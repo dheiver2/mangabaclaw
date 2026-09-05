@@ -140,7 +140,7 @@ export async function resolveChannelSetupState(deps: SystemAgentCommandDeps | un
 }
 
 export function formatChannelDocsUrl(docsPath: string): string {
-  return `https://docs.mangabaclaw.ai${docsPath.startsWith("/") ? docsPath : `/${docsPath}`}`;
+  return `https://docs.openclaw.ai${docsPath.startsWith("/") ? docsPath : `/${docsPath}`}`;
 }
 
 export function formatConfigValidationLine(snapshot: ConfigFileSnapshot): string {
@@ -546,7 +546,8 @@ export async function executeSetDefaultModel(
       // Route projection and the live probes below all take the same optional
       // agent scope, so a per-agent selection is verified against that agent's
       // route with the exact rigor the default route gets.
-      const projectRoute = (config: MangabaClawConfig) => projectInferenceRoute(config, targetAgentId);
+      const projectRoute = (config: MangabaClawConfig) =>
+        projectInferenceRoute(config, targetAgentId);
       const stagedConfig = await applySystemAgentModelSelection({
         config: snapshot.sourceConfig,
         model: operation.model,

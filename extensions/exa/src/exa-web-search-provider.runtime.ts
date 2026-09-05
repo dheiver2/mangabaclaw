@@ -121,7 +121,7 @@ function invalidBaseUrlPayload(value: string) {
   return {
     error: "invalid_base_url",
     message: `plugins.entries.exa.config.webSearch.baseUrl must be a valid http(s) URL. Got: ${value}`,
-    docs: "https://docs.mangabaclaw.ai/tools/exa-search",
+    docs: "https://docs.openclaw.ai/tools/exa-search",
   };
 }
 
@@ -181,7 +181,7 @@ function invalidContentsPayload(message: string) {
   return {
     error: "invalid_contents",
     message,
-    docs: "https://docs.mangabaclaw.ai/tools/web",
+    docs: "https://docs.openclaw.ai/tools/web",
   };
 }
 
@@ -441,7 +441,7 @@ function missingExaKeyPayload() {
     error: "missing_exa_api_key",
     message:
       "web_search (exa) needs an Exa API key. Set EXA_API_KEY in the Gateway environment, or configure plugins.entries.exa.config.webSearch.apiKey.",
-    docs: "https://docs.mangabaclaw.ai/tools/web",
+    docs: "https://docs.openclaw.ai/tools/web",
   };
 }
 
@@ -510,7 +510,7 @@ export async function executeExaWebSearchProviderTool(
     return {
       error: "invalid_freshness",
       message: 'freshness must be one of "day", "week", "month", or "year".',
-      docs: "https://docs.mangabaclaw.ai/tools/web",
+      docs: "https://docs.openclaw.ai/tools/web",
     };
   }
 
@@ -521,7 +521,7 @@ export async function executeExaWebSearchProviderTool(
       error: "conflicting_time_filters",
       message:
         "freshness cannot be combined with date_after or date_before. Use one time-filter mode.",
-      docs: "https://docs.mangabaclaw.ai/tools/web",
+      docs: "https://docs.openclaw.ai/tools/web",
     };
   }
   const parsedDateRange = parseIsoDateRange({

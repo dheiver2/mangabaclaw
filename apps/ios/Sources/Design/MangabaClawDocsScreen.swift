@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct MangabaClawDocsScreen: View {
-    private let docsURL = URL(string: "https://docs.mangabaclaw.ai")!
-    private let gatewayURL = URL(string: "https://docs.mangabaclaw.ai/gateway")!
-    private let pairingURL = URL(string: "https://docs.mangabaclaw.ai/channels/pairing")!
+    private let docsURL = URL(string: "https://docs.openclaw.ai")!
+    private let gatewayURL = URL(string: "https://docs.openclaw.ai/gateway")!
+    private let pairingURL = URL(string: "https://docs.openclaw.ai/channels/pairing")!
     let headerSidebarAction: MangabaClawSidebarHeaderAction?
     let usesNativeNavigationChrome: Bool
     let gatewayAction: (() -> Void)?

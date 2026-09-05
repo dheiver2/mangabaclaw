@@ -38,6 +38,6 @@ export function getSecurityNoteMessage(): string {
     formatCliCommand("mangabaclaw security audit --deep"),
     formatCliCommand("mangabaclaw security audit --fix"),
     "",
-    `${t("wizard.security.learnMore")} https://docs.mangabaclaw.ai/gateway/security`,
+    `${t("wizard.security.learnMore")} https://docs.openclaw.ai/gateway/security`,
   ].join("\n");
 }

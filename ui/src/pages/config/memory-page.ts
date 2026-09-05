@@ -62,7 +62,7 @@ import type { ConfigRouteData } from "./route-data.ts";
 /** Explicit-off sentinel; resolveSlotSelection maps it to an `off` selection. */
 const MEMORY_SLOT_OFF = "none";
 const MEMORY_SLOT_PATH = ["plugins", "slots", "memory"];
-const DREAMING_DOCS_URL = "https://docs.mangabaclaw.ai/concepts/dreaming";
+const DREAMING_DOCS_URL = "https://docs.openclaw.ai/concepts/dreaming";
 
 type GatewayClient = NonNullable<ApplicationContext["gateway"]["snapshot"]["client"]>;
 
@@ -694,7 +694,9 @@ class MemorySettingsPage extends MangabaClawLightDomElement {
           .agentId=${agentId}
         ></mangabaclaw-memory-memories>
       `,
-      dreams: html` <mangabaclaw-memory-dreaming .agentId=${agentId}></mangabaclaw-memory-dreaming> `,
+      dreams: html`
+        <mangabaclaw-memory-dreaming .agentId=${agentId}></mangabaclaw-memory-dreaming>
+      `,
       editor:
         activeTab === "settings" ? this.buildEditor(memorySchemaKeysForTab("settings")) : html``,
       dreamingSettings: activeTab === "settings" ? this.renderDreamingControls() : html``,

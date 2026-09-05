@@ -2,4 +2,4 @@
 
 Raft CLI wake bridge channel plugin for MangabaClaw.
 
-Docs: https://docs.mangabaclaw.ai/channels/raft
+Docs: https://docs.openclaw.ai/channels/raft

@@ -110,7 +110,7 @@ function formatRuntimeGatewayAuthTokenWarning(): string {
   return [
     base,
     "In Nix mode, set gateway.auth.token in your Nix-managed MangabaClaw config and rebuild.",
-    "For the first-party Nix flow, see https://github.com/mangabaclaw/nix-mangabaclaw#quick-start and https://docs.mangabaclaw.ai/install/nix.",
+    "For the first-party Nix flow, see https://github.com/mangabaclaw/nix-mangabaclaw#quick-start and https://docs.openclaw.ai/install/nix.",
   ].join(" ");
 }
 

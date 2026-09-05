@@ -185,7 +185,9 @@ describe("Mantis Telegram Desktop proof workflow", () => {
 
     expect(codexStep.env?.MANGABACLAW_QA_CREDENTIAL_OWNER_ID).toBeUndefined();
     expect(codexStep.env?.MANGABACLAW_TELEGRAM_USER_CREDENTIAL_PAYLOAD).toBeUndefined();
-    expect(workflowStep("Prepare Codex user").run).not.toContain("MANGABACLAW_QA_CREDENTIAL_OWNER_ID");
+    expect(workflowStep("Prepare Codex user").run).not.toContain(
+      "MANGABACLAW_QA_CREDENTIAL_OWNER_ID",
+    );
     expect(cleanupIndex).toBeGreaterThan(steps.findIndex((step) => step.name === codexStep.name));
     expect(cleanupIndex).toBeGreaterThanOrEqual(0);
     expect(cleanupIndex).toBeGreaterThan(restoreIndex);
@@ -620,7 +622,7 @@ describe("Mantis Telegram Desktop proof workflow", () => {
     expect(image.run).toContain("bash scripts/mantis/build-telegram-desktop-image.sh");
 
     const credential = workflowStep("Install TDLib and restore Telegram QA user");
-    expect(credential.run).toContain("http://artifacts.mangabaclaw.ai/tdlib-v1.8.0-linux-x64.tgz");
+    expect(credential.run).toContain("http://artifacts.openclaw.ai/tdlib-v1.8.0-linux-x64.tgz");
     expect(credential.run).toContain('"${tdlib_url}.sha256"');
     expect(credential.run).toContain(
       "943518ad39f67e20f843713ba5c88fedbd06111fbc314c61bfb2fc3f1a45743e",

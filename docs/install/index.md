@@ -24,12 +24,12 @@ Windows desktop users can also install the native [Windows Hub](/platforms/windo
 <Tabs>
   <Tab title="macOS / Linux / WSL2">
     ```bash
-    curl -fsSL https://mangabaclaw.ai/install.sh | bash
+    curl -fsSL https://mangaba.ia.br/install.sh | bash
     ```
   </Tab>
   <Tab title="Windows (PowerShell)">
     ```powershell
-    iwr -useb https://mangabaclaw.ai/install.ps1 | iex
+    iwr -useb https://mangaba.ia.br/install.ps1 | iex
     ```
   </Tab>
 </Tabs>
@@ -39,12 +39,12 @@ To install without running onboarding:
 <Tabs>
   <Tab title="macOS / Linux / WSL2">
     ```bash
-    curl -fsSL https://mangabaclaw.ai/install.sh | bash -s -- --no-onboard
+    curl -fsSL https://mangaba.ia.br/install.sh | bash -s -- --no-onboard
     ```
   </Tab>
   <Tab title="Windows (PowerShell)">
     ```powershell
-    & ([scriptblock]::Create((iwr -useb https://mangabaclaw.ai/install.ps1))) -NoOnboard
+    & ([scriptblock]::Create((iwr -useb https://mangaba.ia.br/install.ps1))) -NoOnboard
     ```
   </Tab>
 </Tabs>
@@ -59,7 +59,7 @@ Use this when you want MangabaClaw and Node kept under a local prefix such as
 `~/.mangabaclaw`, without depending on a system-wide Node install:
 
 ```bash
-curl -fsSL https://mangabaclaw.ai/install-cli.sh | bash
+curl -fsSL https://mangaba.ia.br/install-cli.sh | bash
 ```
 
 It supports npm installs by default, plus git-checkout installs under the same
@@ -149,7 +149,7 @@ Or skip the link and use `pnpm mangabaclaw ...` from inside the repo. See [Setup
 ### Install from the GitHub main checkout
 
 ```bash
-curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash -s -- --install-method git --version main
+curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash -s -- --install-method git --version main
 ```
 
 ### Containers and package managers

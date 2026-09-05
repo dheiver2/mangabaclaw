@@ -1133,7 +1133,7 @@ export function registerExecApprovalsCli(program: Command) {
     .addHelpText(
       "after",
       () =>
-        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/approvals", "docs.mangabaclaw.ai/cli/approvals")}\n`,
+        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/approvals", "docs.openclaw.ai/cli/approvals")}\n`,
     );
 
   const pendingCmd = approvals
@@ -1272,7 +1272,7 @@ export function registerExecApprovalsCli(program: Command) {
         )}\n${formatExample(
           'mangabaclaw approvals allowlist remove "~/Projects/**/bin/rg"',
           "Remove an allowlist pattern.",
-        )}\n\n${theme.muted("Docs:")} ${formatDocsLink("/cli/approvals", "docs.mangabaclaw.ai/cli/approvals")}\n`,
+        )}\n\n${theme.muted("Docs:")} ${formatDocsLink("/cli/approvals", "docs.openclaw.ai/cli/approvals")}\n`,
     );
 
   registerAllowlistMutationCommand({

@@ -296,7 +296,7 @@ describe("ollama web search provider", () => {
       searchResponse(
         {
           title: "MangabaClaw",
-          url: "https://mangabaclaw.ai/docs",
+          url: "https://mangaba.ia.br/docs",
           content: "Gateway docs and setup details",
         },
         release,
@@ -317,7 +317,7 @@ describe("ollama web search provider", () => {
     expect(result.query).toBe("mangabaclaw docs");
     expect(result.provider).toBe("ollama");
     expect(result.count).toBe(1);
-    expectSingleSearchResultUrl(result.results, "https://mangabaclaw.ai/docs");
+    expectSingleSearchResultUrl(result.results, "https://mangaba.ia.br/docs");
     expect(release).toHaveBeenCalledTimes(1);
   });
 

@@ -20,8 +20,8 @@ Install `@mangabaclaw/diffs` first, then install this language pack. The languag
 
 ## Docs
 
-- https://docs.mangabaclaw.ai/tools/diffs
-- https://docs.mangabaclaw.ai/plugins/reference/diffs-language-pack
+- https://docs.openclaw.ai/tools/diffs
+- https://docs.openclaw.ai/plugins/reference/diffs-language-pack
 
 ## Package
 

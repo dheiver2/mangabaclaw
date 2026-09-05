@@ -802,14 +802,14 @@ snapshots; MangabaClaw owns all persistence and lifecycle coordination.
     const isVoice = api.runtime.media.isVoiceCompatibleAudio(filePath);
     const metadata = await api.runtime.media.getImageMetadata(filePath);
     const resized = await api.runtime.media.resizeToJpeg(buffer, { maxWidth: 800 });
-    const terminalQr = await api.runtime.media.renderQrTerminal("https://mangabaclaw.ai");
-    const pngQr = await api.runtime.media.renderQrPngBase64("https://mangabaclaw.ai", {
+    const terminalQr = await api.runtime.media.renderQrTerminal("https://mangaba.ia.br");
+    const pngQr = await api.runtime.media.renderQrPngBase64("https://mangaba.ia.br", {
       scale: 6, // 1-12
       marginModules: 4, // 0-16
     });
-    const pngQrDataUrl = await api.runtime.media.renderQrPngDataUrl("https://mangabaclaw.ai");
+    const pngQrDataUrl = await api.runtime.media.renderQrPngDataUrl("https://mangaba.ia.br");
     const tmpRoot = resolvePreferredMangabaClawTmpDir();
-    const pngQrFile = await api.runtime.media.writeQrPngTempFile("https://mangabaclaw.ai", {
+    const pngQrFile = await api.runtime.media.writeQrPngTempFile("https://mangaba.ia.br", {
       tmpRoot,
       dirPrefix: "my-plugin-qr-",
       fileName: "qr.png",

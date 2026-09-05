@@ -523,4 +523,4 @@ Open agent-to-agent negotiation: your agent haggles deals, schedules, and servic
 
 - [Getting started](/start/getting-started)
 - [MangabaClaw](/start/mangabaclaw)
-- [Full X showcase on mangabaclaw.ai](https://mangabaclaw.ai/showcase/)
+- [Full X showcase on mangabaclaw.ai](https://openclaw.ai/showcase/)

@@ -55,12 +55,12 @@ describe("renderAbout", () => {
 
     const links = Array.from(hero?.querySelectorAll<HTMLAnchorElement>(".about-hero__link") ?? []);
     expect(links.map((link) => link.getAttribute("href"))).toEqual([
-      "https://mangabaclaw.ai",
-      "https://docs.mangabaclaw.ai",
+      "https://mangaba.ia.br",
+      "https://docs.openclaw.ai",
       "https://github.com/mangabaclaw/mangabaclaw",
       "https://discord.gg/clawd",
       "https://x.com/mangabaclaw",
-      "https://docs.mangabaclaw.ai/releases",
+      "https://docs.openclaw.ai/releases",
     ]);
     for (const link of links) {
       expect(link.getAttribute("target")).toBe("_blank");

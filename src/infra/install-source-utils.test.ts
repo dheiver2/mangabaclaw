@@ -137,12 +137,15 @@ describe("withInstallWorkspace", () => {
     let observedDir = "";
     const markerFile = "marker.txt";
 
-    const value = await withInstallWorkspace("mangabaclaw-install-source-utils-", async (tmpDir) => {
-      observedDir = tmpDir;
-      await fs.writeFile(path.join(tmpDir, markerFile), "ok", "utf-8");
-      await expect(fs.readFile(path.join(tmpDir, markerFile), "utf8")).resolves.toBe("ok");
-      return "done";
-    });
+    const value = await withInstallWorkspace(
+      "mangabaclaw-install-source-utils-",
+      async (tmpDir) => {
+        observedDir = tmpDir;
+        await fs.writeFile(path.join(tmpDir, markerFile), "ok", "utf-8");
+        await expect(fs.readFile(path.join(tmpDir, markerFile), "utf8")).resolves.toBe("ok");
+        return "done";
+      },
+    );
 
     expect(value).toBe("done");
     await expectPathMissing(observedDir);
@@ -241,13 +244,15 @@ describe("resolveNpmSpecMetadata", () => {
       ]),
     });
 
-    await expect(resolveNpmSpecMetadata({ spec: "@mangabaclaw/codex@^2026.6.0" })).resolves.toEqual({
-      ok: true,
-      metadata: expect.objectContaining({
-        version: "2026.6.12",
-        integrity: "newer-placeholder",
-      }),
-    });
+    await expect(resolveNpmSpecMetadata({ spec: "@mangabaclaw/codex@^2026.6.0" })).resolves.toEqual(
+      {
+        ok: true,
+        metadata: expect.objectContaining({
+          version: "2026.6.12",
+          integrity: "newer-placeholder",
+        }),
+      },
+    );
   });
 
   it("prefers the max satisfying version over publication order", async () => {
@@ -268,13 +273,15 @@ describe("resolveNpmSpecMetadata", () => {
       ]),
     });
 
-    await expect(resolveNpmSpecMetadata({ spec: "@mangabaclaw/codex@^2026.6.0" })).resolves.toEqual({
-      ok: true,
-      metadata: expect.objectContaining({
-        version: "2026.6.12",
-        integrity: "newer-placeholder",
-      }),
-    });
+    await expect(resolveNpmSpecMetadata({ spec: "@mangabaclaw/codex@^2026.6.0" })).resolves.toEqual(
+      {
+        ok: true,
+        metadata: expect.objectContaining({
+          version: "2026.6.12",
+          integrity: "newer-placeholder",
+        }),
+      },
+    );
   });
 
   it("fails when no multi-version entry satisfies the requested range", async () => {
@@ -288,11 +295,13 @@ describe("resolveNpmSpecMetadata", () => {
       ]),
     });
 
-    await expect(resolveNpmSpecMetadata({ spec: "@mangabaclaw/codex@^2026.6.0" })).resolves.toEqual({
-      ok: false,
-      error: "npm view produced incomplete package metadata (missing: name, version)",
-      category: "metadata-env",
-    });
+    await expect(resolveNpmSpecMetadata({ spec: "@mangabaclaw/codex@^2026.6.0" })).resolves.toEqual(
+      {
+        ok: false,
+        error: "npm view produced incomplete package metadata (missing: name, version)",
+        category: "metadata-env",
+      },
+    );
   });
 
   it("uses the last multi-version entry when the selector is not a semver range", async () => {
@@ -508,7 +517,8 @@ describe("packNpmSpecToArchive", () => {
     const cwd = await createFixtureDir();
     mockPackCommandResult({
       stdout: "",
-      stderr: "npm error code E404\nnpm error 404  '@mangabaclaw/whatsapp@*' is not in this registry.",
+      stderr:
+        "npm error code E404\nnpm error 404  '@mangabaclaw/whatsapp@*' is not in this registry.",
       code: 1,
     });
 
@@ -516,7 +526,7 @@ describe("packNpmSpecToArchive", () => {
     expectPackError(result, [
       "Package not found on npm",
       "@mangabaclaw/whatsapp",
-      "docs.mangabaclaw.ai/tools/plugin",
+      "docs.openclaw.ai/tools/plugin",
     ]);
   });
 

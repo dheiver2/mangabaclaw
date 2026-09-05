@@ -12,5 +12,5 @@ mangabaclaw gateway restart
 
 Configure `SYNTHETIC_API_KEY`, then select a `synthetic/<model-id>` model.
 
-See https://docs.mangabaclaw.ai/providers/synthetic for model and configuration
+See https://docs.openclaw.ai/providers/synthetic for model and configuration
 details.

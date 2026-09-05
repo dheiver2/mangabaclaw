@@ -202,7 +202,7 @@ mangabaclaw browser tab new --label docs
 mangabaclaw browser tab label t1 docs
 mangabaclaw browser tab select 2
 mangabaclaw browser tab close 2
-mangabaclaw browser open https://docs.mangabaclaw.ai --label docs
+mangabaclaw browser open https://docs.openclaw.ai --label docs
 mangabaclaw browser focus docs
 mangabaclaw browser close t1
 ```

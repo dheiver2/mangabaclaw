@@ -86,7 +86,10 @@ export function registerSecurityCli(program: Command) {
             "mangabaclaw security audit --deep",
             "Include best-effort live Gateway probes and plugin-owned security audit collectors.",
           ],
-          ["mangabaclaw security audit --deep --token <token>", "Use explicit token for deep probe."],
+          [
+            "mangabaclaw security audit --deep --token <token>",
+            "Use explicit token for deep probe.",
+          ],
           [
             "mangabaclaw security audit --deep --password <password>",
             "Use explicit password for deep probe.",
@@ -95,9 +98,12 @@ export function registerSecurityCli(program: Command) {
             "mangabaclaw security audit --auth password --password <password>",
             "Audit a runtime-only password-mode Gateway secret.",
           ],
-          ["mangabaclaw security audit --fix", "Apply safe remediations and file-permission fixes."],
+          [
+            "mangabaclaw security audit --fix",
+            "Apply safe remediations and file-permission fixes.",
+          ],
           ["mangabaclaw security audit --json", "Output machine-readable JSON."],
-        ])}\n\n${theme.muted("Docs:")} ${formatDocsLink("/cli/security", "docs.mangabaclaw.ai/cli/security")}\n`,
+        ])}\n\n${theme.muted("Docs:")} ${formatDocsLink("/cli/security", "docs.openclaw.ai/cli/security")}\n`,
     );
 
   security

@@ -314,7 +314,7 @@ describe("ClickClack account resolution", () => {
     const cfg = {
       channels: {
         clickclack: {
-          baseUrl: "https://clack.mangabaclaw.ai/",
+          baseUrl: "https://clack.openclaw.ai/",
           apiBaseUrl: "http://127.0.0.1:8484/",
           workspace: "default",
           token: "test-token-placeholder",
@@ -337,14 +337,14 @@ describe("ClickClack account resolution", () => {
     const fallbackCfg = {
       channels: {
         clickclack: {
-          baseUrl: "https://clack.mangabaclaw.ai/",
+          baseUrl: "https://clack.openclaw.ai/",
           workspace: "default",
           token: "test-token-placeholder",
         },
       },
     } satisfies CoreConfig;
     expect(resolveClickClackAccount({ cfg: fallbackCfg }).apiEndpoint).toBe(
-      "https://clack.mangabaclaw.ai",
+      "https://clack.openclaw.ai",
     );
   });
 
@@ -358,7 +358,7 @@ describe("ClickClack account resolution", () => {
           workspace: "default",
           discussions: {
             enabled: true,
-            controlUrlBase: "https://team.mangabaclaw.ai/",
+            controlUrlBase: "https://team.openclaw.ai/",
           },
           accounts: {
             support: {
@@ -373,13 +373,13 @@ describe("ClickClack account resolution", () => {
     expect(resolveClickClackAccount({ cfg }).discussions).toEqual({
       enabled: true,
       workspace: "default",
-      controlUrlBase: "https://team.mangabaclaw.ai/",
+      controlUrlBase: "https://team.openclaw.ai/",
       section: "Sessions",
     });
     expect(resolveClickClackAccount({ cfg, accountId: "support" }).discussions).toEqual({
       enabled: true,
       workspace: "operations",
-      controlUrlBase: "https://team.mangabaclaw.ai/",
+      controlUrlBase: "https://team.openclaw.ai/",
       section: "Live work",
     });
   });

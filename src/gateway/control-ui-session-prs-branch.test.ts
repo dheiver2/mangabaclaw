@@ -18,7 +18,7 @@ describe("session branch diff stats", () => {
   let root: string;
 
   const git = (...args: string[]) =>
-    execFileAsync("git", ["-c", "user.email=test@mangabaclaw.ai", "-c", "user.name=Test", ...args], {
+    execFileAsync("git", ["-c", "user.email=test@mangaba.ia.br", "-c", "user.name=Test", ...args], {
       cwd: root,
     });
 
@@ -245,7 +245,9 @@ describe("session branch diff stats", () => {
       base: { ref: "release", repo: { name: "mangabaclaw", owner: { login: "mangabaclaw" } } },
     });
     // A release-branch merge leaves the default-branch Create PR available.
-    expect(result.branch?.createUrl).toBe("https://github.com/mangabaclaw/mangabaclaw/pull/new/feature");
+    expect(result.branch?.createUrl).toBe(
+      "https://github.com/mangabaclaw/mangabaclaw/pull/new/feature",
+    );
   });
 
   it("suppresses the row via local HEAD when the merged remote ref was pruned", async () => {

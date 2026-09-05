@@ -252,7 +252,7 @@ Set up an Azure Linux VM with the Azure CLI, apply Network Security Group (NSG) 
 
   <Step title="Install MangabaClaw (in the VM shell)">
     ```bash
-    curl -fsSL https://mangabaclaw.ai/install.sh -o /tmp/install.sh
+    curl -fsSL https://mangaba.ia.br/install.sh -o /tmp/install.sh
     bash /tmp/install.sh
     rm -f /tmp/install.sh
     ```

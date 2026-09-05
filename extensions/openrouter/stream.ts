@@ -65,7 +65,7 @@ function mergeOpenRouterAuthHeaders(options: Parameters<StreamFn>[2]): Parameter
     headers.set("Authorization", `Bearer ${apiKey}`);
   }
   if (!headers.has("http-referer")) {
-    headers.set("HTTP-Referer", "https://mangabaclaw.ai");
+    headers.set("HTTP-Referer", "https://mangaba.ia.br");
   }
   if (!headers.has("x-openrouter-title")) {
     headers.set("X-OpenRouter-Title", "MangabaClaw");

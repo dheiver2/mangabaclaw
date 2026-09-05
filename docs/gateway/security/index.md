@@ -890,6 +890,6 @@ pre-commit run --all-files detect-private-key
 
 Found a vulnerability in MangabaClaw? Report responsibly:
 
-1. Email: [security@mangabaclaw.ai](mailto:security@mangabaclaw.ai)
+1. Email: [security@mangaba.ia.br](mailto:security@mangaba.ia.br)
 2. Do not post publicly until fixed.
 3. We will credit you (unless you prefer anonymity).

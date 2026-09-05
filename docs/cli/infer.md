@@ -20,7 +20,7 @@ Reasons to prefer it over a one-off provider wrapper:
 Copy and paste this to an agent:
 
 ```text
-Read https://docs.mangabaclaw.ai/cli/infer, then create a skill that routes my common workflows to `mangabaclaw infer`.
+Read https://docs.openclaw.ai/cli/infer, then create a skill that routes my common workflows to `mangabaclaw infer`.
 Focus on model runs, image generation, video generation, audio transcription, TTS, web search, and embeddings.
 ```
 
@@ -83,8 +83,8 @@ A good infer-based skill maps common user intents to the right subcommand, inclu
 
 ## Common tasks
 
-| Task                          | Command                                                                                       | Notes                                                 |
-| ----------------------------- | --------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| Task                          | Command                                                                                          | Notes                                                 |
+| ----------------------------- | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------- |
 | Run a text/model prompt       | `mangabaclaw infer model run --prompt "..." --json`                                              | Local by default                                      |
 | Run a model prompt on images  | `mangabaclaw infer model run --prompt "Describe this" --file ./image.png --model provider/model` | Repeat `--file` for multiple images                   |
 | Generate an image             | `mangabaclaw infer image generate --prompt "..." --json`                                         | Use `image edit` when starting from an existing file  |
@@ -264,7 +264,7 @@ Search and fetch.
 ```bash
 mangabaclaw infer web search --query "MangabaClaw docs" --json
 mangabaclaw infer web search --query "MangabaClaw infer web providers" --json
-mangabaclaw infer web fetch --url https://docs.mangabaclaw.ai/cli/infer --json
+mangabaclaw infer web fetch --url https://docs.openclaw.ai/cli/infer --json
 mangabaclaw infer web providers --agent <id> --json
 ```
 

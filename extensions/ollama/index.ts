@@ -987,7 +987,7 @@ export default definePluginEntry({
       buildUnknownModelHint: () =>
         "Ollama Cloud requires an API key. " +
         'Set OLLAMA_API_KEY or run "mangabaclaw onboard --auth-choice ollama-cloud". ' +
-        "See: https://docs.mangabaclaw.ai/providers/ollama",
+        "See: https://docs.openclaw.ai/providers/ollama",
     });
     api.registerProvider({
       id: OLLAMA_PROVIDER_ID,
@@ -1297,7 +1297,7 @@ export default definePluginEntry({
       buildUnknownModelHint: () =>
         "Ollama requires authentication to be registered as a provider. " +
         'Set OLLAMA_API_KEY="ollama-local" (any value works) or run "mangabaclaw configure". ' +
-        "See: https://docs.mangabaclaw.ai/providers/ollama",
+        "See: https://docs.openclaw.ai/providers/ollama",
     });
   },
 });

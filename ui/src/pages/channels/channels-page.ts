@@ -34,7 +34,7 @@ import { ChannelWizardHost } from "./wizard-host.ts";
 type NostrProfileFormState = ReturnType<typeof createNostrProfileFormState> | null;
 
 const CHANNEL_PAIRING_POLL_INTERVAL_MS = 30_000;
-const CHANNELS_DOCS_URL = "https://docs.mangabaclaw.ai/channels";
+const CHANNELS_DOCS_URL = "https://docs.openclaw.ai/channels";
 
 type NostrOperation = {
   scope: GatewayConnectionScope;

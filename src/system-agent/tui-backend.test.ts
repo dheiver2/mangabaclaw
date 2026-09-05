@@ -57,7 +57,7 @@ const overview: SystemAgentOverview = {
     error: "offline",
   },
   references: {
-    docsUrl: "https://docs.mangabaclaw.ai",
+    docsUrl: "https://docs.openclaw.ai",
     sourceUrl: "https://github.com/mangabaclaw/mangabaclaw",
   },
 };

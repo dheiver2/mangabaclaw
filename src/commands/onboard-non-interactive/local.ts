@@ -507,7 +507,7 @@ export async function runNonInteractiveLocalSetup(params: {
 
   if (!opts.json) {
     runtime.log(
-      `Tip: run \`${formatCliCommand("mangabaclaw configure --section web")}\` to store your Brave API key for web_search. Docs: https://docs.mangabaclaw.ai/tools/web`,
+      `Tip: run \`${formatCliCommand("mangabaclaw configure --section web")}\` to store your Brave API key for web_search. Docs: https://docs.openclaw.ai/tools/web`,
     );
   }
 }

@@ -28,7 +28,7 @@ This guide assumes exe.dev's default **exeuntu** image. Map packages accordingly
 Shelley, exe.dev's agent, can install MangabaClaw from a prompt:
 
 ```text
-Set up MangabaClaw (https://docs.mangabaclaw.ai/install) on this VM. Use the non-interactive and accept-risk flags for mangabaclaw onboarding. Add the supplied auth or token as needed. Configure nginx to forward from the default port 18789 to the root location on the default enabled site config, making sure to enable Websocket support. Set gateway.controlUi.allowedOrigins to the exact https://<vm-name>.exe.xyz origin, and set gateway.trustedProxies to ["127.0.0.1"] because nginx connects to the Gateway over loopback and overwrites X-Forwarded-For. Pairing is done by "mangabaclaw devices list" and "mangabaclaw devices approve <request id>". Make sure the dashboard shows that MangabaClaw's health is OK. exe.dev handles forwarding from port 8000 to port 80/443 and HTTPS for us, so the final "reachable" should be <vm-name>.exe.xyz, without port specification.
+Set up MangabaClaw (https://docs.openclaw.ai/install) on this VM. Use the non-interactive and accept-risk flags for mangabaclaw onboarding. Add the supplied auth or token as needed. Configure nginx to forward from the default port 18789 to the root location on the default enabled site config, making sure to enable Websocket support. Set gateway.controlUi.allowedOrigins to the exact https://<vm-name>.exe.xyz origin, and set gateway.trustedProxies to ["127.0.0.1"] because nginx connects to the Gateway over loopback and overwrites X-Forwarded-For. Pairing is done by "mangabaclaw devices list" and "mangabaclaw devices approve <request id>". Make sure the dashboard shows that MangabaClaw's health is OK. exe.dev handles forwarding from port 8000 to port 80/443 and HTTPS for us, so the final "reachable" should be <vm-name>.exe.xyz, without port specification.
 ```
 
 ## Manual installation
@@ -62,7 +62,7 @@ Set up MangabaClaw (https://docs.mangabaclaw.ai/install) on this VM. Use the non
 
   <Step title="Install MangabaClaw">
     ```bash
-    curl -fsSL https://mangabaclaw.ai/install.sh | bash
+    curl -fsSL https://mangaba.ia.br/install.sh | bash
     ```
   </Step>
 

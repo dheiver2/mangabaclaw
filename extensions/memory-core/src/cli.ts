@@ -178,7 +178,7 @@ export function registerMemoryCli(program: Command, hostOptions?: MemoryCoreRunt
             "Preview trusted candidates from retained session history.",
           ],
           ["mangabaclaw memory status --json", "Output machine-readable JSON (good for scripts)."],
-        ])}\n\n${theme.muted("Docs:")} ${formatDocsLink("/cli/memory", "docs.mangabaclaw.ai/cli/memory")}\n`,
+        ])}\n\n${theme.muted("Docs:")} ${formatDocsLink("/cli/memory", "docs.openclaw.ai/cli/memory")}\n`,
     );
 
   memory

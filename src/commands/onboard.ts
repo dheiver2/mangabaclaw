@@ -596,7 +596,7 @@ export async function setupWizardCommand(
     runtime.error(
       [
         "Non-interactive setup requires explicit risk acknowledgement.",
-        "Read: https://docs.mangabaclaw.ai/security",
+        "Read: https://docs.openclaw.ai/security",
         `Re-run with: ${formatCliCommand("mangabaclaw onboard --non-interactive --accept-risk ...")}`,
       ].join("\n"),
     );
@@ -618,7 +618,7 @@ export async function setupWizardCommand(
         "Windows detected - MangabaClaw runs great on WSL2!",
         "Native Windows might be trickier.",
         "Quick setup: wsl --install (one command, one reboot)",
-        "Guide: https://docs.mangabaclaw.ai/windows",
+        "Guide: https://docs.openclaw.ai/windows",
       ].join("\n"),
     );
   }

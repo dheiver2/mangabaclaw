@@ -176,7 +176,7 @@ TEMP_DIR="$(mktemp -d "${TMPDIR:-/tmp}/mangabaclaw-connect.XXXXXX")"
 chmod 0700 "$TEMP_DIR"
 INSTALLER_PATH="${TEMP_DIR}/install-cli.sh"
 TARGET_FILE="${TEMP_DIR}/join-target"
-INSTALLER_SOURCE="${MANGABACLAW_INSTALL_CLI_URL:-https://mangabaclaw.ai/install-cli.sh}"
+INSTALLER_SOURCE="${MANGABACLAW_INSTALL_CLI_URL:-https://mangaba.ia.br/install-cli.sh}"
 
 FAILURE_CONTEXT="Could not obtain the MangabaClaw CLI installer. Check network access or MANGABACLAW_INSTALL_CLI_URL, then retry."
 download_installer "$INSTALLER_SOURCE" "$INSTALLER_PATH"

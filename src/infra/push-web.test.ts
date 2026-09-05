@@ -60,7 +60,7 @@ describe("resolveVapidKeys", () => {
       createWebPushVapidKeyPair(
         "test-public-key-base64url",
         "test-private-key-base64url",
-        "https://mangabaclaw.ai",
+        "https://mangaba.ia.br",
       ),
     );
     expect(readPersistedVapidKeyPair(tmpDir)).toEqual(keys);
@@ -143,7 +143,7 @@ describe("resolveVapidKeys", () => {
         createWebPushVapidKeyPair(
           "test-public-key-base64url",
           "test-private-key-base64url",
-          "https://mangabaclaw.ai",
+          "https://mangaba.ia.br",
         ),
       );
       expect(readPersistedVapidKeyPair(tmpDir)).toEqual(keys);
@@ -161,7 +161,7 @@ describe("resolveVapidKeys", () => {
         ...initial,
         subject: "mailto:changed@test.com",
       });
-      expect(readPersistedVapidKeyPair(tmpDir)?.subject).toBe("https://mangabaclaw.ai");
+      expect(readPersistedVapidKeyPair(tmpDir)?.subject).toBe("https://mangaba.ia.br");
     } finally {
       delete process.env.MANGABACLAW_VAPID_SUBJECT;
     }

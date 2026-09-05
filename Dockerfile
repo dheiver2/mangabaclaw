@@ -208,10 +208,10 @@ ARG MANGABACLAW_BUNDLED_PLUGIN_DIR
 # OCI base-image metadata for downstream image consumers.
 # If you change these annotations, also update:
 # - docs/install/docker.md ("Base image metadata" section)
-# - https://docs.mangabaclaw.ai/install/docker
+# - https://docs.openclaw.ai/install/docker
 LABEL org.opencontainers.image.source="https://github.com/mangabaclaw/mangabaclaw" \
-  org.opencontainers.image.url="https://mangabaclaw.ai" \
-  org.opencontainers.image.documentation="https://docs.mangabaclaw.ai/install/docker" \
+  org.opencontainers.image.url="https://mangaba.ia.br" \
+  org.opencontainers.image.documentation="https://docs.openclaw.ai/install/docker" \
   org.opencontainers.image.licenses="MIT" \
   org.opencontainers.image.title="MangabaClaw" \
   org.opencontainers.image.description="MangabaClaw gateway and CLI runtime container image"

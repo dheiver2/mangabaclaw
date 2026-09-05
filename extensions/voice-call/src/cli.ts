@@ -138,7 +138,7 @@ export function registerVoiceCallCli(params: {
   const root = program
     .command("voicecall")
     .description("Voice call utilities")
-    .addHelpText("after", () => `\nDocs: https://docs.mangabaclaw.ai/cli/voicecall\n`);
+    .addHelpText("after", () => `\nDocs: https://docs.openclaw.ai/cli/voicecall\n`);
 
   root
     .command("setup")

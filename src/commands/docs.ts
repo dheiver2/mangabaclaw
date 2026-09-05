@@ -5,7 +5,7 @@ import { formatCliCommand } from "../cli/command-format.js";
 import { readResponseWithLimit } from "../infra/http-body.js";
 import { type RuntimeEnv, writeRuntimeJson } from "../runtime.js";
 
-const SEARCH_API = "https://docs.mangabaclaw.ai/api/search";
+const SEARCH_API = "https://docs.openclaw.ai/api/search";
 const SEARCH_TIMEOUT_MS = 30_000;
 const DOCS_SEARCH_RESPONSE_MAX_BYTES = 8 * 1024 * 1024;
 
@@ -129,17 +129,17 @@ export async function docsSearchCommand(
     if (options.json) {
       writeRuntimeJson(runtime, {
         query: null,
-        url: "https://docs.mangabaclaw.ai/",
+        url: "https://docs.openclaw.ai/",
         results: [],
       });
       return;
     }
-    const docs = formatDocsLink("/", "docs.mangabaclaw.ai");
+    const docs = formatDocsLink("/", "docs.openclaw.ai");
     if (isRich()) {
       runtime.log(`${theme.muted("Docs:")} ${docs}`);
       runtime.log(`${theme.muted("Search:")} ${formatCliCommand('mangabaclaw docs "your query"')}`);
     } else {
-      runtime.log("Docs: https://docs.mangabaclaw.ai/");
+      runtime.log("Docs: https://docs.openclaw.ai/");
       runtime.log(`Search: ${formatCliCommand('mangabaclaw docs "your query"')}`);
     }
     return;

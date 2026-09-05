@@ -9,4 +9,4 @@ mangabaclaw plugins install @mangabaclaw/deepinfra-provider
 mangabaclaw gateway restart
 ```
 
-See <https://docs.mangabaclaw.ai/providers/deepinfra> for setup and configuration.
+See <https://docs.openclaw.ai/providers/deepinfra> for setup and configuration.

@@ -240,7 +240,7 @@ struct DashboardWindowSmokeTests {
             dashboardURL: dashboard,
             isMainFrame: true))
         #expect(try !DashboardWindowController.shouldAllowNavigation(
-            to: #require(URL(string: "https://docs.mangabaclaw.ai/")),
+            to: #require(URL(string: "https://docs.openclaw.ai/")),
             dashboardURL: dashboard,
             isMainFrame: true))
         #expect(!DashboardWindowController.shouldAllowNavigation(
@@ -296,7 +296,7 @@ struct DashboardWindowSmokeTests {
             auth: DashboardWindowAuth(gatewayUrl: nil, token: nil, password: nil))
         #expect(controller._testNavigationWebViewIdentity == controller._testDashboardWebViewIdentity)
 
-        try controller._testOpenLinkBrowser(#require(URL(string: "https://docs.mangabaclaw.ai/")))
+        try controller._testOpenLinkBrowser(#require(URL(string: "https://docs.openclaw.ai/")))
         let linkWebView = try #require(controller._testLinkBrowserWebViewIdentity)
         #expect(controller._testFocusLinkBrowser())
         #expect(controller._testNavigationWebViewIdentity == linkWebView)
@@ -323,7 +323,7 @@ struct DashboardWindowSmokeTests {
         controller.show()
         #expect(requestCount == 0)
 
-        let link = try #require(URL(string: "https://docs.mangabaclaw.ai/"))
+        let link = try #require(URL(string: "https://docs.openclaw.ai/"))
         controller._testOpenLinkBrowser(link)
         controller.update(
             url: dashboard,
@@ -365,7 +365,7 @@ struct DashboardWindowSmokeTests {
         let manager = DashboardManager._testMake()
         manager._testSetController(controller)
 
-        let link = try #require(URL(string: "https://docs.mangabaclaw.ai/"))
+        let link = try #require(URL(string: "https://docs.openclaw.ai/"))
         controller._testOpenLinkBrowser(link, requestBrowserProfileImportOffer: true)
         for _ in 0..<200 where gate.requestCount == 0 {
             await Task.yield()
@@ -407,7 +407,7 @@ struct DashboardWindowSmokeTests {
             })
         defer { controller.closeDashboard() }
 
-        let link = try #require(URL(string: "https://docs.mangabaclaw.ai/"))
+        let link = try #require(URL(string: "https://docs.openclaw.ai/"))
         controller._testOpenLinkBrowser(link, requestBrowserProfileImportOffer: true)
         for _ in 0..<200 where firstRequestContinuation == nil {
             await Task.yield()
@@ -431,11 +431,11 @@ struct DashboardWindowSmokeTests {
     @Test func `dashboard parses only bounded native link requests`() throws {
         let request = DashboardWindowController.linkRequest(from: [
             "type": "open-link",
-            "url": "https://docs.mangabaclaw.ai/platforms/macos",
+            "url": "https://docs.openclaw.ai/platforms/macos",
             "target": "inline",
         ])
         #expect(try request == DashboardLinkRequest(
-            url: #require(URL(string: "https://docs.mangabaclaw.ai/platforms/macos")),
+            url: #require(URL(string: "https://docs.openclaw.ai/platforms/macos")),
             target: .inline))
 
         #expect(DashboardWindowController.linkRequest(from: [
@@ -445,12 +445,12 @@ struct DashboardWindowSmokeTests {
         ]) == nil)
         #expect(DashboardWindowController.linkRequest(from: [
             "type": "open-link",
-            "url": "https://docs.mangabaclaw.ai/",
+            "url": "https://docs.openclaw.ai/",
             "target": "unknown",
         ]) == nil)
         #expect(DashboardWindowController.linkRequest(from: [
             "type": "other",
-            "url": "https://docs.mangabaclaw.ai/",
+            "url": "https://docs.openclaw.ai/",
             "target": "external",
         ]) == nil)
         #expect(try DashboardWindowController.linkRequest(from: [
@@ -849,7 +849,7 @@ struct DashboardWindowSmokeTests {
     }
 
     @Test func `external pointer fallback rejects synthetic link activation`() throws {
-        let webURL = try #require(URL(string: "https://docs.mangabaclaw.ai/"))
+        let webURL = try #require(URL(string: "https://docs.openclaw.ai/"))
         let mailURL = try #require(URL(string: "mailto:hello@example.com"))
         #expect(DashboardWindowController.shouldOpenExternalDashboardNavigation(
             webURL,

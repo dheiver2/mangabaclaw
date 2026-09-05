@@ -24,7 +24,9 @@ import { collectChannelSecurityFindingsCore } from "../security/audit-channel.js
 import type { SecurityAuditFinding } from "../security/audit.types.js";
 import { collectExecFilesystemPolicyDriftHits } from "../security/exec-filesystem-policy.js";
 
-function collectImplicitHeartbeatDirectPolicyWarnings(cfg: MangabaClawConfig): SecurityAuditFinding[] {
+function collectImplicitHeartbeatDirectPolicyWarnings(
+  cfg: MangabaClawConfig,
+): SecurityAuditFinding[] {
   const findings: SecurityAuditFinding[] = [];
 
   const maybeWarn = (params: {
@@ -324,7 +326,7 @@ export async function collectSecurityWarnings(
   const saferRemoteAccessLines = [
     "Safer remote access: keep bind loopback and use Tailscale Serve/Funnel or an SSH tunnel.",
     "Example tunnel: ssh -N -L 18789:127.0.0.1:18789 user@gateway-host",
-    "Docs: https://docs.mangabaclaw.ai/gateway/remote",
+    "Docs: https://docs.openclaw.ai/gateway/remote",
   ];
 
   if (isExposed) {

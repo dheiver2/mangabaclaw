@@ -27,7 +27,7 @@ beforeEach(() => {
   mocks.builtAt.mockReset().mockReturnValue(100);
   mocks.read.mockReset().mockReturnValue({
     bundle_json: JSON.stringify(bundle),
-    source_url: "https://catalog.mangabaclaw.ai/models/v1/catalog.json",
+    source_url: "https://catalog.openclaw.ai/models/v1/catalog.json",
   });
   setRemoteModelCatalogOverlaySourcesForTest({
     bundledGeneratedAt: mocks.builtAt,

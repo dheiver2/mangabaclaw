@@ -12,7 +12,7 @@ export function registerPromosCli(program: Command) {
     .addHelpText(
       "after",
       () =>
-        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/promos", "docs.mangabaclaw.ai/cli/promos")}\n`,
+        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/promos", "docs.openclaw.ai/cli/promos")}\n`,
     );
 
   promos

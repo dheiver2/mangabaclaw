@@ -655,7 +655,7 @@ jobs:
           tdlib_dir="${RUNNER_TEMP}/mantis-tdlib"
           credential_dir="/tmp/mangabaclaw-mantis-telegram-user-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           mkdir -p "$tdlib_dir" "$credential_dir/user-driver" "$credential_dir/desktop"
-          tdlib_url=http://artifacts.mangabaclaw.ai/tdlib-v1.8.0-linux-x64.tgz
+          tdlib_url=http://artifacts.openclaw.ai/tdlib-v1.8.0-linux-x64.tgz
           tdlib_sha256=943518ad39f67e20f843713ba5c88fedbd06111fbc314c61bfb2fc3f1a45743e
           curl --fail --location --retry 3 --output "$tdlib_dir/tdlib-v1.8.0-linux-x64.tgz" "$tdlib_url"
           curl --fail --location --retry 3 --output "$tdlib_dir/tdlib-v1.8.0-linux-x64.tgz.sha256" "${tdlib_url}.sha256"
@@ -1198,7 +1198,7 @@ jobs:
           MANTIS_ARTIFACT_R2_ACCESS_KEY_ID: ${{ secrets.MANTIS_ARTIFACT_R2_ACCESS_KEY_ID }}
           MANTIS_ARTIFACT_R2_BUCKET: mangabaclaw-crabbox-artifacts
           MANTIS_ARTIFACT_R2_ENDPOINT: ${{ vars.MANTIS_ARTIFACT_R2_ENDPOINT }}
-          MANTIS_ARTIFACT_R2_PUBLIC_BASE_URL: https://artifacts.mangabaclaw.ai
+          MANTIS_ARTIFACT_R2_PUBLIC_BASE_URL: https://artifacts.openclaw.ai
           MANTIS_ARTIFACT_R2_REGION: auto
           MANTIS_ARTIFACT_R2_SECRET_ACCESS_KEY: ${{ secrets.MANTIS_ARTIFACT_R2_SECRET_ACCESS_KEY }}
           REQUEST_SOURCE: ${{ needs.resolve_request.outputs.request_source }}
@@ -1338,7 +1338,7 @@ jobs:
           MANTIS_ARTIFACT_R2_ACCESS_KEY_ID: ${{ secrets.MANTIS_ARTIFACT_R2_ACCESS_KEY_ID }}
           MANTIS_ARTIFACT_R2_BUCKET: mangabaclaw-crabbox-artifacts
           MANTIS_ARTIFACT_R2_ENDPOINT: ${{ vars.MANTIS_ARTIFACT_R2_ENDPOINT }}
-          MANTIS_ARTIFACT_R2_PUBLIC_BASE_URL: https://artifacts.mangabaclaw.ai
+          MANTIS_ARTIFACT_R2_PUBLIC_BASE_URL: https://artifacts.openclaw.ai
           MANTIS_ARTIFACT_R2_REGION: auto
           MANTIS_ARTIFACT_R2_SECRET_ACCESS_KEY: ${{ secrets.MANTIS_ARTIFACT_R2_SECRET_ACCESS_KEY }}
           REQUEST_SOURCE: ${{ needs.resolve_request.outputs.request_source }}

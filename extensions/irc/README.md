@@ -10,4 +10,4 @@ mangabaclaw plugins install @mangabaclaw/irc
 
 ## Docs
 
-See `docs/channels/irc.md` in the MangabaClaw repository, or the published docs at `https://docs.mangabaclaw.ai/channels/irc`.
+See `docs/channels/irc.md` in the MangabaClaw repository, or the published docs at `https://docs.openclaw.ai/channels/irc`.

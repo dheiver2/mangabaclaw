@@ -143,7 +143,7 @@ such as Cloudflare Access:
 {
   channels: {
     clickclack: {
-      baseUrl: "https://clack.mangabaclaw.ai",
+      baseUrl: "https://clack.openclaw.ai",
       apiBaseUrl: "http://127.0.0.1:8484",
       token: { source: "env", provider: "default", id: "CLICKCLACK_BOT_TOKEN" },
       workspace: "default",
@@ -214,7 +214,7 @@ setup token cannot create or synchronize channels.
       discussions: {
         enabled: true,
         workspace: "default",
-        controlUrlBase: "https://team.mangabaclaw.ai",
+        controlUrlBase: "https://team.openclaw.ai",
         section: "Sessions",
       },
     },

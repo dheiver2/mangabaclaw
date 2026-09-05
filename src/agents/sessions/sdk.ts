@@ -208,7 +208,7 @@ function getAttributionHeaders(
 
   if (model.provider === "openrouter" || baseUrl.includes("openrouter.ai")) {
     return {
-      "HTTP-Referer": "https://mangabaclaw.ai",
+      "HTTP-Referer": "https://mangaba.ia.br",
       "X-OpenRouter-Title": "MangabaClaw",
       "X-OpenRouter-Categories": "cli-agent",
     };

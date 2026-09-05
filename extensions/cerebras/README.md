@@ -9,4 +9,4 @@ mangabaclaw plugins install @mangabaclaw/cerebras-provider
 mangabaclaw gateway restart
 ```
 
-See <https://docs.mangabaclaw.ai/providers/cerebras> for setup and configuration.
+See <https://docs.openclaw.ai/providers/cerebras> for setup and configuration.

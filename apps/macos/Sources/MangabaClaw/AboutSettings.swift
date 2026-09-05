@@ -42,8 +42,8 @@ struct AboutSettings: View {
 
             // Unified first-party link set shared with the iOS and Android About screens.
             VStack(alignment: .center, spacing: 6) {
-                AboutLinkRow(icon: "globe", title: "Website", url: "https://mangabaclaw.ai")
-                AboutLinkRow(icon: "book", title: "Docs", url: "https://docs.mangabaclaw.ai")
+                AboutLinkRow(icon: "globe", title: "Website", url: "https://mangaba.ia.br")
+                AboutLinkRow(icon: "book", title: "Docs", url: "https://docs.openclaw.ai")
                 AboutLinkRow(
                     icon: "chevron.left.slash.chevron.right",
                     title: "GitHub",

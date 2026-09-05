@@ -69,7 +69,7 @@ Skills own workflows; root owns hard policy and routing. Product direction and m
 - Doctrine-class findings are first-class: action path ending with no visible outcome and no recorded reason; default-path regression; prompt/tool text contradicting shipped behavior; multi-signal inference where a recorded fact belongs; new default-off capability with no named enablement path.
 - `maturity:stable`: issue-only attention signal for broken existing behavior primarily owned by an M4/M5 scorecard surface; name that surface and category. Not for feature requests, new config/policy choices, docs/support work, or lower-maturity owners merely passing through a stable surface. Visibility only — not fix proof, backport approval, or a release blocker.
 - Before landing any PR: read the latest ClawSweeper comment and its `Rank-up moves:` list; apply each move or state the skip in the PR — never merge past them silently. A <12h review covers the PR once every actionable finding is addressed (or skip stated) and exact-head CI is green, even if the head moved. Request `@clawsweeper re-review` only for an older review or post-review pushes that changed behavior beyond findings + mechanical refreshes (rebase, format, merge-ref). A queued or late re-review refreshes the rating; never block landing on the publisher.
-- Public ClawSweeper comments prefer `https://docs.mangabaclaw.ai/...` when a public docs page exists; structured evidence still cites repo files, lines, SHAs.
+- Public ClawSweeper comments prefer `https://docs.openclaw.ai/...` when a public docs page exists; structured evidence still cites repo files, lines, SHAs.
 - Findings follow the Start-section evidence bar (source, tests, current/shipped behavior, dependency contract proof when involved). Validation is judged against touched + sibling surfaces plus the Commands section; user-visible changes need clear evidence, Telegram-visible behavior Telegram/Desktop proof when feasible.
 - Real-behavior-proof gate: a mock-gateway harness run (mock channel API + mock provider + ephemeral gateway, verdict JSON in the PR body) satisfies it for channel-visible changes covering the changed path; live-channel proof is stronger evidence.
 - Prefer findings for concrete behavior regressions, missing changed-surface proof, owner-boundary violations, security/API contract issues, or docs/config mismatches.
@@ -83,7 +83,7 @@ Skills own workflows; root owns hard policy and routing. Product direction and m
 
 ## Docs
 
-- Source docs: `docs/**`; publish repo: `mangabaclaw/docs`; host: `https://docs.mangabaclaw.ai`.
+- Source docs: `docs/**`; publish repo: `mangabaclaw/docs`; host: `https://docs.openclaw.ai`.
 - Flow: source -> `docs-sync-publish.yml` -> mirror build -> R2 -> Worker router.
 - Docs AI: `mangabaclaw/ask-molty`; see its `AGENTS.md`.
 
@@ -314,7 +314,7 @@ Mechanics only; policy lives above.
 
 - Use `$technical-documentation` for docs writing/review. Docs change with behavior/API.
 - Codex harness upgrade (`extensions/codex/package.json` `@openai/codex`): refresh `docs/plugins/codex-harness.md` model snapshot from the new harness `model/list`.
-- Docs final answers: include relevant full `https://docs.mangabaclaw.ai/...` URL(s).
+- Docs final answers: include relevant full `https://docs.openclaw.ai/...` URL(s).
 - `CHANGELOG.md`: release-only — release generation derives it from merged PRs + direct `main` commits (`$mangabaclaw-changelog-update` owns style, credit, forbidden handles). Never edit it for normal PRs, direct `main` fixes, or `ship it`; never ask contributors/agents for changelog edits.
 - User-facing `fix`/`feat`/`perf`: put release-note context in PR body, squash message, or direct commit: behavior, surface, issue/PR refs, credited human author/reporter.
 

@@ -26,7 +26,7 @@ mangabaclaw plugins enable tokenjuice
 
 ## Docs
 
-- https://docs.mangabaclaw.ai/tools/tokenjuice
+- https://docs.openclaw.ai/tools/tokenjuice
 
 ## Package
 

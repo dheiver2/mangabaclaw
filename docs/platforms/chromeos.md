@@ -32,7 +32,7 @@ Run every command below inside that Terminal.
 1. Install via the installer script (it installs a supported Node for you):
 
    ```bash
-   curl -fsSL https://mangabaclaw.ai/install.sh | bash
+   curl -fsSL https://mangaba.ia.br/install.sh | bash
    ```
 
 2. Onboard and install the service:

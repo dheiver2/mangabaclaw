@@ -72,7 +72,7 @@ describe("sessions page lifecycle", () => {
 
     const docsLink = page.querySelector<HTMLAnchorElement>(".page-subtitle a");
     expect(docsLink?.textContent?.trim()).toBe("Learn more");
-    expect(docsLink?.href).toBe("https://docs.mangabaclaw.ai/concepts/session");
+    expect(docsLink?.href).toBe("https://docs.openclaw.ai/concepts/session");
 
     const archived = [
       ...page.querySelectorAll<HTMLElement & { checked: boolean }>(

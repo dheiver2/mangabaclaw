@@ -174,7 +174,7 @@ class LabsPage extends MangabaClawLightDomElement {
       {
         intro: html`${t("labsPage.intro")}
         ${renderDocsLink(
-          "https://docs.mangabaclaw.ai/concepts/experimental-features",
+          "https://docs.openclaw.ai/concepts/experimental-features",
           t("common.learnMore"),
         )}`,
       },

@@ -36,7 +36,7 @@ export function buildOpenRouterSpeechProvider(): SpeechProviderPlugin {
     voiceCompatibleResponseFormats: ["mp3"],
     baseUrlPolicy: { kind: "canonical", aliases: ["https://openrouter.ai/v1"], allowCustom: true },
     extraHeaders: {
-      "HTTP-Referer": "https://mangabaclaw.ai",
+      "HTTP-Referer": "https://mangaba.ia.br",
       "X-OpenRouter-Title": "MangabaClaw",
     },
     apiErrorLabel: "OpenRouter TTS API error",

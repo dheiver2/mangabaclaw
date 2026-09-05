@@ -104,7 +104,7 @@ const defaultOptions = (): MacosOptions => ({
   hostIp: undefined,
   hostPort: 18425,
   hostPortExplicit: false,
-  installUrl: "https://mangabaclaw.ai/install.sh",
+  installUrl: "https://mangaba.ia.br/install.sh",
   installVersion: "",
   json: false,
   keepServer: false,
@@ -132,7 +132,7 @@ Options:
   --model <provider/model>    Override the model used for the agent-turn smoke.
   --api-key-env <var>        Host env var name for provider API key.
   --openai-api-key-env <var> Alias for --api-key-env (backward compatible)
-  --install-url <url>        Installer URL for latest release. Default: https://mangabaclaw.ai/install.sh
+  --install-url <url>        Installer URL for latest release. Default: https://mangaba.ia.br/install.sh
   --host-port <port>         Host HTTP port for current-main tgz. Default: 18425
   --host-ip <ip>             Override Parallels host IP.
   --latest-version <ver>     Override npm latest version lookup.
@@ -221,7 +221,10 @@ class MacosSmoke {
       modelId: options.modelId,
       provider: options.provider,
     });
-    this.agentTimeoutSeconds = readPositiveIntEnv("MANGABACLAW_PARALLELS_MACOS_AGENT_TIMEOUT_S", 2700);
+    this.agentTimeoutSeconds = readPositiveIntEnv(
+      "MANGABACLAW_PARALLELS_MACOS_AGENT_TIMEOUT_S",
+      2700,
+    );
     this.modelTimeoutSeconds = resolveParallelsModelTimeoutSeconds("macos");
     this.updateDevTimeoutSeconds = readPositiveIntEnv(
       "MANGABACLAW_PARALLELS_MACOS_UPDATE_DEV_TIMEOUT_S",
@@ -949,7 +952,9 @@ sleep 1`,
   }
 
   private showGatewayStatusCompat(): void {
-    const help = this.guestExec([guestMangabaClaw, "gateway", "status", "--help"], { check: false });
+    const help = this.guestExec([guestMangabaClaw, "gateway", "status", "--help"], {
+      check: false,
+    });
     const args = help.includes("--require-rpc")
       ? ["gateway", "status", "--deep", "--require-rpc"]
       : ["gateway", "status", "--deep"];

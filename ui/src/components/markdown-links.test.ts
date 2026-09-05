@@ -219,9 +219,9 @@ describe("toSanitizedMarkdownHtml links", () => {
     });
 
     it("does NOT rewrite explicit markdown links with CJK display text", () => {
-      const html = toSanitizedMarkdownHtml("[MangabaClaw中文](https://docs.mangabaclaw.ai)");
+      const html = toSanitizedMarkdownHtml("[MangabaClaw中文](https://docs.openclaw.ai)");
       expect(html).toBe(
-        '<p><a href="https://docs.mangabaclaw.ai" rel="noreferrer noopener" target="_blank">MangabaClaw中文</a></p>\n',
+        '<p><a href="https://docs.openclaw.ai" rel="noreferrer noopener" target="_blank">MangabaClaw中文</a></p>\n',
       );
     });
 
@@ -640,8 +640,16 @@ describe("toSanitizedMarkdownHtml links", () => {
         "github.com/actions/runs/123",
       ],
       ["issue shorthand", "[#3434](https://github.com/mangabaclaw/mangabaclaw/pull/3434)", "#3434"],
-      ["labelled link", "[the fix](https://github.com/mangabaclaw/mangabaclaw/pull/3434)", "the fix"],
-      ["www host", "[the fix](https://www.github.com/mangabaclaw/mangabaclaw/pull/3434)", "the fix"],
+      [
+        "labelled link",
+        "[the fix](https://github.com/mangabaclaw/mangabaclaw/pull/3434)",
+        "the fix",
+      ],
+      [
+        "www host",
+        "[the fix](https://www.github.com/mangabaclaw/mangabaclaw/pull/3434)",
+        "the fix",
+      ],
       ["http scheme", "[the fix](http://github.com/mangabaclaw/mangabaclaw/pull/3434)", "the fix"],
       ["list item", "- [the fix](https://github.com/mangabaclaw/mangabaclaw/pull/3434)", "the fix"],
     ])("marks %s", (_kind, input, expectedText) => {
@@ -715,7 +723,9 @@ describe("toSanitizedMarkdownHtml links", () => {
         toSanitizedMarkdownHtml("[#3434](https://github.com/mangabaclaw/mangabaclaw/pull/3434)"),
       );
       const link = fragment.querySelector<HTMLAnchorElement>("a.markdown-github-link");
-      expect(link?.getAttribute("href")).toBe("https://github.com/mangabaclaw/mangabaclaw/pull/3434");
+      expect(link?.getAttribute("href")).toBe(
+        "https://github.com/mangabaclaw/mangabaclaw/pull/3434",
+      );
       expect(link?.getAttribute("target")).toBe("_blank");
     });
   });

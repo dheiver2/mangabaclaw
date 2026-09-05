@@ -394,7 +394,7 @@ export function fakeOverviewLoader(
       },
       gateway: { url: "ws://127.0.0.1:18789", source: "local", reachable: false },
       references: {
-        docsUrl: "https://docs.mangabaclaw.ai",
+        docsUrl: "https://docs.openclaw.ai",
         sourceUrl: "https://github.com/mangabaclaw/mangabaclaw",
       },
     }) as never;

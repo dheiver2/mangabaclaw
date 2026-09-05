@@ -23,7 +23,7 @@ body:
     attributes:
       label: Affected docs path(s) or URL(s)
       description: Repo-relative docs file path(s) or published docs URL(s).
-      placeholder: docs/gateway/config-channels.md or https://docs.mangabaclaw.ai/gateway/config-channels
+      placeholder: docs/gateway/config-channels.md or https://docs.openclaw.ai/gateway/config-channels
     validations:
       required: true
   - type: textarea

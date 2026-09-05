@@ -29,7 +29,7 @@ export function getTelegramTokenHelpLines(): string[] {
     t("wizard.telegram.tokenHelpWebApp", { url: "https://t.me/BotFather?startapp" }),
     t("wizard.telegram.tokenEnvTip"),
     t("wizard.channels.docs", { link: formatDocsLink("/telegram") }),
-    t("wizard.telegram.website", { url: "https://mangabaclaw.ai" }),
+    t("wizard.telegram.website", { url: "https://mangaba.ia.br" }),
   ];
 }
 
@@ -41,7 +41,7 @@ export function getTelegramUserIdHelpLines(): string[] {
     t("wizard.telegram.userIdHelpGetUpdates"),
     t("wizard.telegram.userIdHelpThirdParty"),
     t("wizard.channels.docs", { link: formatDocsLink("/telegram") }),
-    t("wizard.telegram.website", { url: "https://mangabaclaw.ai" }),
+    t("wizard.telegram.website", { url: "https://mangaba.ia.br" }),
   ];
 }
 

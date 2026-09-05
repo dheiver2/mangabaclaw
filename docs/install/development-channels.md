@@ -41,7 +41,7 @@ install paths:
 | Channel           | npm/package installs                                                                                                                                                                   | git installs                                                                                                                                                       |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `stable`          | dist-tag `latest`                                                                                                                                                                      | latest stable git tag (excludes `-alpha.N`, `-beta.N`, `-rc.N`, `-dev.N`, `-next.N`, `-preview.N`, `-canary.N`, `-nightly.N`, and other named prerelease suffixes) |
-| `extended-stable` | resolves the public npm `extended-stable` selector, verifies the exact selected package, and installs that exact version. Fails closed with no fallback to `latest`, `beta`, or `dev`. | unsupported: MangabaClaw leaves the checkout unchanged and asks you to use a package installation                                                                     |
+| `extended-stable` | resolves the public npm `extended-stable` selector, verifies the exact selected package, and installs that exact version. Fails closed with no fallback to `latest`, `beta`, or `dev`. | unsupported: MangabaClaw leaves the checkout unchanged and asks you to use a package installation                                                                  |
 | `beta`            | dist-tag `beta`, falling back to `latest` when `beta` is missing or older                                                                                                              | latest beta git tag, falling back to the latest stable git tag when beta is missing or older                                                                       |
 | `dev`             | dist-tag `dev` (rare; most dev users run git installs)                                                                                                                                 | fetches, rebases the checkout on the upstream `main` branch, builds, and reinstalls the global CLI                                                                 |
 
@@ -86,7 +86,7 @@ Notes:
   workspace checkout is not a self-contained package artifact. Use
   `mangabaclaw update --channel dev` (package installs switch to a git checkout)
   or reinstall with the installer's git method:
-  `curl -fsSL https://mangabaclaw.ai/install.sh | bash -s -- --install-method git --version main`.
+  `curl -fsSL https://mangaba.ia.br/install.sh | bash -s -- --install-method git --version main`.
 - Downgrade protection: if the target version is older than the current
   version, MangabaClaw prompts for confirmation (skip with `--yes`).
 - Extended-stable always uses its verified exact package target. It is not a

@@ -570,7 +570,7 @@ async function runOpenAICodexDeviceCode(ctx: ProviderAuthContext) {
     spin.stop("OpenAI device code failed");
     ctx.runtime.error(formatErrorMessage(error));
     await ctx.prompter.note(
-      "Trouble with device code login? See https://docs.mangabaclaw.ai/start/faq",
+      "Trouble with device code login? See https://docs.openclaw.ai/start/faq",
       "OAuth help",
     );
     throw error;

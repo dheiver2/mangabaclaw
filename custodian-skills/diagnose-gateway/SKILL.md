@@ -53,4 +53,4 @@ If access, logs, or the gateway are unavailable, report that exact blocker rathe
 
 Findings in causal order with evidence for each; current gateway/config/SecretRef/channel/port state; one recommended next skill or operator action. State explicitly that nothing was changed.
 
-Further reference: https://docs.mangabaclaw.ai/gateway/troubleshooting
+Further reference: https://docs.openclaw.ai/gateway/troubleshooting

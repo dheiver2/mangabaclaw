@@ -99,7 +99,7 @@ export const zh_TW = {
       websocketUrl: "Gateway WebSocket URL",
     },
     gatewayTailscale: {
-      docsNote: "文件：\nhttps://docs.mangabaclaw.ai/gateway/tailscale\nhttps://docs.mangabaclaw.ai/web",
+      docsNote: "文件：\nhttps://docs.openclaw.ai/gateway/tailscale\nhttps://docs.openclaw.ai/web",
       funnel: "Funnel",
       funnelHint: "透過 Tailscale Funnel 暴露公開 HTTPS",
       missingBinNote:
@@ -456,7 +456,7 @@ export const zh_TW = {
         "在 Linux 容器中會隱藏僅支援 brew 的技能安裝項，因為官方映像檔不包含 Homebrew。",
       containerBrewManual: "請使用預先安裝 Homebrew 的自訂映像檔，或手動安裝這些依賴。",
       containerInstallsTitle: "容器技能安裝",
-      docsLine: "文件：https://docs.mangabaclaw.ai/skills",
+      docsLine: "文件：https://docs.openclaw.ai/skills",
       enterEnv: "輸入 {env}",
       homebrewCommand: "顯示 Homebrew 安裝命令？",
       homebrewInstallTitle: "Homebrew 安裝",
@@ -1069,7 +1069,7 @@ export const zh_TW = {
       codexNativeSearchOnly: "僅用於支援 Codex 的模型。",
       codexNativeSearchTitle: "Codex 原生搜尋",
       controlUiTitle: "Control UI",
-      controlUiDocs: "文件：https://docs.mangabaclaw.ai/web/control-ui",
+      controlUiDocs: "文件：https://docs.openclaw.ai/web/control-ui",
       dashboardCopyPaste: "在本機瀏覽器中複製/貼上這個 URL 來控制 MangabaClaw。",
       dashboardOpened: "已在瀏覽器中開啟。保留該分頁以控制 MangabaClaw。",
       dashboardOpenAnytime: "隨時開啟 dashboard：{command}",
@@ -1077,7 +1077,8 @@ export const zh_TW = {
       dashboardWhenReady: "準備好後執行：{command}",
       daemonRuntime: "Gateway 服務執行環境",
       daemonRuntimeNode: "Node（建議）",
-      daemonRuntimeNodeHint: "MangabaClaw 狀態使用 node:sqlite，因此必須使用 Node；Bun 無法執行閘道。",
+      daemonRuntimeNodeHint:
+        "MangabaClaw 狀態使用 node:sqlite，因此必須使用 Node；Bun 無法執行閘道。",
       editBootstrap: "之後可編輯 BOOTSTRAP.md 來修改 agent 的自我介紹方式。",
       bootstrapHatchMessage: "醒醒，我的朋友！",
       firstTerminalChat: '第一次終端機聊天會傳送："醒醒，我的朋友！"',
@@ -1135,7 +1136,7 @@ export const zh_TW = {
       containerSystemdUnavailable:
         "此容器內沒有 systemd 使用者服務。MangabaClaw 只會略過背景服務安裝；請以前景方式執行 Gateway，或使用你的容器 supervisor。",
       securityReminder:
-        "在你的電腦上執行 agent 存在風險，請加固設定：https://docs.mangabaclaw.ai/security",
+        "在你的電腦上執行 agent 存在風險，請加固設定：https://docs.openclaw.ai/security",
       secretRefAuthFailed: "無法解析用於設定認證的 {field} SecretRef。",
       skipHealthNextTime: "下次也可略過此探測：{command}",
       skipControlUi: "略過 Control UI/TUI 提示。",
@@ -1149,7 +1150,7 @@ export const zh_TW = {
       sessionGatewayStarted: "本次工作階段的 Gateway 已啟動。",
       sessionGatewayStartFailed: "本次工作階段的 Gateway 啟動失敗。",
       terminalHatch: "在終端機中啟動（建議）",
-      webDocs: "文件：https://docs.mangabaclaw.ai/tools/web",
+      webDocs: "文件：https://docs.openclaw.ai/tools/web",
       webSearchAutoDetected: "Web search 可透過 {provider} 使用（自動偵測）。",
       webSearchDisabled: "Web search（{provider}）已設定但被停用。",
       webSearchEnabled: "Web search 已啟用，agent 可在需要時線上查詢。",
@@ -1171,10 +1172,10 @@ export const zh_TW = {
       webSearchUnavailableAction:
         "重新啟用該 provider 或選擇其他 provider 前，web_search 無法運作。",
       webUiUrl: "Web UI：{url}",
-      whatNow: '下一步：https://mangabaclaw.ai/showcase（"What People Are Building"）。',
+      whatNow: '下一步：https://openclaw.ai/showcase（"What People Are Building"）。',
       whatNowTitle: "下一步",
       workspaceBackupTitle: "工作區備份",
-      workspaceDocs: "文件：https://docs.mangabaclaw.ai/concepts/agent-workspace",
+      workspaceDocs: "文件：https://docs.openclaw.ai/concepts/agent-workspace",
       workspaceReady: "你的工作區已就緒。",
     },
     gatewayNotes: {

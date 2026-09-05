@@ -59,7 +59,7 @@ describe("legacy Web Push Doctor migration", () => {
       ...createWebPushVapidKeyPair(
         "legacy-public-key",
         "legacy-private-key",
-        "https://mangabaclaw.ai",
+        "https://mangaba.ia.br",
       ),
       ...overrides,
     };
@@ -398,7 +398,7 @@ describe("legacy Web Push Doctor migration", () => {
     const canonical = subscription({ keys: { p256dh: "canonical", auth: "canonical" } });
     seedSubscription(hashWebPushEndpoint(canonical.endpoint), canonical);
     seedVapid(
-      createWebPushVapidKeyPair("canonical-public", "canonical-private", "https://mangabaclaw.ai"),
+      createWebPushVapidKeyPair("canonical-public", "canonical-private", "https://mangaba.ia.br"),
     );
     const paths = await writeLegacyState({
       stateDir,
@@ -423,7 +423,7 @@ describe("legacy Web Push Doctor migration", () => {
   it("rolls back subscription changes when only VAPID conflicts", async () => {
     const stateDir = useStateDir();
     seedVapid(
-      createWebPushVapidKeyPair("canonical-public", "canonical-private", "https://mangabaclaw.ai"),
+      createWebPushVapidKeyPair("canonical-public", "canonical-private", "https://mangaba.ia.br"),
     );
     await writeLegacyState({
       stateDir,

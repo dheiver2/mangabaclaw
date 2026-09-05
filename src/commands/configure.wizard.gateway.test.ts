@@ -705,7 +705,7 @@ describe("runConfigureWizard", () => {
       [
         "Remote Gateway:",
         "wss://gateway.example.test",
-        "Docs: https://docs.mangabaclaw.ai/gateway/remote",
+        "Docs: https://docs.openclaw.ai/gateway/remote",
       ].join("\n"),
       "Gateway",
     );

@@ -83,7 +83,7 @@ Release behavior:
 
 Relay behavior for App Store builds:
 
-- App Store release builds use the canonical hosted relay at `https://ios-push-relay.mangabaclaw.ai`.
+- App Store release builds use the canonical hosted relay at `https://ios-push-relay.openclaw.ai`.
 - App Store release builds reject custom relay URL overrides. Future self-hosted relay support should use a separate explicit release path, not the public App Store build lane.
 
 Signing setup commands:

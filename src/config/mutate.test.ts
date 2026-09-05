@@ -562,7 +562,7 @@ describe("config mutate helpers", () => {
           draft.gateway = { ...draft.gateway, port: 19001 };
         },
       }),
-    ).rejects.toThrow("MangabaClaw Nix overview: https://docs.mangabaclaw.ai/install/nix");
+    ).rejects.toThrow("MangabaClaw Nix overview: https://docs.openclaw.ai/install/nix");
 
     expect(ioMocks.writeConfigFile).not.toHaveBeenCalled();
   });
@@ -1406,7 +1406,10 @@ describe("config mutate helpers", () => {
       writeOptions: { expectedConfigPath: configPath },
     });
     const preflight = vi.fn(
-      async (sourceConfig: MangabaClawConfig, refreshOptions?: { includeAuthStoreRefs?: boolean }) => {
+      async (
+        sourceConfig: MangabaClawConfig,
+        refreshOptions?: { includeAuthStoreRefs?: boolean },
+      ) => {
         if (refreshOptions?.includeAuthStoreRefs !== false) {
           throw new Error("unavailable auth-profile SecretRef");
         }

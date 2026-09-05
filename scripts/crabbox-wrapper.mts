@@ -1027,7 +1027,7 @@ function enforceBrokeredCloud(
   if ("brokerAuthFailure" in readiness && readiness.brokerAuthFailure) {
     const instructions = [
       `[crabbox] provider=${canonicalProvider} requires managed Crabbox broker authentication for MangabaClaw proof.`,
-      `[crabbox] run \`${recoveryCommand(["login", "--url", "https://crabbox.mangabaclaw.ai"])}\`, then retry.`,
+      `[crabbox] run \`${recoveryCommand(["login", "--url", "https://crabbox.openclaw.ai"])}\`, then retry.`,
     ];
     if (canonicalProvider !== "aws") {
       instructions.push(

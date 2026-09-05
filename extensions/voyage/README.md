@@ -10,5 +10,5 @@ mangabaclaw gateway restart
 ```
 
 Set `VOYAGE_API_KEY`, then configure memory search with `provider: "voyage"`.
-See <https://docs.mangabaclaw.ai/reference/memory-config> for setup and
+See <https://docs.openclaw.ai/reference/memory-config> for setup and
 configuration.

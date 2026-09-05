@@ -46,9 +46,9 @@ describe("formatCliJsonFailure", () => {
       new ExpectedCliError({
         message: 'MangabaClaw sessions has no command "lst".',
         humanOutput:
-          '\u001B[31mMangabaClaw sessions has no command "lst".\u001B[39m\nDid you mean this?\n  mangabaclaw sessions list\nTry: mangabaclaw sessions --help\nDocs: \u001B]8;;https://docs.mangabaclaw.ai/cli\u0007docs.mangabaclaw.ai/cli\u001B]8;;\u0007\n',
+          '\u001B[31mMangabaClaw sessions has no command "lst".\u001B[39m\nDid you mean this?\n  mangabaclaw sessions list\nTry: mangabaclaw sessions --help\nDocs: \u001B]8;;https://docs.openclaw.ai/cli\u0007docs.openclaw.ai/cli\u001B]8;;\u0007\n',
         machineOutput:
-          'MangabaClaw sessions has no command "lst".\nDid you mean this?\n  mangabaclaw sessions list\nTry: mangabaclaw sessions --help\nDocs: https://docs.mangabaclaw.ai/cli\n',
+          'MangabaClaw sessions has no command "lst".\nDid you mean this?\n  mangabaclaw sessions list\nTry: mangabaclaw sessions --help\nDocs: https://docs.openclaw.ai/cli\n',
       }),
       { cause: new Error("internal parse cause") },
     );
@@ -59,7 +59,7 @@ describe("formatCliJsonFailure", () => {
       error: {
         type: "cli_error",
         message:
-          'MangabaClaw sessions has no command "lst".\nDid you mean this?\n  mangabaclaw sessions list\nTry: mangabaclaw sessions --help\nDocs: https://docs.mangabaclaw.ai/cli',
+          'MangabaClaw sessions has no command "lst".\nDid you mean this?\n  mangabaclaw sessions list\nTry: mangabaclaw sessions --help\nDocs: https://docs.openclaw.ai/cli',
       },
     });
     expect(payload.error.message).not.toContain("internal parse cause");
@@ -233,7 +233,9 @@ describe("formatCliFailureLines", () => {
       });
 
       expect(lines).not.toContain("[mangabaclaw] Stack:");
-      expect(lines).toContain("[mangabaclaw] Debug: set MANGABACLAW_DEBUG=1 to include the stack trace.");
+      expect(lines).toContain(
+        "[mangabaclaw] Debug: set MANGABACLAW_DEBUG=1 to include the stack trace.",
+      );
     },
   );
 });

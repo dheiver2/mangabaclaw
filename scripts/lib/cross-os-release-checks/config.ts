@@ -103,7 +103,7 @@ export type SummaryPayload = {
   };
 };
 
-export const PUBLISHED_INSTALLER_BASE_URL = "https://mangabaclaw.ai";
+export const PUBLISHED_INSTALLER_BASE_URL = "https://mangaba.ia.br";
 
 const SUPPORTED_MODES = new Set<CrossOsMode>(["fresh", "upgrade", "both"]);
 const SUPPORTED_SUITES = new Set<CrossOsSuite>([
@@ -159,7 +159,8 @@ export function resolveProviderConfig(provider: string, env = process.env): Prov
   }
   const config: ProviderConfig = providerConfig[provider as ProviderId];
   const providerEnvKey = `MANGABACLAW_CROSS_OS_${provider.toUpperCase().replace(/[^A-Z0-9]+/gu, "_")}_MODEL`;
-  const model = env[providerEnvKey]?.trim() || env.MANGABACLAW_CROSS_OS_MODEL?.trim() || config.model;
+  const model =
+    env[providerEnvKey]?.trim() || env.MANGABACLAW_CROSS_OS_MODEL?.trim() || config.model;
   return { ...config, model };
 }
 

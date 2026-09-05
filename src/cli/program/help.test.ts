@@ -168,7 +168,7 @@ describe("configureProgramHelp", () => {
     expect(version).toBe(testProgramContext.programVersion);
     expect(options?.mode).toBe("default");
     expect(help).toContain("Examples:");
-    expect(help).toContain("https://docs.mangabaclaw.ai/cli");
+    expect(help).toContain("https://docs.openclaw.ai/cli");
   });
 
   it("keeps valid root, group, subcommand, short, and help-command output successful", async () => {

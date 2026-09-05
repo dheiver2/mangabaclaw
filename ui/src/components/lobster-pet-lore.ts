@@ -92,7 +92,7 @@ export function lobsterRandomName(seed: number): string {
 // easter-egg channel rather than product UI copy.
 export const LOBSTER_PALETTE_LORE: Record<LobsterPetPaletteId, LobsterPaletteLore> = {
   crimson: {
-    flavor: "The classic red, first in every tide pool.",
+    flavor: "The classic amber, first off every mangaba tree.",
     hint: "Where every story starts.",
   },
   blue: { flavor: "1 in 2 million, and knows it.", hint: "One in two million." },

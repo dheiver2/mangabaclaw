@@ -71,6 +71,6 @@ mangabaclaw message send \
   lookup in group rooms.
 - Not yet supported: DMs, media, reactions, or creating rooms from MangabaClaw.
 
-Full documentation: https://docs.mangabaclaw.ai/channels/buzz
+Full documentation: https://docs.openclaw.ai/channels/buzz
 
 Package: `@mangabaclaw/buzz` · Plugin ID: `buzz`

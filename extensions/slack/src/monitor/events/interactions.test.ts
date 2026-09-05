@@ -73,7 +73,8 @@ const resolveQuestionOverGatewayMock = vi.hoisted(() =>
 let registerSlackInteractionEvents: typeof import("./interactions.js").registerSlackInteractionEvents;
 
 vi.mock("mangabaclaw/plugin-sdk/system-event-runtime", async (importOriginal) => {
-  const actual = await importOriginal<typeof import("mangabaclaw/plugin-sdk/system-event-runtime")>();
+  const actual =
+    await importOriginal<typeof import("mangabaclaw/plugin-sdk/system-event-runtime")>();
   return {
     ...actual,
     enqueueRoutedSystemEvent: (
@@ -3757,13 +3758,13 @@ describe("registerSlackInteractionEvents", () => {
               email_block: {
                 email_input: {
                   type: "email_text_input",
-                  value: "team@mangabaclaw.ai",
+                  value: "team@mangaba.ia.br",
                 },
               },
               url_block: {
                 url_input: {
                   type: "url_text_input",
-                  value: "https://docs.mangabaclaw.ai",
+                  value: "https://docs.openclaw.ai",
                 },
               },
               richtext_block: {
@@ -3845,11 +3846,11 @@ describe("registerSlackInteractionEvents", () => {
     });
     expectRecordFields(inputByActionId(inputs, "email_input"), {
       inputKind: "email",
-      inputEmail: "team@mangabaclaw.ai",
+      inputEmail: "team@mangaba.ia.br",
     });
     expectRecordFields(inputByActionId(inputs, "url_input"), {
       inputKind: "url",
-      inputUrl: "https://docs.mangabaclaw.ai/",
+      inputUrl: "https://docs.openclaw.ai/",
     });
     expectRecordFields(inputByActionId(inputs, "richtext_input"), {
       inputKind: "rich_text",

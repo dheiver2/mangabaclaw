@@ -391,7 +391,9 @@ export function printDaemonStatus(status: DaemonStatus, opts: { json: boolean; d
     service.loadState.status === "unknown" ? service.loadState.detail : undefined;
   if (serviceInspectionDetail) {
     defaultRuntime.error(errorText(`Service inspection failed: ${serviceInspectionDetail}`));
-    defaultRuntime.error(errorText(`Retry: ${formatCliCommand("mangabaclaw gateway status --deep")}`));
+    defaultRuntime.error(
+      errorText(`Retry: ${formatCliCommand("mangabaclaw gateway status --deep")}`),
+    );
     spacer();
   }
   const systemdUnavailableDetail = serviceInspectionDetail ?? service.runtime?.detail;
@@ -604,5 +606,5 @@ export function printDaemonStatus(status: DaemonStatus, opts: { json: boolean; d
   }
 
   defaultRuntime.log(`${label("Troubles:")} run ${formatCliCommand("mangabaclaw status")}`);
-  defaultRuntime.log(`${label("Troubleshooting:")} https://docs.mangabaclaw.ai/troubleshooting`);
+  defaultRuntime.log(`${label("Troubleshooting:")} https://docs.openclaw.ai/troubleshooting`);
 }

@@ -117,7 +117,7 @@ const defaultOptions = (): LinuxOptions => ({
   hostIp: undefined,
   hostPort: 18427,
   hostPortExplicit: false,
-  installUrl: "https://mangabaclaw.ai/install.sh",
+  installUrl: "https://mangaba.ia.br/install.sh",
   installVersion: "",
   json: false,
   keepServer: false,
@@ -145,7 +145,7 @@ Options:
   --model <provider/model>    Override the model used for the agent-turn smoke.
   --api-key-env <var>        Host env var name for provider API key.
   --openai-api-key-env <var> Alias for --api-key-env (backward compatible)
-  --install-url <url>        Installer URL for latest release. Default: https://mangabaclaw.ai/install.sh
+  --install-url <url>        Installer URL for latest release. Default: https://mangaba.ia.br/install.sh
   --host-port <port>         Host HTTP port for current-main tgz. Default: 18427
   --host-ip <ip>             Override Parallels host IP.
   --latest-version <ver>     Override npm latest version lookup.
@@ -616,7 +616,14 @@ setsid sh -lc ` +
       : ["mangabaclaw", "gateway", "status", "--deep"];
     const result = run(
       "prlctl",
-      ["exec", this.options.vmName, "/usr/bin/env", "HOME=/root", "MANGABACLAW_ALLOW_ROOT=1", ...args],
+      [
+        "exec",
+        this.options.vmName,
+        "/usr/bin/env",
+        "HOME=/root",
+        "MANGABACLAW_ALLOW_ROOT=1",
+        ...args,
+      ],
       {
         check: false,
         quiet: true,

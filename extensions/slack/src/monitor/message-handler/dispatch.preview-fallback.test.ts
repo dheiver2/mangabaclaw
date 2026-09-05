@@ -881,7 +881,8 @@ vi.mock("mangabaclaw/plugin-sdk/security-runtime", () => ({
 }));
 
 vi.mock("mangabaclaw/plugin-sdk/string-coerce-runtime", async (importOriginal) => {
-  const actual = await importOriginal<typeof import("mangabaclaw/plugin-sdk/string-coerce-runtime")>();
+  const actual =
+    await importOriginal<typeof import("mangabaclaw/plugin-sdk/string-coerce-runtime")>();
   const normalizeMockLowercaseString = (value?: string) => value?.toLowerCase();
   const readMockOptionalString = (value?: string) => value;
   return {
@@ -2255,7 +2256,7 @@ describe("dispatchPreparedSlackMessage preview fallback", () => {
       createPreparedSlackMessage({
         cfg: {
           gateway: {
-            publicOrigin: "https://team.mangabaclaw.ai",
+            publicOrigin: "https://team.openclaw.ai",
             controlUi: { basePath: "/mangabaclaw" },
           },
         },
@@ -2282,7 +2283,7 @@ describe("dispatchPreparedSlackMessage preview fallback", () => {
     expect(JSON.stringify(finalEdit.blocks)).toContain("✅ *Shelling*");
     expect(JSON.stringify(finalEdit.blocks)).toContain("Open in MangabaClaw");
     expect(JSON.stringify(finalEdit.blocks)).toContain(
-      "https://team.mangabaclaw.ai/mangabaclaw/chat/agent-1/slack/C123",
+      "https://team.openclaw.ai/mangabaclaw/chat/agent-1/slack/C123",
     );
     expect(deliverRepliesMock).toHaveBeenCalledTimes(1);
     expectDeliverReplyCall(0, FINAL_REPLY_TEXT);

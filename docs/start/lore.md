@@ -121,7 +121,7 @@ In just 3 hours:
 - GitHub renamed to `github.com/mangabaclaw/mangabaclaw`
 - X handle `@mangabaclaw` secured, with a gold checkmark
 - npm packages released under the new name
-- Docs migrated to `docs.mangabaclaw.ai`
+- Docs migrated to `docs.openclaw.ai`
 - 200K+ views on the announcement in 90 minutes
 
 **The Heroes:**

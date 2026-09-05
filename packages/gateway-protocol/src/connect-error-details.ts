@@ -508,7 +508,7 @@ const SCOPE_MISMATCH_REMEDIATION =
 const RATE_LIMITED_REMEDIATION =
   "Wait for the temporary authentication lockout to expire, then retry.";
 const IDENTITY_PROXY_REMEDIATION =
-  "An identity-aware proxy rejected the WebSocket upgrade. Configure gateway.remote.edgeAuth for the configured Gateway origin, then reconnect. See https://docs.mangabaclaw.ai/gateway/remote#gateway-behind-an-identity-aware-proxy.";
+  "An identity-aware proxy rejected the WebSocket upgrade. Configure gateway.remote.edgeAuth for the configured Gateway origin, then reconnect. See https://docs.openclaw.ai/gateway/remote#gateway-behind-an-identity-aware-proxy.";
 const CLOUDFLARE_ACCESS_REMEDIATION =
   "Cloudflare Access detected: configure its token header or service-token headers in gateway.remote.edgeAuth.";
 const IDENTITY_PROXY_HTTP_STATUSES = new Set([301, 302, 303, 307, 308, 401, 403]);

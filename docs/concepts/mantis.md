@@ -37,7 +37,7 @@ at build/run time (bundled workflows set `MANGABACLAW_BUILD_PRIVATE_QA=1` and
 | `run`                           | Run a before/after scenario against baseline and candidate refs (Discord only).                                                                           |
 | `desktop-browser-smoke`         | Lease/reuse a Crabbox desktop, open a visible browser, capture screenshot + video.                                                                        |
 | `slack-desktop-smoke`           | Lease/reuse a Crabbox desktop, run Slack QA inside it, open Slack Web, capture evidence.                                                                  |
-| `telegram-desktop-builder`      | Lease/reuse a Crabbox desktop, install Telegram Desktop, optionally configure an MangabaClaw gateway.                                                        |
+| `telegram-desktop-builder`      | Lease/reuse a Crabbox desktop, install Telegram Desktop, optionally configure an MangabaClaw gateway.                                                     |
 | `visual-task` / `visual-driver` | Generic Crabbox desktop capture with optional image-understanding assertions; `visual-driver` is the driver half launched under `crabbox record --while`. |
 
 Every command accepts `--repo-root <path>` and `--output-dir <path>`; Crabbox
@@ -116,7 +116,7 @@ pnpm mangabaclaw qa mantis desktop-browser-smoke \
 ```
 
 Leases or reuses a Crabbox desktop, launches a browser inside the VNC session
-pointed at `--browser-url` (default `https://mangabaclaw.ai`) or a rendered
+pointed at `--browser-url` (default `https://mangaba.ia.br`) or a rendered
 `--html-file`, waits, screenshots with `scrot`, optionally records an MP4 with
 `ffmpeg`, and rsyncs `desktop-browser-smoke.png` / `.mp4` / `remote-metadata.json`
 back to `--output-dir`.
@@ -348,7 +348,7 @@ creates a new one. Required env:
 - `MANTIS_ARTIFACT_R2_BUCKET` (workflows set `mangabaclaw-crabbox-artifacts`)
 - `MANTIS_ARTIFACT_R2_ENDPOINT`
 - `MANTIS_ARTIFACT_R2_REGION` (workflows set `auto`)
-- `MANTIS_ARTIFACT_R2_PUBLIC_BASE_URL` (workflows set `https://artifacts.mangabaclaw.ai`)
+- `MANTIS_ARTIFACT_R2_PUBLIC_BASE_URL` (workflows set `https://artifacts.openclaw.ai`)
 
 Comments post through the Mantis GitHub App (`MANTIS_GITHUB_APP_ID` /
 `MANTIS_GITHUB_APP_PRIVATE_KEY`), not `github-actions[bot]`, using a hidden
@@ -360,9 +360,9 @@ marker comment as the upsert key.
 | `Mantis Discord Status Reactions` | manual dispatch                                                                                 | Builds separate baseline/candidate worktrees, runs `discord-status-reactions-tool-only` on each, renders each lane's timeline in a Crabbox desktop browser, generates motion-trimmed GIF/MP4 previews with `crabbox media preview`, uploads artifacts, posts inline PR evidence.                                 |
 | `Mantis Scenario`                 | manual dispatch                                                                                 | Generic dispatcher: takes `scenario_id` (`discord-status-reactions-tool-only`, `discord-thread-reply-filepath-attachment`, `slack-desktop-smoke`, `telegram-live`, `telegram-desktop-proof`, `web-ui-chat-proof`), `baseline_ref`, `candidate_ref`, `pr_number`, and forwards to the matching scenario workflow. |
 | `Mantis Slack Desktop Smoke`      | manual dispatch                                                                                 | Leases a Crabbox Linux desktop (defaults to `aws`, choice of `hetzner`), runs `slack-desktop-smoke --gateway-setup` against the candidate, records the desktop, generates a motion preview, uploads artifacts, posts PR evidence when a PR number is given.                                                      |
-| `Mantis Telegram Live`            | manual dispatch                                                                                 | Runs the bot-API Telegram live QA lane (`mangabaclaw qa telegram`), writes `mantis-evidence.json` from the QA summary, renders redacted evidence HTML through a Crabbox desktop browser, generates a motion GIF, posts PR evidence. Telegram Web login is not required for this lane.                               |
+| `Mantis Telegram Live`            | manual dispatch                                                                                 | Runs the bot-API Telegram live QA lane (`mangabaclaw qa telegram`), writes `mantis-evidence.json` from the QA summary, renders redacted evidence HTML through a Crabbox desktop browser, generates a motion GIF, posts PR evidence. Telegram Web login is not required for this lane.                            |
 | `Mantis Telegram Desktop Proof`   | ClawSweeper label (`mantis: telegram-visible-proof`), maintainer PR comment, or manual dispatch | Agentic native Telegram Desktop before/after proof. Hands the PR, baseline/candidate refs, and maintainer instructions to Codex, which runs each container-isolated SUT against a local Docker desktop recorder and posts a 2-column PR evidence table.                                                          |
-| `Mantis Web UI Chat Proof`        | manual dispatch                                                                                 | Runs the focused MangabaClaw Control UI chat Playwright proof against the candidate, verifies the browser sends through the mocked Gateway, captures screenshot/video artifacts, and posts PR evidence. This lane is web chat proof only, not WinUI/native-app or arbitrary visual proof.                           |
+| `Mantis Web UI Chat Proof`        | manual dispatch                                                                                 | Runs the focused MangabaClaw Control UI chat Playwright proof against the candidate, verifies the browser sends through the mocked Gateway, captures screenshot/video artifacts, and posts PR evidence. This lane is web chat proof only, not WinUI/native-app or arbitrary visual proof.                        |
 
 `Mantis Discord Status Reactions` and `Mantis Telegram Live` both accept
 `baseline_ref`/`candidate_ref` and validate that the resolved SHA is either an

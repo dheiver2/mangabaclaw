@@ -50,7 +50,7 @@ type SandboxExplainOptions = {
   json: boolean;
 };
 
-const SANDBOX_DOCS_URL = "https://docs.mangabaclaw.ai/sandbox";
+const SANDBOX_DOCS_URL = "https://docs.openclaw.ai/sandbox";
 
 function normalizeExplainSessionKey(params: {
   cfg: MangabaClawConfig;
@@ -442,7 +442,7 @@ export async function sandboxExplainCommand(
     lines.push(`  - ${keyLocal}`);
   }
   lines.push("");
-  lines.push(`${key("Docs:")} ${formatDocsLink("/sandbox", "docs.mangabaclaw.ai/sandbox")}`);
+  lines.push(`${key("Docs:")} ${formatDocsLink("/sandbox", "docs.openclaw.ai/sandbox")}`);
 
   runtime.log(`${lines.join("\n")}\n`);
 }

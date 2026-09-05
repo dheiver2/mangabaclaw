@@ -34,7 +34,7 @@ import { createManagedWorktree } from "../../lib/worktrees/create-worktree.ts";
 import { GatewayPageController } from "../../lit/gateway-page-controller.ts";
 import { MangabaClawLightDomElement } from "../../lit/mangabaclaw-element.ts";
 
-const WORKTREES_DOCS_URL = "https://docs.mangabaclaw.ai/concepts/managed-worktrees";
+const WORKTREES_DOCS_URL = "https://docs.openclaw.ai/concepts/managed-worktrees";
 
 type WorktreesListResult = { worktrees: WorktreeRecord[] };
 type WorktreeBranchesResult = {

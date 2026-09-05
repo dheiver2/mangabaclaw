@@ -1120,7 +1120,7 @@ describe("attachGatewayWsMessageHandler post-connect health refresh", () => {
           },
         },
         trustedProxies: ["10.0.0.1"],
-        controlUi: { allowedOrigins: ["https://team.mangabaclaw.ai"] },
+        controlUi: { allowedOrigins: ["https://team.openclaw.ai"] },
       },
     }));
     const resolvedAuth: ResolvedGatewayAuth = {
@@ -1134,8 +1134,8 @@ describe("attachGatewayWsMessageHandler post-connect health refresh", () => {
     const harness = attachGatewayHarness({
       connId: "conn-cloudflare-access",
       connectNonce: "nonce-cloudflare-access",
-      requestHost: "team.mangabaclaw.ai",
-      requestOrigin: "https://team.mangabaclaw.ai",
+      requestHost: "team.openclaw.ai",
+      requestOrigin: "https://team.openclaw.ai",
       remoteAddr: "10.0.0.1",
       resolvedAuth,
       headers: {

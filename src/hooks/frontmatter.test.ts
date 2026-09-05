@@ -15,7 +15,9 @@ function requireString(value: string | undefined, label: string): string {
   return value;
 }
 
-function requireMangabaClawMetadata(metadata: MangabaClawHookMetadata | undefined): MangabaClawHookMetadata {
+function requireMangabaClawMetadata(
+  metadata: MangabaClawHookMetadata | undefined,
+): MangabaClawHookMetadata {
   if (!metadata) {
     throw new Error("expected mangabaclaw metadata");
   }
@@ -254,7 +256,7 @@ describe("resolveHookManifestMetadata", () => {
     const content = `---
 name: session-memory
 description: "Save session context to memory when a session is reset"
-homepage: https://docs.mangabaclaw.ai/automation/hooks#session-memory
+homepage: https://docs.openclaw.ai/automation/hooks#session-memory
 metadata:
   {
     "mangabaclaw":
@@ -280,9 +282,9 @@ metadata:
     expect(mangabaclaw.emoji).toBe("💾");
     expect(mangabaclaw.events).toEqual(["command:new", "command:reset", "session:auto-reset"]);
     expect(mangabaclaw.requires?.config).toEqual(["workspace.dir"]);
-    expect(expectDefined(mangabaclaw.install?.[0], "mangabaclaw.install?.[0] test invariant").kind).toBe(
-      "bundled",
-    );
+    expect(
+      expectDefined(mangabaclaw.install?.[0], "mangabaclaw.install?.[0] test invariant").kind,
+    ).toBe("bundled");
   });
 
   it("parses YAML metadata map", () => {

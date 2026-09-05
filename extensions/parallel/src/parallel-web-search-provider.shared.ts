@@ -13,7 +13,7 @@ export function createParallelWebSearchProviderBase() {
     envVars: ["PARALLEL_API_KEY"],
     placeholder: "par-...",
     signupUrl: "https://platform.parallel.ai",
-    docsUrl: "https://docs.mangabaclaw.ai/tools/parallel-search",
+    docsUrl: "https://docs.openclaw.ai/tools/parallel-search",
     autoDetectOrder: 75,
     credentialPath: PARALLEL_CREDENTIAL_PATH,
     ...createWebSearchProviderContractFields({

@@ -194,7 +194,7 @@ describe("exa web search provider", () => {
       endpoint: "https://proxy.example/exa/search",
     });
     expect(testing.resolveExaSearchEndpoint({ baseUrl: "ftp://proxy.example/exa" })).toEqual({
-      docs: "https://docs.mangabaclaw.ai/tools/exa-search",
+      docs: "https://docs.openclaw.ai/tools/exa-search",
       error: "invalid_base_url",
       message:
         "plugins.entries.exa.config.webSearch.baseUrl must be a valid http(s) URL. Got: ftp://proxy.example/exa",
@@ -289,7 +289,7 @@ describe("exa web search provider", () => {
     ).toEqual({
       error: "invalid_contents",
       message: "contents.highlights.numSentences must be a positive integer.",
-      docs: "https://docs.mangabaclaw.ai/tools/web",
+      docs: "https://docs.openclaw.ai/tools/web",
     });
   });
 
@@ -351,7 +351,7 @@ describe("exa web search provider", () => {
       error: "conflicting_time_filters",
       message:
         "freshness cannot be combined with date_after or date_before. Use one time-filter mode.",
-      docs: "https://docs.mangabaclaw.ai/tools/web",
+      docs: "https://docs.openclaw.ai/tools/web",
     });
   });
 
@@ -375,7 +375,7 @@ describe("exa web search provider", () => {
     expect(result).toEqual({
       error: "invalid_date",
       message: "date_after must be YYYY-MM-DD format.",
-      docs: "https://docs.mangabaclaw.ai/tools/web",
+      docs: "https://docs.openclaw.ai/tools/web",
     });
   });
 

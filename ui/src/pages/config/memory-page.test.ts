@@ -840,16 +840,16 @@ describe("MemorySettingsPage dreaming support", () => {
       await waitForFast(() =>
         expect(
           element.querySelector(
-            '.settings-page__intro a[href="https://docs.mangabaclaw.ai/concepts/dreaming"]',
+            '.settings-page__intro a[href="https://docs.openclaw.ai/concepts/dreaming"]',
           ),
         ).not.toBeNull(),
       );
       const link = element.querySelector<HTMLAnchorElement>(
-        '.settings-page__intro a[href="https://docs.mangabaclaw.ai/concepts/dreaming"]',
+        '.settings-page__intro a[href="https://docs.openclaw.ai/concepts/dreaming"]',
       );
 
       expect(link?.textContent?.trim()).toBe("Learn more");
-      expect(link?.href).toBe("https://docs.mangabaclaw.ai/concepts/dreaming");
+      expect(link?.href).toBe("https://docs.openclaw.ai/concepts/dreaming");
     } finally {
       element.remove();
     }

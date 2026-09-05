@@ -201,7 +201,7 @@ describe("scripts/ios-run.sh", () => {
     const log = readFileSync(fixture.logFile, "utf8");
     expect(log).toContain("MANGABACLAW_PUSH_MODE=simulatorSandbox");
     expect(log).toContain(
-      "MANGABACLAW_PUSH_RELAY_BASE_URL=https://ios-push-relay-sandbox.mangabaclaw.ai",
+      "MANGABACLAW_PUSH_RELAY_BASE_URL=https://ios-push-relay-sandbox.openclaw.ai",
     );
     expect(log).toContain("simctl launch iPhone 17 ai.mangabaclawfoundation.app");
     expect(log).toContain("simctl-launch-proof set");

@@ -105,7 +105,7 @@ help stay in sync with plugin runtime validation.
 
 This patch creates a default `main` agent, then adds a dedicated `mxc-test`
 agent so MXC testing does not change the default agent. It uses
-[`mangabaclaw config patch --stdin`](https://docs.mangabaclaw.ai/cli/config#config-patch)
+[`mangabaclaw config patch --stdin`](https://docs.openclaw.ai/cli/config#config-patch)
 so setup is one validated config write instead of several path-based
 `config set` commands.
 

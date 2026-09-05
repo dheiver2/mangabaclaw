@@ -9,4 +9,4 @@ mangabaclaw plugins install @mangabaclaw/parallel-plugin
 mangabaclaw gateway restart
 ```
 
-See <https://docs.mangabaclaw.ai/tools/parallel-search> for setup and configuration.
+See <https://docs.openclaw.ai/tools/parallel-search> for setup and configuration.

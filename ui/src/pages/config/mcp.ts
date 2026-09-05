@@ -8,7 +8,7 @@ import {
 import { t } from "../../i18n/index.ts";
 import { summarizeMcpServers } from "../../lib/config/mcp-servers.ts";
 
-const MCP_DOCS_URL = "https://docs.mangabaclaw.ai/tools/mcp";
+const MCP_DOCS_URL = "https://docs.openclaw.ai/tools/mcp";
 
 type McpViewProps = {
   configObject: Record<string, unknown>;

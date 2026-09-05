@@ -993,7 +993,7 @@ describe("openrouter provider hooks", () => {
     const options = baseStreamFn.mock.calls[0]?.[2] as { headers?: HeadersInit } | undefined;
     const headers = new Headers(options?.headers);
     expect(headers.get("authorization")).toBe("Bearer or-test-key");
-    expect(headers.get("http-referer")).toBe("https://mangabaclaw.ai");
+    expect(headers.get("http-referer")).toBe("https://mangaba.ia.br");
     expect(headers.get("x-openrouter-title")).toBe("MangabaClaw");
   });
 

@@ -223,7 +223,7 @@ export function buildCanonicalProtocolSchema(
 ): ProtocolSchemaDocument {
   return structuredClone({
     $schema: "http://json-schema.org/draft-07/schema#",
-    $id: "https://mangabaclaw.ai/protocol.schema.json",
+    $id: "https://mangaba.ia.br/protocol.schema.json",
     title: "MangabaClaw Gateway Protocol",
     description: "Handshake, request/response, and event frames for the Gateway WebSocket.",
     oneOf: [
@@ -479,7 +479,10 @@ async function compileAndRunSwiftProtocolModels(params: {
   await fs.rm(swiftArtifactDir, { force: true, recursive: true });
   await fs.mkdir(swiftArtifactDir, { recursive: true });
   const anyCodableSource = await fs.readFile(
-    path.join(params.repoRoot, "apps/shared/MangabaClawKit/Sources/MangabaClawProtocol/AnyCodable.swift"),
+    path.join(
+      params.repoRoot,
+      "apps/shared/MangabaClawKit/Sources/MangabaClawProtocol/AnyCodable.swift",
+    ),
     "utf8",
   );
   // Linux Foundation does not re-export the CoreFoundation type-ID helpers.

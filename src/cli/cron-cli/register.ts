@@ -43,7 +43,7 @@ export function registerCronCli(program: Command) {
     .addHelpText(
       "after",
       () =>
-        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/cron", "docs.mangabaclaw.ai/cli/cron")}\n${theme.muted("Upgrade tip:")} run \`mangabaclaw doctor --fix\` to normalize legacy automation storage.\n`,
+        `\n${theme.muted("Docs:")} ${formatDocsLink("/cli/cron", "docs.openclaw.ai/cli/cron")}\n${theme.muted("Upgrade tip:")} run \`mangabaclaw doctor --fix\` to normalize legacy automation storage.\n`,
     );
 
   addGatewayClientOptions(cron);

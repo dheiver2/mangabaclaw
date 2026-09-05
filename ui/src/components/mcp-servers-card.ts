@@ -51,7 +51,7 @@ class McpServersCard extends MangabaClawLightDomElement {
 
   @property() pluginsHref = "";
 
-  @property() docsUrl = "https://docs.mangabaclaw.ai/tools/mcp";
+  @property() docsUrl = "https://docs.openclaw.ai/tools/mcp";
 
   @state() private rows: McpServerSummary[] | null = null;
   @state() private busy = false;

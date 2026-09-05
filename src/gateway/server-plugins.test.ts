@@ -1296,7 +1296,9 @@ describe("loadGatewayPlugins", () => {
   });
 
   test("lets trusted official plugin runtime request admin scope for browser proxy", async () => {
-    loadMangabaClawPlugins.mockReturnValue(addLoadedPlugin(createRegistry([]), { id: "google-meet" }));
+    loadMangabaClawPlugins.mockReturnValue(
+      addLoadedPlugin(createRegistry([]), { id: "google-meet" }),
+    );
     loadGatewayStartupPluginsForTest();
     serverPluginsModule.setFallbackGatewayContext(createTestContext("nodes-invoke-browser-proxy"));
 
@@ -1350,7 +1352,9 @@ describe("loadGatewayPlugins", () => {
   });
 
   test("dispatches gateway methods with the trusted plugin identity", async () => {
-    loadMangabaClawPlugins.mockReturnValue(addLoadedPlugin(createRegistry([]), { id: "google-meet" }));
+    loadMangabaClawPlugins.mockReturnValue(
+      addLoadedPlugin(createRegistry([]), { id: "google-meet" }),
+    );
     loadGatewayStartupPluginsForTest();
     serverPluginsModule.setFallbackGatewayContext(createTestContext("plugin-gateway-request"));
     const runtime = createRuntimeFromLastGatewayLoad();
@@ -1366,7 +1370,9 @@ describe("loadGatewayPlugins", () => {
   });
 
   test("lets trusted official plugins request explicit Gateway scopes", async () => {
-    loadMangabaClawPlugins.mockReturnValue(addLoadedPlugin(createRegistry([]), { id: "google-meet" }));
+    loadMangabaClawPlugins.mockReturnValue(
+      addLoadedPlugin(createRegistry([]), { id: "google-meet" }),
+    );
     loadGatewayStartupPluginsForTest();
     serverPluginsModule.setFallbackGatewayContext(createTestContext("plugin-gateway-admin"));
     const runtime = createRuntimeFromLastGatewayLoad();
@@ -1396,7 +1402,9 @@ describe("loadGatewayPlugins", () => {
   });
 
   test("does not inherit admin scope for trusted plugin gateway requests", async () => {
-    loadMangabaClawPlugins.mockReturnValue(addLoadedPlugin(createRegistry([]), { id: "google-meet" }));
+    loadMangabaClawPlugins.mockReturnValue(
+      addLoadedPlugin(createRegistry([]), { id: "google-meet" }),
+    );
     loadGatewayStartupPluginsForTest();
     const scope = {
       context: createTestContext("plugin-gateway-request-admin-caller"),
@@ -1422,7 +1430,9 @@ describe("loadGatewayPlugins", () => {
   });
 
   test("preserves structured errors from trusted plugin gateway requests", async () => {
-    loadMangabaClawPlugins.mockReturnValue(addLoadedPlugin(createRegistry([]), { id: "google-meet" }));
+    loadMangabaClawPlugins.mockReturnValue(
+      addLoadedPlugin(createRegistry([]), { id: "google-meet" }),
+    );
     loadGatewayStartupPluginsForTest();
     serverPluginsModule.setFallbackGatewayContext(createTestContext("plugin-gateway-error"));
     handleGatewayRequest.mockImplementationOnce(async (opts: HandleGatewayRequestOptions) => {
@@ -2311,7 +2321,7 @@ describe("loadGatewayPlugins", () => {
         }),
       ),
     ).rejects.toThrow(
-      'plugin "voice-call" is not trusted for fallback provider/model override requests. See https://docs.mangabaclaw.ai/plugins/sdk-runtime#api-runtime-subagent and search for: plugins.entries.<id>.subagent.allowModelOverride',
+      'plugin "voice-call" is not trusted for fallback provider/model override requests. See https://docs.openclaw.ai/plugins/sdk-runtime#api-runtime-subagent and search for: plugins.entries.<id>.subagent.allowModelOverride',
     );
   });
 

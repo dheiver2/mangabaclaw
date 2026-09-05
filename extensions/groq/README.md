@@ -9,4 +9,4 @@ mangabaclaw plugins install @mangabaclaw/groq-provider
 mangabaclaw gateway restart
 ```
 
-See <https://docs.mangabaclaw.ai/providers/groq> for setup and configuration.
+See <https://docs.openclaw.ai/providers/groq> for setup and configuration.

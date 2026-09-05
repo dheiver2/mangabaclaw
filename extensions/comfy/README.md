@@ -17,7 +17,7 @@ Local ComfyUI workflows do not require credentials. Comfy Cloud workflows use
 
 Full workflow, model, and provider configuration:
 
-- https://docs.mangabaclaw.ai/providers/comfy
+- https://docs.openclaw.ai/providers/comfy
 
 ## Package
 

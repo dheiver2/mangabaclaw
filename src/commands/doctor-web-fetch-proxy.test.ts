@@ -42,7 +42,7 @@ describe("web_fetch proxy doctor diagnostic", () => {
     );
     expect(diagnostic).toContain("web_fetch still uses direct connections");
     expect(diagnostic).toContain("tools.web.fetch.useTrustedEnvProxy is not enabled");
-    expect(diagnostic).toContain("Direct TLS connectivity to docs.mangabaclaw.ai:443 failed");
+    expect(diagnostic).toContain("Direct TLS connectivity to docs.openclaw.ai:443 failed");
     expect(diagnostic).toContain("mangabaclaw config set tools.web.fetch.useTrustedEnvProxy true");
     expect(diagnostic).not.toContain(proxyUrl);
     expect(diagnostic).not.toContain("proxy-value-marker");
@@ -57,7 +57,7 @@ describe("web_fetch proxy doctor diagnostic", () => {
     });
 
     expect(diagnostic).toContain("proxy environment detected in the doctor process: http_proxy");
-    expect(diagnostic).toContain("Direct TLS connectivity to docs.mangabaclaw.ai:443 succeeded");
+    expect(diagnostic).toContain("Direct TLS connectivity to docs.openclaw.ai:443 succeeded");
   });
 
   it("reports both process and installed service proxy sources", async () => {

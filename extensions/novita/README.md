@@ -12,4 +12,4 @@ mangabaclaw gateway restart
 ## Docs
 
 See `docs/providers/novita.md` in the MangabaClaw repository, or the published
-docs at `https://docs.mangabaclaw.ai/providers/novita`.
+docs at `https://docs.openclaw.ai/providers/novita`.

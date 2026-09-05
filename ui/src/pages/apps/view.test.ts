@@ -7,22 +7,22 @@ import { renderApps } from "./view.ts";
 
 const EXPECTED_EXTERNAL_HREFS = [
   "https://apps.apple.com/app/mangabaclaw-ai-that-does-things/id6780396132",
-  "https://docs.mangabaclaw.ai/platforms/ios",
+  "https://docs.openclaw.ai/platforms/ios",
   "https://play.google.com/store/apps/details?id=ai.mangabaclaw.app",
-  "https://docs.mangabaclaw.ai/platforms/android",
-  "https://docs.mangabaclaw.ai/platforms/ios",
-  "https://docs.mangabaclaw.ai/platforms/android",
+  "https://docs.openclaw.ai/platforms/android",
+  "https://docs.openclaw.ai/platforms/ios",
+  "https://docs.openclaw.ai/platforms/android",
   "https://github.com/mangabaclaw/mangabaclaw/releases",
-  "https://docs.mangabaclaw.ai/platforms/macos",
+  "https://docs.openclaw.ai/platforms/macos",
   "https://github.com/mangabaclaw/mangabaclaw-windows-node/releases/latest",
-  "https://docs.mangabaclaw.ai/platforms/windows",
+  "https://docs.openclaw.ai/platforms/windows",
   "https://github.com/mangabaclaw/mangabaclaw/releases",
-  "https://docs.mangabaclaw.ai/platforms/linux",
+  "https://docs.openclaw.ai/platforms/linux",
   "https://chromewebstore.google.com/detail/mangabaclaw/kcdjddhmeafeomebliikmbpblkmkfoig",
-  "https://docs.mangabaclaw.ai/tools/chrome-extension",
+  "https://docs.openclaw.ai/tools/chrome-extension",
   "https://clawhub.ai",
   "https://discord.gg/clawd",
-  "https://docs.mangabaclaw.ai",
+  "https://docs.openclaw.ai",
 ];
 
 describe("renderApps", () => {

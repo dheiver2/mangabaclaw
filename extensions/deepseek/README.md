@@ -9,4 +9,4 @@ mangabaclaw plugins install @mangabaclaw/deepseek-provider
 mangabaclaw gateway restart
 ```
 
-See <https://docs.mangabaclaw.ai/providers/deepseek> for setup and configuration.
+See <https://docs.openclaw.ai/providers/deepseek> for setup and configuration.

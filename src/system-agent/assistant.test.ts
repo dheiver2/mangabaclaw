@@ -32,7 +32,7 @@ function overview(overrides: Partial<SystemAgentOverview["tools"]> = {}): System
       reachable: false,
     },
     references: {
-      docsUrl: "https://docs.mangabaclaw.ai",
+      docsUrl: "https://docs.openclaw.ai",
       sourceUrl: "https://github.com/mangabaclaw/mangabaclaw",
     },
   };
@@ -169,7 +169,7 @@ describe("MangabaClaw assistant", () => {
         defaultModel: "openai/gpt-5.5",
         references: {
           docsPath: "/tmp/mangabaclaw/docs",
-          docsUrl: "https://docs.mangabaclaw.ai",
+          docsUrl: "https://docs.openclaw.ai",
           sourcePath: "/tmp/mangabaclaw",
           sourceUrl: "https://github.com/mangabaclaw/mangabaclaw",
         },

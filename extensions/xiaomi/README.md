@@ -12,5 +12,5 @@ mangabaclaw gateway restart
 
 Configure `XIAOMI_API_KEY` for `xiaomi/*` models and speech, or
 `XIAOMI_TOKEN_PLAN_API_KEY` for `xiaomi-token-plan/*` models. See
-https://docs.mangabaclaw.ai/providers/xiaomi for regional Token Plan setup and
+https://docs.openclaw.ai/providers/xiaomi for regional Token Plan setup and
 the full model and speech configuration.

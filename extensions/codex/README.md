@@ -34,4 +34,4 @@ For a supervised branch, Codex App Server selects the snapshot fork's model and 
 
 The visible-history mirror keeps at most 200 user or assistant messages, 512 KiB total, and 64 KiB per message. Image inputs become `[Image attachment]`; image data and local paths are not copied.
 
-See the [Codex harness](https://docs.mangabaclaw.ai/plugins/codex-harness) and [Codex supervision](https://docs.mangabaclaw.ai/plugins/codex-supervision) guides.
+See the [Codex harness](https://docs.openclaw.ai/plugins/codex-harness) and [Codex supervision](https://docs.openclaw.ai/plugins/codex-supervision) guides.

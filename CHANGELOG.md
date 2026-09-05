@@ -1,6 +1,6 @@
 ﻿# Changelog
 
-Docs: https://docs.mangabaclaw.ai
+Docs: https://docs.openclaw.ai
 
 ## Unreleased
 
@@ -410,17 +410,17 @@ Docs: https://docs.mangabaclaw.ai
 
 MangabaClaw v2026.7.1 brings major Control UI and onboarding overhauls, major updates to the official iOS, Android, and macOS apps, expanded model and provider support including GPT-5.6 compatibility, Tencent Hy3, and Meta Muse Spark 1.1, and stronger Codex and connected coding-agent workflows. Telegram, Slack, Discord, and Apple Messages each receive substantial updates, while Gateway crash loops, scheduled work, remote browser control, workspace terminals, sessions, and goals also improve. There are also many general fixes and refinements throughout MangabaClaw.
 
-[Full release notes](https://docs.mangabaclaw.ai/releases/2026.7.1)
+[Full release notes](https://docs.openclaw.ai/releases/2026.7.1)
 
 ### Highlights
 
 #### Control UI
 
-The [Control UI](https://docs.mangabaclaw.ai/web/control-ui) now works more like one browser workspace for conversations and parallel work. Chats receive clearer titles, recent sessions are easier to find, pin, group, rename, fork, archive, and mark read, and multiple sessions can sit in resizable panes that return after a reload. Drag-and-drop placement, a denser Sessions page, and a live Tasks view make it easier to move between active work without juggling browser tabs.
+The [Control UI](https://docs.openclaw.ai/web/control-ui) now works more like one browser workspace for conversations and parallel work. Chats receive clearer titles, recent sessions are easier to find, pin, group, rename, fork, archive, and mark read, and multiple sessions can sit in resizable panes that return after a reload. Drag-and-drop placement, a denser Sessions page, and a live Tasks view make it easier to move between active work without juggling browser tabs.
 
 Chat controls are clearer while work is in progress. The composer keeps attachments, model choice, voice, reasoning, send and stop state, and message actions usable across screen sizes; Talk users can choose or refresh a microphone from settings and get readable permission guidance on narrow screens; quoted replies preserve the point being answered; and compact tool rows keep inputs, results, images, progress, errors, approvals, and steering available without overwhelming the conversation.
 
-Usage information is easier to understand from both [status views](https://docs.mangabaclaw.ai/cli/status) and the browser. The Usage page compares recent estimated spend and daily values without repeated reloads or hovering, shows each provider, model, agent, or channel's share, and can include provider-reported plans, quotas, balances, budgets, and Anthropic or OpenAI billing details. Seven-, thirty-, and ninety-day charts now keep zero-activity days visible, large all-agent reports limit concurrent work to reduce slowdowns and memory pressure, and chat-level context panels and completed-message details show the active model, tokens, cache use, context pressure, and estimated cost.
+Usage information is easier to understand from both [status views](https://docs.openclaw.ai/cli/status) and the browser. The Usage page compares recent estimated spend and daily values without repeated reloads or hovering, shows each provider, model, agent, or channel's share, and can include provider-reported plans, quotas, balances, budgets, and Anthropic or OpenAI billing details. Seven-, thirty-, and ninety-day charts now keep zero-activity days visible, large all-agent reports limit concurrent work to reduce slowdowns and memory pressure, and chat-level context panels and completed-message details show the active model, tokens, cache use, context pressure, and estimated cost.
 
 Mobile pairing, Gateway health, desktop-node approvals, linked GitHub work, workspace files, scheduled jobs, worktrees, Workboard items, and background tasks are now available closer to the conversation. Their status, permissions, and next steps are also clearer.
 
@@ -567,9 +567,9 @@ Responsive layouts keep chat history and controls usable on phones, tablets, sho
 
 #### Setup and onboarding
 
-[Onboarding](https://docs.mangabaclaw.ai/cli/onboard) now offers clearer paths to a usable first chat. Fresh CLI installs enter guided setup, configured installs open the TUI, and conversational Crestodian setup remains optional. Android and macOS guide users through [pairing](https://docs.mangabaclaw.ai/channels/pairing), permissions, local or remote setup, and recovery; macOS can also test detected Claude Code, Codex, Gemini CLI, API-key, and supported provider-catalog choices before saving them. Interrupted authentication or channel setup retains earlier choices, while users without a working model are guided through credential and model selection instead of being sent into an unusable chat. Owners and administrators can also renew an expired Codex or OpenAI login through private Telegram, Web UI, Discord, or Slack commands without SSH access.
+[Onboarding](https://docs.openclaw.ai/cli/onboard) now offers clearer paths to a usable first chat. Fresh CLI installs enter guided setup, configured installs open the TUI, and conversational Crestodian setup remains optional. Android and macOS guide users through [pairing](https://docs.openclaw.ai/channels/pairing), permissions, local or remote setup, and recovery; macOS can also test detected Claude Code, Codex, Gemini CLI, API-key, and supported provider-catalog choices before saving them. Interrupted authentication or channel setup retains earlier choices, while users without a working model are guided through credential and model selection instead of being sent into an unusable chat. Owners and administrators can also renew an expired Codex or OpenAI login through private Telegram, Web UI, Discord, or Slack commands without SSH access.
 
-Existing installations receive safeguards before their working state is changed. [Doctor](https://docs.mangabaclaw.ai/cli/doctor) and updates refuse to replace an unreadable configuration, Doctor preserves model tuning while merging retired entries, and [extended-stable updates](https://docs.mangabaclaw.ai/install/updating) retain the selected release channel. Container upgrades complete migrations and plugin repairs before reporting readiness, and unsafe runtimes are stopped before they can open MangabaClaw state databases.
+Existing installations receive safeguards before their working state is changed. [Doctor](https://docs.openclaw.ai/cli/doctor) and updates refuse to replace an unreadable configuration, Doctor preserves model tuning while merging retired entries, and [extended-stable updates](https://docs.openclaw.ai/install/updating) retain the selected release channel. Container upgrades complete migrations and plugin repairs before reporting readiness, and unsafe runtimes are stopped before they can open MangabaClaw state databases.
 
 - `mangabaclaw doctor` and updates now refuse to replace an unreadable `mangabaclaw.json`, preserving existing Gateway, agent, channel, and plugin settings instead of breaking the installation. [#96469](https://github.com/mangabaclaw/mangabaclaw/pull/96469) Thanks @obviyus, @yetval.
 - `mangabaclaw doctor --fix` now preserves aliases, parameters, streaming choices, runtime settings, and other model tuning when several retired model names merge into one current model, and reports any merge conflicts accurately. [#96544](https://github.com/mangabaclaw/mangabaclaw/pull/96544) Thanks @vincentkoc, @yetval.
@@ -584,9 +584,9 @@ Existing installations receive safeguards before their working state is changed.
 
 #### Official apps
 
-The official [iOS](https://docs.mangabaclaw.ai/platforms/ios), [Android](https://docs.mangabaclaw.ai/platforms/android), and [macOS](https://docs.mangabaclaw.ai/platforms/macos) apps received substantial updates across setup, navigation, chat, voice, permissions, localization, files, scheduled work, native session controls, and Gateway recovery. Recent conversations remain useful through temporary disconnects: cached sessions and transcripts stay available for reading, supported text sends can wait for reconnection in the correct chat, and long conversations are easier to resume without losing the current place or mistaking an offline view for live history.
+The official [iOS](https://docs.openclaw.ai/platforms/ios), [Android](https://docs.openclaw.ai/platforms/android), and [macOS](https://docs.openclaw.ai/platforms/macos) apps received substantial updates across setup, navigation, chat, voice, permissions, localization, files, scheduled work, native session controls, and Gateway recovery. Recent conversations remain useful through temporary disconnects: cached sessions and transcripts stay available for reading, supported text sends can wait for reconnection in the correct chat, and long conversations are easier to resume without losing the current place or mistaking an offline view for live history.
 
-These improvements also bring the native clients closer together. Mobile queues survive app restarts, the [macOS](https://docs.mangabaclaw.ai/platforms/macos) app gains fuller session and transcript tools, and each client refreshes the same conversation when the Gateway returns.
+These improvements also bring the native clients closer together. Mobile queues survive app restarts, the [macOS](https://docs.openclaw.ai/platforms/macos) app gains fuller session and transcript tools, and each client refreshes the same conversation when the Gateway returns.
 
 ##### iOS and Android
 
@@ -609,11 +609,11 @@ These improvements also bring the native clients closer together. Mobile queues 
 
 #### Models and providers
 
-MangabaClaw [model selection](https://docs.mangabaclaw.ai/concepts/models) expands across major hosted, managed, and local choices. Each supported [provider route](https://docs.mangabaclaw.ai/concepts/model-providers) retains its own authentication, model limits, reasoning controls, tool behavior, image support, and usage reporting.
+MangabaClaw [model selection](https://docs.openclaw.ai/concepts/models) expands across major hosted, managed, and local choices. Each supported [provider route](https://docs.openclaw.ai/concepts/model-providers) retains its own authentication, model limits, reasoning controls, tool behavior, image support, and usage reporting.
 
 ##### GPT-5.6 and Codex
 
-Organizations with GPT-5.6 preview access can select Sol, Terra, or Luna through supported OpenAI and Codex routes with the expected context metadata, text and image input, reasoning levels, and cache-write accounting when OpenAI supplies it. Fresh OpenAI API-key and ChatGPT/Codex setups choose their intended GPT-5.6 defaults without replacing an explicit model choice. Supported Ultra choices remain aligned across MangabaClaw and native Codex, and [Codex supervision](https://docs.mangabaclaw.ai/plugins/codex-supervision) records native Codex child agents as tasks and returns their results to the parent.
+Organizations with GPT-5.6 preview access can select Sol, Terra, or Luna through supported OpenAI and Codex routes with the expected context metadata, text and image input, reasoning levels, and cache-write accounting when OpenAI supplies it. Fresh OpenAI API-key and ChatGPT/Codex setups choose their intended GPT-5.6 defaults without replacing an explicit model choice. Supported Ultra choices remain aligned across MangabaClaw and native Codex, and [Codex supervision](https://docs.openclaw.ai/plugins/codex-supervision) records native Codex child agents as tasks and returns their results to the parent.
 
 - GPT-5.6 users can now select supported Ultra modes consistently, keep model and thinking choices aligned across MangabaClaw surfaces, and receive native Codex child-agent results as tracked tasks. [#98021](https://github.com/mangabaclaw/mangabaclaw/pull/98021) Thanks @anyech.
 - Organizations with GPT-5.6 preview access can select Sol, Terra, or Luna across supported OpenAI and Codex paths with correct reasoning controls, context metadata, and cache-write accounting. [#98333](https://github.com/mangabaclaw/mangabaclaw/pull/98333) Related [#98296](https://github.com/mangabaclaw/mangabaclaw/issues/98296). Thanks @steipete-oai.
@@ -666,7 +666,7 @@ The surrounding session workflow is more durable too. Important conversations ca
 
 #### Telegram
 
-[Telegram](https://docs.mangabaclaw.ai/channels/telegram) received broad work across live progress, media, documents, topics, commands, retries, account routing, setup, and delivery. Albums reach the model with every available image, long replies remain easier to follow while they run, and temporary conflicts or network failures are less likely to block later messages or create duplicates.
+[Telegram](https://docs.openclaw.ai/channels/telegram) received broad work across live progress, media, documents, topics, commands, retries, account routing, setup, and delivery. Albums reach the model with every available image, long replies remain easier to follow while they run, and temporary conflicts or network failures are less likely to block later messages or create duplicates.
 
 Messages and actions also stay with the intended bot, topic, and conversation more consistently, while setup and account-health problems provide clearer ways to recover.
 
@@ -682,7 +682,7 @@ Messages and actions also stay with the intended bot, topic, and conversation mo
 
 #### Slack
 
-[Slack](https://docs.mangabaclaw.ai/channels/slack) threads retain their conversation history more consistently, interactive cards and progress stay in the right place, and accepted replies are less likely to be repeated after an uncertain confirmation. Long-running conversations also avoid more unnecessary waits before reaching the agent.
+[Slack](https://docs.openclaw.ai/channels/slack) threads retain their conversation history more consistently, interactive cards and progress stay in the right place, and accepted replies are less likely to be repeated after an uncertain confirmation. Long-running conversations also avoid more unnecessary waits before reaching the agent.
 
 - Slack replies stay attached to the root thread's session history instead of accumulating separate, nearly empty child sessions. [#97168](https://github.com/mangabaclaw/mangabaclaw/pull/97168) Related [#96535](https://github.com/mangabaclaw/mangabaclaw/issues/96535). Thanks @gorkem2020, @liuwqgit.
 - When Slack accepts a reply but the confirmation is lost, MangabaClaw can verify the existing post and avoid sending a duplicate. [#97480](https://github.com/mangabaclaw/mangabaclaw/pull/97480) Thanks @joeyfrasier.
@@ -692,7 +692,7 @@ Messages and actions also stay with the intended bot, topic, and conversation mo
 
 #### Discord
 
-[Discord](https://docs.mangabaclaw.ai/channels/discord) improves reply visibility, attachments, voice sessions, progress, reconnects, and multi-account behavior. Completed replies produce more useful unread cues, brief Gateway reconnects are less likely to lose outbound messages, and repeated session-resume failures can recover without taking the whole Gateway down.
+[Discord](https://docs.openclaw.ai/channels/discord) improves reply visibility, attachments, voice sessions, progress, reconnects, and multi-account behavior. Completed replies produce more useful unread cues, brief Gateway reconnects are less likely to lose outbound messages, and repeated session-resume failures can recover without taking the whole Gateway down.
 
 - Completed partial-stream Discord replies now arrive as fresh messages that can trigger normal unread cues after a user leaves the channel. [#99711](https://github.com/mangabaclaw/mangabaclaw/pull/99711) Thanks @davelutztx.
 - Discord replies, cron reports, and other outbound messages are less likely to disappear during a brief Gateway reconnect, without replaying chunks or media Discord already accepted. [#100896](https://github.com/mangabaclaw/mangabaclaw/pull/100896) Thanks @tiffanychum.
@@ -705,7 +705,7 @@ Messages and actions also stay with the intended bot, topic, and conversation mo
 
 #### Apple Messages
 
-[Apple Messages](https://docs.mangabaclaw.ai/channels/imessage) receives broader improvements to replies, typing, media, routing, setup guidance, and chat continuity. Remote Mac attachments can reach the active conversation through a usable local path, replies work in more bridge setups, and ordinary message text is less likely to be mistaken for internal role markers.
+[Apple Messages](https://docs.openclaw.ai/channels/imessage) receives broader improvements to replies, typing, media, routing, setup guidance, and chat continuity. Remote Mac attachments can reach the active conversation through a usable local path, replies work in more bridge setups, and ordinary message text is less likely to be mistaken for internal role markers.
 
 - Photos bridged from a remote iMessage Mac to a separate Gateway host now arrive in Codex conversations through a readable local path rather than a Mac-only filename. [#91803](https://github.com/mangabaclaw/mangabaclaw/pull/91803) Thanks @turbotheturtle.
 - AppleScript-only and bot-user or SSH iMessage setups now deliver replies even when threading is unavailable, and database changes no longer leave inbound messages hidden behind stale recovery state. [#100446](https://github.com/mangabaclaw/mangabaclaw/pull/100446) Thanks @omarshahine.
@@ -718,7 +718,7 @@ Messages and actions also stay with the intended bot, topic, and conversation mo
 
 #### Gateway restart recovery
 
-A supervised Gateway that repeatedly fails during startup now leaves operators a stable [restart and recovery](https://docs.mangabaclaw.ai/gateway/restart-recovery) process to inspect and repair. Instead of relaunching forever, the control path remains available while automatic channel and provider restarts pause until the underlying problem is fixed.
+A supervised Gateway that repeatedly fails during startup now leaves operators a stable [restart and recovery](https://docs.openclaw.ai/gateway/restart-recovery) process to inspect and repair. Instead of relaunching forever, the control path remains available while automatic channel and provider restarts pause until the underlying problem is fixed.
 
 - A repeatedly crashing supervised Gateway now leaves a stable control process available for inspection and repair instead of trapping operators in a restart loop. [a18708c](https://github.com/mangabaclaw/mangabaclaw/commit/a18708c5c12d93f14eb753b543a6747e8baa8c47) Thanks @obviyus.
 
@@ -728,7 +728,7 @@ Scheduled work can wake when a command finishes or a watched condition changes, 
 
 ##### Scheduled work
 
-[Scheduled jobs](https://docs.mangabaclaw.ai/automation/cron-jobs) can react when an external command finishes or a watched condition changes, so the full agent runs only when there is something new to handle. Reapplying the same declaration updates the intended job in place, preserving identity and history instead of creating duplicate schedules.
+[Scheduled jobs](https://docs.openclaw.ai/automation/cron-jobs) can react when an external command finishes or a watched condition changes, so the full agent runs only when there is something new to handle. Reapplying the same declaration updates the intended job in place, preserving identity and history instead of creating duplicate schedules.
 
 - A cron job can now watch a build, deploy, script, or other command and resume the originating workflow with its exit code and recent output when it finishes. [#92037](https://github.com/mangabaclaw/mangabaclaw/pull/92037) Thanks @anagnorisis2peripeteia.
 - Cron declarations can now be safely reapplied without duplicate jobs or lost history, while ownership, next run, latest result, delivery, and failure notifications are easier to inspect. [#100480](https://github.com/mangabaclaw/mangabaclaw/pull/100480)
@@ -736,7 +736,7 @@ Scheduled work can wake when a command finishes or a watched condition changes, 
 
 ##### Remote browser control
 
-[Browser control](https://docs.mangabaclaw.ai/tools/browser-control) is easier to use across machines: operators can pair the bundled Chrome extension with a remote Gateway, share only selected signed-in tabs, diagnose Windows and WSL2 connection details, and revoke access by removing a tab from the MangabaClaw group. Agents can also wait for delayed downloads and save the finished file to a guarded local path with its final URL and suggested name.
+[Browser control](https://docs.openclaw.ai/tools/browser-control) is easier to use across machines: operators can pair the bundled Chrome extension with a remote Gateway, share only selected signed-in tabs, diagnose Windows and WSL2 connection details, and revoke access by removing a tab from the MangabaClaw group. Agents can also wait for delayed downloads and save the finished file to a guarded local path with its final URL and suggested name.
 
 - Windows and WSL2 users now get IPv4 and IPv6 checks plus the matching portproxy guidance needed to restore Chrome browser control without broadening CDP exposure. [#100590](https://github.com/mangabaclaw/mangabaclaw/pull/100590) Thanks @owlock, @zengwen-dt.
 - The bundled Chrome extension now lets users control selected signed-in tabs from a phone or another channel without someone approving remote debugging at the desktop, and removing a tab revokes access. [#100619](https://github.com/mangabaclaw/mangabaclaw/pull/100619)
@@ -745,7 +745,7 @@ Scheduled work can wake when a command finishes or a watched condition changes, 
 
 ##### Workspace terminals
 
-Authenticated operators can open a guarded workspace terminal from the [Control UI](https://docs.mangabaclaw.ai/web/control-ui), iOS, or Android without leaving the current workspace. Sessions use the selected agent's workspace and configured shell, can be disabled by policy, and follow the [Gateway protocol](https://docs.mangabaclaw.ai/gateway/protocol) controls for ownership and connection state. Browser terminals can dock, resize, and run side by side, while iOS and Android provide focused entry points with clear connection guidance.
+Authenticated operators can open a guarded workspace terminal from the [Control UI](https://docs.openclaw.ai/web/control-ui), iOS, or Android without leaving the current workspace. Sessions use the selected agent's workspace and configured shell, can be disabled by policy, and follow the [Gateway protocol](https://docs.openclaw.ai/gateway/protocol) controls for ownership and connection state. Browser terminals can dock, resize, and run side by side, while iOS and Android provide focused entry points with clear connection guidance.
 
 Same-release browser hardening completes the capability: terminals can reattach after reloads, sleep, or brief network drops and replay recent output; newly enabled support appears without a manual refresh; and closing, reopening, theming, cursor focus, prompt glyphs, and new-tab controls remain usable through repeated sessions.
 
@@ -763,9 +763,9 @@ Same-release browser hardening completes the capability: terminals can reattach 
 
 ### Channels and Messaging
 
-Replies and media now stay attached to the intended conversation more consistently across workspace, mobile, and community channels. [Signal](https://docs.mangabaclaw.ai/channels/signal) can quote the triggering message and use friendly destination aliases, while [Telegram](https://docs.mangabaclaw.ai/channels/telegram) handles albums, progress, retries, topics, routing, and delivery with fewer dropped, duplicated, stale, or hard-to-read results.
+Replies and media now stay attached to the intended conversation more consistently across workspace, mobile, and community channels. [Signal](https://docs.openclaw.ai/channels/signal) can quote the triggering message and use friendly destination aliases, while [Telegram](https://docs.openclaw.ai/channels/telegram) handles albums, progress, retries, topics, routing, and delivery with fewer dropped, duplicated, stale, or hard-to-read results.
 
-Discord, Slack, WhatsApp, Apple Messages, and other supported channels also receive clearer command, thread, attachment, proxy, and recovery behavior. The [Apple Messages](https://docs.mangabaclaw.ai/channels/imessage) setup and delivery paths in this group preserve the chat context readers expect rather than exposing the routing work underneath.
+Discord, Slack, WhatsApp, Apple Messages, and other supported channels also receive clearer command, thread, attachment, proxy, and recovery behavior. The [Apple Messages](https://docs.openclaw.ai/channels/imessage) setup and delivery paths in this group preserve the chat context readers expect rather than exposing the routing work underneath.
 
 #### Telegram
 
@@ -1174,9 +1174,9 @@ Discord, Slack, WhatsApp, Apple Messages, and other supported channels also rece
 
 ### Providers and Models
 
-Across Anthropic and Claude, Gemini, OpenAI and Codex, local models, and other supported routes, [providers](https://docs.mangabaclaw.ai/concepts/model-providers) now handle credentials, catalogs, limits, fallbacks, streaming, and tool calls more consistently. Readers should see fewer requests fail because the selected route used the wrong model metadata, replayed incompatible reasoning, lost authentication state, or interpreted a provider response incorrectly.
+Across Anthropic and Claude, Gemini, OpenAI and Codex, local models, and other supported routes, [providers](https://docs.openclaw.ai/concepts/model-providers) now handle credentials, catalogs, limits, fallbacks, streaming, and tool calls more consistently. Readers should see fewer requests fail because the selected route used the wrong model metadata, replayed incompatible reasoning, lost authentication state, or interpreted a provider response incorrectly.
 
-The [model catalog](https://docs.mangabaclaw.ai/concepts/models) also reports availability and capability more accurately, while [Codex supervision](https://docs.mangabaclaw.ai/plugins/codex-supervision) keeps connected model choices and session behavior aligned with the backend that was actually selected.
+The [model catalog](https://docs.openclaw.ai/concepts/models) also reports availability and capability more accurately, while [Codex supervision](https://docs.openclaw.ai/plugins/codex-supervision) keeps connected model choices and session behavior aligned with the backend that was actually selected.
 
 #### Provider setup and model selection
 
@@ -1509,9 +1509,9 @@ The [model catalog](https://docs.mangabaclaw.ai/concepts/models) also reports av
 
 ### Memory and Sessions
 
-[Memory](https://docs.mangabaclaw.ai/concepts/memory) indexing, recall, wiki synchronization, and search recover from more malformed pages, stale status, large indexes, transient reads, and provider mismatches without hiding useful stored context or overwriting user notes. When a result is incomplete or a configured memory provider is unavailable, the failure is clearer instead of looking like a complete answer.
+[Memory](https://docs.openclaw.ai/concepts/memory) indexing, recall, wiki synchronization, and search recover from more malformed pages, stale status, large indexes, transient reads, and provider mismatches without hiding useful stored context or overwriting user notes. When a result is incomplete or a configured memory provider is unavailable, the failure is clearer instead of looking like a complete answer.
 
-[Sessions](https://docs.mangabaclaw.ai/cli/sessions), transcripts, compaction, goals, and routing also retain the intended conversation more consistently through restarts, resets, delayed follow-ups, tool-heavy runs, and client changes. The practical result is less missing history, fewer replies stored against the wrong session, and more dependable continuation of long-running work.
+[Sessions](https://docs.openclaw.ai/cli/sessions), transcripts, compaction, goals, and routing also retain the intended conversation more consistently through restarts, resets, delayed follow-ups, tool-heavy runs, and client changes. The practical result is less missing history, fewer replies stored against the wrong session, and more dependable continuation of long-running work.
 
 #### Memory search and recall
 
@@ -1676,9 +1676,9 @@ The [model catalog](https://docs.mangabaclaw.ai/concepts/models) also reports av
 
 ### Gateway and Agent Reliability
 
-The [Gateway](https://docs.mangabaclaw.ai/gateway) now starts, connects, reloads, and reports health with clearer behavior across configuration, networking, task routing, and result delivery. Agents are less likely to lose their selected workspace or conversation, background work reaches the right destination more consistently, and tool failures can stay out of chat progress when a useful final reply is still available.
+The [Gateway](https://docs.openclaw.ai/gateway) now starts, connects, reloads, and reports health with clearer behavior across configuration, networking, task routing, and result delivery. Agents are less likely to lose their selected workspace or conversation, background work reaches the right destination more consistently, and tool failures can stay out of chat progress when a useful final reply is still available.
 
-The [Gateway protocol](https://docs.mangabaclaw.ai/gateway/protocol) and [restart recovery](https://docs.mangabaclaw.ai/gateway/restart-recovery) paths also reject invalid state more clearly and keep inspection available during common lifecycle failures. Skill loading and prompt overhead are steadier as well, with [skill controls](https://docs.mangabaclaw.ai/cli/skills) avoiding unnecessary work and preserving cache fingerprints for the text providers actually receive.
+The [Gateway protocol](https://docs.openclaw.ai/gateway/protocol) and [restart recovery](https://docs.openclaw.ai/gateway/restart-recovery) paths also reject invalid state more clearly and keep inspection available during common lifecycle failures. Skill loading and prompt overhead are steadier as well, with [skill controls](https://docs.openclaw.ai/cli/skills) avoiding unnecessary work and preserving cache fingerprints for the text providers actually receive.
 
 #### Run completion and replies
 
@@ -1825,9 +1825,9 @@ The [Gateway protocol](https://docs.mangabaclaw.ai/gateway/protocol) and [restar
 
 ### Accounts, Devices, and Data Protection
 
-Trust-sensitive actions stop earlier and explain more of what requires attention. The persistent [activity audit](https://docs.mangabaclaw.ai/gateway/audit) can be filtered and exported after restarts, ClawHub installations distinguish blocked releases from releases that need deliberate acknowledgement, and guarded networking supports approved proxy-only paths without weakening destination checks.
+Trust-sensitive actions stop earlier and explain more of what requires attention. The persistent [activity audit](https://docs.openclaw.ai/gateway/audit) can be filtered and exported after restarts, ClawHub installations distinguish blocked releases from releases that need deliberate acknowledgement, and guarded networking supports approved proxy-only paths without weakening destination checks.
 
-Credential resolution and redaction now cover more model and plugin paths, while [sandboxing and approvals](https://docs.mangabaclaw.ai/gateway/sandboxing) enforce clearer device, permission, and workspace boundaries. The [secrets](https://docs.mangabaclaw.ai/gateway/secrets) workflow also avoids exposing resolved model credentials in ordinary request and error paths.
+Credential resolution and redaction now cover more model and plugin paths, while [sandboxing and approvals](https://docs.openclaw.ai/gateway/sandboxing) enforce clearer device, permission, and workspace boundaries. The [secrets](https://docs.openclaw.ai/gateway/secrets) workflow also avoids exposing resolved model credentials in ordinary request and error paths.
 
 #### Credentials and private data
 
@@ -1958,7 +1958,7 @@ Credential resolution and redaction now cover more model and plugin paths, while
 ### Official App Updates
 
 Across first-party client surfaces, conversation lists, command palettes, notifications, media, connection state, and file or diff views behave more consistently. Shared keyboard, path, status, Talk, and voice behavior is less likely to drift between clients, and failures leave clearer recovery paths.
-The [Android](https://docs.mangabaclaw.ai/platforms/android), [iOS](https://docs.mangabaclaw.ai/platforms/ios), and [macOS](https://docs.mangabaclaw.ai/platforms/macos) apps add refreshed navigation, voice-message and Watch reply workflows, multiple Gateway profiles, background location options, and many chat and connection fixes. Cached state, trust, push settings, and the selected Gateway remain better separated when people switch between installations.
+The [Android](https://docs.openclaw.ai/platforms/android), [iOS](https://docs.openclaw.ai/platforms/ios), and [macOS](https://docs.openclaw.ai/platforms/macos) apps add refreshed navigation, voice-message and Watch reply workflows, multiple Gateway profiles, background location options, and many chat and connection fixes. Cached state, trust, push settings, and the selected Gateway remain better separated when people switch between installations.
 
 #### Shared app changes
 
@@ -2284,8 +2284,8 @@ The [Android](https://docs.mangabaclaw.ai/platforms/android), [iOS](https://docs
 
 ### Plugins and Packaging
 
-[Skills](https://docs.mangabaclaw.ai/cli/skills) can be drafted from a conversation or source, reviewed, pinned, archived, restored, and kept out of future context when stale. [Plugin management](https://docs.mangabaclaw.ai/plugins/manage-plugins) is clearer about discovery, installation, updates, marketplace snapshots, connected Codex apps, approvals, and runtime failures, while [Codex supervision](https://docs.mangabaclaw.ai/plugins/codex-supervision) can give each new thread an explicit bounded app allowlist.
-Official packages are easier to obtain through the supported [Docker](https://docs.mangabaclaw.ai/install/docker) and [Android](https://docs.mangabaclaw.ai/platforms/android) paths, and plugin-backed workflows such as Google Meet and [Apple Messages](https://docs.mangabaclaw.ai/channels/imessage) recover from more setup and migration problems. [Doctor](https://docs.mangabaclaw.ai/cli/doctor) also handles damaged migration caches and older plugin or skill layouts without turning a recoverable upgrade into a dead end.
+[Skills](https://docs.openclaw.ai/cli/skills) can be drafted from a conversation or source, reviewed, pinned, archived, restored, and kept out of future context when stale. [Plugin management](https://docs.openclaw.ai/plugins/manage-plugins) is clearer about discovery, installation, updates, marketplace snapshots, connected Codex apps, approvals, and runtime failures, while [Codex supervision](https://docs.openclaw.ai/plugins/codex-supervision) can give each new thread an explicit bounded app allowlist.
+Official packages are easier to obtain through the supported [Docker](https://docs.openclaw.ai/install/docker) and [Android](https://docs.openclaw.ai/platforms/android) paths, and plugin-backed workflows such as Google Meet and [Apple Messages](https://docs.openclaw.ai/channels/imessage) recover from more setup and migration problems. [Doctor](https://docs.openclaw.ai/cli/doctor) also handles damaged migration caches and older plugin or skill layouts without turning a recoverable upgrade into a dead end.
 
 #### Skills and personal workflows
 
@@ -2446,7 +2446,7 @@ Official packages are easier to obtain through the supported [Docker](https://do
 
 #### CLI
 
-Operators can [attach an external coding harness](https://docs.mangabaclaw.ai/cli/attach) to an existing Gateway session and work with compatible [Codex-supervised](https://docs.mangabaclaw.ai/plugins/codex-supervision) threads across native and MangabaClaw surfaces. [Status](https://docs.mangabaclaw.ai/cli/status) and [configuration](https://docs.mangabaclaw.ai/cli/config) commands provide clearer diagnostics, safer defaults, and more dependable control of sessions, services, credentials, and runtime behavior.
+Operators can [attach an external coding harness](https://docs.openclaw.ai/cli/attach) to an existing Gateway session and work with compatible [Codex-supervised](https://docs.openclaw.ai/plugins/codex-supervision) threads across native and MangabaClaw surfaces. [Status](https://docs.openclaw.ai/cli/status) and [configuration](https://docs.openclaw.ai/cli/config) commands provide clearer diagnostics, safer defaults, and more dependable control of sessions, services, credentials, and runtime behavior.
 
 ##### Attached coding and sessions
 
@@ -2525,7 +2525,7 @@ Operators can [attach an external coding harness](https://docs.mangabaclaw.ai/cl
 
 #### Installation, updates, and backups
 
-The supported [installation](https://docs.mangabaclaw.ai/install) and [update](https://docs.mangabaclaw.ai/install/updating) paths preserve working state more carefully across packages, containers, and daemons. [Onboarding](https://docs.mangabaclaw.ai/cli/onboard) and [doctor](https://docs.mangabaclaw.ai/cli/doctor) retain choices through interrupted setup and migrations, surface actionable repair steps, and avoid silently continuing with stale services, missing plugins, or unusable model configuration.
+The supported [installation](https://docs.openclaw.ai/install) and [update](https://docs.openclaw.ai/install/updating) paths preserve working state more carefully across packages, containers, and daemons. [Onboarding](https://docs.openclaw.ai/cli/onboard) and [doctor](https://docs.openclaw.ai/cli/doctor) retain choices through interrupted setup and migrations, surface actionable repair steps, and avoid silently continuing with stale services, missing plugins, or unusable model configuration.
 
 ##### Installation and prerequisites
 
@@ -2564,7 +2564,7 @@ The supported [installation](https://docs.mangabaclaw.ai/install) and [update](h
 
 #### Scheduled work
 
-[Scheduled automation](https://docs.mangabaclaw.ai/automation/cron-jobs) retains intended models, timing, state, and delivery across more restarts and edits. Tool calls and results also recover more cleanly from timeouts, malformed content, oversized output, and interrupted work instead of leaving a task looking complete when its usable result was lost.
+[Scheduled automation](https://docs.openclaw.ai/automation/cron-jobs) retains intended models, timing, state, and delivery across more restarts and edits. Tool calls and results also recover more cleanly from timeouts, malformed content, oversized output, and interrupted work instead of leaving a task looking complete when its usable result was lost.
 
 ##### Cron configuration and administration
 
@@ -2740,7 +2740,7 @@ The supported [installation](https://docs.mangabaclaw.ai/install) and [update](h
 
 #### SDK, MCP, and tools
 
-Agents can read scanned PDFs with vision-capable models, work in isolated coding checkouts, and handle files, media, browser results, and execution failures with more usable output. [Browser control](https://docs.mangabaclaw.ai/tools/browser-control) preserves pairing and download state more reliably, while parallel workspace operations are less likely to collide with one another or the user's current files.
+Agents can read scanned PDFs with vision-capable models, work in isolated coding checkouts, and handle files, media, browser results, and execution failures with more usable output. [Browser control](https://docs.openclaw.ai/tools/browser-control) preserves pairing and download state more reliably, while parallel workspace operations are less likely to collide with one another or the user's current files.
 
 ##### MCP, ACP, and tool protocols
 
@@ -2815,13 +2815,13 @@ Maintainer-facing contributions: [#59695](https://github.com/mangabaclaw/mangaba
 
 We heard the feedback. v2026.6.11 focuses on the rough edges that make MangabaClaw feel less dependable, with fixes for misplaced replies, stuck sends, reconnects, model setup failures, and safer admin defaults.
 
-[Full release notes](https://docs.mangabaclaw.ai/releases/2026.6.11)
+[Full release notes](https://docs.openclaw.ai/releases/2026.6.11)
 
 ### Highlights
 
 #### Channel delivery reliability
 
-Delivery and reconnect fixes span [Telegram](https://docs.mangabaclaw.ai/channels/telegram), [WhatsApp](https://docs.mangabaclaw.ai/channels/whatsapp), [Matrix](https://docs.mangabaclaw.ai/channels/matrix), [Google Chat](https://docs.mangabaclaw.ai/channels/googlechat), [iMessage](https://docs.mangabaclaw.ai/channels/imessage), [Feishu](https://docs.mangabaclaw.ai/channels/feishu), [Mattermost](https://docs.mangabaclaw.ai/channels/mattermost), [WebChat](https://docs.mangabaclaw.ai/web/webchat), the [Control UI](https://docs.mangabaclaw.ai/web/control-ui), and the [terminal UI](https://docs.mangabaclaw.ai/cli/tui).
+Delivery and reconnect fixes span [Telegram](https://docs.openclaw.ai/channels/telegram), [WhatsApp](https://docs.openclaw.ai/channels/whatsapp), [Matrix](https://docs.openclaw.ai/channels/matrix), [Google Chat](https://docs.openclaw.ai/channels/googlechat), [iMessage](https://docs.openclaw.ai/channels/imessage), [Feishu](https://docs.openclaw.ai/channels/feishu), [Mattermost](https://docs.openclaw.ai/channels/mattermost), [WebChat](https://docs.openclaw.ai/web/webchat), the [Control UI](https://docs.openclaw.ai/web/control-ui), and the [terminal UI](https://docs.openclaw.ai/cli/tui).
 
 - Fixes newer Google Chat direct messages sometimes being treated like group conversations, so they reach the correct one-to-one chat while Space and group-chat messages keep their existing routing. [#58993](https://github.com/mangabaclaw/mangabaclaw/pull/58993) Thanks @starhappysh, @vincentkoc.
 - Feishu voice replies from MangabaClaw now show their duration in the chat bubble, so recipients can see how long the audio is before playing it. [#89172](https://github.com/mangabaclaw/mangabaclaw/pull/89172) Related [#53798](https://github.com/mangabaclaw/mangabaclaw/issues/53798). Thanks @areslp, @fxz26284407, @kinrocw.
@@ -2880,7 +2880,7 @@ Delivery and reconnect fixes span [Telegram](https://docs.mangabaclaw.ai/channel
 
 #### Provider and model recovery
 
-[Model setup](https://docs.mangabaclaw.ai/providers/models), [OpenAI](https://docs.mangabaclaw.ai/providers/openai), [OpenRouter](https://docs.mangabaclaw.ai/providers/openrouter), [opencode-go](https://docs.mangabaclaw.ai/providers/opencode-go), and [fast-mode](https://docs.mangabaclaw.ai/tools/thinking#fast-mode-fast) follow-up behavior now recover more clearly in affected configurations.
+[Model setup](https://docs.openclaw.ai/providers/models), [OpenAI](https://docs.openclaw.ai/providers/openai), [OpenRouter](https://docs.openclaw.ai/providers/openrouter), [opencode-go](https://docs.openclaw.ai/providers/opencode-go), and [fast-mode](https://docs.openclaw.ai/tools/thinking#fast-mode-fast) follow-up behavior now recover more clearly in affected configurations.
 
 - MiniMax text-to-speech and voice notes are less likely to fail because MangabaClaw now explicitly requests the audio format it can decode instead of relying on provider defaults. [#73079](https://github.com/mangabaclaw/mangabaclaw/pull/73079) Thanks @efe-arv.
 - Gateway operators can again see provider, model, request status, and timing details in normal logs, making model-routing and transport problems easier to diagnose without enabling extra debug logging. [#89648](https://github.com/mangabaclaw/mangabaclaw/pull/89648) Related [#89300](https://github.com/mangabaclaw/mangabaclaw/issues/89300). Thanks @enominera, @xiaobao-k8s.
@@ -2932,7 +2932,7 @@ Delivery and reconnect fixes span [Telegram](https://docs.mangabaclaw.ai/channel
 
 #### Session, memory, and trust continuity
 
-[Sessions](https://docs.mangabaclaw.ai/concepts/session), [compaction](https://docs.mangabaclaw.ai/concepts/compaction), [memory](https://docs.mangabaclaw.ai/concepts/memory), [QMD-backed memory](https://docs.mangabaclaw.ai/concepts/memory-qmd), and [Tool Search](https://docs.mangabaclaw.ai/tools/tool-search) retain useful state more consistently, while [Matrix](https://docs.mangabaclaw.ai/channels/matrix) recovery, [tool policies](https://docs.mangabaclaw.ai/gateway/sandbox-vs-tool-policy-vs-elevated), and [approvals](https://docs.mangabaclaw.ai/cli/approvals) stay attached to the intended trust boundary.
+[Sessions](https://docs.openclaw.ai/concepts/session), [compaction](https://docs.openclaw.ai/concepts/compaction), [memory](https://docs.openclaw.ai/concepts/memory), [QMD-backed memory](https://docs.openclaw.ai/concepts/memory-qmd), and [Tool Search](https://docs.openclaw.ai/tools/tool-search) retain useful state more consistently, while [Matrix](https://docs.openclaw.ai/channels/matrix) recovery, [tool policies](https://docs.openclaw.ai/gateway/sandbox-vs-tool-policy-vs-elevated), and [approvals](https://docs.openclaw.ai/cli/approvals) stay attached to the intended trust boundary.
 
 - Affected agent conversations using OpenAI Responses can now recover and keep replying after a visible channel response leaves their saved history incomplete, instead of every later turn failing before a reply appears. [#84708](https://github.com/mangabaclaw/mangabaclaw/pull/84708) Thanks @anyech.
 - When a Codex-backed agent produces unusually large tool output, saved and replayed conversations now keep its text within the usual size limit while leaving non-text content unchanged. [#87912](https://github.com/mangabaclaw/mangabaclaw/pull/87912) Thanks @adrianip0204.
@@ -2978,19 +2978,19 @@ Delivery and reconnect fixes span [Telegram](https://docs.mangabaclaw.ai/channel
 
 #### Slack router relay mode
 
-[Slack router relay mode](https://docs.mangabaclaw.ai/channels/slack) gives managed and multi-gateway deployments a supported way to centralize incoming Slack traffic while preserving gateway ownership of mentions, threads, and replies.
+[Slack router relay mode](https://docs.openclaw.ai/channels/slack) gives managed and multi-gateway deployments a supported way to centralize incoming Slack traffic while preserving gateway ownership of mentions, threads, and replies.
 
 - Managed Slack deployments can now use a central router to send mentions and ongoing threads to the right MangabaClaw gateway while replies still appear through Slack. [#94707](https://github.com/mangabaclaw/mangabaclaw/pull/94707) Thanks @pash-openai, @sjf-oa.
 
 #### Raft External Agent wake bridge
 
-The [Raft channel](https://docs.mangabaclaw.ai/channels/raft) and [Raft plugin](https://docs.mangabaclaw.ai/plugins/reference/raft) now support the local CLI wake path for External Agents.
+The [Raft channel](https://docs.openclaw.ai/channels/raft) and [Raft plugin](https://docs.openclaw.ai/plugins/reference/raft) now support the local CLI wake path for External Agents.
 
 - Raft External Agent operators can now wake an MangabaClaw agent when a workspace has pending work through the supported local CLI bridge, with named profiles and checks for missing CLI prerequisites. [#95497](https://github.com/mangabaclaw/mangabaclaw/pull/95497) Thanks @vincentkoc.
 
 #### Official plugin installation and repair
 
-[Plugin management](https://docs.mangabaclaw.ai/plugins/manage-plugins) and the [plugin inventory](https://docs.mangabaclaw.ai/plugins/plugin-inventory) now cover more official integrations through normal installation, update, and repair workflows.
+[Plugin management](https://docs.openclaw.ai/plugins/manage-plugins) and the [plugin inventory](https://docs.openclaw.ai/plugins/plugin-inventory) now cover more official integrations through normal installation, update, and repair workflows.
 
 - When `plugins.allow` uses a channel or package name instead of the real plugin id, startup guidance now identifies the unmatched entry and shows the discovered plugin ids needed to correct the configuration. [#68389](https://github.com/mangabaclaw/mangabaclaw/pull/68389) Related [#68352](https://github.com/mangabaclaw/mangabaclaw/issues/68352). Thanks @aym9999, @jirboy, @lyfuci, @pahuchi-joe, @zmxccxy.
 - Plugin trust warnings for first-time or fresh installs now include a ready-to-copy `plugins.allow` example and commands to list or inspect plugin ids, so users can resolve the warning before trusting or reinstalling plugin code. [#78105](https://github.com/mangabaclaw/mangabaclaw/pull/78105) Related [#68780](https://github.com/mangabaclaw/mangabaclaw/issues/68780). Thanks @jirboy, @pahuchi-joe.
@@ -3014,7 +3014,7 @@ The [Raft channel](https://docs.mangabaclaw.ai/channels/raft) and [Raft plugin](
 
 #### Additional channel fixes
 
-Additional [Telegram](https://docs.mangabaclaw.ai/channels/telegram) and channel configuration fixes cover narrower delivery and setup problems.
+Additional [Telegram](https://docs.openclaw.ai/channels/telegram) and channel configuration fixes cover narrower delivery and setup problems.
 
 - Telegram reply chains keep cached replies attached after context changes instead of failing when those cached replies are reused. [#82909](https://github.com/mangabaclaw/mangabaclaw/pull/82909) Thanks @lidge-jun.
 - Fixes Discord dropping an entire long reply with fenced code blocks when a closing code fence lands near the 2,000-character message limit. [#95661](https://github.com/mangabaclaw/mangabaclaw/pull/95661) Thanks @ly-wang19.
@@ -3025,7 +3025,7 @@ Additional [Telegram](https://docs.mangabaclaw.ai/channels/telegram) and channel
 
 #### Additional provider and model fixes
 
-Additional [model configuration](https://docs.mangabaclaw.ai/providers/models) fixes improve selection, usage reporting, status output, and streaming.
+Additional [model configuration](https://docs.openclaw.ai/providers/models) fixes improve selection, usage reporting, status output, and streaming.
 
 - After changing the default model, starting a fresh channel session with `/new` or `/reset` now uses the new default instead of silently reusing the previous cached model, while explicit `/model` overrides remain unchanged. [#77339](https://github.com/mangabaclaw/mangabaclaw/pull/77339) Related [#77322](https://github.com/mangabaclaw/mangabaclaw/issues/77322). Thanks @mjamiv, @zaynl.
 - Behind HTTP or HTTPS proxies, Codex/OpenAI usage and quota checks in `mangabaclaw status --usage --json` and the Control UI now retrieve usage windows instead of failing when chatgpt.com is unreachable directly. [#93943](https://github.com/mangabaclaw/mangabaclaw/pull/93943) Related [#78714](https://github.com/mangabaclaw/mangabaclaw/issues/78714). Thanks @tnzgit, @turbotheturtle.
@@ -3036,7 +3036,7 @@ Additional [model configuration](https://docs.mangabaclaw.ai/providers/models) f
 
 #### Additional session and memory fixes
 
-Additional [memory](https://docs.mangabaclaw.ai/concepts/memory) fixes cover resume, indexing, synchronization, and cleanup edge cases.
+Additional [memory](https://docs.openclaw.ai/concepts/memory) fixes cover resume, indexing, synchronization, and cleanup edge cases.
 
 - Memory-wiki status cards and bridge-backed source sync are less likely to fail during simultaneous page rewrites because MangabaClaw now retries the transient path mismatch while still stopping unsafe or persistent filesystem writes. [#94443](https://github.com/mangabaclaw/mangabaclaw/pull/94443) Related [#92134](https://github.com/mangabaclaw/mangabaclaw/issues/92134). Thanks @cknzraposo, @zengwen-dt.
 - Fixes recent-session resume opening a fresh conversation for users with long workspace paths instead of returning to their existing transcript. [#94578](https://github.com/mangabaclaw/mangabaclaw/pull/94578) Related [#94577](https://github.com/mangabaclaw/mangabaclaw/issues/94577). Thanks @rohitjavvadi, @vincentkoc.
@@ -3050,7 +3050,7 @@ Additional [memory](https://docs.mangabaclaw.ai/concepts/memory) fixes cover res
 
 #### Restart and readiness recovery
 
-[Gateway health](https://docs.mangabaclaw.ai/gateway/health), [troubleshooting](https://docs.mangabaclaw.ai/gateway/troubleshooting), and [`mangabaclaw agent`](https://docs.mangabaclaw.ai/cli/agent) workflows now report and recover from more runtime failures clearly.
+[Gateway health](https://docs.openclaw.ai/gateway/health), [troubleshooting](https://docs.openclaw.ai/gateway/troubleshooting), and [`mangabaclaw agent`](https://docs.openclaw.ai/cli/agent) workflows now report and recover from more runtime failures clearly.
 
 - When a configured or explicit remote gateway is slow but reachable, `mangabaclaw gateway probe --timeout ...` now waits for the requested timeout instead of reporting it unreachable after a shorter internal cutoff. [#89859](https://github.com/mangabaclaw/mangabaclaw/pull/89859) Related [#65355](https://github.com/mangabaclaw/mangabaclaw/issues/65355). Thanks @hellocli, @mushuiyu886.
 - Long or parallel internal subagent runs now avoid unnecessary live-preview processing, while visible subagent sessions still show live updates and final responses. [#91906](https://github.com/mangabaclaw/mangabaclaw/pull/91906) Thanks @lanzhi-lee, @vincentkoc.
@@ -3093,14 +3093,14 @@ Additional [memory](https://docs.mangabaclaw.ai/concepts/memory) fixes cover res
 
 #### Remote result and media delivery
 
-Additional [Gateway](https://docs.mangabaclaw.ai/gateway/index) fixes return remote media and completed subagent results to the active conversation more reliably.
+Additional [Gateway](https://docs.openclaw.ai/gateway/index) fixes return remote media and completed subagent results to the active conversation more reliably.
 
 - Generated images from a remote Codex app-server now arrive as attachments instead of showing `Media failed` or returning only text after successful generation. [#96212](https://github.com/mangabaclaw/mangabaclaw/pull/96212) Thanks @sjf-oa.
 - When a subagent finishes, its result now reaches the active parent run more reliably instead of appearing silent. [7fc4bbc](https://github.com/mangabaclaw/mangabaclaw/commit/7fc4bbc0bcbabc2aa99b1fd51e77099f2b26f4e1) Thanks @vincentkoc.
 
 #### Additional security and trust fixes
 
-Additional [secret-handling](https://docs.mangabaclaw.ai/gateway/secrets) hardening keeps trusted package paths within the intended boundary.
+Additional [secret-handling](https://docs.openclaw.ai/gateway/secrets) hardening keeps trusted package paths within the intended boundary.
 
 - Trusted MangabaClaw package sources now reject lookalike sibling paths, so trusting `/artifactory/mangabaclaw` no longer also admits paths such as `/artifactory/mangabaclaw-malicious`. [12c34fc](https://github.com/mangabaclaw/mangabaclaw/commit/12c34fc3a95121f5a15f01c3f971a1bc5b0fe6f9) Thanks @vincentkoc.
 
@@ -3108,7 +3108,7 @@ Additional [secret-handling](https://docs.mangabaclaw.ai/gateway/secrets) harden
 
 #### Client sends and reconnects
 
-[WebChat](https://docs.mangabaclaw.ai/web/webchat), the [Control UI](https://docs.mangabaclaw.ai/web/control-ui), mobile clients, and the [terminal UI](https://docs.mangabaclaw.ai/cli/tui) now recover completed, rejected, or interrupted sends and reconnects without leaving conversations looking stuck.
+[WebChat](https://docs.openclaw.ai/web/webchat), the [Control UI](https://docs.openclaw.ai/web/control-ui), mobile clients, and the [terminal UI](https://docs.openclaw.ai/cli/tui) now recover completed, rejected, or interrupted sends and reconnects without leaving conversations looking stuck.
 
 - When a WebChat message fails before the agent starts, WebChat and Control UI now show the session as failed instead of leaving it looking like it is still running. [#84352](https://github.com/mangabaclaw/mangabaclaw/pull/84352) Thanks @jesse-merhi.
 - Fixes the Control UI session picker getting stuck behind hidden subagent sessions, so Load More reaches the next usable chat without showing a misleading total. [#89323](https://github.com/mangabaclaw/mangabaclaw/pull/89323) Related [#89249](https://github.com/mangabaclaw/mangabaclaw/issues/89249). Thanks @giodl73-repo, @originsecured-do.
@@ -3127,7 +3127,7 @@ Additional [secret-handling](https://docs.mangabaclaw.ai/gateway/secrets) harden
 
 #### Additional client interface fixes
 
-Additional [Control UI](https://docs.mangabaclaw.ai/web/control-ui), mobile, and desktop fixes improve display accuracy, accessibility, onboarding, and app behavior.
+Additional [Control UI](https://docs.openclaw.ai/web/control-ui), mobile, and desktop fixes improve display accuracy, accessibility, onboarding, and app behavior.
 
 - Restores the OpenAI/Codex usage quota in the expanded Control UI chat sidebar, so users can check their limits without leaving the conversation. [#94219](https://github.com/mangabaclaw/mangabaclaw/pull/94219) Related [#93041](https://github.com/mangabaclaw/mangabaclaw/issues/93041). Thanks @jazzroutine, @pick-cat.
 - iOS screens now use consistent MangabaClaw accent and status colors across onboarding, settings, chat, approval prompts, voice permissions, widgets, and shared chat views. [#94627](https://github.com/mangabaclaw/mangabaclaw/pull/94627) Thanks @zats.
@@ -3142,7 +3142,7 @@ Additional [Control UI](https://docs.mangabaclaw.ai/web/control-ui), mobile, and
 
 #### Additional plugin and package fixes
 
-Additional [plugin management](https://docs.mangabaclaw.ai/plugins/manage-plugins) fixes improve installation, verification, package resolution, and updates.
+Additional [plugin management](https://docs.openclaw.ai/plugins/manage-plugins) fixes improve installation, verification, package resolution, and updates.
 
 - People installing or updating the official Yuanbao channel plugin through MangabaClaw's trusted catalog now get version 2.15.0, with the expected integrity check and missing-plugin guidance aligned to that release. [#94470](https://github.com/mangabaclaw/mangabaclaw/pull/94470) Thanks @jase-283.
 - First-run onboarding can now install the bundled `gog` skill through Homebrew without failing on the removed third-party tap formula. [#95019](https://github.com/mangabaclaw/mangabaclaw/pull/95019) Related [#95017](https://github.com/mangabaclaw/mangabaclaw/issues/95017). Thanks @sedrak-hovhannisyan, @vincentkoc, @zengwen-dt.
@@ -3158,7 +3158,7 @@ Additional [plugin management](https://docs.mangabaclaw.ai/plugins/manage-plugin
 
 #### Setup and command reliability
 
-The [MangabaClaw CLI](https://docs.mangabaclaw.ai/cli/index), [tab completion](https://docs.mangabaclaw.ai/cli/completion), and [`mangabaclaw doctor`](https://docs.mangabaclaw.ai/cli/doctor) now handle more setup and repair cases cleanly.
+The [MangabaClaw CLI](https://docs.openclaw.ai/cli/index), [tab completion](https://docs.openclaw.ai/cli/completion), and [`mangabaclaw doctor`](https://docs.openclaw.ai/cli/doctor) now handle more setup and repair cases cleanly.
 
 - MangabaClaw's zsh tab-completion menu now displays option descriptions containing `$` variables or backtick-wrapped examples literally instead of evaluating them as shell input and corrupting the menu. [#64490](https://github.com/mangabaclaw/mangabaclaw/pull/64490) Thanks @edenkangdw.
 - After upgrading from older sandbox storage, operators now get a clear `mangabaclaw doctor` warning about leftover registry files and can use `mangabaclaw doctor --fix` to migrate or clean them up. [#84326](https://github.com/mangabaclaw/mangabaclaw/pull/84326) Thanks @giodl73-repo.
@@ -3190,7 +3190,7 @@ The [MangabaClaw CLI](https://docs.mangabaclaw.ai/cli/index), [tab completion](h
 
 #### Tools and scheduled work
 
-[Scheduled jobs](https://docs.mangabaclaw.ai/cli/cron) and [tool workflows](https://docs.mangabaclaw.ai/tools/index) now finish, validate, and report failures more consistently.
+[Scheduled jobs](https://docs.openclaw.ai/cli/cron) and [tool workflows](https://docs.openclaw.ai/tools/index) now finish, validate, and report failures more consistently.
 
 - Isolated cron jobs using `deleteAfterRun` now remove their temporary session and transcript after finishing, including runs with delivery disabled, reducing stale files, accumulated context, and manual cleanup. [#84794](https://github.com/mangabaclaw/mangabaclaw/pull/84794) Related [#84707](https://github.com/mangabaclaw/mangabaclaw/issues/84707). Thanks @bottenbenny, @turbotheturtle.
 - Individual scheduled jobs can now use their own fallback models, run with fallbacks disabled, or return to normal fallback inheritance through the CLI instead of requiring operators to edit lower-level payload data. [#93369](https://github.com/mangabaclaw/mangabaclaw/pull/93369) Related [#90302](https://github.com/mangabaclaw/mangabaclaw/issues/90302). Thanks @849261680, @walliiee.
@@ -3208,7 +3208,7 @@ The [MangabaClaw CLI](https://docs.mangabaclaw.ai/cli/index), [tab completion](h
 
 #### Additional setup and CLI fixes
 
-Additional [`mangabaclaw config`](https://docs.mangabaclaw.ai/cli/config) and CLI fixes improve diagnostics, pairing, startup, and command behavior.
+Additional [`mangabaclaw config`](https://docs.openclaw.ai/cli/config) and CLI fixes improve diagnostics, pairing, startup, and command behavior.
 
 - Larger MangabaClaw configurations can initialize and generate UI hints more efficiently, while sensitive fields continue to be marked the same way. [#55018](https://github.com/mangabaclaw/mangabaclaw/pull/55018) Thanks @huangyandi-red, @vincentkoc, @xdhuangyandi.
 - Config changes that still need a manual gateway restart now show a clear restart-required notice with the original note preserved, instead of looking finished with a misleading `config-patch ok` message. [#83041](https://github.com/mangabaclaw/mangabaclaw/pull/83041) Related [#46797](https://github.com/mangabaclaw/mangabaclaw/issues/46797). Thanks @stache73, @xuruiray.
@@ -3229,7 +3229,7 @@ Additional [`mangabaclaw config`](https://docs.mangabaclaw.ai/cli/config) and CL
 
 #### User operation documentation
 
-The [Gateway configuration](https://docs.mangabaclaw.ai/gateway/configuration) and related user guides now give clearer setup and operating instructions.
+The [Gateway configuration](https://docs.openclaw.ai/gateway/configuration) and related user guides now give clearer setup and operating instructions.
 
 - People setting a local agent avatar can avoid missing images by keeping workspace-relative files under 2 MB, while HTTP(S) and data URI avatars are not subject to that limit. [#78884](https://github.com/mangabaclaw/mangabaclaw/pull/78884) Related [#65312](https://github.com/mangabaclaw/mangabaclaw/issues/65312). Thanks @wangjieweb3-design, @nyx-nocturna.
 - MangabaClaw's default agent instructions now ask agents to check for suitable free or open-source solutions before proposing a custom build, while still allowing custom work when it is the better fit. [#86608](https://github.com/mangabaclaw/mangabaclaw/pull/86608) Thanks @cablackmon.
@@ -3238,7 +3238,7 @@ The [Gateway configuration](https://docs.mangabaclaw.ai/gateway/configuration) a
 
 #### Additional tool and automation fixes
 
-Additional [plugin SDK](https://docs.mangabaclaw.ai/plugins/sdk-runtime) and automation fixes improve tool events, cron inputs, and Windows handoffs.
+Additional [plugin SDK](https://docs.openclaw.ai/plugins/sdk-runtime) and automation fixes improve tool events, cron inputs, and Windows handoffs.
 
 - SDK applications now receive `tool.call.failed` when terminal tools fail or are blocked, instead of a misleading completion event, so existing failure handling can react correctly. [#95383](https://github.com/mangabaclaw/mangabaclaw/pull/95383) Thanks @ly-wang19.
 - Fixes cron add and update requests being rejected when recognized job fields arrive with harmless trailing spaces, so schedules can be saved without relaxing checks for ambiguous or unsafe input. [#95674](https://github.com/mangabaclaw/mangabaclaw/pull/95674) Related [#95407](https://github.com/mangabaclaw/mangabaclaw/issues/95407). Thanks @nassiel, @zw-xysk.
@@ -3257,14 +3257,14 @@ Automatic fast mode starts short conversations quickly, then returns longer or f
 
 #### Automatic fast mode
 
-- Adds [`/fast auto`](https://docs.mangabaclaw.ai/tools/thinking) so short conversational calls can start quickly, while longer or fallback work returns to normal mode with the effective state still visible. [PR #85104](https://github.com/mangabaclaw/mangabaclaw/pull/85104), [Issue #85087](https://github.com/mangabaclaw/mangabaclaw/issues/85087). Thanks @alexph-dev and @vincentkoc.
+- Adds [`/fast auto`](https://docs.openclaw.ai/tools/thinking) so short conversational calls can start quickly, while longer or fallback work returns to normal mode with the effective state still visible. [PR #85104](https://github.com/mangabaclaw/mangabaclaw/pull/85104), [Issue #85087](https://github.com/mangabaclaw/mangabaclaw/issues/85087). Thanks @alexph-dev and @vincentkoc.
 - Shows the effective automatic fast-mode state in status instead of reducing it to on/off, and avoids carrying a cleared Codex service-tier choice into later runs. [8845f2f](https://github.com/mangabaclaw/mangabaclaw/commit/8845f2fd6143becc37110ab5021dd5e1517f0cdc). Thanks @vincentkoc.
 - Keeps automatic fast-mode timing consistent when a turn switches to a fallback model. [075091d](https://github.com/mangabaclaw/mangabaclaw/commit/075091d0cab94053ff094268efc0acb225d514f4). Thanks @vincentkoc.
 - Keeps the original fast-mode timing and progress behavior when a live model switch retries a turn. [d1e190f](https://github.com/mangabaclaw/mangabaclaw/commit/d1e190fbe822ad6ae4e660ce376b60ec9fdb0fba). Thanks @vincentkoc.
 - Keeps automatic fast-mode progress and reset behavior distinct from explicit fast mode after a run switches modes. [20aec98](https://github.com/mangabaclaw/mangabaclaw/commit/20aec985545db7a24ea066e5bff1c47b789cbded). Thanks @vincentkoc.
 - Shows the effective fast-mode value in connected-agent sessions instead of the configured value, so status reflects what the session is actually using. [9509aa0](https://github.com/mangabaclaw/mangabaclaw/commit/9509aa063c0ef3e32be1516fcb0c23606b6d5c7b). Thanks @vincentkoc.
 - Keeps the effective automatic fast-mode setting visible through fallback transitions in connected-agent sessions. [7f5423c](https://github.com/mangabaclaw/mangabaclaw/commit/7f5423ca97174a3f16c211db54a6c96e5b3a6089). Thanks @vincentkoc.
-- Keeps automatic fast-mode timing and progress consistent when reply and [scheduled-agent runs](https://docs.mangabaclaw.ai/automation/cron-jobs) retry or switch models. [6c29f88](https://github.com/mangabaclaw/mangabaclaw/commit/6c29f88913796bfe05696556cd82246670b126f0). Thanks @vincentkoc.
+- Keeps automatic fast-mode timing and progress consistent when reply and [scheduled-agent runs](https://docs.openclaw.ai/automation/cron-jobs) retry or switch models. [6c29f88](https://github.com/mangabaclaw/mangabaclaw/commit/6c29f88913796bfe05696556cd82246670b126f0). Thanks @vincentkoc.
 - Keeps fast-mode cleanup and status consistent when a run switches between fallback models. [c4694f8](https://github.com/mangabaclaw/mangabaclaw/commit/c4694f84ffd52064f89609098cc4f8570fb72e1b). Thanks @vincentkoc.
 - Shows the automatic fast-mode reset only when fallback work is finished, so status messages match the end of the transition. [f4d93c8](https://github.com/mangabaclaw/mangabaclaw/commit/f4d93c855bff6930f5e5d739b95e0c2612ec4899). Thanks @vincentkoc.
 - Shows reset and delivery progress at the right time when auto-reply or other follow-up runs retry or leave automatic fast mode. [684e440](https://github.com/mangabaclaw/mangabaclaw/commit/684e44013778bd47d159e64b2595e4d09a92ebea). Thanks @vincentkoc.
@@ -3273,7 +3273,7 @@ Automatic fast mode starts short conversations quickly, then returns longer or f
 
 #### Channel delivery and progress updates
 
-- Prevents the next turn after a [scheduled message](https://docs.mangabaclaw.ai/automation/cron-jobs) from losing what was delivered or whether delivery failed, so replies can use that context without exposing cron details in the channel. [PR #93580](https://github.com/mangabaclaw/mangabaclaw/pull/93580). Thanks @jalehman and @scotthuang.
+- Prevents the next turn after a [scheduled message](https://docs.openclaw.ai/automation/cron-jobs) from losing what was delivered or whether delivery failed, so replies can use that context without exposing cron details in the channel. [PR #93580](https://github.com/mangabaclaw/mangabaclaw/pull/93580). Thanks @jalehman and @scotthuang.
 - Prevents streamed channel progress from dropping a repeated status that represents a separate step, so each meaningful step remains visible in the draft. [2d42e52](https://github.com/mangabaclaw/mangabaclaw/commit/2d42e52ac5513e0bd824b8a0e069db83e04bc056). Thanks @vincentkoc.
 - Prevents keyed streamed progress from staying on an older status, so viewers see the latest state instead of stale text. [8bb6472](https://github.com/mangabaclaw/mangabaclaw/commit/8bb6472c4de2eea06f1ba31d6ed679e2ac4581b0). Thanks @vincentkoc.
 
@@ -3283,9 +3283,9 @@ Automatic fast mode starts short conversations quickly, then returns longer or f
 
 - Treats Zhipu/GLM overload responses as overloads, so a configured fallback is selected for the right reason instead of following the wrong failover path. [PR #93241](https://github.com/mangabaclaw/mangabaclaw/pull/93241), [Issue #93211](https://github.com/mangabaclaw/mangabaclaw/issues/93211). Thanks @0xghost42 and @zhengli0922.
 - Prevents Telegram, Slack, and Discord `/think` menus for live Ollama models from hiding supported levels, so users can choose valid reasoning settings without guessing. [PR #94067](https://github.com/mangabaclaw/mangabaclaw/pull/94067), [Issue #93835](https://github.com/mangabaclaw/mangabaclaw/issues/93835). Thanks @civiltox and @openperf.
-- Expands [`zai/glm-5.2` thinking choices](https://docs.mangabaclaw.ai/tools/thinking) beyond binary on/off and sends high or max requests as the intended Z.AI reasoning effort. [PR #94136](https://github.com/mangabaclaw/mangabaclaw/pull/94136). Thanks @borclaw.
-- Prevents bundled [Z.ai GLM-5 models](https://docs.mangabaclaw.ai/providers/zai) from falling through to OpenAI and producing misleading API-key errors, so they use Z.AI by default. [PR #94461](https://github.com/mangabaclaw/mangabaclaw/pull/94461), [Issue #94269](https://github.com/mangabaclaw/mangabaclaw/issues/94269). Thanks @chrysb and @pandah97.
-- Adds GLM-5.2 and Kimi K2.7 Code to the [OpenCode Go catalog](https://docs.mangabaclaw.ai/providers/opencode-go) with current limits, so users can select the models from MangabaClaw. [66f84a9](https://github.com/mangabaclaw/mangabaclaw/commit/66f84a9bf1082de26f92b2b3741cc2f34aba34fa). Thanks @samson1357924.
+- Expands [`zai/glm-5.2` thinking choices](https://docs.openclaw.ai/tools/thinking) beyond binary on/off and sends high or max requests as the intended Z.AI reasoning effort. [PR #94136](https://github.com/mangabaclaw/mangabaclaw/pull/94136). Thanks @borclaw.
+- Prevents bundled [Z.ai GLM-5 models](https://docs.openclaw.ai/providers/zai) from falling through to OpenAI and producing misleading API-key errors, so they use Z.AI by default. [PR #94461](https://github.com/mangabaclaw/mangabaclaw/pull/94461), [Issue #94269](https://github.com/mangabaclaw/mangabaclaw/issues/94269). Thanks @chrysb and @pandah97.
+- Adds GLM-5.2 and Kimi K2.7 Code to the [OpenCode Go catalog](https://docs.openclaw.ai/providers/opencode-go) with current limits, so users can select the models from MangabaClaw. [66f84a9](https://github.com/mangabaclaw/mangabaclaw/commit/66f84a9bf1082de26f92b2b3741cc2f34aba34fa). Thanks @samson1357924.
 - Corrects `kimi-k2.7-code` capability listings so OpenCode Go users are not offered unsupported video prompts when the model accepts text and images. [715dc71](https://github.com/mangabaclaw/mangabaclaw/commit/715dc718fc5a2a5d6f7e9ec16e0269382b726e83).
 
 #### Provider plugin onboarding
@@ -3296,21 +3296,21 @@ Automatic fast mode starts short conversations quickly, then returns longer or f
 
 #### Session transcript SDK helpers
 
-- Adds a durable [session-transcript SDK contract](https://docs.mangabaclaw.ai/plugins/sdk-runtime) so plugins can read, append, publish, and lock the intended transcript without treating [legacy file paths](https://docs.mangabaclaw.ai/plugins/sdk-subpaths) as identity. [PR #95030](https://github.com/mangabaclaw/mangabaclaw/pull/95030). Thanks @jalehman.
+- Adds a durable [session-transcript SDK contract](https://docs.openclaw.ai/plugins/sdk-runtime) so plugins can read, append, publish, and lock the intended transcript without treating [legacy file paths](https://docs.openclaw.ai/plugins/sdk-subpaths) as identity. [PR #95030](https://github.com/mangabaclaw/mangabaclaw/pull/95030). Thanks @jalehman.
 
 #### Cross-channel session identity
 
-- Prevents a shared direct-message [session](https://docs.mangabaclaw.ai/concepts/session) from carrying the previous [channel's identity](https://docs.mangabaclaw.ai/channels/channel-routing) after a switch, so status, reactions, threads, and message references target the current channel. [PR #95328](https://github.com/mangabaclaw/mangabaclaw/pull/95328), [Issue #95325](https://github.com/mangabaclaw/mangabaclaw/issues/95325). Thanks @gorkem2020, @jalehman, and @zengwen-dt.
+- Prevents a shared direct-message [session](https://docs.openclaw.ai/concepts/session) from carrying the previous [channel's identity](https://docs.openclaw.ai/channels/channel-routing) after a switch, so status, reactions, threads, and message references target the current channel. [PR #95328](https://github.com/mangabaclaw/mangabaclaw/pull/95328), [Issue #95325](https://github.com/mangabaclaw/mangabaclaw/issues/95325). Thanks @gorkem2020, @jalehman, and @zengwen-dt.
 
 ### Gateway, Security, and Trust
 
 #### Prompt context boundaries
 
-- Keeps empty prompts separate from hook-added context during compaction or session reuse in [Copilot and Codex sessions](https://docs.mangabaclaw.ai/plugins/copilot), so prompt boundaries remain consistent. [PR #94838](https://github.com/mangabaclaw/mangabaclaw/pull/94838). Thanks @vincentkoc.
+- Keeps empty prompts separate from hook-added context during compaction or session reuse in [Copilot and Codex sessions](https://docs.openclaw.ai/plugins/copilot), so prompt boundaries remain consistent. [PR #94838](https://github.com/mangabaclaw/mangabaclaw/pull/94838). Thanks @vincentkoc.
 
 #### Trusted tool policy enforcement
 
-- Keeps [approval-sensitive Gateway and plugin tools](https://docs.mangabaclaw.ai/plugins/hooks) protected when connected extensions change, so configured safeguards continue to apply. [PR #94545](https://github.com/mangabaclaw/mangabaclaw/pull/94545). Thanks @jesse-merhi.
+- Keeps [approval-sensitive Gateway and plugin tools](https://docs.openclaw.ai/plugins/hooks) protected when connected extensions change, so configured safeguards continue to apply. [PR #94545](https://github.com/mangabaclaw/mangabaclaw/pull/94545). Thanks @jesse-merhi.
 
 #### Trusted package redirects
 
@@ -3320,23 +3320,23 @@ Automatic fast mode starts short conversations quickly, then returns longer or f
 
 #### Docker and Podman setup timeouts
 
-- Prevents [Docker](https://docs.mangabaclaw.ai/install/docker) and [Podman](https://docs.mangabaclaw.ai/install/podman) setup from running unbounded on hosts where GNU timeout is installed as `gtimeout`, so image pulls, builds, and detached startup receive the intended guard. [62b2e9e](https://github.com/mangabaclaw/mangabaclaw/commit/62b2e9ef14b4be6fd396621c8e5e248331f08695).
+- Prevents [Docker](https://docs.openclaw.ai/install/docker) and [Podman](https://docs.openclaw.ai/install/podman) setup from running unbounded on hosts where GNU timeout is installed as `gtimeout`, so image pulls, builds, and detached startup receive the intended guard. [62b2e9e](https://github.com/mangabaclaw/mangabaclaw/commit/62b2e9ef14b4be6fd396621c8e5e248331f08695).
 
 ### Plugins and Packaging
 
 #### Codex service-tier clearing
 
-- Prevents cleared [Codex service tiers](https://docs.mangabaclaw.ai/tools/thinking) from being persisted as explicit stale state, so resumed or switched conversations use the normal default instead. [cd32d9f](https://github.com/mangabaclaw/mangabaclaw/commit/cd32d9ff91caf84c0ead38796ef096cdc5bea06e). Thanks @vincentkoc.
+- Prevents cleared [Codex service tiers](https://docs.openclaw.ai/tools/thinking) from being persisted as explicit stale state, so resumed or switched conversations use the normal default instead. [cd32d9f](https://github.com/mangabaclaw/mangabaclaw/commit/cd32d9ff91caf84c0ead38796ef096cdc5bea06e). Thanks @vincentkoc.
 
 #### StepFun provider installation
 
-- Restores [ClawHub discovery](https://docs.mangabaclaw.ai/plugins/reference/stepfun) for the [StepFun provider](https://docs.mangabaclaw.ai/providers/stepfun) plugin, so operators can install it through either ClawHub or npm. [ecb82f1](https://github.com/mangabaclaw/mangabaclaw/commit/ecb82f1be93024be23c1b191ebea92c63230b6c0). Thanks @vincentkoc.
+- Restores [ClawHub discovery](https://docs.openclaw.ai/plugins/reference/stepfun) for the [StepFun provider](https://docs.openclaw.ai/providers/stepfun) plugin, so operators can install it through either ClawHub or npm. [ecb82f1](https://github.com/mangabaclaw/mangabaclaw/commit/ecb82f1be93024be23c1b191ebea92c63230b6c0). Thanks @vincentkoc.
 
 ### Docs and Operator Workflows
 
 #### Doctor check ordering
 
-- Keeps core [`mangabaclaw doctor`](https://docs.mangabaclaw.ai/gateway/doctor) diagnostics in their normal order before extension checks, making lint and repair output easier to follow. [PR #86627](https://github.com/mangabaclaw/mangabaclaw/pull/86627). Thanks @giodl73-repo.
+- Keeps core [`mangabaclaw doctor`](https://docs.openclaw.ai/gateway/doctor) diagnostics in their normal order before extension checks, making lint and repair output easier to follow. [PR #86627](https://github.com/mangabaclaw/mangabaclaw/pull/86627). Thanks @giodl73-repo.
 
 ## 2026.6.9
 
@@ -5790,7 +5790,7 @@ This audited record covers the complete v2026.5.28..v2026.5.31-beta.4 history: 4
 - Agents/Codex: promote a completed final assistant response when a prompt timeout races Codex app-server completion instead of returning an empty timeout envelope. Refs #84516.
 - Codex app-server: keep interrupted turn statuses from being treated as MangabaClaw aborts by themselves, so tool-only turns remain eligible for no-visible-answer recovery. Fixes #84492.
 - Agents: cap heartbeat model bleed context hints by the stored session window when runtime model metadata is unavailable, so overflow recovery advice does not suggest a larger window than the active session actually has.
-- Control UI/Web Push: use `https://mangabaclaw.ai` as the generated default VAPID subject instead of the old localhost mailbox so iOS PWA push setup uses an Apple-acceptable subject when `MANGABACLAW_VAPID_SUBJECT` is unset. Fixes #83134. (#83317) Thanks @IWhatsskill.
+- Control UI/Web Push: use `https://mangaba.ia.br` as the generated default VAPID subject instead of the old localhost mailbox so iOS PWA push setup uses an Apple-acceptable subject when `MANGABACLAW_VAPID_SUBJECT` is unset. Fixes #83134. (#83317) Thanks @IWhatsskill.
 - Control UI: distinguish inherited thinking-off settings from explicit Off selections so the thinking selector no longer shows two identical Off rows. (#85223) Thanks @amknight.
 - Agents/Pi: keep embedded session transcript writes from tripping false takeover detection after packaged npm onboarding agent turns.
 - Codex/TUI: surface Codex-native post-turn compaction failures instead of continuing uncompacted, and keep successful native compaction serialized before local idle/next-turn handling. Fixes #84305. (#85160) Thanks @joshavant.
@@ -6855,7 +6855,7 @@ This audited record covers the complete v2026.5.28..v2026.5.31-beta.4 history: 4
 - Runtime/Fly: detect Fly Machines as container environments from their runtime env vars, so gateway bind and Bonjour defaults match remote container launches. (#80209) Thanks @liorb-mountapps.
 - Providers/fal: route GPT Image 2 and Nano Banana 2 reference-image edit requests to `/edit` with `image_urls` array, enforce NB2 edit geometry using `aspect_ratio` and `resolution` params, lift Fal edit mode input-image caps to 10 for GPT Image 2 and 14 for Nano Banana 2, and allow aspect-ratio hints in edit mode. (#77295) Thanks @leoge007.
 - Control UI: show a plain HTML recovery panel when the app module never registers, giving blank dashboard pages a retry path and browser-extension troubleshooting link. Fixes #44107. Thanks @BunsDev.
-- Docs: rename the broad tools nav to Capabilities, keep automation and agent coordination as sections, and keep the tools overview focused on tools, skills, and plugins. https://docs.mangabaclaw.ai/tools
+- Docs: rename the broad tools nav to Capabilities, keep automation and agent coordination as sections, and keep the tools overview focused on tools, skills, and plugins. https://docs.openclaw.ai/tools
 - Build: enable additional low-churn oxlint rules for promise, TypeScript, and runtime footgun checks.
 - Build: enable stricter Vitest lint rules for focused, disabled, conditional, hook, matcher, and expectation hazards.
 - Build: pin explicit oxfmt defaults in the shared formatter config to keep formatting behavior stable across upgrades.
@@ -11261,7 +11261,7 @@ This audited record covers the complete v2026.5.28..v2026.5.31-beta.4 history: 4
 ### Changes
 
 - QA/lab: add Convex-backed pooled Telegram credential leasing plus `mangabaclaw qa credentials` admin commands and broker setup docs. (#65596) Thanks @joshavant.
-- Memory/Active Memory: add a new optional Active Memory plugin that gives MangabaClaw a dedicated memory sub-agent right before the main reply, so ongoing chats can automatically pull in relevant preferences, context, and past details without making users remember to manually say "remember this" or "search memory" first. Includes configurable message/recent/full context modes, live `/verbose` inspection, advanced prompt/thinking overrides for tuning, and opt-in transcript persistence for debugging. Docs: https://docs.mangabaclaw.ai/concepts/active-memory. (#63286) Thanks @Takhoffman.
+- Memory/Active Memory: add a new optional Active Memory plugin that gives MangabaClaw a dedicated memory sub-agent right before the main reply, so ongoing chats can automatically pull in relevant preferences, context, and past details without making users remember to manually say "remember this" or "search memory" first. Includes configurable message/recent/full context modes, live `/verbose` inspection, advanced prompt/thinking overrides for tuning, and opt-in transcript persistence for debugging. Docs: https://docs.openclaw.ai/concepts/active-memory. (#63286) Thanks @Takhoffman.
 - macOS/Talk: add an experimental local MLX speech provider for Talk Mode, with explicit provider selection, local utterance playback, interruption handling, and system-voice fallback. (#63539) Thanks @ImLukeF.
 - CLI/exec policy: add a local `mangabaclaw exec-policy` command with `show`, `preset`, and `set` subcommands for synchronizing requested `tools.exec.*` config with the local exec approvals file, plus follow-up hardening for node-host rejection, rollback safety, and sync conflict detection. (#64050) Thanks @rugvedS07.
 - Gateway: add a `commands.list` RPC so remote gateway clients can discover runtime-native, text, skill, and plugin commands with surface-aware naming and serialized argument metadata. (#62656) Thanks @samzong.
@@ -11381,7 +11381,7 @@ This audited record covers the complete v2026.5.28..v2026.5.31-beta.4 history: 4
 ### Changes
 
 - Models/Codex: add the bundled Codex provider and plugin-owned app-server harness so `codex/gpt-*` models use Codex-managed auth, native threads, model discovery, and compaction while `openai/gpt-*` stays on the normal OpenAI provider path. (#64298).
-- Memory/Active Memory: add a new optional Active Memory plugin that gives MangabaClaw a dedicated memory sub-agent right before the main reply, so ongoing chats can automatically pull in relevant preferences, context, and past details without making users remember to manually say "remember this" or "search memory" first. Includes configurable message/recent/full context modes, live `/verbose` inspection, advanced prompt/thinking overrides for tuning, and opt-in transcript persistence for debugging. Docs: https://docs.mangabaclaw.ai/concepts/active-memory. (#63286) Thanks @Takhoffman.
+- Memory/Active Memory: add a new optional Active Memory plugin that gives MangabaClaw a dedicated memory sub-agent right before the main reply, so ongoing chats can automatically pull in relevant preferences, context, and past details without making users remember to manually say "remember this" or "search memory" first. Includes configurable message/recent/full context modes, live `/verbose` inspection, advanced prompt/thinking overrides for tuning, and opt-in transcript persistence for debugging. Docs: https://docs.openclaw.ai/concepts/active-memory. (#63286) Thanks @Takhoffman.
 - macOS/Talk: add an experimental local MLX speech provider for Talk Mode, with explicit provider selection, local utterance playback, interruption handling, and system-voice fallback. (#63539) Thanks @ImLukeF.
 - Tools/video generation: add Seedance 2.0 model refs to the bundled fal provider and submit the provider-specific duration, resolution, audio, and seed metadata fields needed for live Seedance 2.0 runs.
 - Microsoft Teams: add message actions for pin, unpin, read, react, and listing reactions. (#53432) Thanks @sudie-codes.
@@ -12723,15 +12723,15 @@ This audited record covers the complete v2026.5.28..v2026.5.31-beta.4 history: 4
 
 ### Breaking
 
-- Plugins/install: bare `mangabaclaw plugins install <package>` now prefers ClawHub before npm for npm-safe names, and only falls back to npm when ClawHub does not have that package or version. Docs: https://docs.mangabaclaw.ai/tools/clawhub.
-- Browser/Chrome MCP: remove the legacy Chrome extension relay path, bundled extension assets, `driver: "extension"`, and `browser.relayBindHost`. Run `mangabaclaw doctor --fix` to migrate host-local browser config to `existing-session` / `user`; Docker, headless, sandbox, and remote browser flows still use raw CDP. Docs: https://docs.mangabaclaw.ai/gateway/doctor and https://docs.mangabaclaw.ai/tools/browser (#47893) Thanks @vincentkoc.
+- Plugins/install: bare `mangabaclaw plugins install <package>` now prefers ClawHub before npm for npm-safe names, and only falls back to npm when ClawHub does not have that package or version. Docs: https://docs.openclaw.ai/tools/clawhub.
+- Browser/Chrome MCP: remove the legacy Chrome extension relay path, bundled extension assets, `driver: "extension"`, and `browser.relayBindHost`. Run `mangabaclaw doctor --fix` to migrate host-local browser config to `existing-session` / `user`; Docker, headless, sandbox, and remote browser flows still use raw CDP. Docs: https://docs.openclaw.ai/gateway/doctor and https://docs.openclaw.ai/tools/browser (#47893) Thanks @vincentkoc.
 - Tools/image generation: standardize the stock image create/edit path on the core `image_generate` tool. The old `nano-banana-pro` docs/examples are gone; if you previously copied that sample-skill config, switch to `agents.defaults.imageGenerationModel` for built-in image generation or install a separate third-party skill explicitly.
 - Skills/image generation: remove the bundled `nano-banana-pro` skill wrapper. Use `agents.defaults.imageGenerationModel.primary: "google/gemini-3-pro-image-preview"` for the native Nano Banana-style path instead.
-- Plugins/SDK: the new public plugin SDK surface is `mangabaclaw/plugin-sdk/*`; `mangabaclaw/extension-api` is removed with no compatibility shim. Bundled plugins must use injected runtime for host-side operations (for example `api.runtime.agent.runEmbeddedPiAgent`) and any remaining direct imports must come from narrow `mangabaclaw/plugin-sdk/*` subpaths instead of the monolithic SDK root. Docs: https://docs.mangabaclaw.ai/plugins/sdk-migration and https://docs.mangabaclaw.ai/plugins/sdk-overview.
+- Plugins/SDK: the new public plugin SDK surface is `mangabaclaw/plugin-sdk/*`; `mangabaclaw/extension-api` is removed with no compatibility shim. Bundled plugins must use injected runtime for host-side operations (for example `api.runtime.agent.runEmbeddedPiAgent`) and any remaining direct imports must come from narrow `mangabaclaw/plugin-sdk/*` subpaths instead of the monolithic SDK root. Docs: https://docs.openclaw.ai/plugins/sdk-migration and https://docs.openclaw.ai/plugins/sdk-overview.
 - Plugins/message discovery: require `ChannelMessageActionAdapter.describeMessageTool(...)` for shared `message` tool discovery. The legacy `listActions`, `getCapabilities`, and `getToolSchema` adapter methods are removed. Plugin authors should migrate message discovery to `describeMessageTool(...)` and keep channel-specific action runtime code inside the owning plugin package. Thanks @gumadeiras.
-- Plugins/Matrix: add a new Matrix plugin backed by the official `matrix-js-sdk`. If you are upgrading from the previous public Matrix plugin, follow the migration guide: https://docs.mangabaclaw.ai/install/migrating-matrix Thanks @gumadeiras.
+- Plugins/Matrix: add a new Matrix plugin backed by the official `matrix-js-sdk`. If you are upgrading from the previous public Matrix plugin, follow the migration guide: https://docs.openclaw.ai/install/migrating-matrix Thanks @gumadeiras.
 - Config/env: remove legacy `CLAWDBOT_*` and `MOLTBOT_*` compatibility env names across runtime, installers, and test tooling. Use the matching `MANGABACLAW_*` env names instead.
-- Config/state: remove legacy `.moltbot` state-dir and `moltbot.json` auto-detection/migration fallback. If you still keep state under `~/.moltbot`, move it to `~/.mangabaclaw` or set `MANGABACLAW_STATE_DIR` / `MANGABACLAW_CONFIG_PATH` explicitly. Docs: https://docs.mangabaclaw.ai/install/migrating and https://docs.mangabaclaw.ai/start/getting-started.
+- Config/state: remove legacy `.moltbot` state-dir and `moltbot.json` auto-detection/migration fallback. If you still keep state under `~/.moltbot`, move it to `~/.mangabaclaw` or set `MANGABACLAW_STATE_DIR` / `MANGABACLAW_CONFIG_PATH` explicitly. Docs: https://docs.openclaw.ai/install/migrating and https://docs.openclaw.ai/start/getting-started.
 - Exec/env sandbox: block build-tool JVM injection (`MAVEN_OPTS`, `SBT_OPTS`, `GRADLE_OPTS`, `ANT_OPTS`), glibc tunable exploitation (`GLIBC_TUNABLES`), and .NET dependency resolution hijack (`DOTNET_ADDITIONAL_DEPS`) from the host exec environment, and restrict Gradle init script redirect (`GRADLE_USER_HOME`) as an override-only block so user-configured Gradle homes still propagate. (#49702).
 - Discord/commands: switch native command deployment to Carbon reconcile by default so Discord restarts stop churning slash commands through MangabaClaw's local deploy path. (#46597) Thanks @huntharo and @thewilloftheshadow.
 - Security/exec approvals: treat `time` as a transparent dispatch wrapper during allowlist evaluation and allow-always persistence so approved `time ...` commands bind the inner executable instead of the wrapper path. Thanks @YLChen-007 for reporting.
@@ -14008,7 +14008,7 @@ This audited record covers the complete v2026.5.28..v2026.5.31-beta.4 history: 4
 ### Breaking
 
 - **BREAKING:** Onboarding now defaults `tools.profile` to `messaging` for new local installs (interactive + non-interactive). New setups no longer start with broad coding/system tools unless explicitly configured.
-- **BREAKING:** ACP dispatch now defaults to enabled unless explicitly disabled (`acp.dispatch.enabled=false`). If you need to pause ACP turn routing while keeping `/acp` controls, set `acp.dispatch.enabled=false`. Docs: https://docs.mangabaclaw.ai/tools/acp-agents.
+- **BREAKING:** ACP dispatch now defaults to enabled unless explicitly disabled (`acp.dispatch.enabled=false`). If you need to pause ACP turn routing while keeping `/acp` controls, set `acp.dispatch.enabled=false`. Docs: https://docs.openclaw.ai/tools/acp-agents.
 - **BREAKING:** Plugin SDK removed `api.registerHttpHandler(...)`. Plugins must register explicit HTTP routes via `api.registerHttpRoute({ path, auth, match, handler })`, and dynamic webhook lifecycles should use `registerPluginHttpRoute(...)`.
 - **BREAKING:** Zalo Personal plugin (`@mangabaclaw/zalouser`) no longer depends on external `zca`-compatible CLI binaries (`openzca`, `zca-cli`) for runtime send/listen/login; operators should use `mangabaclaw channels login --channel zalouser` after upgrade to refresh sessions in the new JS-native path.
 
@@ -16237,28 +16237,28 @@ This audited record covers the complete v2026.5.28..v2026.5.31-beta.4 history: 4
 
 ### Highlights
 
-- Providers: Ollama discovery + docs; Venice guide upgrades + cross-links. (#1606) Thanks @abhaymundhara. https://docs.mangabaclaw.ai/providers/ollama https://docs.mangabaclaw.ai/providers/venice
+- Providers: Ollama discovery + docs; Venice guide upgrades + cross-links. (#1606) Thanks @abhaymundhara. https://docs.openclaw.ai/providers/ollama https://docs.openclaw.ai/providers/venice
 - Channels: LINE plugin (Messaging API) with rich replies + quick replies. (#1630) Thanks @plum-dawg.
-- TTS: Edge fallback (keyless) + `/tts` auto modes. (#1668, #1667) Thanks @sebslight. https://docs.mangabaclaw.ai/tts
-- Exec approvals: approve in-chat via `/approve` across all channels (including plugins). (#1621) Thanks @czekaj. https://docs.mangabaclaw.ai/tools/exec-approvals https://docs.mangabaclaw.ai/tools/slash-commands
-- Telegram: DM topics as separate sessions + outbound link preview toggle. (#1597, #1700) Thanks @rohannagpal, @zerone0x. https://docs.mangabaclaw.ai/channels/telegram
+- TTS: Edge fallback (keyless) + `/tts` auto modes. (#1668, #1667) Thanks @sebslight. https://docs.openclaw.ai/tts
+- Exec approvals: approve in-chat via `/approve` across all channels (including plugins). (#1621) Thanks @czekaj. https://docs.openclaw.ai/tools/exec-approvals https://docs.openclaw.ai/tools/slash-commands
+- Telegram: DM topics as separate sessions + outbound link preview toggle. (#1597, #1700) Thanks @rohannagpal, @zerone0x. https://docs.openclaw.ai/channels/telegram
 
 ### Changes
 
 - Channels: add LINE plugin (Messaging API) with rich replies, quick replies, and plugin HTTP registry. (#1630) Thanks @plum-dawg.
-- TTS: add Edge TTS provider fallback, defaulting to keyless Edge with MP3 retry on format failures. (#1668) https://docs.mangabaclaw.ai/tts.
-- TTS: add auto mode enum (off/always/inbound/tagged) with per-session `/tts` override. (#1667) Thanks @sebslight. https://docs.mangabaclaw.ai/tts
+- TTS: add Edge TTS provider fallback, defaulting to keyless Edge with MP3 retry on format failures. (#1668) https://docs.openclaw.ai/tts.
+- TTS: add auto mode enum (off/always/inbound/tagged) with per-session `/tts` override. (#1667) Thanks @sebslight. https://docs.openclaw.ai/tts
 - Telegram: treat DM topics as separate sessions and keep DM history limits stable with thread suffixes. (#1597) Thanks @rohannagpal.
-- Telegram: add `channels.telegram.linkPreview` to toggle outbound link previews. (#1700) Thanks @zerone0x. https://docs.mangabaclaw.ai/channels/telegram
-- Web search: add Brave freshness filter parameter for time-scoped results. (#1688) Thanks @JonUleis. https://docs.mangabaclaw.ai/tools/web
+- Telegram: add `channels.telegram.linkPreview` to toggle outbound link previews. (#1700) Thanks @zerone0x. https://docs.openclaw.ai/channels/telegram
+- Web search: add Brave freshness filter parameter for time-scoped results. (#1688) Thanks @JonUleis. https://docs.openclaw.ai/tools/web
 - UI: refresh Control UI dashboard design system (colors, icons, typography). (#1745, #1786) Thanks @EnzeD, @mousberg.
-- Exec approvals: forward approval prompts to chat with `/approve` for all channels (including plugins). (#1621) Thanks @czekaj. https://docs.mangabaclaw.ai/tools/exec-approvals https://docs.mangabaclaw.ai/tools/slash-commands
+- Exec approvals: forward approval prompts to chat with `/approve` for all channels (including plugins). (#1621) Thanks @czekaj. https://docs.openclaw.ai/tools/exec-approvals https://docs.openclaw.ai/tools/slash-commands
 - Gateway: expose config.patch in the gateway tool with safe partial updates + restart sentinel. (#1653).
-- Diagnostics: add diagnostic flags for targeted debug logs (config + env override). https://docs.mangabaclaw.ai/diagnostics/flags.
+- Diagnostics: add diagnostic flags for targeted debug logs (config + env override). https://docs.openclaw.ai/diagnostics/flags.
 - Docs: expand FAQ (migration, scheduling, concurrency, model recommendations, OpenAI subscription auth, Pi sizing, hackable install, docs SSL workaround).
 - Docs: add verbose installer troubleshooting guidance.
 - Docs: add macOS VM guide with local/hosted options + VPS/nodes guidance. (#1693) Thanks @f-trycua.
-- Docs: add Bedrock EC2 instance role setup + IAM steps. (#1625) Thanks @sergical. https://docs.mangabaclaw.ai/bedrock
+- Docs: add Bedrock EC2 instance role setup + IAM steps. (#1625) Thanks @sergical. https://docs.openclaw.ai/bedrock
 - Docs: update Fly.io guide notes.
 - Dev: add prek pre-commit hooks + dependabot config for weekly updates. (#1720) Thanks @dguido.
 
@@ -16270,11 +16270,11 @@ This audited record covers the complete v2026.5.28..v2026.5.31-beta.4 history: 4
 - Web UI: hide internal `message_id` hints in chat bubbles.
 - Gateway: allow Control UI token-only auth to skip device pairing even when device identity is present (`gateway.controlUi.allowInsecureAuth`). (#1679).
 - Matrix: decrypt E2EE media attachments with preflight size guard. (#1744) Thanks @araa47.
-- BlueBubbles: route phone-number targets to DMs, avoid leaking routing IDs, and auto-create missing DMs (Private API required). (#1751) Thanks @tyler6204. https://docs.mangabaclaw.ai/channels/bluebubbles
+- BlueBubbles: route phone-number targets to DMs, avoid leaking routing IDs, and auto-create missing DMs (Private API required). (#1751) Thanks @tyler6204. https://docs.openclaw.ai/channels/bluebubbles
 - BlueBubbles: keep part-index GUIDs in reply tags when short IDs are missing.
 - iMessage: normalize chat_id/chat_guid/chat_identifier prefixes case-insensitively and keep service-prefixed handles stable. (#1708) Thanks @aaronn.
 - Signal: repair reaction sends (group/UUID targets + CLI author flags). (#1651) Thanks @vilkasdev.
-- Signal: add configurable signal-cli startup timeout + external daemon mode docs. (#1677) https://docs.mangabaclaw.ai/channels/signal.
+- Signal: add configurable signal-cli startup timeout + external daemon mode docs. (#1677) https://docs.openclaw.ai/channels/signal.
 - Telegram: set fetch duplex="half" for uploads on Node 22 to avoid sendPhoto failures. (#1684) Thanks @commdata2338.
 - Telegram: use wrapped fetch for long-polling on Node to normalize AbortSignal handling. (#1639).
 - Telegram: honor per-account proxy for outbound API calls. (#1774) Thanks @radek-paclt.
@@ -16314,26 +16314,26 @@ This audited record covers the complete v2026.5.28..v2026.5.31-beta.4 history: 4
 
 ### Highlights
 
-- TTS: move Telegram TTS into core + enable model-driven TTS tags by default for expressive audio replies. (#1559) Thanks @Glucksberg. https://docs.mangabaclaw.ai/tts
-- Gateway: add `/tools/invoke` HTTP endpoint for direct tool calls (auth + tool policy enforced). (#1575) Thanks @vignesh07. https://docs.mangabaclaw.ai/gateway/tools-invoke-http-api
-- Heartbeat: per-channel visibility controls (OK/alerts/indicator). (#1452) Thanks @dlauer. https://docs.mangabaclaw.ai/gateway/heartbeat
-- Deploy: add Fly.io deployment support + guide. (#1570) https://docs.mangabaclaw.ai/platforms/fly.
-- Channels: add Tlon/Urbit channel plugin (DMs, group mentions, thread replies). (#1544) Thanks @wca4a. https://docs.mangabaclaw.ai/channels/tlon
+- TTS: move Telegram TTS into core + enable model-driven TTS tags by default for expressive audio replies. (#1559) Thanks @Glucksberg. https://docs.openclaw.ai/tts
+- Gateway: add `/tools/invoke` HTTP endpoint for direct tool calls (auth + tool policy enforced). (#1575) Thanks @vignesh07. https://docs.openclaw.ai/gateway/tools-invoke-http-api
+- Heartbeat: per-channel visibility controls (OK/alerts/indicator). (#1452) Thanks @dlauer. https://docs.openclaw.ai/gateway/heartbeat
+- Deploy: add Fly.io deployment support + guide. (#1570) https://docs.openclaw.ai/platforms/fly.
+- Channels: add Tlon/Urbit channel plugin (DMs, group mentions, thread replies). (#1544) Thanks @wca4a. https://docs.openclaw.ai/channels/tlon
 
 ### Changes
 
-- Channels: allow per-group tool allow/deny policies across built-in + plugin channels. (#1546) Thanks @adam91holt. https://docs.mangabaclaw.ai/multi-agent-sandbox-tools
-- Agents: add Bedrock auto-discovery defaults + config overrides. (#1553) Thanks @fal3. https://docs.mangabaclaw.ai/bedrock
-- CLI: add `mangabaclaw system` for system events + heartbeat controls; remove standalone `wake`. (commit 71203829d) https://docs.mangabaclaw.ai/cli/system.
-- CLI: add live auth probes to `mangabaclaw models status` for per-profile verification. (commit 40181afde) https://docs.mangabaclaw.ai/cli/models.
+- Channels: allow per-group tool allow/deny policies across built-in + plugin channels. (#1546) Thanks @adam91holt. https://docs.openclaw.ai/multi-agent-sandbox-tools
+- Agents: add Bedrock auto-discovery defaults + config overrides. (#1553) Thanks @fal3. https://docs.openclaw.ai/bedrock
+- CLI: add `mangabaclaw system` for system events + heartbeat controls; remove standalone `wake`. (commit 71203829d) https://docs.openclaw.ai/cli/system.
+- CLI: add live auth probes to `mangabaclaw models status` for per-profile verification. (commit 40181afde) https://docs.openclaw.ai/cli/models.
 - CLI: restart the gateway by default after `mangabaclaw update`; add `--no-restart` to skip it. (commit 2c85b1b40).
 - Browser: add node-host proxy auto-routing for remote gateways (configurable per gateway/node). (commit c3cb26f7c).
-- Plugins: add optional `llm-task` JSON-only tool for workflows. (#1498) Thanks @vignesh07. https://docs.mangabaclaw.ai/tools/llm-task
+- Plugins: add optional `llm-task` JSON-only tool for workflows. (#1498) Thanks @vignesh07. https://docs.openclaw.ai/tools/llm-task
 - Markdown: add per-channel table conversion (bullets for Signal/WhatsApp, code blocks elsewhere). (#1495) Thanks @odysseus0.
 - Agents: keep system prompt time zone-only and move current time to `session_status` for better cache hits. (commit 66eec295b).
 - Agents: remove redundant bash tool alias from tool registration/display. (#1571) Thanks @Takhoffman.
-- Docs: add cron vs heartbeat decision guide (with Lobster workflow notes). (#1533) Thanks @JustYannicc. https://docs.mangabaclaw.ai/automation/cron-vs-heartbeat
-- Docs: clarify HEARTBEAT.md empty file skips heartbeats, missing file still runs. (#1535) Thanks @JustYannicc. https://docs.mangabaclaw.ai/gateway/heartbeat
+- Docs: add cron vs heartbeat decision guide (with Lobster workflow notes). (#1533) Thanks @JustYannicc. https://docs.openclaw.ai/automation/cron-vs-heartbeat
+- Docs: clarify HEARTBEAT.md empty file skips heartbeats, missing file still runs. (#1535) Thanks @JustYannicc. https://docs.openclaw.ai/gateway/heartbeat
 
 ### Fixes
 
@@ -16415,15 +16415,15 @@ This audited record covers the complete v2026.5.28..v2026.5.31-beta.4 history: 4
 
 ### Fixes
 
-- Control UI: ignore bootstrap identity placeholder text for avatar values and fall back to the default avatar. https://docs.mangabaclaw.ai/cli/agents https://docs.mangabaclaw.ai/web/control-ui.
+- Control UI: ignore bootstrap identity placeholder text for avatar values and fall back to the default avatar. https://docs.openclaw.ai/cli/agents https://docs.openclaw.ai/web/control-ui.
 - Slack: remove deprecated `filetype` field from `files.uploadV2` to eliminate API warnings. (#1447)
 
 ## 2026.1.21
 
 ### Changes
 
-- Highlight: Lobster optional plugin tool for typed workflows + approval gates. https://docs.mangabaclaw.ai/tools/lobster.
-- Lobster: allow workflow file args via `argsJson` in the plugin tool. https://docs.mangabaclaw.ai/tools/lobster.
+- Highlight: Lobster optional plugin tool for typed workflows + approval gates. https://docs.openclaw.ai/tools/lobster.
+- Lobster: allow workflow file args via `argsJson` in the plugin tool. https://docs.openclaw.ai/tools/lobster.
 - Heartbeat: allow running heartbeats in an explicit session key. (#1256) Thanks @zknicker.
 - CLI: default exec approvals to the local host, add gateway/node targeting flags, and show target details in allowlist output. Thanks @tobiasbischoff.
 - CLI: exec approvals mutations render tables instead of raw JSON. Thanks @tobiasbischoff.
@@ -16435,11 +16435,11 @@ This audited record covers the complete v2026.5.28..v2026.5.31-beta.4 history: 4
 - Sessions: add per-channel reset overrides via `session.resetByChannel`. (#1353) Thanks @cash-echo-bot.
 - Agents: add identity avatar config support and Control UI avatar rendering. (#1329, #1424) Thanks @dlauer.
 - UI: show per-session assistant identity in the Control UI. (#1420) Thanks @robbyczgw-cla.
-- CLI: add `mangabaclaw update wizard` for interactive channel selection and restart prompts. https://docs.mangabaclaw.ai/cli/update.
+- CLI: add `mangabaclaw update wizard` for interactive channel selection and restart prompts. https://docs.openclaw.ai/cli/update.
 - Signal: add typing indicators and DM read receipts via signal-cli.
 - MSTeams: add file uploads, adaptive cards, and attachment handling improvements. (#1410) Thanks @Evizero.
 - Onboarding: remove the run setup-token auth option (paste setup-token or reuse CLI creds instead).
-- Docs: add troubleshooting entry for gateway.mode blocking gateway start. https://docs.mangabaclaw.ai/gateway/troubleshooting.
+- Docs: add troubleshooting entry for gateway.mode blocking gateway start. https://docs.openclaw.ai/gateway/troubleshooting.
 - Docs: add /model allowlist troubleshooting note. (#1405).
 - Docs: add per-message Gmail search example for gog. (#1220) Thanks @mbelinky.
 
@@ -16467,75 +16467,75 @@ This audited record covers the complete v2026.5.28..v2026.5.31-beta.4 history: 4
 
 ### Breaking
 
-- **BREAKING:** Control UI now rejects insecure HTTP without device identity by default. Use HTTPS (Tailscale Serve) or set `gateway.controlUi.allowInsecureAuth: true` to allow token-only auth. https://docs.mangabaclaw.ai/web/control-ui#insecure-http.
+- **BREAKING:** Control UI now rejects insecure HTTP without device identity by default. Use HTTPS (Tailscale Serve) or set `gateway.controlUi.allowInsecureAuth: true` to allow token-only auth. https://docs.openclaw.ai/web/control-ui#insecure-http.
 - **BREAKING:** Envelope and system event timestamps now default to host-local time (was UTC) so agents don't have to constantly convert (#57018). Thanks @hydro13.
 
 ## 2026.1.20
 
 ### Changes
 
-- Control UI: add copy-as-markdown with error feedback. (#1345) https://docs.mangabaclaw.ai/web/control-ui.
-- Control UI: drop the legacy list view. (#1345) https://docs.mangabaclaw.ai/web/control-ui.
-- TUI: add syntax highlighting for code blocks. (#1200) https://docs.mangabaclaw.ai/tui.
-- TUI: session picker shows derived titles, fuzzy search, relative times, and last message preview. (#1271) https://docs.mangabaclaw.ai/tui.
-- TUI: add a searchable model picker for quicker model selection. (#1198) https://docs.mangabaclaw.ai/tui.
-- TUI: add input history (up/down) for submitted messages. (#1348) https://docs.mangabaclaw.ai/tui.
-- ACP: add `mangabaclaw acp` for IDE integrations. https://docs.mangabaclaw.ai/cli/acp.
-- ACP: add `mangabaclaw acp client` interactive harness for debugging. https://docs.mangabaclaw.ai/cli/acp.
-- Skills: add download installs with OS-filtered options. https://docs.mangabaclaw.ai/tools/skills.
-- Skills: add the local sherpa-onnx-tts skill. https://docs.mangabaclaw.ai/tools/skills.
-- Memory: add hybrid BM25 + vector search (FTS5) with weighted merging and fallback. https://docs.mangabaclaw.ai/concepts/memory.
-- Memory: add SQLite embedding cache to speed up reindexing and frequent updates. https://docs.mangabaclaw.ai/concepts/memory.
-- Memory: add OpenAI batch indexing for embeddings when configured. https://docs.mangabaclaw.ai/concepts/memory.
-- Memory: enable OpenAI batch indexing by default for OpenAI embeddings. https://docs.mangabaclaw.ai/concepts/memory.
-- Memory: allow parallel OpenAI batch indexing jobs (default concurrency: 2). https://docs.mangabaclaw.ai/concepts/memory.
-- Memory: render progress immediately, color batch statuses in verbose logs, and poll OpenAI batch status every 2s by default. https://docs.mangabaclaw.ai/concepts/memory.
-- Memory: add `--verbose` logging for memory status + batch indexing details. https://docs.mangabaclaw.ai/concepts/memory.
-- Memory: add native Gemini embeddings provider for memory search. (#1151) https://docs.mangabaclaw.ai/concepts/memory.
-- Browser: allow config defaults for efficient snapshots in the tool/CLI. (#1336) https://docs.mangabaclaw.ai/tools/browser.
-- Nostr: add the Nostr channel plugin with profile management + onboarding defaults. (#1323) https://docs.mangabaclaw.ai/channels/nostr.
-- Matrix: migrate to matrix-bot-sdk with E2EE support, location handling, and group allowlist upgrades. (#1298) https://docs.mangabaclaw.ai/channels/matrix.
-- Slack: add HTTP webhook mode via Bolt HTTP receiver. (#1143) https://docs.mangabaclaw.ai/channels/slack.
-- Telegram: enrich forwarded-message context with normalized origin details + legacy fallback. (#1090) https://docs.mangabaclaw.ai/channels/telegram.
+- Control UI: add copy-as-markdown with error feedback. (#1345) https://docs.openclaw.ai/web/control-ui.
+- Control UI: drop the legacy list view. (#1345) https://docs.openclaw.ai/web/control-ui.
+- TUI: add syntax highlighting for code blocks. (#1200) https://docs.openclaw.ai/tui.
+- TUI: session picker shows derived titles, fuzzy search, relative times, and last message preview. (#1271) https://docs.openclaw.ai/tui.
+- TUI: add a searchable model picker for quicker model selection. (#1198) https://docs.openclaw.ai/tui.
+- TUI: add input history (up/down) for submitted messages. (#1348) https://docs.openclaw.ai/tui.
+- ACP: add `mangabaclaw acp` for IDE integrations. https://docs.openclaw.ai/cli/acp.
+- ACP: add `mangabaclaw acp client` interactive harness for debugging. https://docs.openclaw.ai/cli/acp.
+- Skills: add download installs with OS-filtered options. https://docs.openclaw.ai/tools/skills.
+- Skills: add the local sherpa-onnx-tts skill. https://docs.openclaw.ai/tools/skills.
+- Memory: add hybrid BM25 + vector search (FTS5) with weighted merging and fallback. https://docs.openclaw.ai/concepts/memory.
+- Memory: add SQLite embedding cache to speed up reindexing and frequent updates. https://docs.openclaw.ai/concepts/memory.
+- Memory: add OpenAI batch indexing for embeddings when configured. https://docs.openclaw.ai/concepts/memory.
+- Memory: enable OpenAI batch indexing by default for OpenAI embeddings. https://docs.openclaw.ai/concepts/memory.
+- Memory: allow parallel OpenAI batch indexing jobs (default concurrency: 2). https://docs.openclaw.ai/concepts/memory.
+- Memory: render progress immediately, color batch statuses in verbose logs, and poll OpenAI batch status every 2s by default. https://docs.openclaw.ai/concepts/memory.
+- Memory: add `--verbose` logging for memory status + batch indexing details. https://docs.openclaw.ai/concepts/memory.
+- Memory: add native Gemini embeddings provider for memory search. (#1151) https://docs.openclaw.ai/concepts/memory.
+- Browser: allow config defaults for efficient snapshots in the tool/CLI. (#1336) https://docs.openclaw.ai/tools/browser.
+- Nostr: add the Nostr channel plugin with profile management + onboarding defaults. (#1323) https://docs.openclaw.ai/channels/nostr.
+- Matrix: migrate to matrix-bot-sdk with E2EE support, location handling, and group allowlist upgrades. (#1298) https://docs.openclaw.ai/channels/matrix.
+- Slack: add HTTP webhook mode via Bolt HTTP receiver. (#1143) https://docs.openclaw.ai/channels/slack.
+- Telegram: enrich forwarded-message context with normalized origin details + legacy fallback. (#1090) https://docs.openclaw.ai/channels/telegram.
 - Discord: fall back to `/skill` when native command limits are exceeded. (#1287).
 - Discord: expose `/skill` globally. (#1287).
-- Zalouser: add channel dock metadata, config schema, setup wiring, probe, and status issues. (#1219) https://docs.mangabaclaw.ai/plugins/zalouser.
-- Plugins: require manifest-embedded config schemas with preflight validation warnings. (#1272) https://docs.mangabaclaw.ai/plugins/manifest.
-- Plugins: move channel catalog metadata into plugin manifests. (#1290) https://docs.mangabaclaw.ai/plugins/manifest.
-- Plugins: align Nextcloud Talk policy helpers with core patterns. (#1290) https://docs.mangabaclaw.ai/plugins/manifest.
-- Plugins/UI: let channel plugin metadata drive UI labels/icons and cron channel options. (#1306) https://docs.mangabaclaw.ai/web/control-ui.
-- Agents/UI: add agent avatar support in identity config, IDENTITY.md, and the Control UI. (#1329) https://docs.mangabaclaw.ai/gateway/configuration.
-- Plugins: add plugin slots with a dedicated memory slot selector. https://docs.mangabaclaw.ai/plugins/agent-tools.
-- Plugins: ship the bundled BlueBubbles channel plugin (disabled by default). https://docs.mangabaclaw.ai/channels/bluebubbles.
+- Zalouser: add channel dock metadata, config schema, setup wiring, probe, and status issues. (#1219) https://docs.openclaw.ai/plugins/zalouser.
+- Plugins: require manifest-embedded config schemas with preflight validation warnings. (#1272) https://docs.openclaw.ai/plugins/manifest.
+- Plugins: move channel catalog metadata into plugin manifests. (#1290) https://docs.openclaw.ai/plugins/manifest.
+- Plugins: align Nextcloud Talk policy helpers with core patterns. (#1290) https://docs.openclaw.ai/plugins/manifest.
+- Plugins/UI: let channel plugin metadata drive UI labels/icons and cron channel options. (#1306) https://docs.openclaw.ai/web/control-ui.
+- Agents/UI: add agent avatar support in identity config, IDENTITY.md, and the Control UI. (#1329) https://docs.openclaw.ai/gateway/configuration.
+- Plugins: add plugin slots with a dedicated memory slot selector. https://docs.openclaw.ai/plugins/agent-tools.
+- Plugins: ship the bundled BlueBubbles channel plugin (disabled by default). https://docs.openclaw.ai/channels/bluebubbles.
 - Plugins: migrate bundled messaging extensions to the plugin SDK and resolve plugin-sdk imports in the loader.
-- Plugins: migrate the Zalo plugin to the shared plugin SDK runtime. https://docs.mangabaclaw.ai/channels/zalo.
-- Plugins: migrate the Zalo Personal plugin to the shared plugin SDK runtime. https://docs.mangabaclaw.ai/plugins/zalouser.
-- Plugins: allow optional agent tools with explicit allowlists and add the plugin tool authoring guide. https://docs.mangabaclaw.ai/plugins/agent-tools.
+- Plugins: migrate the Zalo plugin to the shared plugin SDK runtime. https://docs.openclaw.ai/channels/zalo.
+- Plugins: migrate the Zalo Personal plugin to the shared plugin SDK runtime. https://docs.openclaw.ai/plugins/zalouser.
+- Plugins: allow optional agent tools with explicit allowlists and add the plugin tool authoring guide. https://docs.openclaw.ai/plugins/agent-tools.
 - Plugins: auto-enable bundled channel/provider plugins when configuration is present.
 - Plugins: sync plugin sources on channel switches and update npm-installed plugins during `mangabaclaw update`.
 - Plugins: share npm plugin update logic between `mangabaclaw update` and `mangabaclaw plugins update`.
 
 - Gateway/API: add `/v1/responses` (OpenResponses) with item-based input + semantic streaming events. (#1229).
 - Gateway/API: expand `/v1/responses` to support file/image inputs, tool_choice, usage, and output limits. (#1229).
-- Usage: add `/usage cost` summaries and macOS menu cost charts. https://docs.mangabaclaw.ai/reference/api-usage-costs.
-- Security: warn when <=300B models run without sandboxing while web tools are enabled. https://docs.mangabaclaw.ai/cli/security.
-- Exec: add host/security/ask routing for gateway + node exec. https://docs.mangabaclaw.ai/tools/exec.
-- Exec: add `/exec` directive for per-session exec defaults (host/security/ask/node). https://docs.mangabaclaw.ai/tools/exec.
-- Exec approvals: migrate approvals to `~/.mangabaclaw/exec-approvals.json` with per-agent allowlists + skill auto-allow toggle, and add approvals UI + node exec lifecycle events. https://docs.mangabaclaw.ai/tools/exec-approvals.
-- Nodes: add headless node host (`mangabaclaw node start`) for `system.run`/`system.which`. https://docs.mangabaclaw.ai/cli/node.
-- Nodes: add node daemon service install/status/start/stop/restart. https://docs.mangabaclaw.ai/cli/node.
+- Usage: add `/usage cost` summaries and macOS menu cost charts. https://docs.openclaw.ai/reference/api-usage-costs.
+- Security: warn when <=300B models run without sandboxing while web tools are enabled. https://docs.openclaw.ai/cli/security.
+- Exec: add host/security/ask routing for gateway + node exec. https://docs.openclaw.ai/tools/exec.
+- Exec: add `/exec` directive for per-session exec defaults (host/security/ask/node). https://docs.openclaw.ai/tools/exec.
+- Exec approvals: migrate approvals to `~/.mangabaclaw/exec-approvals.json` with per-agent allowlists + skill auto-allow toggle, and add approvals UI + node exec lifecycle events. https://docs.openclaw.ai/tools/exec-approvals.
+- Nodes: add headless node host (`mangabaclaw node start`) for `system.run`/`system.which`. https://docs.openclaw.ai/cli/node.
+- Nodes: add node daemon service install/status/start/stop/restart. https://docs.openclaw.ai/cli/node.
 - Bridge: add `skills.bins` RPC to support node host auto-allow skill bins.
-- Sessions: add daily reset policy with per-type overrides and idle windows (default 4am local), preserving legacy idle-only configs. (#1146) https://docs.mangabaclaw.ai/concepts/session.
-- Sessions: allow `sessions_spawn` to override thinking level for sub-agent runs. https://docs.mangabaclaw.ai/tools/subagents.
-- Channels: unify thread/topic allowlist matching + command/mention gating helpers across core providers. https://docs.mangabaclaw.ai/concepts/groups.
-- Models: add Qwen Portal OAuth provider support. (#1120) https://docs.mangabaclaw.ai/providers/qwen.
-- Onboarding: add allowlist prompts and username-to-id resolution across core and extension channels. https://docs.mangabaclaw.ai/start/onboarding.
-- Docs: clarify allowlist input types and onboarding behavior for messaging channels. https://docs.mangabaclaw.ai/start/onboarding.
-- Docs: refresh Android node discovery docs for the Gateway WS service type. https://docs.mangabaclaw.ai/platforms/android.
-- Docs: surface Amazon Bedrock in provider lists and clarify Bedrock auth env vars. (#1289) https://docs.mangabaclaw.ai/bedrock.
-- Docs: clarify WhatsApp voice notes. https://docs.mangabaclaw.ai/channels/whatsapp.
-- Docs: clarify Windows WSL portproxy LAN access notes. https://docs.mangabaclaw.ai/platforms/windows.
-- Docs: refresh bird skill install metadata and usage notes. (#1302) https://docs.mangabaclaw.ai/tools/browser-login.
+- Sessions: add daily reset policy with per-type overrides and idle windows (default 4am local), preserving legacy idle-only configs. (#1146) https://docs.openclaw.ai/concepts/session.
+- Sessions: allow `sessions_spawn` to override thinking level for sub-agent runs. https://docs.openclaw.ai/tools/subagents.
+- Channels: unify thread/topic allowlist matching + command/mention gating helpers across core providers. https://docs.openclaw.ai/concepts/groups.
+- Models: add Qwen Portal OAuth provider support. (#1120) https://docs.openclaw.ai/providers/qwen.
+- Onboarding: add allowlist prompts and username-to-id resolution across core and extension channels. https://docs.openclaw.ai/start/onboarding.
+- Docs: clarify allowlist input types and onboarding behavior for messaging channels. https://docs.openclaw.ai/start/onboarding.
+- Docs: refresh Android node discovery docs for the Gateway WS service type. https://docs.openclaw.ai/platforms/android.
+- Docs: surface Amazon Bedrock in provider lists and clarify Bedrock auth env vars. (#1289) https://docs.openclaw.ai/bedrock.
+- Docs: clarify WhatsApp voice notes. https://docs.openclaw.ai/channels/whatsapp.
+- Docs: clarify Windows WSL portproxy LAN access notes. https://docs.openclaw.ai/platforms/windows.
+- Docs: refresh bird skill install metadata and usage notes. (#1302) https://docs.openclaw.ai/tools/browser-login.
 - Agents: add local docs path resolution and include docs/mirror/source/community pointers in the system prompt.
 - Agents: clarify node_modules read-only guidance in agent instructions.
 - Config: stamp last-touched metadata on write and warn if the config is newer than the running build.
@@ -16664,12 +16664,12 @@ Thanks @AlexMikhalev, @CoreyH, @John-Rood, @KrauseFx, @MaudeBot, @Nachx639, @Nic
 
 ### Highlights
 
-- Hooks: add hooks system with bundled hooks, CLI tooling, and docs. (#1028) - thanks @ThomsenDrake. https://docs.mangabaclaw.ai/hooks
-- Media: add inbound media understanding (image/audio/video) with provider + CLI fallbacks. https://docs.mangabaclaw.ai/nodes/media-understanding.
-- Plugins: add Zalo Personal plugin (`@mangabaclaw/zalouser`) and unify channel directory for plugins. (#1032) - thanks @suminhthanh. https://docs.mangabaclaw.ai/plugins/zalouser
-- Models: add Vercel AI Gateway auth choice + onboarding updates. (#1016) - thanks @timolins. https://docs.mangabaclaw.ai/providers/vercel-ai-gateway
-- Sessions: add `session.identityLinks` for cross-platform DM session li nking. (#1033) - thanks @thewilloftheshadow. https://docs.mangabaclaw.ai/concepts/session
-- Web search: add `country`/`language` parameters (schema + Brave API) and docs. (#1046) - thanks @YuriNachos. https://docs.mangabaclaw.ai/tools/web
+- Hooks: add hooks system with bundled hooks, CLI tooling, and docs. (#1028) - thanks @ThomsenDrake. https://docs.openclaw.ai/hooks
+- Media: add inbound media understanding (image/audio/video) with provider + CLI fallbacks. https://docs.openclaw.ai/nodes/media-understanding.
+- Plugins: add Zalo Personal plugin (`@mangabaclaw/zalouser`) and unify channel directory for plugins. (#1032) - thanks @suminhthanh. https://docs.openclaw.ai/plugins/zalouser
+- Models: add Vercel AI Gateway auth choice + onboarding updates. (#1016) - thanks @timolins. https://docs.openclaw.ai/providers/vercel-ai-gateway
+- Sessions: add `session.identityLinks` for cross-platform DM session li nking. (#1033) - thanks @thewilloftheshadow. https://docs.openclaw.ai/concepts/session
+- Web search: add `country`/`language` parameters (schema + Brave API) and docs. (#1046) - thanks @YuriNachos. https://docs.openclaw.ai/tools/web
 
 ### Changes
 
@@ -16680,7 +16680,7 @@ Thanks @AlexMikhalev, @CoreyH, @John-Rood, @KrauseFx, @MaudeBot, @Nachx639, @Nic
 - Tools: send Chrome-like headers by default for `web_fetch` to improve extraction on bot-sensitive sites.
 - Tools: Firecrawl fallback now uses bot-circumvention + cache by default; remove basic HTML fallback when extraction fails.
 - Tools: default `exec` exit notifications and auto-migrate legacy `tools.bash` to `tools.exec`.
-- Tools: add `exec` PTY support for interactive sessions. https://docs.mangabaclaw.ai/tools/exec.
+- Tools: add `exec` PTY support for interactive sessions. https://docs.openclaw.ai/tools/exec.
 - Tools: add tmux-style `process send-keys` and bracketed paste helpers for PTY sessions.
 - Tools: add `process submit` helper to send CR for PTY sessions.
 - Tools: respond to PTY cursor position queries to unblock interactive TUIs.
@@ -16736,7 +16736,7 @@ Thanks @AlexMikhalev, @CoreyH, @John-Rood, @KrauseFx, @MaudeBot, @Nachx639, @Nic
 - Sessions: hard-stop `sessions.delete` cleanup.
 - Channels: treat replies to the bot as implicit mentions across supported channels.
 - Channels: normalize object-format capabilities in channel capability parsing.
-- Security: default-deny slash/control commands unless a channel computed `CommandAuthorized` (fixes accidental "open" behavior), and ensure WhatsApp + Zalo plugin channels gate inline `/...` tokens correctly. https://docs.mangabaclaw.ai/gateway/security (#57018) Thanks @hydro13.
+- Security: default-deny slash/control commands unless a channel computed `CommandAuthorized` (fixes accidental "open" behavior), and ensure WhatsApp + Zalo plugin channels gate inline `/...` tokens correctly. https://docs.openclaw.ai/gateway/security (#57018) Thanks @hydro13.
 - Security: redact sensitive text in gateway WS logs.
 - Tools: cap pending `exec` process output to avoid unbounded buffers.
 - CLI: speed up `mangabaclaw sandbox-explain` by avoiding heavy plugin imports when normalizing channel ids.
@@ -16768,7 +16768,7 @@ Thanks @AlexMikhalev, @CoreyH, @John-Rood, @KrauseFx, @MaudeBot, @Nachx639, @Nic
 - **BREAKING:** Channel auth now prefers config over env for Discord/Telegram/Matrix (env is fallback only). (#1040) - thanks @thewilloftheshadow.
 - **BREAKING:** Drop legacy `chatType: "room"` support; use `chatType: "channel"`.
 - **BREAKING:** remove legacy provider-specific target resolution fallbacks; target resolution is centralized with plugin hints + directory lookups.
-- **BREAKING:** `mangabaclaw hooks` is now `mangabaclaw webhooks`; hooks live under `mangabaclaw hooks`. https://docs.mangabaclaw.ai/cli/webhooks.
+- **BREAKING:** `mangabaclaw hooks` is now `mangabaclaw webhooks`; hooks live under `mangabaclaw hooks`. https://docs.openclaw.ai/cli/webhooks.
 - **BREAKING:** `mangabaclaw plugins install <path>` now copies into `~/.mangabaclaw/extensions` (use `--link` to keep path-based loading).
 
 ## 2026.1.15

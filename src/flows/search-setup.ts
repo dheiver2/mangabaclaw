@@ -33,7 +33,9 @@ import { sortFlowContributionsByLabel } from "./types.js";
 type SearchProvider = NonNullable<
   NonNullable<NonNullable<NonNullable<MangabaClawConfig["tools"]>["web"]>["search"]>["provider"]
 >;
-type SearchConfig = NonNullable<NonNullable<NonNullable<MangabaClawConfig["tools"]>["web"]>["search"]>;
+type SearchConfig = NonNullable<
+  NonNullable<NonNullable<MangabaClawConfig["tools"]>["web"]>["search"]
+>;
 type MutableSearchConfig = SearchConfig & Record<string, unknown>;
 
 type SearchProviderSetupOption = FlowOption & {
@@ -49,7 +51,7 @@ type SearchProviderSetupContribution = FlowContribution & {
 };
 
 const SEARCH_INSTALL_CATALOG_ENTRY = Symbol("search-install-catalog-entry");
-const WEB_SEARCH_DOCS_URL = "https://docs.mangabaclaw.ai/tools/web";
+const WEB_SEARCH_DOCS_URL = "https://docs.openclaw.ai/tools/web";
 const CODEX_HOSTED_SEARCH_PROVIDER_ID = "codex";
 
 type SearchProviderEntryWithInstall = PluginWebSearchProviderEntry & {
@@ -331,7 +333,10 @@ export function applySearchProviderSelection(
   return applySearchProviderSelectionConfig(nextBase, providerEntry);
 }
 
-function preserveDisabledState(original: MangabaClawConfig, result: MangabaClawConfig): MangabaClawConfig {
+function preserveDisabledState(
+  original: MangabaClawConfig,
+  result: MangabaClawConfig,
+): MangabaClawConfig {
   if (original.tools?.web?.search?.enabled !== false) {
     return result;
   }
@@ -643,7 +648,7 @@ export async function runSearchSetupFlow(
       [
         `${entry.label} works without an API key.`,
         "MangabaClaw will enable the plugin and use it as your web_search provider.",
-        `Docs: ${entry.docsUrl ?? "https://docs.mangabaclaw.ai/tools/web"}`,
+        `Docs: ${entry.docsUrl ?? "https://docs.openclaw.ai/tools/web"}`,
       ].join("\n"),
       "Web search",
     );
@@ -691,7 +696,7 @@ export async function runSearchSetupFlow(
         "Secret references enabled — MangabaClaw will store a reference instead of the API key.",
         `Env var: ${ref.id}${envAvailable ? " (detected)" : ""}.`,
         ...(envAvailable ? [] : [`Set ${ref.id} in the Gateway environment.`]),
-        "Docs: https://docs.mangabaclaw.ai/tools/web",
+        "Docs: https://docs.openclaw.ai/tools/web",
       ].join("\n"),
       "Web search",
     );
@@ -726,7 +731,7 @@ export async function runSearchSetupFlow(
     [
       `No ${credentialLabel} stored — web_search won't work until a key is available.`,
       `Get your key at: ${entry.signupUrl}`,
-      "Docs: https://docs.mangabaclaw.ai/tools/web",
+      "Docs: https://docs.openclaw.ai/tools/web",
     ].join("\n"),
     "Web search",
   );

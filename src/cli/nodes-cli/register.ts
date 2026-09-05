@@ -33,7 +33,7 @@ export async function registerNodesCli(program: Command, argv: readonly string[]
             "Invoke a node command directly.",
           ],
           ["mangabaclaw nodes camera snap --node <id>", "Capture a photo from a node camera."],
-        ])}\n\n${theme.muted("Docs:")} ${formatDocsLink("/cli/nodes", "docs.mangabaclaw.ai/cli/nodes")}\n`,
+        ])}\n\n${theme.muted("Docs:")} ${formatDocsLink("/cli/nodes", "docs.openclaw.ai/cli/nodes")}\n`,
     );
 
   registerNodesStatusCommands(nodes);

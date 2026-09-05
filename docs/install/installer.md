@@ -9,11 +9,11 @@ title: "Installer internals"
 
 MangabaClaw ships three installer scripts, served from `mangabaclaw.ai`.
 
-| Script                             | Platform             | What it does                                                                                   |
-| ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------------- |
-| [`install.sh`](#installsh)         | macOS / Linux / WSL  | Installs Node if needed, installs MangabaClaw via npm (default) or git, can run onboarding.       |
+| Script                             | Platform             | What it does                                                                                         |
+| ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------- |
+| [`install.sh`](#installsh)         | macOS / Linux / WSL  | Installs Node if needed, installs MangabaClaw via npm (default) or git, can run onboarding.          |
 | [`install-cli.sh`](#install-clish) | macOS / Linux / WSL  | Installs Node + MangabaClaw into a local prefix (`~/.mangabaclaw`) via npm or git. No root required. |
-| [`install.ps1`](#installps1)       | Windows (PowerShell) | Installs Node if needed, installs MangabaClaw via npm (default) or git, can run onboarding.       |
+| [`install.ps1`](#installps1)       | Windows (PowerShell) | Installs Node if needed, installs MangabaClaw via npm (default) or git, can run onboarding.          |
 
 All three support Node **22.22.3+, 24.15+, or 25.9+**. On macOS and Linux, `install.sh` provisions Node 26 when needed, while the rootless `install-cli.sh` downloads Node 24.15.0 (Node 22.22.3 on ARMv7). On Windows, winget/Chocolatey/Scoop install the supported Node LTS line, and the portable fallback downloads Node 26.
 
@@ -26,31 +26,31 @@ Install-method switches verify the replacement before retiring the current owner
 <Tabs>
   <Tab title="install.sh">
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash
     ```
 
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash -s -- --help
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash -s -- --help
     ```
 
   </Tab>
   <Tab title="install-cli.sh">
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install-cli.sh | bash
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install-cli.sh | bash
     ```
 
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install-cli.sh | bash -s -- --help
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install-cli.sh | bash -s -- --help
     ```
 
   </Tab>
   <Tab title="install.ps1">
     ```powershell
-    iwr -useb https://mangabaclaw.ai/install.ps1 | iex
+    iwr -useb https://mangaba.ia.br/install.ps1 | iex
     ```
 
     ```powershell
-    & ([scriptblock]::Create((iwr -useb https://mangabaclaw.ai/install.ps1))) -Tag beta -NoOnboard -DryRun
+    & ([scriptblock]::Create((iwr -useb https://mangaba.ia.br/install.ps1))) -Tag beta -NoOnboard -DryRun
     ```
 
   </Tab>
@@ -113,32 +113,32 @@ The script exits with code `2` for invalid method selection or invalid `--instal
 <Tabs>
   <Tab title="Default">
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash
     ```
   </Tab>
   <Tab title="Skip onboarding">
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash -s -- --no-onboard
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash -s -- --no-onboard
     ```
   </Tab>
   <Tab title="Git install">
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash -s -- --install-method git
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash -s -- --install-method git
     ```
   </Tab>
   <Tab title="GitHub main checkout">
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash -s -- --install-method git --version main
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash -s -- --install-method git --version main
     ```
   </Tab>
   <Tab title="Dry run">
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash -s -- --dry-run
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash -s -- --dry-run
     ```
   </Tab>
   <Tab title="Verify after install">
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash -s -- --no-onboard --verify
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash -s -- --no-onboard --verify
     ```
   </Tab>
 </Tabs>
@@ -153,7 +153,7 @@ The script exits with code `2` for invalid method selection or invalid `--instal
 | `--git \| --github`                     | Shortcut for git method                                                 |
 | `--version <version\|dist-tag\|spec>`   | npm version, dist-tag, or package spec (default: `latest`)              |
 | `--beta`                                | Use beta dist-tag if available, else fall back to `latest`              |
-| `--git-dir \| --dir <path>`             | Checkout directory (default: `~/mangabaclaw`)                              |
+| `--git-dir \| --dir <path>`             | Checkout directory (default: `~/mangabaclaw`)                           |
 | `--no-git-update`                       | Skip `git pull` for existing checkout                                   |
 | `--no-prompt`                           | Disable prompts                                                         |
 | `--no-onboard`                          | Skip onboarding                                                         |
@@ -167,20 +167,20 @@ The script exits with code `2` for invalid method selection or invalid `--instal
 
   <Accordion title="Environment variables reference">
 
-| Variable                                          | Description                                                        |
-| ------------------------------------------------- | ------------------------------------------------------------------ |
-| `MANGABACLAW_INSTALL_METHOD=git\|npm`                | Install method                                                     |
-| `MANGABACLAW_VERSION=latest\|next\|<semver>\|<spec>` | npm version, dist-tag, or package spec                             |
-| `MANGABACLAW_BETA=0\|1`                              | Use beta if available                                              |
+| Variable                                             | Description                                                           |
+| ---------------------------------------------------- | --------------------------------------------------------------------- |
+| `MANGABACLAW_INSTALL_METHOD=git\|npm`                | Install method                                                        |
+| `MANGABACLAW_VERSION=latest\|next\|<semver>\|<spec>` | npm version, dist-tag, or package spec                                |
+| `MANGABACLAW_BETA=0\|1`                              | Use beta if available                                                 |
 | `MANGABACLAW_HOME=<path>`                            | Base directory for MangabaClaw state and default git/onboarding paths |
-| `MANGABACLAW_GIT_DIR=<path>`                         | Checkout directory                                                 |
-| `MANGABACLAW_GIT_UPDATE=0\|1`                        | Toggle git updates                                                 |
-| `MANGABACLAW_NO_PROMPT=1`                            | Disable prompts                                                    |
-| `MANGABACLAW_VERIFY_INSTALL=1`                       | Run the post-install smoke verify                                  |
-| `MANGABACLAW_NO_ONBOARD=1`                           | Skip onboarding                                                    |
-| `MANGABACLAW_DRY_RUN=1`                              | Dry run mode                                                       |
-| `MANGABACLAW_VERBOSE=1`                              | Debug mode                                                         |
-| `MANGABACLAW_NPM_LOGLEVEL=error\|warn\|notice`       | npm log level (default: `error`, hides npm deprecation noise)      |
+| `MANGABACLAW_GIT_DIR=<path>`                         | Checkout directory                                                    |
+| `MANGABACLAW_GIT_UPDATE=0\|1`                        | Toggle git updates                                                    |
+| `MANGABACLAW_NO_PROMPT=1`                            | Disable prompts                                                       |
+| `MANGABACLAW_VERIFY_INSTALL=1`                       | Run the post-install smoke verify                                     |
+| `MANGABACLAW_NO_ONBOARD=1`                           | Skip onboarding                                                       |
+| `MANGABACLAW_DRY_RUN=1`                              | Dry run mode                                                          |
+| `MANGABACLAW_VERBOSE=1`                              | Debug mode                                                            |
+| `MANGABACLAW_NPM_LOGLEVEL=error\|warn\|notice`       | npm log level (default: `error`, hides npm deprecation noise)         |
 
   </Accordion>
 </AccordionGroup>
@@ -229,27 +229,27 @@ by default, plus git-checkout installs under the same prefix flow.
 <Tabs>
   <Tab title="Default">
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install-cli.sh | bash
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install-cli.sh | bash
     ```
   </Tab>
   <Tab title="Custom prefix + version">
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install-cli.sh | bash -s -- --prefix /opt/mangabaclaw --version latest
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install-cli.sh | bash -s -- --prefix /opt/mangabaclaw --version latest
     ```
   </Tab>
   <Tab title="Git install">
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install-cli.sh | bash -s -- --install-method git --git-dir ~/mangabaclaw
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install-cli.sh | bash -s -- --install-method git --git-dir ~/mangabaclaw
     ```
   </Tab>
   <Tab title="Automation JSON output">
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install-cli.sh | bash -s -- --json --prefix /opt/mangabaclaw
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install-cli.sh | bash -s -- --json --prefix /opt/mangabaclaw
     ```
   </Tab>
   <Tab title="Run onboarding">
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install-cli.sh | bash -s -- --onboard
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install-cli.sh | bash -s -- --onboard
     ```
   </Tab>
 </Tabs>
@@ -259,17 +259,17 @@ by default, plus git-checkout installs under the same prefix flow.
 
 | Flag                                    | Description                                                                     |
 | --------------------------------------- | ------------------------------------------------------------------------------- |
-| `--prefix <path>`                       | Install prefix (default: `~/.mangabaclaw`)                                         |
+| `--prefix <path>`                       | Install prefix (default: `~/.mangabaclaw`)                                      |
 | `--install-method \| --method npm\|git` | Choose install method (default: `npm`)                                          |
 | `--npm`                                 | Shortcut for npm method                                                         |
 | `--git \| --github`                     | Shortcut for git method                                                         |
-| `--git-dir \| --dir <path>`             | Git checkout directory (default: `~/mangabaclaw`)                                  |
+| `--git-dir \| --dir <path>`             | Git checkout directory (default: `~/mangabaclaw`)                               |
 | `--no-git-update`                       | Skip `git pull` for an existing git checkout                                    |
-| `--version <ver>`                       | MangabaClaw version or dist-tag (default: `latest`)                                |
+| `--version <ver>`                       | MangabaClaw version or dist-tag (default: `latest`)                             |
 | `--compatible-with <ver>`               | Refuse a CLI that cannot modify config written by `<ver>`                       |
 | `--node-version <ver>`                  | Node version (default: `24.15.0`; `22.22.3` on Linux ARMv7)                     |
 | `--json`                                | Emit NDJSON events                                                              |
-| `--onboard`                             | Run `mangabaclaw onboard` after install                                            |
+| `--onboard`                             | Run `mangabaclaw onboard` after install                                         |
 | `--no-onboard`                          | Skip onboarding (default)                                                       |
 | `--set-npm-prefix`                      | On Linux, force npm prefix to `~/.npm-global` if current prefix is not writable |
 | `--help \| -h`                          | Show usage                                                                      |
@@ -278,17 +278,17 @@ by default, plus git-checkout installs under the same prefix flow.
 
   <Accordion title="Environment variables reference">
 
-| Variable                                    | Description                                                        |
-| ------------------------------------------- | ------------------------------------------------------------------ |
-| `MANGABACLAW_PREFIX=<path>`                    | Install prefix                                                     |
-| `MANGABACLAW_INSTALL_METHOD=git\|npm`          | Install method                                                     |
+| Variable                                       | Description                                                           |
+| ---------------------------------------------- | --------------------------------------------------------------------- |
+| `MANGABACLAW_PREFIX=<path>`                    | Install prefix                                                        |
+| `MANGABACLAW_INSTALL_METHOD=git\|npm`          | Install method                                                        |
 | `MANGABACLAW_VERSION=<ver>`                    | MangabaClaw version or dist-tag                                       |
-| `MANGABACLAW_NODE_VERSION=<ver>`               | Node version                                                       |
+| `MANGABACLAW_NODE_VERSION=<ver>`               | Node version                                                          |
 | `MANGABACLAW_HOME=<path>`                      | Base directory for MangabaClaw state and default git/onboarding paths |
-| `MANGABACLAW_GIT_DIR=<path>`                   | Git checkout directory for git installs                            |
-| `MANGABACLAW_GIT_UPDATE=0\|1`                  | Toggle git updates for existing checkouts                          |
-| `MANGABACLAW_NO_ONBOARD=1`                     | Skip onboarding                                                    |
-| `MANGABACLAW_NPM_LOGLEVEL=error\|warn\|notice` | npm log level (default: `error`)                                   |
+| `MANGABACLAW_GIT_DIR=<path>`                   | Git checkout directory for git installs                               |
+| `MANGABACLAW_GIT_UPDATE=0\|1`                  | Toggle git updates for existing checkouts                             |
+| `MANGABACLAW_NO_ONBOARD=1`                     | Skip onboarding                                                       |
+| `MANGABACLAW_NPM_LOGLEVEL=error\|warn\|notice` | npm log level (default: `error`)                                      |
 
   </Accordion>
 </AccordionGroup>
@@ -333,27 +333,27 @@ by default, plus git-checkout installs under the same prefix flow.
 <Tabs>
   <Tab title="Default">
     ```powershell
-    iwr -useb https://mangabaclaw.ai/install.ps1 | iex
+    iwr -useb https://mangaba.ia.br/install.ps1 | iex
     ```
   </Tab>
   <Tab title="Git install">
     ```powershell
-    & ([scriptblock]::Create((iwr -useb https://mangabaclaw.ai/install.ps1))) -InstallMethod git
+    & ([scriptblock]::Create((iwr -useb https://mangaba.ia.br/install.ps1))) -InstallMethod git
     ```
   </Tab>
   <Tab title="GitHub main checkout">
     ```powershell
-    & ([scriptblock]::Create((iwr -useb https://mangabaclaw.ai/install.ps1))) -InstallMethod git -Tag main
+    & ([scriptblock]::Create((iwr -useb https://mangaba.ia.br/install.ps1))) -InstallMethod git -Tag main
     ```
   </Tab>
   <Tab title="Custom git directory">
     ```powershell
-    & ([scriptblock]::Create((iwr -useb https://mangabaclaw.ai/install.ps1))) -InstallMethod git -GitDir "C:\mangabaclaw"
+    & ([scriptblock]::Create((iwr -useb https://mangaba.ia.br/install.ps1))) -InstallMethod git -GitDir "C:\mangabaclaw"
     ```
   </Tab>
   <Tab title="Dry run">
     ```powershell
-    & ([scriptblock]::Create((iwr -useb https://mangabaclaw.ai/install.ps1))) -DryRun
+    & ([scriptblock]::Create((iwr -useb https://mangaba.ia.br/install.ps1))) -DryRun
     ```
   </Tab>
 </Tabs>
@@ -365,7 +365,7 @@ by default, plus git-checkout installs under the same prefix flow.
 | --------------------------- | ---------------------------------------------------------- |
 | `-InstallMethod npm\|git`   | Install method (default: `npm`)                            |
 | `-Tag <tag\|version\|spec>` | npm dist-tag, version, or package spec (default: `latest`) |
-| `-GitDir <path>`            | Checkout directory (default: `%USERPROFILE%\mangabaclaw`)     |
+| `-GitDir <path>`            | Checkout directory (default: `%USERPROFILE%\mangabaclaw`)  |
 | `-NoOnboard`                | Skip onboarding                                            |
 | `-NoGitUpdate`              | Skip `git pull`                                            |
 | `-DryRun`                   | Print actions only                                         |
@@ -375,8 +375,8 @@ by default, plus git-checkout installs under the same prefix flow.
 
   <Accordion title="Environment variables reference">
 
-| Variable                           | Description        |
-| ---------------------------------- | ------------------ |
+| Variable                              | Description        |
+| ------------------------------------- | ------------------ |
 | `MANGABACLAW_INSTALL_METHOD=git\|npm` | Install method     |
 | `MANGABACLAW_GIT_DIR=<path>`          | Checkout directory |
 | `MANGABACLAW_NO_ONBOARD=1`            | Skip onboarding    |
@@ -403,23 +403,23 @@ Use non-interactive flags/env vars for predictable runs.
 <Tabs>
   <Tab title="install.sh (non-interactive npm)">
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash -s -- --no-prompt --no-onboard
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash -s -- --no-prompt --no-onboard
     ```
   </Tab>
   <Tab title="install.sh (non-interactive git)">
     ```bash
     MANGABACLAW_INSTALL_METHOD=git MANGABACLAW_NO_PROMPT=1 \
-      curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install.sh | bash
+      curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install.sh | bash
     ```
   </Tab>
   <Tab title="install-cli.sh (JSON)">
     ```bash
-    curl -fsSL --proto '=https' --tlsv1.2 https://mangabaclaw.ai/install-cli.sh | bash -s -- --json --prefix /opt/mangabaclaw
+    curl -fsSL --proto '=https' --tlsv1.2 https://mangaba.ia.br/install-cli.sh | bash -s -- --json --prefix /opt/mangabaclaw
     ```
   </Tab>
   <Tab title="install.ps1 (skip onboarding)">
     ```powershell
-    & ([scriptblock]::Create((iwr -useb https://mangabaclaw.ai/install.ps1))) -NoOnboard
+    & ([scriptblock]::Create((iwr -useb https://mangaba.ia.br/install.ps1))) -NoOnboard
     ```
   </Tab>
 </Tabs>
@@ -450,7 +450,7 @@ Use non-interactive flags/env vars for predictable runs.
 
     ```powershell
     Set-PSDebug -Trace 1
-    & ([scriptblock]::Create((iwr -useb https://mangabaclaw.ai/install.ps1))) -NoOnboard
+    & ([scriptblock]::Create((iwr -useb https://mangaba.ia.br/install.ps1))) -NoOnboard
     Set-PSDebug -Trace 0
     ```
 

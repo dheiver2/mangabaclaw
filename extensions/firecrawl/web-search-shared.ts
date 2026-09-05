@@ -38,7 +38,7 @@ export function buildFirecrawlWebSearchProviderBase(): Omit<WebSearchProviderPlu
     envVars: ["FIRECRAWL_API_KEY"],
     placeholder: "fc-...",
     signupUrl: "https://www.firecrawl.dev/",
-    docsUrl: "https://docs.mangabaclaw.ai/tools/firecrawl",
+    docsUrl: "https://docs.openclaw.ai/tools/firecrawl",
     autoDetectOrder: 60,
     credentialPath: FIRECRAWL_CREDENTIAL_PATH,
     ...contractFields,
@@ -78,7 +78,7 @@ export function buildFirecrawlFreeWebSearchProviderBase(): Omit<
     envVars: [],
     placeholder: "(no key needed)",
     signupUrl: "https://www.firecrawl.dev/",
-    docsUrl: "https://docs.mangabaclaw.ai/tools/firecrawl",
+    docsUrl: "https://docs.openclaw.ai/tools/firecrawl",
     credentialPath: "",
     ...createWebSearchProviderContractFields({
       credentialPath: "",

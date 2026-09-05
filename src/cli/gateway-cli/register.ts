@@ -532,7 +532,7 @@ export function registerGatewayCli(program: Command, deps: GatewayCliDependencie
             ["mangabaclaw gateway discover", "Find local and wide-area gateway beacons."],
             ["mangabaclaw gateway stability", "Show recent stability diagnostics."],
             ["mangabaclaw gateway call health", "Call a gateway RPC method directly."],
-          ])}\n\n${theme.muted("Docs:")} ${formatDocsLink("/cli/gateway", "docs.mangabaclaw.ai/cli/gateway")}\n`,
+          ])}\n\n${theme.muted("Docs:")} ${formatDocsLink("/cli/gateway", "docs.openclaw.ai/cli/gateway")}\n`,
       ),
   );
 

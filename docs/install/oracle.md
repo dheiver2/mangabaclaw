@@ -73,7 +73,7 @@ Run a persistent MangabaClaw Gateway on Oracle Cloud's **Always Free** ARM tier 
 
   <Step title="Install MangabaClaw">
     ```bash
-    curl -fsSL https://mangabaclaw.ai/install.sh | bash
+    curl -fsSL https://mangaba.ia.br/install.sh | bash
     source ~/.bashrc
     ```
 

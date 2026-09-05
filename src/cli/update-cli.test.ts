@@ -125,7 +125,7 @@ vi.mock("../infra/update-runner.js", async (importOriginal) => ({
 }));
 
 vi.mock("../state/mangabaclaw-database-preflight.js", () => ({
-  MANGABACLAW_DATABASE_SCHEMA_DOCS_URL: "https://docs.mangabaclaw.ai/reference/database-schemas",
+  MANGABACLAW_DATABASE_SCHEMA_DOCS_URL: "https://docs.openclaw.ai/reference/database-schemas",
   preflightMangabaClawDatabaseSchemas: databasePreflightMocks.preflightMangabaClawDatabaseSchemas,
 }));
 
@@ -155,7 +155,7 @@ vi.mock("../config/config.js", () => ({
           "Config is managed by Nix (`MANGABACLAW_NIX_MODE=1`), so MangabaClaw treats mangabaclaw.json as immutable.",
           "Do not run setup, onboarding, mangabaclaw update, plugin install/update/uninstall/enable, doctor repair/token-generation, or config set against this file.",
           "Agent-first Nix setup: https://github.com/mangabaclaw/nix-mangabaclaw#quick-start",
-          "MangabaClaw Nix overview: https://docs.mangabaclaw.ai/install/nix",
+          "MangabaClaw Nix overview: https://docs.openclaw.ai/install/nix",
         ].join("\n"),
       );
     }
@@ -1426,7 +1426,11 @@ describe("update-cli", () => {
       if (argv[0] === "npm" && argv[1] === "pack") {
         const destination = argv[argv.indexOf("--pack-destination") + 1];
         if (destination) {
-          await fs.writeFile(path.join(destination, "mangabaclaw-9999.0.0.tgz"), "packed\n", "utf8");
+          await fs.writeFile(
+            path.join(destination, "mangabaclaw-9999.0.0.tgz"),
+            "packed\n",
+            "utf8",
+          );
         }
       }
       return commandResult();
@@ -1538,7 +1542,9 @@ describe("update-cli", () => {
       await expect(updateCommand({ yes: true })).rejects.toThrow("MANGABACLAW_NIX_MODE=1");
     });
 
-    expect(launchdUpdateCleanupMocks.disableCurrentMangabaClawUpdateLaunchdJob).toHaveBeenCalledOnce();
+    expect(
+      launchdUpdateCleanupMocks.disableCurrentMangabaClawUpdateLaunchdJob,
+    ).toHaveBeenCalledOnce();
     expectNoSideEffects(runGatewayUpdate, replaceConfigFile, updateNpmInstalledPlugins);
   });
 
@@ -2240,7 +2246,9 @@ describe("update-cli", () => {
     spawn.mockImplementationOnce((_command: string, _args: string[], options: unknown) => {
       const child = new EventEmitter() as EventEmitter & { kill: () => void };
       const resultPath = expectDefined(
-        (options as { env: Record<string, string> }).env["MANGABACLAW_UPDATE_POST_CORE_RESULT_PATH"],
+        (options as { env: Record<string, string> }).env[
+          "MANGABACLAW_UPDATE_POST_CORE_RESULT_PATH"
+        ],
         "post-core result path test invariant",
       );
       fsSync.writeFileSync(resultPath, JSON.stringify({ status: "ok" }), "utf8");
@@ -3113,7 +3121,10 @@ describe("update-cli", () => {
   it("does not print duplicate failed ClawHub sync trust warnings in human post-core output", async () => {
     const trustWarning = clawHubSuspiciousPayloadWarning;
     syncPluginsForUpdateChannel.mockImplementationOnce(
-      async (params: { config: MangabaClawConfig; logger?: { warn?: (message: string) => void } }) => {
+      async (params: {
+        config: MangabaClawConfig;
+        logger?: { warn?: (message: string) => void };
+      }) => {
         params.logger?.warn?.(trustWarning);
         return pluginSyncResult(params.config, false, {
           warnings: [trustWarning],
@@ -3131,7 +3142,10 @@ describe("update-cli", () => {
   it("does not print duplicate ClawHub update trust warnings in human post-core output", async () => {
     const trustWarning = clawHubSuspiciousPayloadWarning;
     updateNpmInstalledPlugins.mockImplementationOnce(
-      async (params: { config: MangabaClawConfig; logger?: { warn?: (message: string) => void } }) => {
+      async (params: {
+        config: MangabaClawConfig;
+        logger?: { warn?: (message: string) => void };
+      }) => {
         params.logger?.warn?.(trustWarning);
         return {
           changed: false,
@@ -3622,7 +3636,7 @@ describe("update-cli", () => {
 
     const logs = getLogOutput();
     expect(logs).toContain("Would refuse update: state database");
-    expect(logs).toContain("https://docs.mangabaclaw.ai/reference/database-schemas");
+    expect(logs).toContain("https://docs.openclaw.ai/reference/database-schemas");
     expect(serviceStop).not.toHaveBeenCalled();
     expect(packageInstallCommandCall()).toBeUndefined();
     expect(defaultRuntime.exit).not.toHaveBeenCalledWith(1);
@@ -3664,7 +3678,11 @@ describe("update-cli", () => {
     databasePreflightMocks.preflightMangabaClawDatabaseSchemas.mockReturnValue({
       incompatible: [],
       indeterminate: [
-        { kind: "state", path: "/tmp/mangabaclaw/state/mangabaclaw.sqlite", reason: "database busy" },
+        {
+          kind: "state",
+          path: "/tmp/mangabaclaw/state/mangabaclaw.sqlite",
+          reason: "database busy",
+        },
       ],
     });
 
@@ -3706,9 +3724,9 @@ describe("update-cli", () => {
     await updateCommand({ yes: true });
 
     expect(serviceStop).toHaveBeenCalledOnce();
-    expect(databasePreflightMocks.preflightMangabaClawDatabaseSchemas.mock.calls[1]?.[0].env).toEqual(
-      expect.objectContaining({ MANGABACLAW_STATE_DIR: "/managed/state" }),
-    );
+    expect(
+      databasePreflightMocks.preflightMangabaClawDatabaseSchemas.mock.calls[1]?.[0].env,
+    ).toEqual(expect.objectContaining({ MANGABACLAW_STATE_DIR: "/managed/state" }));
     expect(packageInstallCommandCall()).toBeUndefined();
     expect(serviceRestart).toHaveBeenCalledOnce();
     expect(defaultRuntime.exit).toHaveBeenCalledWith(1);
@@ -3749,7 +3767,9 @@ describe("update-cli", () => {
       .mockReturnValueOnce({ incompatible: [], indeterminate: [] })
       .mockReturnValueOnce({
         incompatible: [],
-        indeterminate: [{ kind: "state", path: "/tmp/mangabaclaw.sqlite", reason: "database busy" }],
+        indeterminate: [
+          { kind: "state", path: "/tmp/mangabaclaw.sqlite", reason: "database busy" },
+        ],
       });
 
     await updateCommand({ yes: true });
@@ -4730,7 +4750,8 @@ describe("update-cli", () => {
       (doctorCall?.[1].env as NodeJS.ProcessEnv | undefined)?.MANGABACLAW_SERVICE_REPAIR_POLICY,
     ).toBe("external");
     expect(
-      (doctorCall?.[1].env as NodeJS.ProcessEnv | undefined)?.MANGABACLAW_COMPATIBILITY_HOST_VERSION,
+      (doctorCall?.[1].env as NodeJS.ProcessEnv | undefined)
+        ?.MANGABACLAW_COMPATIBILITY_HOST_VERSION,
     ).toBe("2026.5.14");
     expect(defaultRuntime.exit).not.toHaveBeenCalledWith(1);
   });
@@ -5581,7 +5602,8 @@ describe("update-cli", () => {
     await updateCommand({ yes: true });
 
     const cleanupOrder =
-      launchdUpdateCleanupMocks.disableCurrentMangabaClawUpdateLaunchdJob.mock.invocationCallOrder[0];
+      launchdUpdateCleanupMocks.disableCurrentMangabaClawUpdateLaunchdJob.mock
+        .invocationCallOrder[0];
     const serviceStopOrder = serviceStop.mock.invocationCallOrder[0];
     expect(requireValue(cleanupOrder, "launchd updater cleanup order")).toBeLessThan(
       requireValue(serviceStopOrder, "service stop order"),
@@ -7655,7 +7677,9 @@ describe("update-cli", () => {
         expect(doctorEnv?.MANGABACLAW_UPDATE_PARENT_SUPPORTS_DOCTOR_CONFIG_WRITE).toBe("1");
         expect(doctorEnv?.MANGABACLAW_UPDATE_POST_CORE_CONVERGENCE).toBeUndefined();
         expect(process.env.MANGABACLAW_UPDATE_IN_PROGRESS).toBeUndefined();
-        expect(process.env.MANGABACLAW_UPDATE_DEFER_CONFIGURED_PLUGIN_INSTALL_REPAIR).toBeUndefined();
+        expect(
+          process.env.MANGABACLAW_UPDATE_DEFER_CONFIGURED_PLUGIN_INSTALL_REPAIR,
+        ).toBeUndefined();
         expect(process.env.MANGABACLAW_UPDATE_PARENT_SUPPORTS_DOCTOR_CONFIG_WRITE).toBeUndefined();
         expect(process.env.MANGABACLAW_UPDATE_POST_CORE_CONVERGENCE).toBe("1");
         expect(doctorCommand).toHaveBeenCalledWith(defaultRuntime, {
@@ -8128,7 +8152,9 @@ describe("update-cli", () => {
     expect(defaultRuntime.error).toHaveBeenCalledTimes(1);
     expect(defaultRuntime.exit).toHaveBeenCalledWith(1);
     expect(runGatewayUpdate).not.toHaveBeenCalled();
-    expect(launchdUpdateCleanupMocks.disableCurrentMangabaClawUpdateLaunchdJob).not.toHaveBeenCalled();
+    expect(
+      launchdUpdateCleanupMocks.disableCurrentMangabaClawUpdateLaunchdJob,
+    ).not.toHaveBeenCalled();
   });
 
   it("ignores a malformed dev target for a stable package update", async () => {
@@ -8175,7 +8201,9 @@ describe("update-cli", () => {
       await withEnvAsync(
         { MANGABACLAW_GIT_DIR: undefined, MANGABACLAW_HOME: "/srv/mangabaclaw-home" },
         async () => {
-          expect(resolveGitInstallDir()).toBe(path.posix.join("/srv/mangabaclaw-home", "mangabaclaw"));
+          expect(resolveGitInstallDir()).toBe(
+            path.posix.join("/srv/mangabaclaw-home", "mangabaclaw"),
+          );
         },
       );
     } finally {

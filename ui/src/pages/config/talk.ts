@@ -55,7 +55,7 @@ type TalkViewProps = {
 
 const TALK_PICKER_UNSET = "";
 
-const TALK_DOCS_URL = "https://docs.mangabaclaw.ai/nodes/talk";
+const TALK_DOCS_URL = "https://docs.openclaw.ai/nodes/talk";
 
 /** Config may name a provider by alias; pickers always speak canonical ids. */
 function findProviderOption(

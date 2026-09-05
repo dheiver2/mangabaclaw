@@ -224,7 +224,7 @@ const BLOCKS_FINAL_PRESENTATION = {
       type: "buttons",
       buttons: [
         { label: "Approve release", action: { type: "callback", value: "approve-release" } },
-        { label: "Release notes", url: "https://docs.mangabaclaw.ai/release" },
+        { label: "Release notes", url: "https://docs.openclaw.ai/release" },
       ],
     },
   ],
@@ -483,7 +483,7 @@ function createPreparedTraceMessage(scenario: SlackTraceScenarioName): PreparedS
     ...(progressCard || nativeProgress
       ? {
           gateway: {
-            publicOrigin: "https://team.mangabaclaw.ai",
+            publicOrigin: "https://team.openclaw.ai",
             controlUi: { basePath: "/mangabaclaw" },
           },
         }
