@@ -126,7 +126,7 @@ jobs:
           EOF
 
       - name: Checkout target
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ inputs.target_ref }}
           fetch-depth: 1
@@ -329,7 +329,7 @@ jobs:
       matrix: ${{ fromJson(needs.preflight.outputs.plugin_prerelease_static_matrix) }}
     steps:
       - name: Checkout
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ needs.preflight.outputs.checkout_revision }}
           fetch-depth: 1
@@ -366,7 +366,7 @@ jobs:
       matrix: ${{ fromJson(needs.preflight.outputs.plugin_prerelease_node_matrix) }}
     steps:
       - name: Checkout
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ needs.preflight.outputs.checkout_revision }}
           fetch-depth: 1
@@ -376,7 +376,7 @@ jobs:
 
       - name: Checkout trusted npm security inventory
         if: inputs.full_release_validation
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ github.sha }}
           path: .plugin-prerelease-trusted
@@ -476,7 +476,7 @@ jobs:
       matrix: ${{ fromJson(needs.preflight.outputs.plugin_prerelease_extension_matrix) }}
     steps:
       - name: Checkout
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ needs.preflight.outputs.checkout_revision }}
           fetch-depth: 1
@@ -509,7 +509,7 @@ jobs:
     timeout-minutes: 30
     steps:
       - name: Checkout
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ needs.preflight.outputs.checkout_revision }}
           fetch-depth: 1

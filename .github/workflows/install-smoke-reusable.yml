@@ -83,7 +83,7 @@ jobs:
           NODE
 
       - name: Checkout
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ inputs.ref || github.ref }}
           fetch-depth: 1
@@ -126,7 +126,7 @@ jobs:
       MANGABACLAW_DOCKER_E2E_REQUIRE_LOCAL_IMAGE: "1"
     steps:
       - name: Checkout CLI
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ needs.preflight.outputs.target_sha }}
           persist-credentials: false
@@ -247,13 +247,13 @@ jobs:
       DOCKER_BUILD_RECORD_UPLOAD: "false"
     steps:
       - name: Checkout CLI
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ needs.preflight.outputs.target_sha }}
           persist-credentials: false
 
       - name: Checkout trusted image artifact helper
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: ${{ needs.preflight.outputs.workflow_repository }}
           ref: ${{ needs.preflight.outputs.workflow_sha }}
@@ -356,7 +356,7 @@ jobs:
     timeout-minutes: 30
     steps:
       - name: Checkout CLI
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ needs.preflight.outputs.target_sha }}
           persist-credentials: false
@@ -375,13 +375,13 @@ jobs:
       MANGABACLAW_DOCKER_E2E_REQUIRE_LOCAL_IMAGE: "1"
     steps:
       - name: Checkout CLI
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ needs.preflight.outputs.target_sha }}
           persist-credentials: false
 
       - name: Checkout trusted image artifact helper
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: ${{ needs.preflight.outputs.workflow_repository }}
           ref: ${{ needs.preflight.outputs.workflow_sha }}
@@ -547,21 +547,21 @@ jobs:
       MANGABACLAW_DOCKER_E2E_REQUIRE_LOCAL_IMAGE: "1"
     steps:
       - name: Checkout trusted installer harness
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: ${{ needs.preflight.outputs.workflow_repository }}
           ref: ${{ needs.preflight.outputs.workflow_sha }}
           persist-credentials: false
 
       - name: Checkout candidate CLI
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ needs.preflight.outputs.target_sha }}
           path: candidate
           persist-credentials: false
 
       - name: Checkout trusted image artifact helper
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: ${{ needs.preflight.outputs.workflow_repository }}
           ref: ${{ needs.preflight.outputs.workflow_sha }}
@@ -713,13 +713,13 @@ jobs:
       MANGABACLAW_DOCKER_E2E_REQUIRE_LOCAL_IMAGE: "1"
     steps:
       - name: Checkout CLI
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ needs.preflight.outputs.target_sha }}
           persist-credentials: false
 
       - name: Checkout trusted image artifact helper
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: ${{ needs.preflight.outputs.workflow_repository }}
           ref: ${{ needs.preflight.outputs.workflow_sha }}
@@ -818,7 +818,7 @@ jobs:
       DOCKER_BUILD_RECORD_UPLOAD: "false"
     steps:
       - name: Checkout CLI
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ needs.preflight.outputs.target_sha }}
           persist-credentials: false
