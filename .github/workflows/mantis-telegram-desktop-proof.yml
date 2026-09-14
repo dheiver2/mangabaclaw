@@ -301,7 +301,7 @@ jobs:
       # so uv is a lane runtime dependency, not developer convenience. The runner image does
       # not ship it.
       - name: Setup uv for the Telegram user driver
-        uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+        uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
 
       - name: Install local proof tools
         env:
@@ -760,7 +760,7 @@ jobs:
       - name: Run Codex Mantis Telegram agent
         # Pin audited 2026-08: runCodexExec rejects a missing codex-user, then
         # launches the CLI as `sudo -u <codex-user> -- codex exec`.
-        uses: openai/codex-action@52fe01ec70a42f454c9d2ebd47598f9fd6893d56
+        uses: openai/codex-action@86365089eb2b84e0a8fb0717b304f8bdcb13b20e
         env:
           BASELINE_REF: ${{ needs.resolve_request.outputs.baseline_ref }}
           BASELINE_SHA: ${{ needs.resolve_request.outputs.baseline_revision }}
